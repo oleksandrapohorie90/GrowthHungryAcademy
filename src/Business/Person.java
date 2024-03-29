@@ -1,26 +1,55 @@
 package Business;
 
 import Business.business.Company;
+import org.w3c.dom.ls.LSOutput;
 
 public class Person {
-    //constant
-    private final double PI = 3.14;
-    private final String MY_BIG_CONSTANT = "Hi , this is my constant message";
-    private String firstName = "Jerry";
-    private int age;
-    private long id; //primitive
-    private char middleInitial = 'J';
-    private byte myByte;
-    private Company company = new Company(); //reference to the company/reference that we use is the address, java system is building the object, company holds the address of where that object lives
-    private NewsAgency agency; //reference to an object
-    private Company company1 = new Company();
 
-    public void myTestMethod(){
-        //only can do for local variables not for instance variables
-        var age = 21;
-        var name = "Jake";
-   }
     //type a string and hold alt + ENTER - to introduce a var
     //alt shift o
+    //method - block of code where work gets done, line of code btw curly braces, can take 0,1 inputs and one output
+    //method is a function, all code has to live in a class, a method is a function that a part of the class
+    //function within a class-method
+private String middleName = "Christopher";
+    public void sayHello(){
+        System.out.println("Hello"); //statement/command
+        //void - doesn't return any data
+        //no output from the method
+    }
+
+    public void saySomething(String message){
+        System.out.println(message);
+    }
+
+    public char getMiddleInitial() {
+        return middleName.charAt(0);
+    }
+
+    public int add(int num1, int num2){
+        return num1+num2;
+    }
+
+    public void test(String[] words){
+       // do smth clever with words
+    }
+
+    public void test1(String ... words){
+        // do smth clever data type var
+    }
+//var args is really just an arrays
+    public static void main(String[] args) {
+        Person p1 = new Person(); //store reference of an obj to p1
+        p1.sayHello(); //I refer to this person and want to execute it
+        p1.saySomething("My groovy message");
+        char middleInitial = p1.getMiddleInitial();
+        System.out.println(p1.getMiddleInitial());
+        System.out.println(p1.add(5,3));
+        String [] words = new String[] {"one","two"};
+        p1.test(words);
+        p1.test1("one", "two", "three");
+    }
+
+
+
 
 }
