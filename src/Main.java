@@ -1,4 +1,4 @@
-import model.Dog;
+import specific.animals.Dog;
 import model.Person;
 
 import java.time.LocalDate;
