@@ -1,0 +1,71 @@
+Example 1:
+rdi=a, rsi=b, eax=c
+do_sth:
+mov eax, [rdi]
+xor eax, [rsi]
+xor [rsi], eax
+xor [rdi], eax
+ret
+
+do_sth:: This line defines a label named do_sth. Labels are used as markers in assembly code to mark locations in the code that can be referenced by other parts of the code.
+
+mov eax, [rdi]: This line moves the contents of the memory location pointed to by the register rdi into the eax register. It's essentially loading a value from memory into the eax register.
+
+xor eax, [rsi]: This line performs a bitwise XOR operation between the value in the eax register and the value in the memory location pointed to by the register rsi. The result is stored back in the eax register.
+
+xor [rsi], eax: This line performs a bitwise XOR operation between the value in the memory location pointed to by the register rsi and the value in the eax register. The result is then stored back into the memory location pointed to by rsi.
+
+xor [rdi], eax: This line performs a bitwise XOR operation between the value in the memory location pointed to by the register rdi and the value in the eax register. The result is then stored back into the memory location pointed to by rdi.
+
+ret: This line is a return instruction. It indicates the end of the function and returns control to the calling function. It may also return a value depending on the calling convention.
+
+min = b^((a^b)&-(a<b))
+
+
+Arrays => offset = base_address + (index * element_size)
+===============================================
+Example 2:
+; rdi - array, rsi - array length
+; what does 'do_sth' do?
+
+do_sth       => function that takes 2 parameters an array and the length of the array
+	xor rax, rax - zeroing up, need to clean up
+	xor rcx, rcx - 0s maybe another program was using the same register
+
+start_loop:     - is just a label
+	cmp rcx, rsi - cmp is comparing, rcx is a counter=0 at the start of the loop and it will go till rsi which is the array length
+	jge end_loop - jump if rcx is greater or equal rsi to the end loop !if not continue to next instruction
+	mov rdx, [rdi + rcx*4] - base_address+(index(rcx=0)*element_size(4))
+	and rdx, 1             - is 1 or 0, bitwise comparison of bit, compare last bit, last bit of the numer rdx is 1(binary representation) odd=1, even=0, if element odd or even, 1 or 0
+	jz next element        - jump if zero=jz
+	add rax, [rdi + rcx*4] - keeps and goes to nex element
+
+next_element:
+	inc rcx                - next element increment rcx
+	jmp start_loop         - we jump to start loop(it is adding all the odd numbers)
+
+end_loop - exiting condition
+	ret
+
+
+Example 3:
+sum_even_elements:
+    xor rax, rax          ; Clear accumulator register (rax)
+    xor rcx, rcx          ; Clear loop counter register (rcx)
+
+loop_start:
+    cmp rcx, rsi          ; Compare loop counter with array size
+    jge loop_end          ; If rcx >= rsi, exit loop
+
+    mov rdx, [rdi + rcx*4]; Load value from memory into rdx (assuming 32-bit integers)
+    test rdx, 1           ; Test if the least significant bit is set (checks if the number is odd)
+    jnz next_element      ; If odd, skip to the next element
+
+    add rax, rdx          ; Add even element to the accumulator (rax)
+
+next_element:
+    inc rcx               ; Increment loop counter
+    jmp loop_start        ; Jump back to loop start
+
+loop_end:
+    ret                   ; Return with the sum stored in rax

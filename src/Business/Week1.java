@@ -1,3 +1,5 @@
+package Business;
+
 import java.util.Scanner;
 
 public class Week1 {
