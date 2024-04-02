@@ -1,7 +1,4 @@
-package Business;
-
-import Business.business.Company;
-import org.w3c.dom.ls.LSOutput;
+package business;
 
 public class Person {
     //object is an instance of the class

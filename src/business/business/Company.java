@@ -1,4 +1,4 @@
-package Business.business;
+package business.business;
 
 public class Company {
 

@@ -8,7 +8,11 @@ public class Cat extends Pet {
 
     public void meow() {
         System.out.println("Meow meow");
+        //super allows to call parent's data
+        //Cat is able to access protected method of Pet bc Cat extends Pet
+        super.protectedMethod();
     }
+
 
     //override a toString method
     @Override

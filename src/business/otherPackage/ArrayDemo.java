@@ -1,4 +1,4 @@
-package Business.otherPackage;
+package business.otherPackage;
 
 public class ArrayDemo {
     public static void main(String[] args) {

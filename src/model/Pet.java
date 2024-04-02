@@ -11,6 +11,15 @@ public class Pet {
         return name;
     }
 
+    protected void protectedMethod(){
+        System.out.println("This is the protectedMethod of Pet");
+    }
+
+    void packageProtected(){
+        System.out.println("This is the void protected package of Pet");
+
+    }
+
     public void setName(String name) {
         this.name = name;
     }
