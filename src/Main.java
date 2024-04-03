@@ -20,6 +20,12 @@ public class Main {
         Dog fido = new Dog("Fido",LocalDate.of(2018,1,1));
         tom.setPet(fido);
         System.out.println(tom);
+        //create new instance of the class Person and initialize
+        Person johnny = new Person("Johnny", "Smith", LocalDate.of(200,11,1));
+        System.out.format("The person's fn is: %s",johnny.getFirstName());
+        System.out.format("The person's fn is: %s",johnny.getLastName());
+
+        johnny.setLastName("smith");
 
 
         for (int i = 1; i <= 5; i++) {
