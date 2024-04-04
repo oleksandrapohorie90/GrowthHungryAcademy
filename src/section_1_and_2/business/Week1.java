@@ -1,4 +1,4 @@
-package business;
+package section_1_and_2.business;
 
 import java.util.Scanner;
 

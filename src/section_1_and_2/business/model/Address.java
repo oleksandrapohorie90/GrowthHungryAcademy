@@ -1,6 +1,4 @@
-package model;
-
-import java.time.LocalDate;
+package section_1_and_2.business.model;
 
 public class Address {
     private String address1;

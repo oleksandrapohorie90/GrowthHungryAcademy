@@ -1,6 +1,6 @@
-package business;
+package section_1_and_2.business;
 
-import business.business.Company;
+import section_1_and_2.business.business.Company;
 class NewsAgency {
     Company company;
 

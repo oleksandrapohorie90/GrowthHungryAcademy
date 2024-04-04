@@ -1,4 +1,4 @@
-package package2;
+package section_1_and_2.business.package2;
 
 public class ClassB {
 

@@ -1,5 +1,5 @@
-import specific.animals.Dog;
-import model.Person;
+import section_1_and_2.business.animals.Dog;
+import section_1_and_2.business.model.Person;
 
 import java.time.LocalDate;
 

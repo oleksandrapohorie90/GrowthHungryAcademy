@@ -1,6 +1,6 @@
-package package1;
+package section_1_and_2.business.package1;
 
-import package2.ClassB;
+import section_1_and_2.business.package2.ClassB;
 
 public class ClassA {
     public static void main(String[] args) {

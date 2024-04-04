@@ -1,4 +1,4 @@
-package business.otherPackage;
+package section_1_and_2.business.otherPackage;
 
 public class ArrayDemo {
     public static void main(String[] args) {

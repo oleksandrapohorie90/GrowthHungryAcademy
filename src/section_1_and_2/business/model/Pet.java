@@ -1,4 +1,4 @@
-package model;
+package section_1_and_2.business.model;
 
 import java.time.LocalDate;
 
