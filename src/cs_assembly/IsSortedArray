@@ -1,0 +1,33 @@
+1. Implement a function that checks whether an array is sorted
+   in ascending order and returns a boolean value (0 for false, 1 for true).
+
+   section .text
+   global is_sorted
+
+   is_sorted:                   => The function is_sorted takes two parameters: a pointer to the array (in rdi) and the length of the array (in rsi).
+       ; Inputs:
+       ;   rdi = pointer to the array
+       ;   rsi = length of the array
+
+       ; Check if the length of the array is less than or equal to 1
+       cmp rsi, 1                                                   =>CMP corresponds to calculating the difference of the operands, updating the flags and discarding the result. Typically used for greater/smaller checks
+       jle .sorted  ; If length <= 1, it's considered sorted        =>It checks if the length of the array is less than or equal to 1. If it is, the array is considered sorted, and the function returns true (1).
+                                                                    =>The jump itself checks the flags in the EFL register. These are usually set with TEST or CMP(or as a side effect of many other instructions).
+       ; Loop through the array elements                            =>If the array length is greater than 1, it enters a loop where it compares each element with the next one. If any element is greater than the next one, the array is not sorted, and the function returns false (0).
+       xor rcx, rcx  ; Initialize loop counter to 0
+   .loop:                                                           =>If the loop completes without finding any out-of-order elements, the function returns true, indicating that the array is sorted.
+       mov rax, rcx  ; rax = current index
+       mov rbx, [rdi + rax*4]  ; rbx = current element
+       cmp rbx, [rdi + rax*4 + 4]  ; Compare current element with the next element
+       jg .not_sorted  ; If current element > next element, array is not sorted
+       inc rcx  ; Increment loop counter
+       cmp rcx, rsi  ; Compare loop counter with array length
+       jl .loop  ; Continue looping if not reached the end of the array
+
+   .sorted:
+       mov rax, 1  ; Return 1 (true) if array is sorted
+       ret
+
+   .not_sorted:
+       xor rax, rax  ; Return 0 (false) if array is not sorted
+       ret

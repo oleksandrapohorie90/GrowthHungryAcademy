@@ -1,0 +1,40 @@
+2. Find Maximum Element: Implement a function to find and return the maximum value
+   in an integer array
+
+section .text
+global find_max
+
+find_max:              =>The function find_max takes two parameters: a pointer to the array (in rdi) and the length of the array (in rsi).
+    ; Inputs:
+    ;   rdi = pointer to the array
+    ;   rsi = length of the array
+    ; Output:
+    ;   rax = maximum value in the array
+
+    ; Check if the length of the array is 0
+    cmp rsi, 0                                  =>It checks if the length of the array is 0. If it is, the function returns 0 as there is no maximum value to find.
+    jle .empty_array  ; If length <= 0, return 0
+
+    ; Initialize maximum value to the first element of the array
+    mov rax, [rdi]                              =>If the array length is greater than 0, it initializes the maximum value (rax) to the first element of the array.
+
+    ; Loop through the array elements starting from the second element
+    xor rcx, rcx  ; Initialize loop counter to 0
+
+=>Then it loops through the array elements starting from the second element. For each element, it compares it with the current maximum value.
+  If the current element is greater than the current maximum, it updates the maximum value.
+.loop:
+    mov rbx, [rdi + rcx*4]  ; rbx = current element   => offset = base_address + (index * element_size); elements in the array are 32-bit integers (4 bytes each).
+    cmp rbx, rax  ; Compare current element with current maximum
+    jle .not_greater  ; If current element <= current maximum, skip
+    mov rax, rbx  ; Update maximum value with current element
+.not_greater:
+    inc rcx  ; Increment loop counter
+    cmp rcx, rsi  ; Compare loop counter with array length
+    jl .loop  ; Continue looping if not reached the end of the array
+
+    ret    =>After iterating through all elements of the array, the function returns the maximum value found.
+
+.empty_array:
+    xor rax, rax  ; Return 0 if array is empty
+    ret
