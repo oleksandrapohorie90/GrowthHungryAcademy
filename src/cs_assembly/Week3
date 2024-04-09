@@ -1,12 +1,37 @@
 1. Check if Array is Sorted: Implement a function that checks whether an array is sorted
 in ascending order and returns a boolean value (0 for false, 1 for true).
 
+
 bool isSorted(int arr[], int size) {
+    if (size < 2) {
+        return true;
+    }
     for (int i = 0; i < size - 1; i++) {
         if (arr[i] > arr[i + 1]) {
             return false; // If any element is greater than its next element, return false
-        }       return true; // Return true if the loop completes without finding out-of-order elements
+        }
     }
+    return true; // Return true if the loop completes without finding out-of-order elements
+}
+
+WITH POINTERS
+==========================   
+// Function to check if an array is sorted in ascending order
+bool isSorted(int *arr, int size) {
+    // If the array has fewer than 2 elements, it is considered sorted
+    if (size < 2) {
+        return true;
+    }
+
+    // Iterate through the array elements using pointers
+    for (int i = 0; i < size - 1; i++) {
+        // If the current element is greater than its next element, array is not sorted
+        if (*(arr + i) > *(arr + i + 1)) {
+            return false;
+        }
+    }
+    // If the loop completes without returning false, array is sorted
+    return true;
 }
 
 2. Find Maximum Element: Implement a function to find and return the maximum value
@@ -28,6 +53,22 @@ int findMax(int arr[], int size) {
     // Return the maximum value found
     return max;
 }
+WITH POINTERS
+==========================
+// Function to find the maximum element in an array
+int findMax(int *arr, int size) {
+    // Initialize max to the first element of the array
+    int max = *arr; // Initialize max to the first element of the array
+
+    // Iterate through the array elements using pointers
+    for (int i = 1; i < size; i++) {
+        // Update max if current element is greater
+        if (*(arr + i) > max) {
+            max = *(arr + i);
+        }
+    }
+    // Return the maximum value found
+    return max;
 
 3. Linear Search: Write a function that performs a linear search on an array. The function
    should return the index of the first occurrence of a specified value, or -1 if the value is not
@@ -38,6 +79,22 @@ int findMax(int arr[], int size) {
        for (int i = 0; i < size; i++) {
            // Check if the current element matches the target value
            if (arr[i] == target) {
+               // Return the index of the first occurrence of the target value
+               return i;
+           }
+       }
+       // If the target value is not found, return -1
+       return -1;
+   }
+
+WITH POINTERS
+==========================
+   // Function to perform linear search in an array
+   int linearSearch(int *arr, int size, int target) {
+       // Iterate through the array elements using pointers
+       for (int i = 0; i < size; i++) {
+           // Check if the current element matches the target value
+           if (*(arr + i) == target) {
                // Return the index of the first occurrence of the target value
                return i;
            }
