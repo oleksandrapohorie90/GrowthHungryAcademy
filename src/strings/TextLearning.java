@@ -30,7 +30,7 @@ public class TextLearning {
         //updates for java 21-22
         System.out.println("Hello my name is " + name +" and I am" +age+ " years old.");
         System.out.printf("Hello my name is %s and I am %d years old.\n",name,age);
-        System.out.printf(STR."Hello my name is \{name} and I am \{age+10} years old.");
+        //System.out.printf(STR."Hello my name is \{name} and I am \{age+10} years old.");
         //%s - string
         //%d - integer
 
