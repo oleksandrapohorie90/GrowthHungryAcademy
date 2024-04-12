@@ -1,6 +1,6 @@
-package section_1_and_2.business.package1;
+package Github_200days.business.package1;
 
-import section_1_and_2.business.package2.ClassB;
+import Github_200days.business.package2.ClassB;
 
 public class ClassA {
     public static void main(String[] args) {

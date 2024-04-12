@@ -1,4 +1,4 @@
-package section_1_and_2.business.model;
+package Github_200days.business.model;
 
 public class Turtle extends Pet{
     public void hide(){

@@ -1,6 +1,6 @@
-package section_1_and_2.business.animals;
+package Github_200days.business.animals;
 
-import section_1_and_2.business.model.Pet;
+import Github_200days.business.model.Pet;
 
 import java.time.LocalDate;
 

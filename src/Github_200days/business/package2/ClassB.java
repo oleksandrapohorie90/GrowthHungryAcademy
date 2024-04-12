@@ -1,4 +1,4 @@
-package section_1_and_2.business.package2;
+package Github_200days.business.package2;
 
 public class ClassB {
 

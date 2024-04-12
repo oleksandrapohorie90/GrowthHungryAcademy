@@ -1,4 +1,4 @@
-package strings;
+package Github_200days.business.strings;
 
 public class MoreStringMethods {
 
@@ -13,7 +13,7 @@ public class MoreStringMethods {
         System.out.println(text1 + " " + text2);
         System.out.println(text1.concat(text2));
 
-        //if lots of strings together StringBuilder to build long strings
+        //if lots of Github_200days.business.strings together StringBuilder to build long Github_200days.business.strings
         String finalString = new StringBuilder(text1.length() + text2.length() + 1)
                 .append(text1)
                 .append(text2)

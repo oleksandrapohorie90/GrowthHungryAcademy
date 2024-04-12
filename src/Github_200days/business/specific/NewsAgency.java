@@ -1,6 +1,6 @@
-package section_1_and_2.business;
+package Github_200days.business.specific;
 
-import section_1_and_2.business.business.Company;
+import Github_200days.business.business.Company;
 class NewsAgency {
     Company company;
 

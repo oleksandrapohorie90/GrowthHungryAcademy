@@ -1,4 +1,4 @@
-package section_1_and_2.business.model;
+package Github_200days.business.model;
 
 import java.time.LocalDate;
 

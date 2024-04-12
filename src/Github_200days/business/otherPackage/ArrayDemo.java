@@ -1,4 +1,4 @@
-package section_1_and_2.business.otherPackage;
+package Github_200days.business.otherPackage;
 
 public class ArrayDemo {
     public static void main(String[] args) {

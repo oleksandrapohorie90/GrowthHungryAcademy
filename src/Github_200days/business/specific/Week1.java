@@ -1,4 +1,4 @@
-package section_1_and_2.business;
+package Github_200days.business.specific;
 
 import java.util.Scanner;
 

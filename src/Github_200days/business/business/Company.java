@@ -1,4 +1,4 @@
-package section_1_and_2.business.business;
+package Github_200days.business.business;
 
 public class Company {
 

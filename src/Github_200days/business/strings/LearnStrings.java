@@ -1,6 +1,4 @@
-package strings;
-
-import org.w3c.dom.ls.LSOutput;
+package Github_200days.business.strings;
 
 public class LearnStrings {
     public static void main(String[] args) {

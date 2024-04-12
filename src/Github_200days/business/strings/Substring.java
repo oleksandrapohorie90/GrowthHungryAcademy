@@ -1,4 +1,4 @@
-package strings;
+package Github_200days.business.strings;
 
 public class Substring {
     public static void main(String[] args) {
