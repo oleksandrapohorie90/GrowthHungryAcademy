@@ -1,0 +1,121 @@
+Decimal: Deci -> 1/10 -> 10 decemeters in 1 m -> 10m = 1m -> decade -> 10 years
+Decimal -> Base 10, there are 10 diff nums in the decimal system: 0,1,2,3,4,5,6,7,8,9
+decimal system is used to represent numbers:
+
+Binary system -> Base 2 -> Bi means 2
+Only 2 nums: 0, 1 0=off, 1=system is in on state
+
+Octal system: Octagon is a poligoan with -> Base 8
+0,1,2,3,4,5,6,7
+
+Hexadecimal system -> Hexa -> hexigon -> hexa=6, decimal=10
+Hexadecimal is Base 16 system
+0,1,2,3,4,5,6,7,8,9 => all 10 numbers in the decimal system, plus 6 letters from Hexa
+A, B, C, D, E, F
+10 11 12 13 14 15
+
+Decimal number to Binary
+===========================================================
+348base10 means its in a base 10 system => a decimal number
+1. 348/2 = 174 Remainder 0 <= LSB least significant bit
+2. 174/2 = 87 R 0
+3. 87/2 = 43 R 1
+4. 43/2 = 21 R 1
+5. 21/2 = 10 R 1
+6. 10/2 = 5 R 0
+7. 5/2 = 2 R 1
+8. 2/2 = 1 R 0
+9. 1/2 = 0 R 1 <= MSB most significant bit
+Binary number thats equivalent to 348base10 is Read from MSB to LSB => 101011100
+
+Decimal number to Hexadecimal number using Sucsessive division
+===========================================================
+348base10 -> Hex - a number in a base 16
+348/16 = 21.75 = 21 R to find remainder = 16*0.75 = 12, R=12 = 21 R 12
+21/16 = 1.3125 R 16*0.3125 = 5
+1/16 = 0(16 goes in 1 0 times) = remainder is what we see 1st = 0 R 1
+
+Answer from MSB to LSB all remainders only = 1 5 12(because it is large than 9-base 10, we have to turn it to letter)
+10->A
+11->B
+12->C
+Answer = 348 in the base 10 system is 1 5 C in the base 16 system
+Dec->Hex
+0   0
+1   1
+2   2
+3   3
+4   4
+5   5
+6   6
+7   7
+8   8
+9   9
+10  A
+11  B
+12  C
+13  D
+14  E
+15  F - highest digit in the Hex system
+
+23E base 16 -> Dec => 2x16^2 + 3x16^1 + convert E from Hex system = 14, 14x16^0(anything to the power of 0 is 1) = 2x256 + 48 + 14 = 574base10
+going from right to left
+E -> 16 to 0 power
+3 -> 16 to 1 power
+2 -> 16 to 2 power
+
+1. 0x1AF -> binary
+F -> 15
+A -> 10
+1 ->  1
+0 -> 0
+
+8 4 2 1
+0000
+0001
+1010
+1111
+
+10=82 - 15=8421 - 1=1
+Answer: 0b110101111
+
+2. 11011110 -> hex
+1110 = 2^3 2^2 2^1 2^0
+8421 = 8+4+2=14
+
+1101 = 8+4+1=13
+8421
+Answer: DE
+
+3. 0x8E -> binary
+8 4 2 1
+E -> 14 => 1110
+8 -> 8 => 1000
+Answer: 10001110
+
+4. 31,301 -> hex
+31,301/16 = 1956 R 16x0.3125=5 => 1956 R 5
+1956/16 = 122 R 4
+122/16 = 7 R 10
+7/16 = 0 R 7
+Answer: 7 10 4 5 => 7A45
+
+5. 0x2F + 0x5C -> hex
+6. 0x8A - 0x1C -> hex
+7. 1011 * 1101 -> hex
+ 1011
+*
+ 1101
+________
+   1011
+  0000
+ 1011
+1011
+-------
+10011011
+8. 0x3E & 0x51 -> hex
+9. 0x34E1 | 0x12FF -> hex
+
+
+
+

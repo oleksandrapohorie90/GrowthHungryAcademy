@@ -1,4 +1,4 @@
-package cs_assembly;
+package cs_assembly.week_3;
 
 public class LinearSearch {
     public static void main(String[] args) {
