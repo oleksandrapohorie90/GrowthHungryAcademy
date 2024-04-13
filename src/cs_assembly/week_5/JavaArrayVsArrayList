@@ -1,0 +1,28 @@
+Array: data structure with a fixed size, can store both primitive types and object types,
+	--------
+objects themselves do not have methods;
+-> There is an Arrays class, which is a utility class, that have methods
+				Ex:
+				int [] nums = {1, 2, 3};
+				nums.method() --> not valid
+				printing array objects: sout(Arrays.toString())
+
+	ArrayList: a class, that is a part of the collection framework, the size can be changed, it behaves like a
+	----------   dynamic array -> becomes bigger or smaller, doesn't work with primitive data types
+
+-> To use primitives - we need to use WRAPPER classes
+the ArrayList objects have methods add, remove, edit, check for elements, etc
+printing ArrayList -> normal
+
+=> Both: mutable objects, but ArrayList is even more flexible
+				Ex:
+				ArrayList<dataType> name = new ArrayList<>(); // creates empty ArrayList
+
+ARRAY TO ARRAY LIST
+for array we were able to declare values using curly brackets
+				Ex:
+				int [] a = { 1, 2, 3, 4};
+for ArrayList
+				Ex:
+				ArrayList<type> name = new ArrayList<>(); // makes empty ArrayList, no elements
+				ArrayList<type> name = new ArrayList<>( Arrays.asList( array []) );

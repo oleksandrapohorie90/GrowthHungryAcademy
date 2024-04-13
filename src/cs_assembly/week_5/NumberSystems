@@ -1,0 +1,48 @@
+
+Data Type	Default Value (for fields)
+byte	0
+short	0
+int	    0
+long	0L
+float	0.0f
+double	0.0d
+char	'\u0000'
+String (or any object)  	null
+boolean	false
+
+You may have noticed that the new keyword isn't used when initializing a variable of a primitive type.
+Primitive types are special data types built into the language; they are not objects created from a class.
+A literal is the source code representation of a fixed value;
+literals are represented directly in your code without requiring computation.
+As shown below, it's possible to assign a literal to a variable of a primitive type:
+
+boolean result = true;
+char capitalC = 'C';
+byte b = 100;
+short s = 10000;
+int i = 100000;
+
+Integer literals can be expressed by these number systems:
+
+Decimal: Base 10, whose digits consists of the numbers 0 through 9; this is the number system you use every day
+Hexadecimal: Base 16, whose digits consist of the numbers 0 through 9 and the letters A through F
+Binary: Base 2, whose digits consists of the numbers 0 and 1 (you can create binary literals in Java SE 7 and later)
+
+// The number 26, in decimal
+int decVal = 26;
+//  The number 26, in hexadecimal
+int hexVal = 0x1a;
+// The number 26, in binary
+int binVal = 0b11010;
+
+NUMERIC LITERALS
+The following example shows other ways you can use the underscore in numeric literals:
+
+long creditCardNumber = 1234_5678_9012_3456L;
+long socialSecurityNumber = 999_99_9999L;
+float pi =  3.14_15F;
+long hexBytes = 0xFF_EC_DE_5E;
+long hexWords = 0xCAFE_BABE;
+long maxLong = 0x7fff_ffff_ffff_ffffL;
+byte nybbles = 0b0010_0101;
+long bytes = 0b11010010_01101001_10010100_10010010;

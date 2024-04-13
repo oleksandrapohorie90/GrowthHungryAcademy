@@ -1,0 +1,56 @@
+Python:
+1.A list is a data structure that's built into Python and holds a collection of items. Lists have a number of important characteristics:
+
+List items are enclosed in square brackets, like this [item1, item2, item3].
+Lists are ordered – i.e. the items in the list appear in a specific order. This enables us to use an index to access to any item.
+Lists are mutable, which means you can add or remove items after a list's creation.
+List elements do not need to be unique. Item duplication is possible, as each element has its own distinct place and can be accessed separately through the index.
+Elements can be of different data types: you can combine strings, integers, and objects in the same list.
+
+**Code:
+list = [3, 6, 9, 12]
+print(list)
+print(type(list))
+
+2.An array is also a data structure that stores a collection of items.
+Like lists, arrays are ordered, mutable, enclosed in square brackets, and able to store non-unique items.
+
+But when it comes to the array's ability to store different data types, the answer is not as straightforward.
+It depends on the kind of array used.
+
+To use arrays in Python, you need to import either an array module or a NumPy package.
+import array as arr
+import numpy as np
+
+The Python array module requires all array elements to be of the same type.
+Moreover, to create an array, you'll need to specify a value type.
+In the code below, the "i" signifies that all elements in array_1 are integers:
+
+**Code:
+array_1 = arr.array("i", [3, 6, 9, 12])
+print(array_1)
+print(type(array_1))
+
+On the other hand, NumPy arrays support different data types.
+To create a NumPy array, you only need to specify the items (enclosed in square brackets, of course):
+
+**Code:
+array_2 = np.array(["numbers", 3, 6, 9, 12])
+print (array_2)
+print(type(array_2))
+
+Arrays need to be declared. Lists don't, since they are built into Python.
+In the examples above, you saw that lists are created by simply enclosing a sequence of elements into square brackets.
+Creating an array, on the other hand, requires a specific function from either the array module (i.e., array.array())
+or NumPy package (i.e., numpy.array()).
+Because of this, lists are used more often than arrays.
+Arrays can store data very compactly and are more efficient for storing large amounts of data.
+Arrays are great for numerical operations; lists cannot directly handle math operations.
+For example, you can divide each element of an array by the same number with just one line of code.
+If you try the same with a list, you'll get an error.
+
+If you need to store a relatively short sequence of items and you don't plan to do any mathematical operations with it, a list is the preferred choice.
+This data structure will allow you to store an ordered, mutable, and indexed sequence of items without importing any additional modules or packages.
+If you have a very long sequence of items, consider using an array. This structure offers more efficient data storage.
+If you plan to do any numerical operations with your combination of items, use an array.
+Data analytics and data science rely heavily on (mostly NumPy) arrays.
