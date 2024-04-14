@@ -25,4 +25,4 @@ for array we were able to declare values using curly brackets
 for ArrayList
 				Ex:
 				ArrayList<type> name = new ArrayList<>(); // makes empty ArrayList, no elements
-				ArrayList<type> name = new ArrayList<>( Arrays.asList( array []) );
+				A rrayList<type> name = new ArrayList<>( Arrays.asList( array []) );
