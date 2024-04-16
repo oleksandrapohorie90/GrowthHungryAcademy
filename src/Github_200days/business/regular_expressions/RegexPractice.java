@@ -1,5 +1,9 @@
 package Github_200days.business.regular_expressions;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
+
 public class RegexPractice {
     public static void main(String[] args) {
         //just literal expression, does this cat matches this
@@ -38,5 +42,20 @@ public class RegexPractice {
         System.out.println("1.321.333.7652".matches("\\d{1}[.]\\d{3}[.]\\d{3}[.]\\d{4}"));
         //to make 1st bit optional, ? mark means for signs -,.\\s to have a choice 0 or more, any of them or none return true
         System.out.println("321-333-7652".matches("(\\d[-,.\\s]?)?(\\d{3}[-,.\\s]?){1,2}\\d{4}"));
+        String regex = "(\\d{1,2}[-,.\s]?)?(\\d{3}[-,.\s]?){1,2}\\d{4}";
+        //pattern is a regular expression
+        String phoneNumber = "232.333.2365";
+        System.out.println("12.232.333.2365".matches(regex));
+        Pattern pat = Pattern.compile(regex);
+        //system that translates java code into machine-byte code
+        //compile() method does that translation
+        Matcher mat = pat.matcher(phoneNumber);
+
+        if(mat.matches()){
+
+            System.out.println(mat.group(1));
+            System.out.println(mat.group(2));
+            //System.out.println(mat.group(3));
+        }
     }
 }
