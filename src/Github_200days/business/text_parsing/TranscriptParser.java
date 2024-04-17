@@ -14,7 +14,14 @@ public class TranscriptParser {
                 Cumulative GPA (Unweighted)   3.46
                 """;
         String regex = """
-                Student\\sNumber:\\s(?<studentNum>\\d{10}).*
+                Student\\sNumber:\\s(?<studentNum>\\d{10}).*#Grab student number
+                Grade:\\s+(?<grade>\\d{1,2}).* #Grab student grade
+                Birthdate:\\s+(?<birthMonth>\\d{2})/(?<birthDay>\\d{2})/(?<birthYear>\\d{4}).* 
+                Gender:\\s+(?<gender>\\w+)\\b.* 
+                State\\sID:\\s+(?<stateID>\\d+)\\b.*? #it goes forward bc of ? till word Cumulative 
+                Cumulative.*?(?<weightedGPA>[\\d\\.]+)\\b.* 
+                #Weighted\\)\\s+(?<weightedGPA>[\\d\\.]+)\\b.* 
+                #UnWeighted\\)\\s+(?<unWeightedGPA>[\\d\\.]+)\\b.* 
                 """; //.* zero or more
         Pattern pat = Pattern.compile(regex, Pattern.DOTALL | Pattern.COMMENTS); //tells regular expression engine to match everything after dot
         Matcher mat = pat.matcher(transcript);
@@ -23,6 +30,14 @@ public class TranscriptParser {
 
             //start with string literals to look for static words
             System.out.println(mat.group("studentNum"));
+            System.out.println(mat.group("grade"));
+            System.out.println(mat.group("birthMonth"));
+            System.out.println(mat.group("birthDay"));
+            System.out.println(mat.group("birthYear"));
+            System.out.println(mat.group("gender"));
+            System.out.println(mat.group("stateID"));
+            System.out.println(mat.group("weightedGPA"));
+            System.out.println(mat.group("unWeightedGPA"));
         }
     }
 }
