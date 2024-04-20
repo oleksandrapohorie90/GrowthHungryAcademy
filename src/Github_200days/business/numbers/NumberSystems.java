@@ -27,5 +27,13 @@ A=10, B=11, C=12, D=13, E=14, F=15
 F        A        C        E
 15       10       12       14
 
+
      */
+    public static void main(String[] args) {
+        boolean myFlag = true;
+        byte myByte = 12;
+        short myBigShort = 45;
+        char myChar = 'A'; //65
+
+    }
 }
