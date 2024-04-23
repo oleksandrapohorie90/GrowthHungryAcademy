@@ -1,5 +1,5 @@
-import Github_200days.business.animals.Dog;
-import Github_200days.business.model.Person;
+import Github_200days.animals.Dog;
+import Github_200days.model.Person;
 
 import java.time.LocalDate;
 
