@@ -3,7 +3,6 @@ package algos_and_ds;
 import java.util.Scanner;
 
 public class Recursion {
-
     public static void main(String[] args) {
         Scanner in = new Scanner((System.in));
         int t = in.nextInt();
@@ -11,7 +10,7 @@ public class Recursion {
             t--;
             int a = in.nextInt();
             int b = in.nextInt();
-            System.out.println();
+            System.out.println(fastExp(a,b));
         }
     }
     private static int fastExp(int a, int b){
