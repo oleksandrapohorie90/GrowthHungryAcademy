@@ -8,7 +8,7 @@ public class GuessIt {
         //to rename var everywhere Shift+F6
         int randomNum = new Random().nextInt(5) + 1;
         System.out.printf("Generated number is %d", randomNum);
-        String command = "go";
+        String command = null;
 
         switch (command){
             case "stop":
@@ -19,7 +19,11 @@ public class GuessIt {
             default:
                 System.out.println("Enter smth else");
         }
-        if(command.equals("stop"))
+        if(command.equals("stop")){
+
+        }else if(command.equals("go")){
+
+        }
 
 
 
