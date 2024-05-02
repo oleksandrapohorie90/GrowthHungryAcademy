@@ -2,9 +2,9 @@ package Github_200days.control_flow;
 
 import java.util.Random;
 
-public class DoWhileLoop {
-    public static final int MAX_ALLOWED_TRIED = 4;
+public class ForLoop {
 
+    public static final int MAX_ALLOWED_TRIED = 4;
     public static void main(String[] args) {
         int randomNum = new Random().nextInt(10) + 1;
         System.out.printf("Random number is %d.%n", randomNum);
