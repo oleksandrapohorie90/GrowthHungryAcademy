@@ -27,6 +27,7 @@ public class InstantiateInnerClass {
 //    Bicycle yourBike = new Bicycle(); invokes the no-argument constructor to create a new Bicycle object called yourBike.
 
     //params vs arguments
+    //Parameters refers to the list of variables in a method declaration. Arguments are the actual values that are passed in when the method is invoked. When you invoke a method, the arguments used must match the declaration's parameters in type and order.
 
 //    public double computePayment(
 //            double loanAmt,
@@ -42,4 +43,20 @@ public class InstantiateInnerClass {
 //        return answer;
 //    }
 //    This method has four parameters: the loan amount, the interest rate, the future value and the number of periods. The first three are double-precision floating point numbers, and the fourth is an integer. The parameters are used in the method body and at runtime will take on the values of the arguments that are passed in.
+
+    //varargs
+//    To use varargs, you follow the type of the last parameter by an ellipsis (three dots, ...), then a space, and the parameter name. The method can then be called with any number of that parameter, including none.
+//
+//    public Polygon polygonFrom(Point... corners) {
+//        int numberOfSides = corners.length;
+//        double squareOfSide1, lengthOfSide1;
+//        squareOfSide1 = (corners[1].x - corners[0].x)
+//                * (corners[1].x - corners[0].x)
+//                + (corners[1].y - corners[0].y)
+//                * (corners[1].y - corners[0].y);
+//        lengthOfSide1 = Math.sqrt(squareOfSide1);
+
+        // more method body code follows that creates and returns a
+        // polygon connecting the Points
+    }
 }
