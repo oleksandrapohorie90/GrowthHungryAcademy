@@ -59,4 +59,4 @@ public class InstantiateInnerClass {
         // more method body code follows that creates and returns a
         // polygon connecting the Points
     }
-}
+

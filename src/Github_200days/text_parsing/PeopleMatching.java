@@ -15,17 +15,8 @@ public class PeopleMatching {
         Pattern pat = Pattern.compile(regex);
         Matcher mat = pat.matcher(people);
 
-        mat.find();
-        System.out.println(mat.group("firstName"));
-        System.out.println(mat.group("lastName"));
-        System.out.println(mat.group("dob"));
-
-        mat.find(35);
-        System.out.println(mat.group("firstName"));
-        System.out.println(mat.group("lastName"));
-        System.out.println(mat.group("dob"));
-        System.out.println(mat.start("firstName"));
-        System.out.println(mat.end("firstName"));
-
+        while(mat.find()) {
+            System.out.printf("%s,%s %s%n",mat.group("firstName"),mat.group("lastName"),mat.group("dob"),mat.end("firstName"));
+        }
     }
 }
