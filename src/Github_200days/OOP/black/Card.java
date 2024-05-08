@@ -39,7 +39,7 @@ public class Card {
     }
 
     public int getValue() {
-        return  this.rank==Rank.JACK ? 10 : this.rank.ordinal()+1;
+      return this.rank.getValue();
     }
 
 }
