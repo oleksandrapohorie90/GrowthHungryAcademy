@@ -1,21 +1,23 @@
 package Github_200days.OOP.black;
 
 public class Card {
-    private String suit;
+
+    //changed to ENUM
+    private Suit suit;
     private String rank;
 
     //initialize a newly created object
 
-    public Card(String suit, String rank) {
+    public Card(Suit suit, String rank) {
         this.suit = suit;
         this.rank = rank;
     }
 
-    public String getSuit() {
+    public Suit getSuit() {
         return suit;
     }
 
-    public void setSuit(String suit) {
+    public void setSuit(Suit suit) {
         this.suit = suit;
     }
 
@@ -28,8 +30,8 @@ public class Card {
     }
 
     public static void main(String[] args) {
-        Card card1 = new Card("Clubs", "King");
-        Card card2 = new Card("Diamonds", "");
+        Card card1 = new Card(Suit.CLUBS, "King");
+        Card card2 = new Card(Suit.DIAMONDS, "");
         //int total = card1.plus(card2);
         //Hand hand = new Hand();
         //myHand.add(card1);
