@@ -1,6 +1,7 @@
 package Github_200days.OOP.black;
 
 public enum Rank {
+    //one available method is
     ACE,
     TWO,
     THREE,
