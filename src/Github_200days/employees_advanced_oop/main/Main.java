@@ -6,41 +6,42 @@ import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
-        String people = """
-                Flinstone, Fred, 1/1/1900, Programmer
-                Flinstone, Fred, 1/1/1900, Programmer
-                Flinstone, Fred, 1/1/1900, Programmer
-                Flinstone, Fred, 1/1/1900, Programmer
-                Flinstone, Fred, 1/1/1900, Programmer
-                Rubble, Barney, 2/2/1905, Manager
-                Rubble, Barney, 2/2/1905, Manager
-                Rubble, Barney, 2/2/1905, Manager
-                Rubble, Barney, 2/2/1905, Manager
-                Rubble, Barney, 2/2/1905, Manager
-                Flinstone, Wilma, 3/3/1910, Analyst
-                Flinstone, Wilma, 3/3/1910, Analyst
-                Flinstone, Wilma, 3/3/1910, Analyst
-                Flinstone, Wilma, 3/3/1910, Analyst
-                Flinstone, Wilma, 3/3/1910, Analyst
-                Flinstone, Wilma, 3/3/1910, Analyst
-                Rubble, Betty, 4/4/1915, CEO
-                Rubble, Betty, 4/4/1915, CEO
-                Rubble, Betty, 4/4/1915, CEO
-                Rubble, Betty, 4/4/1915, CEO
-                Rubble, Betty, 4/4/1915, CEO
+        String peopleText = """
+                Flinstone, Fred, 1/1/1900, Programmer, {locpd=3000,yoe=14,iq=100}
+                Rubble, Barney, 2/2/1905, Manager, {orgSize=300,dr=10}
+                Flinstone, Wilma, 3/3/1910, Analyst,{projectCount=9}
+                Rubble, Betty, 4/4/1915, CEO,{avgStockPrice=300}
                 """;
-        String regex = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}),\\s*(?<role>\\w+)\\n";
-        Pattern pat = Pattern.compile(regex);
-        Matcher mat = pat.matcher(people);
+        String regex = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}),\\s*(?<role>\\w+)(?:,\\s*\\{(?<details>.*)\\})?\\n";
+        Pattern peoplePat = Pattern.compile(regex);
+        Matcher peopleMat = peoplePat.matcher(peopleText);
+                String progRegex = "\\w+=(?<locpd>\\w),\\w+=(?<yoe>\\w),\\w+=(?<iq>\\w)";
+        Pattern coderPat = Pattern.compile(progRegex);
+
 
         int totalSalaries = 0;
-        while (mat.find()) {
+        while (peopleMat.find()) {
             totalSalaries +=
-                    switch (mat.group("role")) {
-                        case "Programmer" -> 3000;
-                        case "Manager" -> 3500;
-                        case "Analyst" -> 2500;
-                        case "CEO" -> 5000;
+                    switch (peopleMat.group("role")) {
+                        case "Programmer" -> {
+                            String details = peopleMat.group("details");
+
+                            Matcher coderMat = coderPat.matcher(details);
+                            //need to tell to code to find smth
+                            if(coderMat.find()) {
+                                System.out.printf("Programmer loc: %s yoe: %s iq: %s%n", coderMat.group("locpd"), coderMat.group("yoe"), coderMat.group("iq"));
+                            }
+                            yield 3000;
+                        }
+                        case "Manager" -> {
+                            yield 3500;
+                        }
+                        case "Analyst" -> {
+                            yield 2500;
+                        }
+                        case "CEO" -> {
+                            yield 5000;
+                        }
                         default -> 0;
                     };
         }
