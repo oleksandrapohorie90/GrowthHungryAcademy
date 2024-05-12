@@ -14,7 +14,6 @@ public class BeautifulArrangement {
             count++;
             return;
         }
-
         for (int i = 1; i <= N; i++) {
             if (used[i] == 0 && (i % pos == 0 || pos % i == 0)) {
                 used[i] = 1;
