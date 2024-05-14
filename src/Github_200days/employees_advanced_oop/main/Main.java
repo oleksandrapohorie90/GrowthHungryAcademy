@@ -44,7 +44,17 @@ public class Main {
                             yield salary;
                         }
                         case "Manager" -> {
-                            yield 3500;
+                            String details = peopleMat.group("details");
+                            Matcher mgrMat = mngrPat.matcher(details);
+                            int salary = 0;
+                            if(mgrMat.find()){
+                                int orgSize = Integer.parseInt(mgrMat.group("orgSize"));
+                                int directReports = Integer.parseInt(mgrMat.group("dr"));
+                                salary=3500+orgSize*directReports;
+                            }else{
+                                salary=3500;
+                            }
+                            yield salary;
                         }
                         case "Analyst" -> {
                             yield 2500;
