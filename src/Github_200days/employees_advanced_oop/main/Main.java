@@ -27,7 +27,8 @@ public class Main {
             totalSalaries +=
                     switch (peopleMat.group("role")) {
                         case "Programmer" -> {
-                            Programmer programmer = new Programmer(peopleMat.group())
+                            Programmer programmer = new Programmer(peopleMat.group());
+                            System.out.println(programmer);
 //                            String details = peopleMat.group("details");
 //
 //                            Matcher coderMat = coderPat.matcher(details);
@@ -43,6 +44,7 @@ public class Main {
 //                                salary = 3000;
 //                            }
                             yield programmer.getSalary();
+
                         }
                         case "Manager" -> {
                             String details = peopleMat.group("details");

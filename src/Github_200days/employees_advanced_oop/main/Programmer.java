@@ -1,5 +1,6 @@
 package Github_200days.employees_advanced_oop.main;
 
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
@@ -18,8 +19,8 @@ public class Programmer {
     private final Pattern peoplePat = Pattern.compile(regex);
     private final String progRegex = "\\w+=(?<locpd>\\w),\\w+=(?<yoe>\\w),\\w+=(?<iq>\\w)";
     private final Pattern progPat = Pattern.compile(progRegex);
-
-    DateTimeFormatter dtformatter = DateTimeFormatter.ofPattern("M/d/YYYY")
+    private final NumberFormat moneyFormat= NumberFormat.getCurrencyInstance();
+    DateTimeFormatter dtformatter = DateTimeFormatter.ofPattern("M/d/yyyy");
 
     public Programmer(String personText) {
         Matcher peopleMat = peoplePat.matcher(personText);
@@ -38,6 +39,11 @@ public class Programmer {
 
     }
     public int getSalary(){
-        return 3000 + linesOfCode * iq * iq;
+        return 3000 + linesOfCode * yearsOfExp * iq;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s, %s, %s", lastName,firstName,moneyFormat.format(getSalary()));
     }
 }
