@@ -15,7 +15,7 @@ public class Main {
         String regex = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}),\\s*(?<role>\\w+)(?:,\\s*\\{(?<details>.*)\\})?\\n";
         Pattern peoplePat = Pattern.compile(regex);
         Matcher peopleMat = peoplePat.matcher(peopleText);
-                String progRegex = "\\w+=(?<locpd>\\w),\\w+=(?<yoe>\\w),\\w+=(?<iq>\\w)";
+        String progRegex = "\\w+=(?<locpd>\\w),\\w+=(?<yoe>\\w),\\w+=(?<iq>\\w)";
         Pattern coderPat = Pattern.compile(progRegex);
 
 
@@ -28,7 +28,10 @@ public class Main {
 
                             Matcher coderMat = coderPat.matcher(details);
                             //need to tell to code to find smth
-                            if(coderMat.find()) {
+                            if (coderMat.find()) {
+                                int locpd = Integer.parseInt(coderMat.group("locpd"));
+                                int yoe = Integer.parseInt(coderMat.group("yoe"));
+                                int iq = Integer.parseInt(coderMat.group("iq"));
                                 System.out.printf("Programmer loc: %s yoe: %s iq: %s%n", coderMat.group("locpd"), coderMat.group("yoe"), coderMat.group("iq"));
                             }
                             yield 3000;
