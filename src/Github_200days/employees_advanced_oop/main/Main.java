@@ -18,6 +18,9 @@ public class Main {
         String progRegex = "\\w+=(?<locpd>\\w),\\w+=(?<yoe>\\w),\\w+=(?<iq>\\w)";
         Pattern coderPat = Pattern.compile(progRegex);
 
+        String mngrRegex = "\\w+\\=(?<orgSize>\\w+)\\,\\w+\\=(?<dr>\\w+)";
+        Pattern mngrPat = Pattern.compile(progRegex);
+
 
         int totalSalaries = 0;
         while (peopleMat.find()) {
