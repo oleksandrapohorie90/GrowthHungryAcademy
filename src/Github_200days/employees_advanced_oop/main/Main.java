@@ -28,21 +28,21 @@ public class Main {
                     switch (peopleMat.group("role")) {
                         case "Programmer" -> {
                             Programmer programmer = new Programmer(peopleMat.group())
-                            String details = peopleMat.group("details");
-
-                            Matcher coderMat = coderPat.matcher(details);
-                            int salary = 0;
-                            //need to tell to code to find smth
-                            if (coderMat.find()) {
-                                int locpd = Integer.parseInt(coderMat.group("locpd"));
-                                int yoe = Integer.parseInt(coderMat.group("yoe"));
-                                int iq = Integer.parseInt(coderMat.group("iq"));
-                                System.out.printf("Programmer loc: %s yoe: %s iq: %s%n", coderMat.group("locpd"), coderMat.group("yoe"), coderMat.group("iq"));
-                                salary = 3000 + locpd * yoe * iq;
-                            } else {
-                                salary = 3000;
-                            }
-                            yield salary;
+//                            String details = peopleMat.group("details");
+//
+//                            Matcher coderMat = coderPat.matcher(details);
+//                            int salary = 0;
+//                            //need to tell to code to find smth
+//                            if (coderMat.find()) {
+//                                int locpd = Integer.parseInt(coderMat.group("locpd"));
+//                                int yoe = Integer.parseInt(coderMat.group("yoe"));
+//                                int iq = Integer.parseInt(coderMat.group("iq"));
+//                                System.out.printf("Programmer loc: %s yoe: %s iq: %s%n", coderMat.group("locpd"), coderMat.group("yoe"), coderMat.group("iq"));
+//                                salary = 3000 + locpd * yoe * iq;
+//                            } else {
+//                                salary = 3000;
+//                            }
+                            yield programmer.getSalary();
                         }
                         case "Manager" -> {
                             String details = peopleMat.group("details");
