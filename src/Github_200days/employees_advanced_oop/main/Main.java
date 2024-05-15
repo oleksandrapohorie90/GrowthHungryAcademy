@@ -47,17 +47,20 @@ public class Main {
 
                         }
                         case "Manager" -> {
-                            String details = peopleMat.group("details");
-                            Matcher mgrMat = mngrPat.matcher(details);
-                            int salary = 0;
-                            if(mgrMat.find()){
-                                int orgSize = Integer.parseInt(mgrMat.group("orgSize"));
-                                int directReports = Integer.parseInt(mgrMat.group("dr"));
-                                salary=3500+orgSize*directReports;
-                            }else{
-                                salary=3500;
-                            }
-                            yield salary;
+//                            String details = peopleMat.group("details");
+//                            Matcher mgrMat = mngrPat.matcher(details);
+//                            int salary = 0;
+//                            if(mgrMat.find()){
+//                                int orgSize = Integer.parseInt(mgrMat.group("orgSize"));
+//                                int directReports = Integer.parseInt(mgrMat.group("dr"));
+//                                salary=3500+orgSize*directReports;
+//                            }else{
+//                                salary=3500;
+//                            }
+//                            yield salary;
+                            Manager manager = new Manager(peopleMat.group());
+                            System.out.println(manager.toString());
+                            yield manager.getSalary();
                         }
                         case "Analyst" -> {
                             yield 2500;
