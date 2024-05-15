@@ -30,7 +30,7 @@ public class Main {
                 case "Manager" -> new Manager(peopleMat.group());
                 //case "Analyst" -> new Analyst(peopleMat.group());
                 //case "CEO" -> new Analyst(peopleMat.group());
-                default -> null;
+                default -> null; //create a new class NOBODY with getSalary()=0
             };
             System.out.println(employee.toString());
             totalSalaries += employee.getSalary();
