@@ -10,6 +10,8 @@ public class Manager {
     private String lastName;
     private String firstName;
     private LocalDate dob;
+    private int orgSize = 0;
+    private int directReports = 0;
 
     private final String mngrRegex = "\\w+\\=(?<orgSize>\\w+)\\,\\w+\\=(?<dr>\\w+)";
     private final Pattern mngrPat = Pattern.compile(mngrRegex);
@@ -24,11 +26,10 @@ public class Manager {
             this.lastName = peopleMat.group("lastName");
             this.firstName = peopleMat.group("firstName");
             this.dob = LocalDate.from(dtformatter.parse(peopleMat.group("dob")));
-            Matcher progMat = mngrPat.matcher(peopleMat.group("details"));
-            if (progMat.find()) {
-                this.linesOfCode = Integer.parseInt(progMat.group("locpd"));
-                this.yearsOfExp = Integer.parseInt(progMat.group("yoe"));
-                this.iq = Integer.parseInt(progMat.group("iq"));
+            Matcher mgrMat = mngrPat.matcher(peopleMat.group("details"));
+            if (mgrMat.find()) {
+                this.orgSize = Integer.parseInt(mgrMat.group("orgSize"));
+                this.directReports = Integer.parseInt(mgrMat.group("dr"));
 
             }
         }
