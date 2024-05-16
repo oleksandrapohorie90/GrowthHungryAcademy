@@ -37,17 +37,17 @@ public class ProgramForMemoryLeak {
             this.name = name;
         }
 
-        //proper implementation
+        //proper implementation, then above assertion in test will be true
         @Override
         public boolean equals(Object o) {
             if (o == this) {
                 return true;
             }
-            if (!(o instanceof Person)) {
+            if (!(o instanceof Person1)) {
                 return false;
             }
-            Person person = (Person) o;
-            return person.name.equals(name);
+            Person1 person1 = (Person1) o;
+            return person1.name.equals(name);
         }
 
         @Override
