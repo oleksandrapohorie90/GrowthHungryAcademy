@@ -22,5 +22,15 @@ public class MemoryAllocator {
             }
         }
     }
+    //serial gc
+    //java -XX:+UseSerialGC -Xmx2G -Xms2G -XX:+PrintGCDetails -XX:+PrintGCDateStamps MemoryAllocator
 
-}
+//parallel gc
+//java -XX:+UseSerialGC -Xmx2G -Xms2G -XX:+PrintGCDetails -XX:+PrintGCDateStamps MemoryAllocator
+
+//G1GC
+//java -XX:+UseG1GC -Xmx2G -Xms2G -XX:+PrintGCDetails -XX:+PrintGCDateStamps MemoryAllocator
+
+//ZGC
+//java -XX:+UseZGC -Xmx2G -Xms2G -XX:+PrintGCDetails -XX:+PrintGCDateStamps MemoryAllocator
+
