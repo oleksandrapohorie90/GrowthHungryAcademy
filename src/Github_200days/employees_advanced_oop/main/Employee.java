@@ -1,6 +1,24 @@
 package Github_200days.employees_advanced_oop.main;
 
-public interface Employee {
-    int getSalary();
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+public class Employee {
+    protected final DateTimeFormatter dtformatter = DateTimeFormatter.ofPattern("M/d/yyyy");
+    private final String regex = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}),\\s*(?<role>\\w+)(?:,\\s*\\{(?<details>.*)\\})?\\n";
+    protected final Pattern peoplePat = Pattern.compile(regex);
+    protected String lastName;
+    protected String firstName;
+    protected String dob;
+
+    public Employee(String personText) {
+        Matcher peopleMat = peoplePat.matcher(personText);
+        if (peopleMat.find()) {
+            this.lastName = peopleMat.group("lastName");
+            this.firstName = peopleMat.group("firstName");
+            this.dob = String.valueOf(LocalDate.from(dtformatter.parse(peopleMat.group("dob"))));
+        }
+    }
 }
