@@ -30,10 +30,13 @@ public class Main {
                 case "Manager" -> new Manager(peopleMat.group());
                 //case "Analyst" -> new Analyst(peopleMat.group());
                 //case "CEO" -> new Analyst(peopleMat.group());
-                default -> null; //create a new class NOBODY with getSalary()=0
+                default -> null;//OR -> new Employee(peopleMat.group()); //create a new class NOBODY with getSalary()=0
             };
-            System.out.println(employee.toString());
-            totalSalaries += employee.getSalary();
+
+            if (employee != null) {
+                System.out.println(employee.toString());
+                totalSalaries += employee.getSalary();
+            }
         }
         NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
         System.out.printf("The total payout should be %s%n", currencyInstance.format(totalSalaries));
