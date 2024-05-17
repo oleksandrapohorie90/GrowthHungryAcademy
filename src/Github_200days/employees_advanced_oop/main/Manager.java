@@ -10,14 +10,12 @@ public class Manager extends Employee {
     private final String mngrRegex = "\\w+\\=(?<orgSize>\\w+)\\,\\w+\\=(?<dr>\\w+)";
     private final Pattern mngrPat = Pattern.compile(mngrRegex);
 
-
     public Manager(String personText) {
         super(personText);
         Matcher mgrMat = mngrPat.matcher(peopleMat.group("details"));
         if (mgrMat.find()) {
             this.orgSize = Integer.parseInt(mgrMat.group("orgSize"));
             this.directReports = Integer.parseInt(mgrMat.group("dr"));
-
         }
     }
 

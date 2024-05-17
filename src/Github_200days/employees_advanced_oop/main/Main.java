@@ -21,7 +21,6 @@ public class Main {
         String mngrRegex = "\\w+\\=(?<orgSize>\\w+)\\,\\w+\\=(?<dr>\\w+)";
         Pattern mngrPat = Pattern.compile(progRegex);
 
-
         int totalSalaries = 0;
         Employee employee = null;
         while (peopleMat.find()) {
