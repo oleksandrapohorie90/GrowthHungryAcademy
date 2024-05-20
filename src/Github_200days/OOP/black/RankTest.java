@@ -2,6 +2,7 @@ package Github_200days.OOP.black;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RankTest {
