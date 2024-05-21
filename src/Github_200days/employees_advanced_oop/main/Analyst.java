@@ -6,4 +6,9 @@ public class Analyst extends Employee{
     public Analyst(String personText) {
         super(personText);
     }
+
+    @Override
+    public int getSalary() {
+        return 0;
+    }
 }
