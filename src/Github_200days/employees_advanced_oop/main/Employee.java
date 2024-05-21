@@ -24,17 +24,21 @@ public abstract class Employee {
             this.dob = String.valueOf(LocalDate.from(dtformatter.parse(peopleMat.group("dob"))));
         }
     }
-    public static final Employee createEmployee(String employeeText){
+    public static final Employee createEmployee(String employeeText) {
         Matcher peopleMat = Employee.peoplePat.matcher(employeeText);
-
-        return switch (peopleMat.group("role")){
-            case "Programmer" -> new Programmer(employeeText);
-            case "Manager" -> new Manager(employeeText);
-            case "Analyst" -> new Analyst(employeeText);
-            case "CEO" -> new CEO(employeeText);
+        if (peopleMat.find()) {
+            return switch (peopleMat.group("role")) {
+                case "Programmer" -> new Programmer(employeeText);
+                case "Manager" -> new Manager(employeeText);
+                case "Analyst" -> new Analyst(employeeText);
+                case "CEO" -> new CEO(employeeText);
                 default -> null;
-        };
+            };
+        } else {
+            return null;
+        }
     }
+
 
     public abstract int getSalary();
 
