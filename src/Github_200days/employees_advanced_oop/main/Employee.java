@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public abstract class Employee {
     protected final DateTimeFormatter dtformatter = DateTimeFormatter.ofPattern("M/d/yyyy");
     private static final String regex = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}),\\s*(?<role>\\w+)(?:,\\s*\\{(?<details>.*)\\})?\\n";
-    protected static final Pattern peoplePat = Pattern.compile(regex);
+    public static final Pattern peoplePat = Pattern.compile(regex);
     protected final Matcher peopleMat;
     private final NumberFormat moneyFormat = NumberFormat.getCurrencyInstance();
     protected String lastName;

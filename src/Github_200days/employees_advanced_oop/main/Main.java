@@ -12,14 +12,9 @@ public class Main {
                 Flinstone, Wilma, 3/3/1910, Analyst,{projectCount=9}
                 Rubble, Betty, 4/4/1915, CEO,{avgStockPrice=300}
                 """;
-        String regex = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}),\\s*(?<role>\\w+)(?:,\\s*\\{(?<details>.*)\\})?\\n";
-        Pattern peoplePat = Pattern.compile(regex);
-        Matcher peopleMat = peoplePat.matcher(peopleText);
-        String progRegex = "\\w+=(?<locpd>\\w),\\w+=(?<yoe>\\w),\\w+=(?<iq>\\w)";
-        Pattern coderPat = Pattern.compile(progRegex);
 
-        String mngrRegex = "\\w+\\=(?<orgSize>\\w+)\\,\\w+\\=(?<dr>\\w+)";
-        Pattern mngrPat = Pattern.compile(progRegex);
+        Matcher peopleMat = Employee.peoplePat.matcher(peopleText);
+
 
         int totalSalaries = 0;
         Employee employee = null;
