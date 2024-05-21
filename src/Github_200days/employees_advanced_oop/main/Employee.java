@@ -28,10 +28,10 @@ public abstract class Employee {
         Matcher peopleMat = Employee.peoplePat.matcher(employeeText);
 
         return switch (peopleMat.group("role")){
-            case "Programmer" -> new Programmer(peopleMat.group());
-            case "Manager" -> new Manager(peopleMat.group());
-            case "Analyst" -> new Analyst(peopleMat.group());
-            case "CEO" -> new CEO(peopleMat.group());
+            case "Programmer" -> new Programmer(employeeText);
+            case "Manager" -> new Manager(employeeText);
+            case "Analyst" -> new Analyst(employeeText);
+            case "CEO" -> new CEO(employeeText);
                 default -> null;
         };
     }

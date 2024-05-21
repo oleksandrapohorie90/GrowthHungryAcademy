@@ -24,13 +24,7 @@ public class Main {
         int totalSalaries = 0;
         Employee employee = null;
         while (peopleMat.find()) {
-            employee = switch (peopleMat.group("role")) {
-                case "Programmer" -> new Programmer(peopleMat.group());
-                case "Manager" -> new Manager(peopleMat.group());
-                //case "Analyst" -> new Analyst(peopleMat.group());
-                //case "CEO" -> new Analyst(peopleMat.group());
-                default -> null;//OR -> new Employee(peopleMat.group()); //create a new class NOBODY with getSalary()=0
-            };
+            employee = Employee.createEmployee(peopleMat.group());
 
             if (employee != null) {
                 System.out.println(employee.toString());
