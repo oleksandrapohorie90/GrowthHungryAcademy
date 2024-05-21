@@ -27,8 +27,9 @@ public abstract class Employee {
 
 
     public abstract int getSalary();
-    public double getBonus(){
-        return getSalary()*1.10;
+
+    public double getBonus() {
+        return getSalary() * 1.10;
     }
 
     @Override
