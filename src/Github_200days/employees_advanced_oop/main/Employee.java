@@ -26,15 +26,13 @@ public abstract class Employee {
     }
 
 
-    public int getSalary(){
-        return 0;
-    }
+    public abstract int getSalary();
     public double getBonus(){
         return getSalary()*1.10;
     }
 
     @Override
     public String toString() {
-        return String.format("%s, %s, %s", lastName, firstName, moneyFormat.format(getSalary()));
+        return String.format("%s, %s, %s", lastName, firstName, moneyFormat.format(getSalary()), moneyFormat.format(getBonus()));
     }
 }
