@@ -66,4 +66,11 @@ public abstract class Employee {
             return 0;
         }
     }
+
+    private final class MyInnerClass{
+        public int getStuff(){
+            System.out.println(firstName);
+            return 0;
+        }
+    }
 }
