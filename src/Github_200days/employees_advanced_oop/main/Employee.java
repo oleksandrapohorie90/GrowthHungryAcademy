@@ -42,7 +42,13 @@ public abstract class Employee {
                 case "Manager" -> new Manager(employeeText);
                 case "Analyst" -> new Analyst(employeeText);
                 case "CEO" -> new CEO(employeeText);
-                default -> new DummyEmployee();
+                default -> new IEmployee() {
+
+                    @Override
+                    public int getSalary() {
+                        return 0;
+                    }
+                }; //anonymys class
             };
         } else {
             return null;
@@ -67,10 +73,5 @@ public abstract class Employee {
         }
     }
 
-    private final class MyInnerClass{
-        public int getStuff(){
-            System.out.println(firstName);
-            return 0;
-        }
-    }
+
 }
