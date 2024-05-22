@@ -36,13 +36,19 @@ public abstract class Employee {
 
     public static final Employee createEmployee(String employeeText) {
         Matcher peopleMat = Employee.peoplePat.matcher(employeeText);
+        class MyLocalClass extends Employee{
+            public int getSalary(){
+                return 5;
+            }
+        }
+
         if (peopleMat.find()) {
             return switch (peopleMat.group("role")) {
                 case "Programmer" -> new Programmer(employeeText);
                 case "Manager" -> new Manager(employeeText);
                 case "Analyst" -> new Analyst(employeeText);
                 case "CEO" -> new CEO(employeeText);
-                default -> new IEmployee() {
+                default -> new Employee() {
 
                     @Override
                     public int getSalary() {
