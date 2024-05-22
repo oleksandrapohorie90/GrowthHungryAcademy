@@ -25,7 +25,7 @@ public abstract class Employee {
         dob = null;
     }
 
-    public Employee(String personText) {
+    protected Employee(String personText) {
         peopleMat = Employee.peoplePat.matcher(personText);
         if (peopleMat.find()) {
             this.lastName = peopleMat.group("lastName");
