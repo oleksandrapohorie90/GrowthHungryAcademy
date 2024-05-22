@@ -1,6 +1,7 @@
 package Github_200days.employees_advanced_oop.main;
 
 import java.text.NumberFormat;
+import java.time.LocalDate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -27,6 +28,10 @@ public class Main {
         }
         NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
         System.out.printf("The total payout should be %s%n", currencyInstance.format(totalSalaries));
+
+    WeirdoNew larry = new WeirdoNew("David","Larry", LocalDate.of(1995,12,30));
+    //cannot be changed so no need for setters
+        System.out.println();
     }
 
 }
