@@ -16,6 +16,15 @@ public abstract class Employee {
     protected String firstName;
     protected String dob;
 
+
+
+    public Employee() {
+        peopleMat = null;
+        firstName = "NA";
+        lastName= "NA";
+        dob = null;
+    }
+
     public Employee(String personText) {
         peopleMat = Employee.peoplePat.matcher(personText);
         if (peopleMat.find()) {
@@ -24,6 +33,7 @@ public abstract class Employee {
             this.dob = String.valueOf(LocalDate.from(dtformatter.parse(peopleMat.group("dob"))));
         }
     }
+
     public static final Employee createEmployee(String employeeText) {
         Matcher peopleMat = Employee.peoplePat.matcher(employeeText);
         if (peopleMat.find()) {
@@ -32,13 +42,12 @@ public abstract class Employee {
                 case "Manager" -> new Manager(employeeText);
                 case "Analyst" -> new Analyst(employeeText);
                 case "CEO" -> new CEO(employeeText);
-                default -> null;
+                default -> new DummyEmployee();
             };
         } else {
             return null;
         }
     }
-
 
     public abstract int getSalary();
 
@@ -49,5 +58,12 @@ public abstract class Employee {
     @Override
     public String toString() {
         return String.format("%s, %s, %s", lastName, firstName, moneyFormat.format(getSalary()), moneyFormat.format(getBonus()));
+    }
+
+    private static final class DummyEmployee extends Employee {
+        @Override
+        public int getSalary() {
+            return 0;
+        }
     }
 }
