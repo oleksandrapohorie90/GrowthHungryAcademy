@@ -3,7 +3,6 @@ package Github_200days.employees_advanced_oop.main;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +14,7 @@ public class Main {
                 """;
 
         Matcher peopleMat = Employee.peoplePat.matcher(peopleText);
-
+        Flyer flyer = new Pilot()
 
         int totalSalaries = 0;
         IEmployee employee = null;
