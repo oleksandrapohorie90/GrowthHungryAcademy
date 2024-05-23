@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class Employee {
+public abstract class Employee implements IEmployee {
     protected final DateTimeFormatter dtformatter = DateTimeFormatter.ofPattern("M/d/yyyy");
     private static final String regex = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}),\\s*(?<role>\\w+)(?:,\\s*\\{(?<details>.*)\\})?\\n";
     public static final Pattern peoplePat = Pattern.compile(regex);
@@ -17,11 +17,10 @@ public abstract class Employee {
     protected String dob;
 
 
-
     public Employee() {
         peopleMat = null;
         firstName = "NA";
-        lastName= "NA";
+        lastName = "NA";
         dob = null;
     }
 
@@ -34,13 +33,8 @@ public abstract class Employee {
         }
     }
 
-    public static final Employee createEmployee(String employeeText) {
+    public static final IEmployee createEmployee(String employeeText) {
         Matcher peopleMat = Employee.peoplePat.matcher(employeeText);
-        class MyLocalClass extends Employee{
-            public int getSalary(){
-                return 5;
-            }
-        }
 
         if (peopleMat.find()) {
             return switch (peopleMat.group("role")) {
@@ -48,10 +42,10 @@ public abstract class Employee {
                 case "Manager" -> new Manager(employeeText);
                 case "Analyst" -> new Analyst(employeeText);
                 case "CEO" -> new CEO(employeeText);
-                default -> ()->0;//method that takes no input and returns 0 or 1 output
+                default -> () -> 0;//method that takes no input and returns 0 or 1 output
             };
         } else {
-            return null;
+            return () -> 0;
         }
     }
 
@@ -66,7 +60,7 @@ public abstract class Employee {
         return String.format("%s, %s, %s", lastName, firstName, moneyFormat.format(getSalary()), moneyFormat.format(getBonus()));
     }
 
-    private static final class DummyEmployee extends Employee {
+    private static final class DummyEmployee extends Employee implements IEmployee {
         @Override
         public int getSalary() {
             return 0;
