@@ -14,7 +14,8 @@ public class Main {
                 """;
 
         Matcher peopleMat = Employee.peoplePat.matcher(peopleText);
-        Flyer flyer = new Pilot()
+        Flyer flyer = new CEO("");
+        flyer.fly();
 
         int totalSalaries = 0;
         IEmployee employee = null;
