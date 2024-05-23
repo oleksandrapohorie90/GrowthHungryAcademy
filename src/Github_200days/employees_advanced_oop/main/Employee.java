@@ -48,13 +48,7 @@ public abstract class Employee {
                 case "Manager" -> new Manager(employeeText);
                 case "Analyst" -> new Analyst(employeeText);
                 case "CEO" -> new CEO(employeeText);
-                default -> new Employee() {
-
-                    @Override
-                    public int getSalary() {
-                        return 0;
-                    }
-                }; //anonymys class
+                default -> ()->0;//method that takes no input and returns 0 or 1 output
             };
         } else {
             return null;
