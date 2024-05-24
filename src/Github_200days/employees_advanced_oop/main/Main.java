@@ -14,6 +14,10 @@ public class Main {
                 """;
 
         Matcher peopleMat = Employee.peoplePat.matcher(peopleText);
+
+        Programmer coder = new Programmer("");
+        coder.cook("Hamburger");
+
         Flyer flyer = new CEO("");
         flyer.fly();
 
