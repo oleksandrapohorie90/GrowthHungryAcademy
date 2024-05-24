@@ -25,16 +25,22 @@ public class Main {
         IEmployee employee = null;
         while (peopleMat.find()) {
             employee = Employee.createEmployee(peopleMat.group());
+            if (employee instanceof Programmer){
+                System.out.println("true");
+            }else if (employee instanceof Manager){
+                System.out.println();
+            }else{
 
-                System.out.println(employee.toString());
-                totalSalaries += employee.getSalary();
+            }
+            System.out.println(employee.toString());
+            totalSalaries += employee.getSalary();
 
         }
         NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
         System.out.printf("The total payout should be %s%n", currencyInstance.format(totalSalaries));
 
-    WeirdoNew larry = new WeirdoNew("David","Larry", LocalDate.of(1995,12,30));
-    //cannot be changed so no need for setters
+        WeirdoNew larry = new WeirdoNew("David", "Larry", LocalDate.of(1995, 12, 30));
+        //cannot be changed so no need for setters
         System.out.println();
     }
 
