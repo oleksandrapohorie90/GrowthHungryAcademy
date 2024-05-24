@@ -1,8 +1,8 @@
 package Github_200days.employees_advanced_oop.main;
 
 import java.text.NumberFormat;
+import java.time.LocalDate;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,41 +12,36 @@ public class Main {
                 Flinstone, Wilma, 3/3/1910, Analyst,{projectCount=9}
                 Rubble, Betty, 4/4/1915, CEO,{avgStockPrice=300}
                 """;
-        String regex = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}),\\s*(?<role>\\w+)(?:,\\s*\\{(?<details>.*)\\})?\\n";
-        Pattern peoplePat = Pattern.compile(regex);
-        Matcher peopleMat = peoplePat.matcher(peopleText);
-                String progRegex = "\\w+=(?<locpd>\\w),\\w+=(?<yoe>\\w),\\w+=(?<iq>\\w)";
-        Pattern coderPat = Pattern.compile(progRegex);
 
+        Matcher peopleMat = Employee.peoplePat.matcher(peopleText);
 
+        Programmer coder = new Programmer("");
+        coder.cook("Hamburger");
+
+        Flyer flyer = new CEO("");
+        flyer.fly();
+// say more w/ less
         int totalSalaries = 0;
+        IEmployee employee = null;
         while (peopleMat.find()) {
-            totalSalaries +=
-                    switch (peopleMat.group("role")) {
-                        case "Programmer" -> {
-                            String details = peopleMat.group("details");
+            employee = Employee.createEmployee(peopleMat.group());
+            if (employee instanceof Programmer prog){
+                System.out.println(prog.getIq());
+            }else if (employee instanceof Manager man){
+                System.out.println(man.toString());
+            }else{
 
-                            Matcher coderMat = coderPat.matcher(details);
-                            //need to tell to code to find smth
-                            if(coderMat.find()) {
-                                System.out.printf("Programmer loc: %s yoe: %s iq: %s%n", coderMat.group("locpd"), coderMat.group("yoe"), coderMat.group("iq"));
-                            }
-                            yield 3000;
-                        }
-                        case "Manager" -> {
-                            yield 3500;
-                        }
-                        case "Analyst" -> {
-                            yield 2500;
-                        }
-                        case "CEO" -> {
-                            yield 5000;
-                        }
-                        default -> 0;
-                    };
+            }
+            System.out.println(employee.toString());
+            totalSalaries += employee.getSalary();
+
         }
         NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
         System.out.printf("The total payout should be %s%n", currencyInstance.format(totalSalaries));
+
+        WeirdoNew larry = new WeirdoNew("David", "Larry", LocalDate.of(1995, 12, 30));
+        //cannot be changed so no need for setters
+        System.out.println();
     }
 
 }
