@@ -20,15 +20,15 @@ public class Main {
 
         Flyer flyer = new CEO("");
         flyer.fly();
-
+// say more w/ less
         int totalSalaries = 0;
         IEmployee employee = null;
         while (peopleMat.find()) {
             employee = Employee.createEmployee(peopleMat.group());
-            if (employee instanceof Programmer){
-                System.out.println("true");
-            }else if (employee instanceof Manager){
-                System.out.println();
+            if (employee instanceof Programmer prog){
+                System.out.println(prog.getIq());
+            }else if (employee instanceof Manager man){
+                System.out.println(man.toString());
             }else{
 
             }
