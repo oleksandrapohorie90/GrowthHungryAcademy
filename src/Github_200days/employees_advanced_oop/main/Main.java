@@ -39,6 +39,9 @@ public class Main {
         //enhanced for loop
        for(IEmployee worker : employees){
            if(removalNames.contains(((Employee)worker).firstName))
+           {
+               employees.remove(worker);
+           }
            System.out.println(worker.toString());
            totalSalaries += worker.getSalary();
        }
