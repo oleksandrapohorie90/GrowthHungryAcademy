@@ -32,11 +32,18 @@ public class Main {
             employee = Employee.createEmployee(peopleMat.group());
             employees.add(employee);
         }
+
+        List<String> removalNames = new ArrayList<>();
+        removalNames.add("Fred");
+
         //enhanced for loop
        for(IEmployee worker : employees){
+           if(removalNames.contains(((Employee)worker).firstName))
            System.out.println(worker.toString());
            totalSalaries += worker.getSalary();
        }
+
+
 
         NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
         System.out.printf("The total payout should be %s%n", currencyInstance.format(totalSalaries));
