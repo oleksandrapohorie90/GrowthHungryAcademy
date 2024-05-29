@@ -25,22 +25,16 @@ public class Main {
 // say more w/ less
         int totalSalaries = 0;
         IEmployee employee = null;
-        List employees = new ArrayList<>();
+        List <IEmployee> employees = new ArrayList<>();
         while (peopleMat.find()) {
             employee = Employee.createEmployee(peopleMat.group());
             employees.add(employee);
-            employees.add("Testing 1-2-3");
-            if (employee instanceof Programmer prog){
-                System.out.println(prog.getIq());
-            }else if (employee instanceof Manager man){
-                System.out.println(man.toString());
-            }else{
-
-            }
-            System.out.println(employee.toString());
-            totalSalaries += employee.getSalary();
-
         }
+       for(IEmployee worker : employees){
+           System.out.println(worker.toString());
+           totalSalaries += worker.getSalary();
+       }
+
         NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
         System.out.printf("The total payout should be %s%n", currencyInstance.format(totalSalaries));
 
