@@ -2,6 +2,8 @@ package Github_200days.employees_advanced_oop.main;
 
 import java.text.NumberFormat;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 
 public class Main {
@@ -23,8 +25,11 @@ public class Main {
 // say more w/ less
         int totalSalaries = 0;
         IEmployee employee = null;
+        List employees = new ArrayList<>();
         while (peopleMat.find()) {
             employee = Employee.createEmployee(peopleMat.group());
+            employees.add(employee);
+            employees.add("Testing 1-2-3");
             if (employee instanceof Programmer prog){
                 System.out.println(prog.getIq());
             }else if (employee instanceof Manager man){
