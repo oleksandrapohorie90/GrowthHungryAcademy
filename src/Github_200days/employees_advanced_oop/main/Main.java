@@ -3,6 +3,7 @@ package Github_200days.employees_advanced_oop.main;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
 
@@ -25,11 +26,13 @@ public class Main {
 // say more w/ less
         int totalSalaries = 0;
         IEmployee employee = null;
-        List <IEmployee> employees = new ArrayList<>();
+        List <IEmployee> employees = new LinkedList<>();//linked list doesnt use arr internally
+
         while (peopleMat.find()) {
             employee = Employee.createEmployee(peopleMat.group());
             employees.add(employee);
         }
+        //enhanced for loop
        for(IEmployee worker : employees){
            System.out.println(worker.toString());
            totalSalaries += worker.getSalary();
