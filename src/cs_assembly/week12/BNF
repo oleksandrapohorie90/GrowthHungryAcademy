@@ -12,3 +12,13 @@ Number: [sign] digits [fractional part] -2, 3, 3.3, -45.56, 5.0, -0.5
 <integer> ::= [ "-" ] (<one_to_nine> { digit } | “0”)
 <digit> ::= "0" | <one_to_nine>
 <one_to_nine> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+Symbols:
+::= means “may expand into” and “may get replaced with.”
+
+Every name in Backus-Naur form is surrounded by angle brackets, < >, whether it appears on the left- or right-hand side of the rule.
+An expansion is an expression containing terminal symbols and non-terminal symbols, joined together by sequencing and selection.
+A terminal symbol may be a literal like (“+” or “function”) or a category of literals (like integer).
+
+A vertical bar | indicates choice.
+A terminal could be a quoted literal (like “+”, “switch” or ” “<<=”) or the name of a category of literals (like integer).
