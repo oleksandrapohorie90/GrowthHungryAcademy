@@ -1,0 +1,49 @@
+5 + 6 * 3 - 4 / 2
+
+Expressions: Which can be simple terms or combinations of terms connected by operators.
+Terms: Which can be factors or combinations of factors connected by multiplication or division operators.
+Factors: Which are the basic units of the arithmetic expression, such as numbers.
+
+5 + 6 * 3 - 4 / 2 is an <expr>:
+5 is a <factor>, so it's a <term> as well, hence <expr>.
+6 * 3 is a <term>, parsed from 6 <factor> and 3 <factor>.
+4 / 2 is a <term>, parsed from 4 <factor> and 2 <factor>.
+(1)
+<expr> ::= <term> | <expr> "+" <term> | <expr> "-" <term>
+<term> ::= <factor> | <term> "*" <factor> | <term> "/" <factor>
+<factor> ::= <number>
+<number> ::= <digit> | <digit> <number>
+<digit> ::= "0" |"1" |"2" |"3" |"4" |"5" |"6" |"7" |"8" |"9"|
+
+<expr>:
+
+Represents an expression.
+It can be a single term (<term>) or a combination of expressions and terms connected by the addition ("+") or subtraction ("-") operators.
+<term>:
+
+Represents a term.
+It can be a single factor (<factor>) or a combination of terms and factors connected by the multiplication ("*") or division ("/") operators.
+<factor>:
+
+Represents a factor.
+In this basic BNF, a factor is a number.
+<number>:
+
+Represents a number.
+A number is a sequence of one or more digits.
+<digit>:
+
+Represents a digit.
+A digit is any one of the characters from "0" to "9".
+(2)
+5 + 6 * (45 - 3) - 4 / 2
+<expr> ::= <term> | <expr> "+" <term> | <expr> "-" <term>
+<term> ::= <factor> | <term> "*" <factor> | <term> "/" <factor>
+<factor> ::= <number> | "(" <expr> ")"
+<number> ::= <digit> | <digit> <number>
+<digit> ::= "0" |"1" |"2" |"3" |"4" |"5" |"6" |"7" |"8" |"9"|
+
+(3)
+5^3 + 6 * (45 - 3^2) - 4 / 2
+<expr> ::= <term> | <expr> "+" <term> | <expr> "-" <term>
+<term> ::= <factor> | <term> "*" <factor> | <term> "/" <factor>
