@@ -52,3 +52,39 @@ A digit is any one of the characters from "0" to "9".
 <base> ::= <number>
 <number> ::= <digit> | <digit> <number>
 <digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+====> Parsing each part step by step:
+5^3 is parsed as a <power>, with:
+5 as a <base>.
+3 as a <factor>.
+6 * (45 - 3^2) is a <term>, with:
+6 as a <factor>.
+(45 - 3^2) as a <factor>, with 45 - 3^2 as an <expr>.
+45 and 3^2 are <terms>, with:
+3^2 is a <power>, with:
+3 as a <base>.
+2 as a <factor>.
+4 / 2 is a <term>, with:
+4 and 2 as <factors>.
+
+==> Breaking it down step by step in BNF terms:
+
+   5^3:
+
+   <power> → <base> "^" <factor>:
+   5 is a <number> → <base>.
+   3 is a <number> → <factor>.
+   6 * (45 - 3^2):
+
+   <term> → <factor> "*" <factor>:
+   6 is a <number> → <factor>.
+   (45 - 3^2) is <expr> enclosed in () → <factor>:
+   <expr> is <term> "-" <term>:
+   45 is a <number> → <factor> → <term>.
+   3^2 is a <power> → <base> "^" <factor>:
+   3 is a <number> → <base>.
+   2 is a <number> → <factor>.
+   4 / 2:
+
+   <term> → <factor> "/" <factor>:
+   4 is a <number> → <factor>.
+   2 is a <number> → <factor>.
