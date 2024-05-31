@@ -14,3 +14,54 @@ Note: no support for exponents
 <nonzero-digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 <fraction> ::= "." <digits>
 <exponent> ::= ("e" | "E") ["+" | "-"] <digits>
+
+Explanation
+<number>:
+
+Represents a number.
+It consists of an integer part, optionally followed by a fractional part, and optionally followed by an exponent part.
+<integer>:
+
+Represents the integer part of the number.
+It can optionally start with a minus sign, followed by either a single digit or a non-zero digit followed by other digits.
+<digits>:
+
+Represents a sequence of digits.
+It can be a single digit or a digit followed by more digits.
+<digit>:
+
+Represents a single digit.
+It can be either '0' or a non-zero digit.
+<nonzero-digit>:
+
+Represents a single non-zero digit, from '1' to '9'.
+<fraction>:
+
+Represents the fractional part of the number.
+It starts with a dot followed by a sequence of digits.
+<exponent>:
+
+Represents the exponent part of the number.
+It starts with 'e' or 'E', optionally followed by a plus or minus sign, and followed by a sequence of digits.
+
+===>>>> Examples of numbers in scientific notation:
+(1)
+1.0e-10:
+<number> → <integer> <fraction> <exponent>
+1 is <integer> → <nonzero-digit>
+.0 is <fraction> → "." <digits>
+e-10 is <exponent> → ("e" | "E") ["+" | "-"] <digits>
+
+(2)
+-2.71828e-2:
+<number> → <integer> <fraction> <exponent>
+-2 is <integer> → ["-"] <nonzero-digit>
+.71828 is <fraction> → "." <digits>
+e-2 is <exponent> → ("e" | "E") ["+" | "-"] <digits>
+
+(3)
+9.81e2:
+<number> → <integer> <fraction> <exponent>
+9 is <integer> → <nonzero-digit>
+.81 is <fraction> → "." <digits>
+e2 is <exponent> → ("e" | "E") <digits>
