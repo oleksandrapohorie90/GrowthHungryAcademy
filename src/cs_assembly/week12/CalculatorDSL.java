@@ -11,20 +11,25 @@ public class CalculatorDSL {
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String row_expr = scanner.nextLine();
-        String[] expr = row_expr.split(" ");
-        if (expr.length != 3) {
-            throw new IllegalArgumentException("Input doesn't satisfy language rules " + expr);
 
-        }
-        try {
-            String operator = expr[0];
-            int operand1 = Integer.parseInt(expr[1]);
-            int operand2 = Integer.parseInt(expr[2]);
-            int result = evaluate(operator, operand1, operand2);
-            System.out.println(result);
-        } catch (Exception e) {
-            e.printStackTrace();
+        while (true) {
+            String row_expr = scanner.nextLine();
+            if ("quit".equalsIgnoreCase(row_expr)) break;
+
+            String[] expr = row_expr.split(" ");
+            if (expr.length != 3) {
+                throw new IllegalArgumentException("Input doesn't satisfy language rules " + expr);
+            }
+
+            try {
+                String operator = expr[0];
+                int operand1 = Integer.parseInt(expr[1]);
+                int operand2 = Integer.parseInt(expr[2]);
+                int result = evaluate(operator, operand1, operand2);
+                System.out.println(result);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         scanner.close();
@@ -37,12 +42,16 @@ public class CalculatorDSL {
             case "SUB":
                 return operand1 - operand2;
             case "MUL":
-                return operand1*operand2;
+                return operand1 * operand2;
             case "DIV":
-                if(operand2==0){
+                if (operand2 == 0) {
                     throw new IllegalArgumentException("Division by 0 is not allowed");
                 }
-                return operand1/operand2;
+                return operand1 / operand2;
+            case "MOD":
+                return operand1 % operand2;
+            case "POW":
+                return operand1 ^ operand2;
             default:
                 throw new IllegalArgumentException("Unsupported operation" + operator);
         }
