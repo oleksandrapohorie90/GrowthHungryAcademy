@@ -23,9 +23,9 @@ public class CalculatorDSL {
 
             try {
                 String operator = expr[0];
-                int operand1 = Integer.parseInt(expr[1]);
-                int operand2 = Integer.parseInt(expr[2]);
-                int result = evaluate(operator, operand1, operand2);
+                double operand1 = Double.parseDouble(expr[1]);
+                double operand2 = Double.parseDouble(expr[2]);
+                double result = evaluate(operator, operand1, operand2);
                 System.out.println(result);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -35,7 +35,7 @@ public class CalculatorDSL {
         scanner.close();
     }
 
-    private static int evaluate(String operator, int operand1, int operand2) {
+    private static double evaluate(String operator, double operand1, double operand2) {
         switch (operator) {
             case "ADD":
                 return operand1 + operand2;
@@ -51,7 +51,7 @@ public class CalculatorDSL {
             case "MOD":
                 return operand1 % operand2;
             case "POW":
-                return operand1 ^ operand2;
+                return Math.pow(operand1, operand2);
             default:
                 throw new IllegalArgumentException("Unsupported operation" + operator);
         }
