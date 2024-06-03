@@ -3,6 +3,8 @@ package cs_assembly;
 import java.util.ArrayList;
 import java.util.List;
 
+import static cs_assembly.Lexer.TokenType.STRING;
+
 public class Lexer {
 
     private final String input;
