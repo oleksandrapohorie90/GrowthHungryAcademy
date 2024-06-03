@@ -44,12 +44,14 @@ public class Lexer implements Iterator<Lexer.Token> {
 
                 case '"':
                     tokens.add(new Token(STRING, readString()));
+                    current++;
                     break;
                 case '%':
                     tokens.add(new Token(REFERENCES, readReference()));
+                    break;
                 default:
                     if (isDigit(ch)) {
-                        tokens.add(new Token(NUMBER, readNumber()))
+                        tokens.add(new Token(NUMBER, readNumber()));
                     } else if (isAlpha(ch)) {
                         String identifier = readIdentifier();
                         tokens.add(new Token(deriveTokenType(identifier), identifier));
@@ -61,16 +63,14 @@ public class Lexer implements Iterator<Lexer.Token> {
     }
 
     private TokenType deriveTokenType(String identifier) {
-
-        switch (identifier) {
-            case "config":
-                return CONFIG;
-            case "update":
-                return UPDATE;
-            //......
-            default:
-                return IDENTIFIER;
-        }
+        return switch (identifier) {
+            case "config" -> CONFIG;
+            case "update" -> UPDATE;
+            case "compute" -> COMPUTE;
+            case "show" -> SHOW;
+            case "configs" -> CONFIGS;
+            default -> IDENTIFIER;
+        };
     }
 
     //look at the recording
@@ -108,7 +108,7 @@ public class Lexer implements Iterator<Lexer.Token> {
     }
 
     private boolean isAlpha(char ch) {
-        return ('a' <= ch && ch <= 'z') || ('A' <= ch && ch <= 'Z');
+        return ('a' <= ch && ch <= 'z') || ('A' <= ch && ch <= 'Z') || ch == '_';
     }
 
     private boolean isDigit(char ch) {

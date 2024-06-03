@@ -6,6 +6,8 @@ public class Main {
     public static void main(String[] args) {
         String input = """
                 config "num_users" = 100
+                update "num_requests" = 200
+                compute "result" = %num_users + %num_requests
                 update "num_users" = 200
                 """;
 
