@@ -7,12 +7,19 @@ public class Lexer {
 
     private final String input;
     private final List<Token> tokens;
+    int current;
+
+
     public Lexer(String input){
         this.input = input;
         this.tokens = new ArrayList<Token>();
+        this.current = 0;
+        tokenize();
     }
 
-    private void tokenize(){}
+    private void tokenize(){
+        while(current<input.length())
+    }
 
     static class Token{
         final TokenType type;
