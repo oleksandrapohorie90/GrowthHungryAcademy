@@ -14,7 +14,7 @@ public class Lexer {
 
     private void tokenize(){}
 
-    class Token{
+    static class Token{
         final TokenType type;
         final String value;
 
