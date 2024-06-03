@@ -5,11 +5,14 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         String input = """
-                configs "num_users" = 100
+                config "num_users" = 100
                 update "num_users" = 200
                 """;
 
         Lexer lexer = new Lexer(input);
+        for(Lexer.Token token : lexer){
+            System.out.println(token);
+        }
 
         //use java to create lexer that will parse to token types
         ArrayList<Lexer.Token> tokens = new ArrayList<>();
