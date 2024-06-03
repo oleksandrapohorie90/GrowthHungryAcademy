@@ -3,7 +3,7 @@ package cs_assembly;
 import java.util.ArrayList;
 import java.util.List;
 
-import static cs_assembly.Lexer.TokenType.STRING;
+import static cs_assembly.Lexer.TokenType.*;
 
 public class Lexer {
 
@@ -44,7 +44,12 @@ public class Lexer {
                 case '"':
                     tokens.add(new Token(STRING, readString()));
                     break;
-
+                case '%':
+                    tokens.add(new Token(REFERENCES, readReference()));
+                default:
+                    if (isDigit(ch)) {
+                        tokens.add(new Token(NUMBER, readNumber()))
+                    }
             }
         }
     }
@@ -57,6 +62,37 @@ public class Lexer {
             current++;
         }
         return sb.toString();
+    }
+
+    private String readReference() {
+        StringBuilder sb = new StringBuilder();
+        current++;
+        while (current < input.length() && isAlphanumeric(input.charAt(current))) {
+            sb.append(input.charAt(current));
+            current++;
+        }
+        return sb.toString();
+    }
+
+    private boolean isAlphanumeric(char ch) {
+        return isAlpha(ch) | isDigit(ch);
+    }
+
+    private boolean isAlpha(char ch) {
+        return ('a' <= ch && ch <= 'z') || ('A' <= ch && ch <= 'Z');
+    }
+
+    private boolean isDigit(char ch) {
+        return '0' <=
+    }
+
+    private String readNumber() {
+        StringBuilder stringBuilder = new StringBuilder();
+        while (current < input.length() && isDigit(input.charAt(current))) {
+            stringBuilder.append(input.charAt(current));
+            current++;
+        }
+        return stringBuilder.toString();
     }
 
     static class Token {
