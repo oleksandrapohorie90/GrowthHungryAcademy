@@ -1,11 +1,12 @@
 package cs_assembly;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import static cs_assembly.Lexer.TokenType.*;
 
-public class Lexer {
+public class Lexer implements Iterator<Lexer.Token> {
 
     private final String input;
     private final List<Token> tokens;
@@ -49,28 +50,31 @@ public class Lexer {
                 default:
                     if (isDigit(ch)) {
                         tokens.add(new Token(NUMBER, readNumber()))
-                    }else if (isAlpha(ch)){
+                    } else if (isAlpha(ch)) {
                         String identifier = readIdentifier();
-                        tokens.add(new Token(deriveTokenType(identifier),identifier));
+                        tokens.add(new Token(deriveTokenType(identifier), identifier));
+                    } else {
+                        throw new Lexerexception("unsupported char " + ch);
                     }
             }
         }
     }
 
-    private  TokenType deriveTokenType(String identifier){
+    private TokenType deriveTokenType(String identifier) {
 
-        switch (identifier){
+        switch (identifier) {
             case "config":
                 return CONFIG;
             case "update":
                 return UPDATE;
-                //......
+            //......
             default:
                 return IDENTIFIER;
         }
     }
+
     //look at the recording
-    private String readIdentifier(){
+    private String readIdentifier() {
         StringBuilder sb = new StringBuilder();
         while (current < input.length() && input.charAt(current) != '"') {
             sb.append(input.charAt(current));
@@ -118,6 +122,16 @@ public class Lexer {
             current++;
         }
         return stringBuilder.toString();
+    }
+
+    @Override
+    public boolean hasNext() {
+        return false;
+    }
+
+    @Override
+    public Token next() {
+        return null;
     }
 
     static class Token {
