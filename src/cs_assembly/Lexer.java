@@ -27,6 +27,17 @@ public class Lexer {
                 case '\r':
                     current++;
                     break;
+                case '=':
+                    tokens.add(new Token(TokenType.ASSIGNMENT, "="));
+                    current++;
+                    break;
+                case '+':
+                case '-':
+                case '/':
+                case '*':
+                    tokens.add(new Token(TokenType.OPERATOR, Character.toString(ch)));
+                    current++;
+                    break;
 
             }
         }
@@ -55,6 +66,6 @@ public class Lexer {
         //all the tokens possible in our language
         //Token is
         CONFIG, UPDATE, COMPUTE, SHOW, CONFIGS, STRING, NUMBER, IDENTIFIER,
-        REFERENCES
+        REFERENCES, ASSIGNMENT, OPERATOR
     }
 }
