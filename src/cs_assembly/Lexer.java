@@ -10,22 +10,33 @@ public class Lexer {
     int current;
 
 
-    public Lexer(String input){
+    public Lexer(String input) {
         this.input = input;
         this.tokens = new ArrayList<Token>();
         this.current = 0;
         tokenize();
     }
 
-    private void tokenize(){
-        while(current<input.length())
+    private void tokenize() {
+        while (current < input.length()) {
+            char ch = input.charAt(current);
+            switch (ch) {
+                case ' ':
+                case '\t':
+                case '\n':
+                case '\r':
+                    current++;
+                    break;
+
+            }
+        }
     }
 
-    static class Token{
+    static class Token {
         final TokenType type;
         final String value;
 
-        Token(TokenType type, String value){
+        Token(TokenType type, String value) {
             this.type = type;
             this.value = value;
         }
@@ -39,7 +50,8 @@ public class Lexer {
         }
 
     }
-    enum TokenType{
+
+    enum TokenType {
         //all the tokens possible in our language
         //Token is
         CONFIG, UPDATE, COMPUTE, SHOW, CONFIGS, STRING, NUMBER, IDENTIFIER,
