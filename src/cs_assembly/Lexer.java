@@ -13,5 +13,29 @@ public class Lexer {
     }
 
     private void tokenize(){}
-    private static class Token{}
+
+    class Token{
+        final TokenType type;
+        final String value;
+
+        Token(TokenType type, String value){
+            this.type = type;
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "Token{" +
+                    "type=" + type +
+                    ", value='" + value + '\'' +
+                    '}';
+        }
+
+    }
+    enum TokenType{
+        //all the tokens possible in our language
+        //Token is
+        CONFIG, UPDATE, COMPUTE, SHOW, CONFIGS, STRING, NUMBER, IDENTIFIER,
+        REFERENCES
+    }
 }
