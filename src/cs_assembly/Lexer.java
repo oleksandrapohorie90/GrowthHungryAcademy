@@ -49,9 +49,34 @@ public class Lexer {
                 default:
                     if (isDigit(ch)) {
                         tokens.add(new Token(NUMBER, readNumber()))
+                    }else if (isAlpha(ch)){
+                        String identifier = readIdentifier();
+                        tokens.add(new Token(deriveTokenType(identifier),identifier));
                     }
             }
         }
+    }
+
+    private  TokenType deriveTokenType(String identifier){
+
+        switch (identifier){
+            case "config":
+                return CONFIG;
+            case "update":
+                return UPDATE;
+                //......
+            default:
+                return IDENTIFIER;
+        }
+    }
+    //look at the recording
+    private String readIdentifier(){
+        StringBuilder sb = new StringBuilder();
+        while (current < input.length() && input.charAt(current) != '"') {
+            sb.append(input.charAt(current));
+            current++;
+        }
+        return sb.toString();
     }
 
     private String readString() {
