@@ -39,8 +39,22 @@ public class Lexer {
                     current++;
                     break;
 
+                case '"':
+                    tokens.add(new Token(STRING, readString()));
+                    break;
+
             }
         }
+    }
+
+    private String readString() {
+        StringBuilder sb = new StringBuilder();
+        current++;
+        while (current < input.length() && input.charAt(current) != '"') {
+            sb.append(input.charAt(current));
+            current++;
+        }
+        return sb.toString();
     }
 
     static class Token {
