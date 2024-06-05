@@ -123,7 +123,7 @@ public class Lexer implements Iterable<Lexer.Token> {
         }
         return stringBuilder.toString();
     }
-//because implements Iterable
+//because implements Iterable, we can iterate over its elements
     @Override
     public Iterator<Token> iterator() {
         return tokens.iterator();
