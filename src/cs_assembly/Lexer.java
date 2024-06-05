@@ -72,11 +72,10 @@ public class Lexer implements Iterator<Lexer.Token> {
             default -> IDENTIFIER;
         };
     }
-
-    //look at the recording
+//some special char we cannot process, white space
     private String readIdentifier() {
         StringBuilder sb = new StringBuilder();
-        while (current < input.length() && input.charAt(current) != '"') {
+        while (current < input.length() && isAlphanumeric(input.charAt(current))) {
             sb.append(input.charAt(current));
             current++;
         }
