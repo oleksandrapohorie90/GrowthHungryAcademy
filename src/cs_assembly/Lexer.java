@@ -112,7 +112,7 @@ public class Lexer implements Iterator<Lexer.Token> {
     }
 
     private boolean isDigit(char ch) {
-        return '0' <= ch &&
+        return '0' <= ch && ch <= '9';
     }
 
     private String readNumber() {
