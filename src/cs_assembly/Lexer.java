@@ -6,7 +6,7 @@ import java.util.List;
 
 import static cs_assembly.Lexer.TokenType.*;
 
-public class Lexer implements Iterator<Lexer.Token> {
+public class Lexer implements Iterable<Lexer.Token> {
 
     private final String input;
     private final List<Token> tokens;
@@ -61,7 +61,8 @@ public class Lexer implements Iterator<Lexer.Token> {
             }
         }
     }
-
+//based on this identifier is it configs is it what, everything we dont know will be identifier
+    //otherwise we put here cases
     private TokenType deriveTokenType(String identifier) {
         return switch (identifier) {
             case "config" -> CONFIG;
@@ -122,15 +123,10 @@ public class Lexer implements Iterator<Lexer.Token> {
         }
         return stringBuilder.toString();
     }
-
+//because implements Iterable
     @Override
-    public boolean hasNext() {
-        return false;
-    }
-
-    @Override
-    public Token next() {
-        return null;
+    public Iterator<Token> iterator() {
+        return tokens.iterator();
     }
 
     static class Token {
