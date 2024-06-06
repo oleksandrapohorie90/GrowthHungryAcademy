@@ -26,3 +26,14 @@ max=nums,
  d) procedure choose (a,b: int)
  x: = either a or b
 return x     -> looks correct
+=========================================================
+examples of algos problems: searching, sorting, optimization
+
+1. Algorithm in increasing order and produce the list of all values that occur more than once:
+
+answer = empty list
+for i=2 to n
+    if ai==ai-1
+    answer.append(ai)
+
+return answer
