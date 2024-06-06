@@ -50,3 +50,8 @@ if aj=aj-1 then
                 j:=j+1
         j:=j+1
        {c1,c2,....,ck is the desired list}
+You start at the 2nd element of each segment,you compare it with the prev segment if they are equal, then this element appears at least twice, you add it to the answer, you skip over all of this equal elements(if you have a segment of ones, you skip all of them) then you start at the 2nd element after the current segment and keep doing the same
+
+2. Palindrome
+i=1
+j=n(indexes)
