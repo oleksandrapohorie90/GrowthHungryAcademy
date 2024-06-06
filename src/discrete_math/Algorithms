@@ -1,0 +1,7 @@
+How would you describe your algorithm in simple English ? -Pseudocode(smth btw english and real code)
+1. List all steps used by Algorithm 1 to find the max ?
+procedure max (a1,a2,an: integers)
+max=nums,
+ foreach n : nums
+    if max < n {max=n}
+    return max
