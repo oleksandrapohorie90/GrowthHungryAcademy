@@ -31,9 +31,22 @@ examples of algos problems: searching, sorting, optimization
 
 1. Algorithm in increasing order and produce the list of all values that occur more than once:
 
-answer = empty list
+procedure moreThanOnce(a1,a2,a3,...an: integer list)
+answer = empty list -> use set(Hashset)
 for i=2 to n
-    if ai==ai-1
-    answer.append(ai)
+    if ai==ai-1           O(1)
+    answer.append(ai) instead answer.insert(ai)
 
 return answer
+
+procedure duplicates(a1,a2,...: int in nondecreasing order)
+K:=0{this counts the duplicates}
+j:=2
+while j<=n
+if aj=aj-1 then
+        k:=k+1
+        ck := aj
+        while j<=n and aj=ck
+                j:=j+1
+        j:=j+1
+       {c1,c2,....,ck is the desired list}
