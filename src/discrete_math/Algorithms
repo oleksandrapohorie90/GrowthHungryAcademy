@@ -75,4 +75,15 @@ while i<j
    return location
 
 44. Binary search for determining the correct position in which to insert a new element in an already sorted list
+a1,a2,...an
+i=1j=n
+answer=-1
+while i<=j -> i<j - invariants
+    m=(i+j)/2
+    if am > x => then we know the answer is on the left
+       j=m-1
+    answer=m
+    else
+        i=m+1
 
+    return answer
