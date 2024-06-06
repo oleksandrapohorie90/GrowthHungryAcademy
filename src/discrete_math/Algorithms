@@ -59,3 +59,8 @@ answer :=true
 for i:=1 to floor n/2 floor
     if ai !=an+1-i then answer := false
     return answer (answer is true if and onlyif string is a palindrome)
+ i or j can be used instead of a1 a2
+ ======================================
+ Searching algos
+ 1. Linear
+ 2. Binary
