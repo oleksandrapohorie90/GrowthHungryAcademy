@@ -5,3 +5,24 @@ max=nums,
  foreach n : nums
     if max < n {max=n}
     return max
+
+ Algorithms are finite as well - should produce an output after a finite number for any input:
+ (1)input/(2)output/(3)correct/(4)finitenize
+
+ a) procedure double (n: positive int)
+ while n>0
+ n:=2n -> this loop is Infinite, not finite (4)
+
+ b) procedure divide (n: positive int)
+     while n>=0 -> it will finish but w/ runtime error, divides by 0
+     m:=1/n     -> (3) (2)
+     n:=n-1
+
+ c) procedure sum (n: positive int)
+     sum:=0
+     while i < 10
+     sum:=sum+i -> we dont see i++, no input(1), output ->(2), not correct(3), not finite(4)
+
+ d) procedure choose (a,b: int)
+ x: = either a or b
+return x     -> looks correct
