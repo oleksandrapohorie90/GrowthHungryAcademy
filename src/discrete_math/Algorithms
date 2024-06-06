@@ -64,12 +64,15 @@ for i:=1 to floor n/2 floor
  Searching algos
  1. Linear
  2. Binary====================================================================
- procedure binary search(x: int, a1,a2...an:increasing int)
-i:=1{i is the left endpoint of interval}
-j:=n{j is right endpoint of interval}
+procedure binary search(x: int, a1,a2...an:increasing int)
+    i:=1{i is the left endpoint of interval}
+    j:=n{j is right endpoint of interval}
 
 while i<j
-    m:=floor(i+j)/2floor
-    if x>am then i:=m+1 else j:=m
+        m:=floor(i+j)/2floor
+        if x>am then i:=m+1 else j:=m
    if x=ai then location :=i else location:=0
    return location
+
+44. Binary search for determining the correct position in which to insert a new element in an already sorted list
+
