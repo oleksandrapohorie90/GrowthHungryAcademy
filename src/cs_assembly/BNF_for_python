@@ -1,0 +1,103 @@
+<program> ::= <statement_list>
+<statement_list> ::= <statement> ";" <statement_list> | <statement> ";"
+<statement> ::= <assignment> | <if_statement> | <print_statement>
+<assignment> ::= <identifier> "=" <expression>
+<if_statement> ::= "if" <condition> "then" <statement_list> "else" <statement_list> "end"
+<print_statement> ::= "print" <identifier>
+<condition> ::= <expression> <relop> <expression>
+<relop> ::= ">" | "<" | ">=" | "<=" | "==" | "!="
+<expression> ::= <term> | <expression> "+" <term> | <expression> "-" <term>
+<term> ::= <factor> | <term> "*" <factor> | <term> "/" <factor>
+<factor> ::= <number> | <identifier> | "(" <expression> ")"
+<number> ::= <digit> | <digit> <number>
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<identifier> ::= <letter> | <letter> <identifier>
+<letter> ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
+
+Explanation
+<program>:
+
+Represents the entire program.
+Consists of a list of statements (<statement_list>).
+<statement_list>:
+
+Represents a list of statements.
+It can be a single statement followed by a semicolon and another statement list, or a single statement followed by a semicolon.
+<statement>:
+
+Represents a single statement.
+It can be an assignment, an if statement, or a print statement.
+<assignment>:
+
+Represents an assignment statement.
+Consists of an identifier, an equals sign, and an expression.
+<if_statement>:
+
+Represents an if statement.
+Consists of the keyword "if", a condition, the keyword "then", a statement list for the true branch, the keyword "else", a statement list for the false branch, and the keyword "end".
+<print_statement>:
+
+Represents a print statement.
+Consists of the keyword "print" followed by an identifier.
+<condition>:
+
+Represents a condition in an if statement.
+Consists of two expressions separated by a relational operator.
+<relop>:
+
+Represents a relational operator.
+Includes ">", "<", ">=", "<=", "==", and "!=".
+<expression>:
+
+Represents an arithmetic expression.
+It can be a term, or an expression followed by a plus or minus sign and another term.
+<term>:
+
+Represents a term in an arithmetic expression.
+It can be a factor, or a term followed by a multiplication or division sign and another factor.
+<factor>:
+
+Represents a factor in a term.
+It can be a number, an identifier, or an expression enclosed in parentheses.
+<number>:
+
+Represents a number.
+It can be a single digit or a sequence of digits.
+<digit>:
+
+Represents a single digit.
+It can be any character from "0" to "9".
+<identifier>:
+
+Represents an identifier.
+It can be a single letter or a letter followed by an identifier.
+<letter>:
+
+Represents a single letter.
+It can be any lowercase letter from "a" to "z".
+Example Parsing of the Given Code
+x=5;
+
+<assignment> → <identifier> "=" <expression> → x = 5
+if x>3 then
+
+<if_statement> → "if" <condition> "then" <statement_list> "else" <statement_list> "end"
+<condition> → <expression> <relop> <expression> → x > 3
+y=x+2;
+
+<assignment> → <identifier> "=" <expression> → y = x + 2
+else
+
+"else"
+y=x*(2+3);
+
+<assignment> → <identifier> "=" <expression> → y = x * (2 + 3)
+end
+
+"end"
+print y;
+
+<print_statement> → "print" <identifier> → print y
+This BNF definition captures the structure of the given code, allowing for the correct parsing and understanding of variable assignments, conditionals, arithmetic expressions, and print statements.
+
+
