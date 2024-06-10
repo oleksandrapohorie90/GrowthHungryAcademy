@@ -13,7 +13,15 @@ public class Parser {
         currentPos = 0;
         currentToken = tokens.get(currentPos);
     }
+    private ASTNode expression() {
 
+        ASTNode node = term();
+        while (currentToken != null && (currentToken.type == Type.PLUS || currentToken.type == Type.MINUS)) {
+            Tokens token = currentToken;
+            consume(currentToken.type);
+            node = new BinaryOpNode(node, term(), token);
+        }
+    }
     public ASTNode parse() {
         return term();
     }
@@ -21,7 +29,7 @@ public class Parser {
     private ASTNode term() {
 
         ASTNode node = factor();
-        while (currentToken != null && currentToken.type == Type.MULTIPLY || currentToken.type == Type.DIVIDE) {
+        while (currentToken != null && (currentToken.type == Type.MULTIPLY || currentToken.type == Type.DIVIDE)) {
             Tokens token = currentToken;
             consume(currentToken.type);
             node = new BinaryOpNode(node, factor(), token);
@@ -43,7 +51,22 @@ public class Parser {
     }
 
     private ASTNode factor() {
-        return null;
+        //factor is just an expression or a number
+        //it has to be a number token and we just return it
+        //we are pointing into a token
+
+        //now it could be a paranthesis or a number
+        Tokens token = currentToken;
+        if(token.type==Tokens.type.NUMBER) {
+            consume(Type.NUMBER);
+            return new NumberNode(token);
+        }
+
+        if (token.type == Type.LPAREN){
+            consume(Tokens.type.LPAREN);
+        }
+        throw  new Parserexception("unexpected token found : "+token);
+
     }
 
     abstract class ASTNode {
