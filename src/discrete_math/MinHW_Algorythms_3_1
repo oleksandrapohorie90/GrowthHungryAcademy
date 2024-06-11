@@ -36,3 +36,34 @@ if count>modecount then
          modecout := count
          mode:=value
    return mode
+
+37.
+procedure enhancedbubblesort(a1,...,an)
+i:=1
+still_interchanging :=true
+while i<n and still_interchanging
+        still_interchanging := false
+        for j:=1 to n-i
+               if aj>aj+1 then
+                     still_interchanging :=true
+                     interchange aj and aj +1
+        i:= i+1
+        {a1,....,an is in nondecreasing order}
+
+49.
+procedure binary insertion sort(a1,a2,....,an:real numbers with n>=2)
+for j:=2 to n
+        {binary search for insertion location i}
+        left :=1
+        right :=j-1
+        while left<right
+              middle := floor(left+right)/2floor
+              if aj >amiddle then left:=middle+1
+              else right:= middle
+        if aj < aleft then i:=left else i:=left+1
+        {insert aj in location i by moving ai through aj-1 toward back of list}
+        m:=aj
+        for k:=0 to j-i-1
+                aj-k:=aj-k-1
+        ai :=m
+{a1,a2,...,an are sorted}
