@@ -1,0 +1,22 @@
+procedure is_onto(A, B, function_pairs):
+    // Step 1: Initialize a set to keep track of mapped elements in B
+    set mapped_elements = empty_set
+
+    // Step 2: Iterate through the function pairs
+    for each pair (a, b) in function_pairs:
+        // Ensure a is in A and b is in B for valid pairs
+        if a is in A and b is in B:
+            ADD b TO mapped_elements
+
+    // Step 3: Compare the set of mapped elements to set B
+    if mapped_elements is equal to B:
+        return true
+    else:
+        return false
+
+// Example usage
+set A = {1, 2, 3}
+set B = {4, 5}
+List function_pairs = [(1, 4), (2, 5), (3, 4)] // f(1)=4, f(2)=5, f(3)=4
+
+print is_onto(A, B, function_pairs) // Should print True
