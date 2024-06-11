@@ -1,4 +1,4 @@
-package algos_and_ds.week10;
+package algos_and_ds.week9;
 
 import java.util.HashMap;
 import java.util.Map;
