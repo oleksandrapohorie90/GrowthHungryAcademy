@@ -1,3 +1,12 @@
+x=5;
+if x>3 then
+    y=x+2;
+else
+    y=x*(2+3);
+end
+print y;
+
+
 <program> ::= <statement_list>
 <statement_list> ::= <statement> ";" <statement_list> | <statement> ";"
 <statement> ::= <assignment> | <if_statement> | <print_statement>
