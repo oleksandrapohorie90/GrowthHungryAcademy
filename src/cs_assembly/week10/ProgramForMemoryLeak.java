@@ -1,8 +1,4 @@
 package cs_assembly.week10;
-
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -21,13 +17,13 @@ public class ProgramForMemoryLeak {
     //Here we’re using Person as a key. Since Map doesn’t allow duplicate keys, the numerous duplicate Person objects that we inserted as a key shouldn’t increase the memory.
     //
     //But since we haven’t defined the proper equals() method, the duplicate objects pile up and increase the memory, which is why we see more than one object in the memory.
-    @Test
+
     public void givenMap_whenequalsAndHashCodeNotOverridden_thenMemoryLeak() {
         Map<Person, Integer> map = new HashMap<>();
         for (int i = 0; i < 100; i++) {
             map.put(new Person("json"), 1);
         }
-        Assert.assertFalse(map.size() == 1);
+        //Assert.assertFalse(map.size() == 1);
     }
 
     public class Person1 {

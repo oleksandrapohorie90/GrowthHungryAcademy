@@ -6,9 +6,17 @@ public class Main {
     public static void main(String[] args) {
         String input = """
                 config "num_users" = 100
-                update "num_requests" = 200
+                config "num_requests" = 100
                 compute "result" = %num_users + %num_requests
-                update "num_users" = 200
+                update "num_users" = 200               
+                loop "i" from 1 to 5
+                compute "iteration_result_%i" = %num_users * %i
+                end               
+                    if %num_users > 1000
+                update "status" = "high load"
+                    else 
+                    update "status" = "normal load"
+                end
                 """;
 //lexer is some collections that we can iterate over
         Lexer lexer = new Lexer(input);
