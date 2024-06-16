@@ -78,7 +78,6 @@ public class Lexer implements Iterable<Lexer.Token> {
             case "end" -> END;
             case "if" -> IF;
             case "else" -> ELSE;
-
             default -> IDENTIFIER;
         };
     }
