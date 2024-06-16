@@ -10,7 +10,7 @@ public class Lexer implements Iterable<Lexer.Token> {
 
     private final String input;
     private final List<Token> tokens;
-    int current;
+    private int current;
 
 
     public Lexer(String input) {
@@ -38,10 +38,11 @@ public class Lexer implements Iterable<Lexer.Token> {
                 case '-':
                 case '/':
                 case '*':
+                case '>':
+                case '<':
                     tokens.add(new Token(TokenType.OPERATOR, Character.toString(ch)));
                     current++;
                     break;
-
                 case '"':
                     tokens.add(new Token(STRING, readString()));
                     current++;
@@ -61,7 +62,8 @@ public class Lexer implements Iterable<Lexer.Token> {
             }
         }
     }
-//based on this identifier is it configs is it what, everything we dont know will be identifier
+
+    //based on this identifier is it configs is it what, everything we dont know will be identifier
     //otherwise we put here cases
     private TokenType deriveTokenType(String identifier) {
         return switch (identifier) {
@@ -70,10 +72,18 @@ public class Lexer implements Iterable<Lexer.Token> {
             case "compute" -> COMPUTE;
             case "show" -> SHOW;
             case "configs" -> CONFIGS;
+            case "loop" -> LOOP;
+            case "from" -> FROM;
+            case "to" -> TO;
+            case "end" -> END;
+            case "if" -> IF;
+            case "else" -> ELSE;
+
             default -> IDENTIFIER;
         };
     }
-//some special char we cannot process, white space
+
+    //some special char we cannot process, white space
     private String readIdentifier() {
         StringBuilder sb = new StringBuilder();
         while (current < input.length() && isAlphanumeric(input.charAt(current))) {
@@ -123,7 +133,8 @@ public class Lexer implements Iterable<Lexer.Token> {
         }
         return stringBuilder.toString();
     }
-//because implements Iterable, we can iterate over its elements
+
+    //because implements Iterable, we can iterate over its elements
     @Override
     public Iterator<Token> iterator() {
         return tokens.iterator();
@@ -145,13 +156,12 @@ public class Lexer implements Iterable<Lexer.Token> {
                     ", value='" + value + '\'' +
                     '}';
         }
-
     }
 
     enum TokenType {
         //all the tokens possible in our language
         //Token is
         CONFIG, UPDATE, COMPUTE, SHOW, CONFIGS, STRING, NUMBER, IDENTIFIER,
-        REFERENCES, ASSIGNMENT, OPERATOR
+        REFERENCES, ASSIGNMENT, OPERATOR, LOOP, FROM, TO, END, IF, ELSE
     }
 }
