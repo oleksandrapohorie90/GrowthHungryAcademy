@@ -53,7 +53,12 @@ BNF FOR ARITHMETIC EXPRESSIONS:
 <term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
 <factor> ::= <number> | "(" <expression> ")"
 
-simplify and say we want to support multiplication and division => 3 * 5 * 7 / 1
+simplify and say we want to support multiplication and division => 3 * 8 * 7 / 1 => term
+                                                                  everything is a term and term is a factor times or divide by term
 <expression> ::= <term>
 <term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
 <factor> ::= <number>
+
+=========================
+Parser that receives tokens
+Construction of the tree - everything is a node - node is a binary operation like * / OR just a number: 2 types
