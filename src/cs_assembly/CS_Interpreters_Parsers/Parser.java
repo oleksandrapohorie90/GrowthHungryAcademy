@@ -15,6 +15,7 @@ public class Parser {
         currentPos = 0;
         currentToken = tokens.get(currentPos);
     }
+
     private ASTNode expression() {
 
         ASTNode node = term();
@@ -24,6 +25,7 @@ public class Parser {
             node = new BinaryOpNode(node, term(), token);
         }
     }
+
     public ASTNode parse() {
         return term();
     }
@@ -59,15 +61,15 @@ public class Parser {
 
         //now it could be a paranthesis or a number
         Tokens token = currentToken;
-        if(token.type==Tokens.type.NUMBER) {
+        if (token.type == Tokens.type.NUMBER) {
             consume(Type.NUMBER);
             return new NumberNode(token);
         }
 
-        if (token.type == Type.LPAREN){
+        if (token.type == Type.LPAREN) {
             consume(Tokens.type.LPAREN);
         }
-        throw  new Parserexception("unexpected token found : "+token);
+        throw new Parserexception("unexpected token found : " + token);
 
     }
 
@@ -77,21 +79,21 @@ public class Parser {
 
     class Number extends ASTNode {
 
-        Tokens numberToken;
+        Token numberToken;
         private final int value;
 
-        public Number(Tokens numberToken) {
+        public Number(Token numberToken) {
             //all nodes will either be binary operation or a number, each of them is left and right node
             this.numberToken = numberToken;
-            this.value = Integer.parseInt(value);
+            this.value = Integer.parseInt(numberToken.value);
         }
     }
 
     class BinaryOp extends ASTNode {
         //left node
-        ASTNode left;
+        ASTNode left; // can be another binary operation
         //right node
-        ASTNode right;
+        ASTNode right; // can be another binary operation
         Token operationToken;
 
         public BinaryOp(ASTNode left, ASTNode right, Token operationToken) {
