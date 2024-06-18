@@ -1,11 +1,15 @@
 package cs_assembly.CS_Interpreters_Parsers;
 
 public class NumberNode extends ASTNode{
-    public NumberNode() {
+
+        Token numberToken;
+        final int value;
+
+        public NumberNode (Token numberToken) {
+            //all nodes will either be binary operation or a number, each of them is left and right node
+            this.numberToken = numberToken;
+            this.value = Integer.parseInt(numberToken.value);
+        }
     }
 
-    @Override
-    public String toString() {
-        return "NumberNode{}";
-    }
-}
+

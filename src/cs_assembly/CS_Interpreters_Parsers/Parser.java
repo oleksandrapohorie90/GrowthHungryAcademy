@@ -1,16 +1,19 @@
 package cs_assembly.week13;
 
+import cs_assembly.CS_Interpreters_Parsers.ASTNode;
+import cs_assembly.CS_Interpreters_Parsers.NumberNode;
 import cs_assembly.CS_Interpreters_Parsers.Token;
 
 import java.lang.reflect.Type;
 import java.util.List;
 
 public class Parser {
-    private final List<Token> tokens;
-    private int currentPos; //num of tokens
-    private Tokens currentToken;
+    private final List<Token> tokens; //going over and creating ASD node, you go to BNF form, what I gave to parser it should follow the rules in BNF
+    private int currentPos; //num of tokens, if pos = length we are done
+    private Token currentToken;
 
-    public Parser(List<Tokens> tokens) {
+    public Parser(List<Token> tokens) {
+        //insures everything works
         this.tokens = tokens;
         currentPos = 0;
         currentToken = tokens.get(currentPos);
@@ -27,14 +30,16 @@ public class Parser {
     }
 
     public ASTNode parse() {
-        return term();
+        //will give the top level node to traverse it, we will return the root of the parsed expression if we can parse it
+        return term(); //term returns a Tree too, any expression is a term and term is a root of the Tree
     }
 
     private ASTNode term() {
-
-        ASTNode node = factor();
+        //term can be a factor, or factor * or / by smth OR a number
+        //WE read a factor and checking if the next term a * or /
+        ASTNode factor = factor();
         while (currentToken != null && (currentToken.type == Type.MULTIPLY || currentToken.type == Type.DIVIDE)) {
-            Tokens token = currentToken;
+            Token token = currentToken;
             consume(currentToken.type);
             node = new BinaryOpNode(node, factor(), token);
         }
@@ -60,9 +65,9 @@ public class Parser {
         //we are pointing into a token
 
         //now it could be a paranthesis or a number
-        Tokens token = currentToken;
-        if (token.type == Tokens.type.NUMBER) {
-            consume(Type.NUMBER);
+        Token token = currentToken;
+        if (token.type == Token.Type.NUMBER) {
+            consume(Token.Type.NUMBER);
             return new NumberNode(token);
         }
 
@@ -71,36 +76,6 @@ public class Parser {
         }
         throw new Parserexception("unexpected token found : " + token);
 
-    }
-
-    abstract class ASTNode {
-
-    }
-
-    class Number extends ASTNode {
-
-        Token numberToken;
-        private final int value;
-
-        public Number(Token numberToken) {
-            //all nodes will either be binary operation or a number, each of them is left and right node
-            this.numberToken = numberToken;
-            this.value = Integer.parseInt(numberToken.value);
-        }
-    }
-
-    class BinaryOp extends ASTNode {
-        //left node
-        ASTNode left; // can be another binary operation
-        //right node
-        ASTNode right; // can be another binary operation
-        Token operationToken;
-
-        public BinaryOp(ASTNode left, ASTNode right, Token operationToken) {
-            this.left = left;
-            this.right = right;
-            this.operationToken = operationToken;
-        }
     }
 
 
