@@ -59,21 +59,25 @@ public class Parser {
     }
 
     private ASTNode factor() throws ParserException {
-        //factor is just an expression or a number
+        //factor is just an expression or a number <======
         //it has to be a number token and we just return it
-        //we are pointing into a token
+        //we are pointing into a token, it has to be a number token and we need to return a node from it
 
-        //now it could be a paranthesis or a number
+        //now it could be a parenthesis or a number
         Token token = currentToken;
         if (token.type == Token.Type.NUMBER) {
             consume(Token.Type.NUMBER);
             return new NumberNode(token);
         }
-
+        //we need to consume left parenthesis and the rest should be an expression to give us a node
         if (token.type == Token.Type.LPAREN) {
             consume(Token.Type.LPAREN);
+            ASTNode node = expression();
+            consume(Token.Type.RPAREN);//if no right parenthesis consume() throws an exception
+            return node;
         }
-        throw new ParserException("unexpected token found : " + token);
+
+        throw new ParserException("Unexpected token found for Factor : " + token);
 
     }
 
