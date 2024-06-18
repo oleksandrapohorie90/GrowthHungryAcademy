@@ -12,15 +12,21 @@ Interpreter issue: division by zero                   =>      int y = 10/0;
 
 Tree graph where we have nodes
 All expressions go through lexers, parsers and then parser needs to verify
-
+==============================================================================
 expression is a term or term+ smth
 3     +   5 * (10 - 4)
-term      valid expression <= Rule 1
-|
-factor => factor can be  number or parenthesis(we dont have any in the below example)
-|
-number
+term      valid expression <= Rule 1 => but expression is left and right plus or minus, we have left and right thats it, so it is a term, we cannot say the whole thing left side minus smth
+|             |
+factor       term plus smth/minus smth
+|              |
+number       factor * term => Rule 2 => factor is 5(as to be a factor, we need to verify it), but factor is a num or expression in parenthesis, so its a number
+              |         |
+             number   term is a factor mult by smth by term or divided
+                        |
+                      factor => rule 3
+ => factor can be  number or parenthesis(we dont have any in the below example)
 
 <expression> ::= <term> | <term> "+" <expression> | <term> - <expression>
 <term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
+<factor> ::= <number> | "(" <expression> ")"
 
