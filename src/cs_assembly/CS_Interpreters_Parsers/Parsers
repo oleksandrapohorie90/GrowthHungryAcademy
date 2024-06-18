@@ -23,10 +23,37 @@ number       factor * term => Rule 2 => factor is 5(as to be a factor, we need t
               |         |
              number   term is a factor mult by smth by term or divided
                         |
-                      factor => rule 3
+                      factor => Rule 3
+                        |
+                      parenthesis expression => Rule 4 - can be a number or parenthesis expression "(" => 10 -4 has to be a valid expression
+                        |              |
+                      term    -     expression
+                       |                   |
+                      factor>>number=10   can be a term >> number = 4
  => factor can be  number or parenthesis(we dont have any in the below example)
 
 <expression> ::= <term> | <term> "+" <expression> | <term> - <expression>
 <term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
 <factor> ::= <number> | "(" <expression> ")"
+=====================================================================
+for "3+5*(10-4)" Lexer produced this:
+Tokens:
+Token {type=NUMBER, value='3'}
+Token {type=PLUS, value='+'}
+Token {type=NUMBER, value='5'}
+Token {type=MULTIPLY, value='*'}
+Token {type=LPAREN, value='('}
+Token {type=NUMBER, value='10'}
+Token {type=MINUS, value='-'}
+Token {type=NUMBER, value='4'}
+Token {type=RPAREN, value=')'}
 
+BNF FOR ARITHMETIC EXPRESSIONS:
+<expression> ::= <term> | <term> "+" <expression> | <term> "-" <expression>
+<term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
+<factor> ::= <number> | "(" <expression> ")"
+
+simplify and say we want to support multiplication and division => 3 * 5 * 7 / 1
+<expression> ::= <term>
+<term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
+<factor> ::= <number>
