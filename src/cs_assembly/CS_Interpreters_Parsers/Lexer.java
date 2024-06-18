@@ -8,15 +8,14 @@ public class Lexer {
 
     public static List<Token> getHardcodedTokens(){
         return Arrays.asList(
-                new Token {type=NUMBER, value='3'}
-        new Token {type=PLUS, value='+'}
-        new Token {type=NUMBER, value='5'}
-        new Token {type=MULTIPLY, value='*'}
-        new Token {type=LPAREN, value='('}
-        new Token {type=NUMBER, value='10'}
-        new Token {type=MINUS, value='-'}
-        new Token {type=NUMBER, value='4'}
-        new Token {type=RPAREN, value=')'}
-        )
+                new Token (Token.Type.NUMBER, "3"),
+        new Token (Token.Type.PLUS, "+"),
+        new Token (Token.Type.NUMBER, "5"),
+        new Token (Token.Type.MULTIPLY, "*"),
+        new Token (Token.Type.LPAREN, "("),
+        new Token (Token.Type.NUMBER, "10"),
+        new Token (Token.Type.MINUS, "-"),
+        new Token (Token.Type.NUMBER, "4"),
+        new Token (Token.Type.RPAREN, ")")
     }
 }
