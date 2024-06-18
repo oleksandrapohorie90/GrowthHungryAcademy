@@ -1,4 +1,4 @@
-package cs_assembly.week13;
+package cs_assembly.CS_Interpreters_Parsers;
 
 import cs_assembly.CS_Interpreters_Parsers.ASTNode;
 import cs_assembly.CS_Interpreters_Parsers.NumberNode;
@@ -22,8 +22,8 @@ public class Parser {
     private ASTNode expression() {
 
         ASTNode node = term();
-        while (currentToken != null && (currentToken.type == Type.PLUS || currentToken.type == Type.MINUS)) {
-            Tokens token = currentToken;
+        while (currentToken != null && (currentToken.type == Token.Type.PLUS || currentToken.type == Token.Type.MINUS)) {
+            Token token = currentToken;
             consume(currentToken.type);
             node = new BinaryOpNode(node, term(), token);
         }
@@ -37,8 +37,9 @@ public class Parser {
     private ASTNode term() {
         //term can be a factor, or factor * or / by smth OR a number
         //WE read a factor and checking if the next term a * or /
+        //if next token exists we can only proceed * or / otherwise its an error => Rule 2
         ASTNode factor = factor();
-        while (currentToken != null && (currentToken.type == Type.MULTIPLY || currentToken.type == Type.DIVIDE)) {
+        while (currentToken != null && (currentToken.type == Token.Type.MULTIPLY || currentToken.type == Token.Type.DIVIDE)) {
             Token token = currentToken;
             consume(currentToken.type);
             node = new BinaryOpNode(node, factor(), token);
