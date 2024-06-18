@@ -1,0 +1,26 @@
+Syntax analysis: if we have an assignment we have right/left side, semicolon
+================
+we construct an AST during syntax analysis: to make sure it is processed by compiler to run the code
+x+1, but we never declared x, parser says ok but symantic analysis will warn we never defined x variable
+
+Interpreter
+Compiler
+
+Lexer issue: variable name cannot start w/ a digit    =>      int 123abc = 10;
+Parser issue: missing expression after assignment     =>      int x = ;
+Interpreter issue: division by zero                   =>      int y = 10/0;
+
+Tree graph where we have nodes
+All expressions go through lexers, parsers and then parser needs to verify
+
+expression is a term or term+ smth
+3     +   5 * (10 - 4)
+term      valid expression <= Rule 1
+|
+factor => factor can be  number or parenthesis(we dont have any in the below example)
+|
+number
+
+<expression> ::= <term> | <term> "+" <expression> | <term> - <expression>
+<term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
+
