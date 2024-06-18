@@ -1,9 +1,4 @@
 package cs_assembly.CS_Interpreters_Parsers;
-
-import cs_assembly.CS_Interpreters_Parsers.ASTNode;
-import cs_assembly.CS_Interpreters_Parsers.NumberNode;
-import cs_assembly.CS_Interpreters_Parsers.Token;
-
 import java.lang.reflect.Type;
 import java.util.List;
 
@@ -19,7 +14,7 @@ public class Parser {
         currentToken = tokens.get(currentPos);
     }
 
-    private ASTNode expression() {
+    private ASTNode expression() throws ParserException {
 
         ASTNode node = term();
         while (currentToken != null && (currentToken.type == Token.Type.PLUS || currentToken.type == Token.Type.MINUS)) {
@@ -27,36 +22,40 @@ public class Parser {
             consume(currentToken.type);
             node = new BinaryOpNode(node, term(), token);
         }
+        return node;
     }
 
-    public ASTNode parse() {
+    public ASTNode parse() throws ParserException {
         //will give the top level node to traverse it, we will return the root of the parsed expression if we can parse it
         return term(); //term returns a Tree too, any expression is a term and term is a root of the Tree
     }
 
-    private ASTNode term() {
+    private ASTNode term() throws ParserException {
         //term can be a factor, or factor * or / by smth OR a number
         //WE read a factor and checking if the next term a * or /
         //if next token exists we can only proceed * or / otherwise its an error => Rule 2
-        ASTNode factor = factor();
+        //if not * or / we return a factor
+        ASTNode node = factor();
         while (currentToken != null && (currentToken.type == Token.Type.MULTIPLY || currentToken.type == Token.Type.DIVIDE)) {
             Token token = currentToken;
-            consume(currentToken.type);
+            consume(currentToken.type);//token we are consuming is a type that we want * or / or throw an error
             node = new BinaryOpNode(node, factor(), token);
         }
+        return node;
     }
 
-    private void consume(Type type) {
+    private void consume(Token.Type type) throws ParserException {
+        //we know its a token, verify its multiply and go to the next thing
+        //we consume NUMBER .... and get to * and say
         if (currentToken.type == type) {
             currentPos++;
             if (currentPos < tokens.size()) {
                 currentToken = tokens.get(currentPos);
             } else {
-                currentToken = null;
-
+                currentToken = null; //otherwise we reached the end
             }
         } else {
-            throw new Parserexception("unexpected token " + type);
+            throw new ParserException("Unexpected token " + type);
         }
     }
 
@@ -75,7 +74,7 @@ public class Parser {
         if (token.type == Type.LPAREN) {
             consume(Tokens.type.LPAREN);
         }
-        throw new Parserexception("unexpected token found : " + token);
+        throw new ParserException("unexpected token found : " + token);
 
     }
 
