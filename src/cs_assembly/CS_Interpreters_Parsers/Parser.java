@@ -1,4 +1,5 @@
 package cs_assembly.CS_Interpreters_Parsers;
+
 import java.lang.reflect.Type;
 import java.util.List;
 
@@ -59,7 +60,7 @@ public class Parser {
         }
     }
 
-    private ASTNode factor() {
+    private ASTNode factor() throws ParserException {
         //factor is just an expression or a number
         //it has to be a number token and we just return it
         //we are pointing into a token
@@ -71,8 +72,8 @@ public class Parser {
             return new NumberNode(token);
         }
 
-        if (token.type == Type.LPAREN) {
-            consume(Tokens.type.LPAREN);
+        if (token.type == Token.Type.LPAREN) {
+            consume(Token.Type.LPAREN);
         }
         throw new ParserException("unexpected token found : " + token);
 
