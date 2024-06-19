@@ -57,7 +57,6 @@ public class Parser {
             throw new ParserException("Unexpected token " + type);
         }
     }
-
     private ASTNode factor() throws ParserException {
         //factor is just an expression or a number <======
         //it has to be a number token and we just return it
@@ -78,8 +77,5 @@ public class Parser {
         }
 
         throw new ParserException("Unexpected token found for Factor : " + token);
-
     }
-
-
 }
