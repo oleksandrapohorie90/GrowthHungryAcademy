@@ -18,4 +18,4 @@ public class ShortestSubarrayWithSumAtLeastK {
             return res <= N ? res : -1;
         }
     }
-}
+
