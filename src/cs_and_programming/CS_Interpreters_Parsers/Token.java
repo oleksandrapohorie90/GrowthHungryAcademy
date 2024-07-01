@@ -3,7 +3,7 @@ package cs_and_programming.CS_Interpreters_Parsers;
 public class Token {
 
     public enum Type{
-        NUMBER, PLUS, MINUS, MULTIPLY, DIVIDE, ASSIGN, VAR, LBRACE, LPAREN, SEMICOLON
+        NUMBER, PLUS, MINUS, MULTIPLY, DIVIDE, ASSIGN, VAR, LBRACE, LPAREN, SEMICOLON,RPAREN
     }
 
     public final Type type;

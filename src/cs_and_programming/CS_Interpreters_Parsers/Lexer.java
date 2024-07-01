@@ -1,7 +1,6 @@
 package cs_and_programming.CS_Interpreters_Parsers;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -17,7 +16,7 @@ import java.util.List;
             tokenize();
         }
 
-        public void tokenize() throws ParserException {
+        public List<cs_and_programming.CS_Interpreters_Parsers.Token> tokenize() throws ParserException {
             //anything that is in our BNF form
             //word config, update,compute
             //to go over each element and see what are we reading
@@ -68,6 +67,7 @@ import java.util.List;
                         }
                 }
             }
+            return null;
         }
 
         private String readNumber() {
