@@ -1,6 +1,7 @@
 package cs_and_programming.CS_Interpreters_Parsers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Parser {
@@ -52,6 +53,41 @@ public class Parser {
             return assignment();
         }
         return expression();
+    }
+
+    private ASTNode assignment() throws ParserException {
+        //x=expression()
+        Var varNode = var();
+        consume(Token.Type.ASSIGN);
+        ASTNode right = expression();
+        return new Assign()
+    }
+
+    private ASTNode declaration() throws ParserException {
+        consume(Token.Type.VAR); //var is identifier - X
+        Var varNode = var();
+        consume(Token.Type.ASSIGN);
+        //varNode -> left side, expre - right side
+        return new Vardecl(varNode, expression());
+    }
+
+    private Var var() throws ParserException {
+        Token token = currentToken;
+        consume(Token.Type.IDENTIFIER);
+        return new Var(token);
+    }
+
+    private ASTNode block() throws ParserException {
+        consume(Token.Type.LBRACE);
+        ArrayList<ASTNode> statements = new ArrayList<>();
+        while(currentToken.type != Token.Type.RBRACE){
+            statements.add(statement());
+            if (currentToken.type == Token.Type.SEMICOLON) {
+                consume(currentToken.type);
+            }
+        }
+        consume(Token.Type.RBRACE);
+        return new Block(statements);
     }
 
     private ASTNode term() throws ParserException {
