@@ -1,4 +1,6 @@
 package cs_and_programming.CS_Interpreters_Parsers;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Parser {
@@ -26,7 +28,30 @@ public class Parser {
 
     public ASTNode parse() throws ParserException {
         //will give the top level node to traverse it, we will return the root of the parsed expression if we can parse it
-        return term(); //term returns a Tree too, any expression is a term and term is a root of the Tree
+        //can be declaration-starts with var, block-curly bracets, assignment
+        List<ASTNode> statements = new ArrayList<>();
+        while (currentToken != null) {
+            statements.add(statement());
+            if (currentToken != null && currentToken.type == Token.Type.SEMICOLON) {
+                consume(currentToken.type);
+            }
+        }
+        //return term(); //term returns a Tree too, any expression is a term and term is a root of the Tree
+        return new Block(statements); //the whole program is a block of statements
+    }
+
+    private ASTNode statement() throws ParserException {
+        if (currentToken.type == Token.Type.LBRACE) {
+            //the block is starting
+            return block();
+        } else if (currentToken.type == Token.Type.VAR) {
+            //the block is starting
+            return declaration();
+        } else if (currentToken.type == Token.Type.IDENTIFIER) {
+            //the block is starting
+            return assignment();
+        }
+        return expression();
     }
 
     private ASTNode term() throws ParserException {
@@ -57,6 +82,7 @@ public class Parser {
             throw new ParserException("Unexpected token " + type);
         }
     }
+
     private ASTNode factor() throws ParserException {
         //factor is just an expression or a number <======
         //it has to be a number token and we just return it
