@@ -1,12 +1,16 @@
 package cs_and_programming.CS_Interpreters_Parsers;
 
 public class Assign extends ASTNode{
-    private String variable;
-    private ASTNode value;
 
-    public Assign(String variable, ASTNode value) {
-        this.variable = variable;
-        this.value = value;
+    Var left;
+    Token op;
+
+    ASTNode right;
+
+    public Assign(Var left, Token op, ASTNode right) {
+     this.left = left;
+     this.op = op;
+     this.right = right;
     }
 
     @Override
