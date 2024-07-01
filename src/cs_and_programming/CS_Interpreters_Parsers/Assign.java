@@ -4,7 +4,6 @@ public class Assign extends ASTNode{
 
     Var left;
     Token op;
-
     ASTNode right;
 
     public Assign(Var left, Token op, ASTNode right) {
@@ -15,8 +14,6 @@ public class Assign extends ASTNode{
 
     @Override
     public void print(String indent) {
-        System.out.println(indent+ "Assignment: " +
-                variable + " = ");
-        value.print(indent + " ");
+
     }
 }
