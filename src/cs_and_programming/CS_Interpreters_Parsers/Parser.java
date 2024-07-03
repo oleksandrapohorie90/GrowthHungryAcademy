@@ -60,7 +60,7 @@ public class Parser {
         Var varNode = var();
         consume(Token.Type.ASSIGN);
         ASTNode right = expression();
-        return new Assign()
+        return new Assign(varNode, right);
     }
 
     private ASTNode declaration() throws ParserException {
@@ -80,7 +80,7 @@ public class Parser {
     private ASTNode block() throws ParserException {
         consume(Token.Type.LBRACE);
         ArrayList<ASTNode> statements = new ArrayList<>();
-        while(currentToken.type != Token.Type.RBRACE){
+        while (currentToken.type != Token.Type.RBRACE) {
             statements.add(statement());
             if (currentToken.type == Token.Type.SEMICOLON) {
                 consume(currentToken.type);
