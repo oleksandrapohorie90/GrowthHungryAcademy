@@ -37,17 +37,7 @@ public class Main {
         List<String> removalNames = new ArrayList<>();
         removalNames.add("Fred");
 
-        //if you need to remove items while you are iterating over them
-        //for loop with 2 threads
-        for(Iterator<IEmployee> it = employees.iterator(); it.hasNext();){
-            IEmployee worker = it.next();//give the current element its pointing to
-            if (worker instanceof Employee){
-                Employee tmpWorker = (Employee) worker;
-                if(removalNames.contains(tmpWorker.firstName)){
-                    it.remove();
-                }
-            }
-        }
+        removeUndesirablesed(employees, removalNames);
 
         //enhanced for loop
         for (IEmployee worker : employees) {
@@ -68,6 +58,20 @@ public class Main {
         WeirdoNew larry = new WeirdoNew("David", "Larry", LocalDate.of(1995, 12, 30));
         //cannot be changed so no need for setters
         System.out.println();
+    }
+
+    private static void removeUndesirablesed(List<IEmployee> employees, List<String> removalNames) {
+        //if you need to remove items while you are iterating over them
+        //for loop with 2 threads
+        for(Iterator<IEmployee> it = employees.iterator(); it.hasNext();){
+            IEmployee worker = it.next();//give the current element its pointing to
+            if (worker instanceof Employee){
+                Employee tmpWorker = (Employee) worker;
+                if(removalNames.contains(tmpWorker.firstName)){
+                    it.remove();
+                }
+            }
+        }
     }
 
 }
