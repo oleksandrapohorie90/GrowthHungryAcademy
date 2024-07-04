@@ -2,8 +2,8 @@ package cs_and_programming.CS_Interpreters_Parsers;
 
 public class NumberNode extends ASTNode{
 
-        Token numberToken;
-        final int value;
+        public Token numberToken;
+        public final int value;
 
         public NumberNode (Token numberToken) {
             //all nodes will either be binary operation or a number, each of them is left and right node
