@@ -3,6 +3,7 @@ package Github_200days.employees_advanced_oop.main;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -35,6 +36,18 @@ public class Main {
 
         List<String> removalNames = new ArrayList<>();
         removalNames.add("Fred");
+
+        //if you need to remove items while you are iterating over them
+        //for loop with 2 threads
+        for(Iterator<IEmployee> it = employees.iterator(); it.hasNext();){
+            IEmployee worker = it.next();//give the current element its pointing to
+            if (worker instanceof Employee){
+                Employee tmpWorker = (Employee) worker;
+                if(removalNames.contains(tmpWorker.firstName)){
+                    it.remove();
+                }
+            }
+        }
 
         //enhanced for loop
         for (IEmployee worker : employees) {
