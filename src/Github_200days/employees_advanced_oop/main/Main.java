@@ -26,7 +26,7 @@ public class Main {
 // say more w/ less
         int totalSalaries = 0;
         IEmployee employee = null;
-        List <IEmployee> employees = new LinkedList<>();//linked list doesnt use arr internally
+        List<IEmployee> employees = new LinkedList<>();//linked list doesnt use arr internally
 
         while (peopleMat.find()) {
             employee = Employee.createEmployee(peopleMat.group());
@@ -37,15 +37,16 @@ public class Main {
         removalNames.add("Fred");
 
         //enhanced for loop
-       for(IEmployee worker : employees){
-           if(removalNames.contains(((Employee)worker).firstName))
-           {
-               employees.remove(worker);
-           }
-           System.out.println(worker.toString());
-           totalSalaries += worker.getSalary();
-       }
-
+        for (IEmployee worker : employees) {
+            if (worker instanceof Employee) {
+                Employee tmpWorker = (Employee) worker;
+                if (removalNames.contains(((Employee) worker).firstName)) {
+                    employees.remove(worker);
+                }
+            }
+            System.out.println(worker.toString());
+            totalSalaries += worker.getSalary();
+        }
 
 
         NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
