@@ -1,8 +1,8 @@
 package cs_and_programming.CS_Interpreters_Parsers;
 
 public class Vardecl extends ASTNode{
-    Var varNode;
-    ASTNode expr;
+    public Var varNode;
+    public ASTNode expr;
 
     //declaration has below
     public Vardecl(Var varNode, ASTNode expr) {
