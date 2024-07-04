@@ -9,6 +9,7 @@ import java.util.Stack;
 
 public class SemanticAnalyzer {
     private final Stack<Set<String>> scopes = new Stack<>();
+//checks if var are used after they are declared
 
     //parser returns the root node
     //go thru all the children and check if everything is good
