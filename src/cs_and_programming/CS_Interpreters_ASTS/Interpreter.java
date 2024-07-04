@@ -54,8 +54,9 @@ public class Interpreter {
             return valueTable.get(varName);
 
         } else if (node instanceof Assign assignNode) {
-
-
+            int rightExpressionResult = visit(assignNode.right);
+            valueTable.put(assignNode.left.name, rightExpressionResult);
+            return rightExpressionResult;
         } else if (node instanceof Block block) {
             int result = 0;
             for (ASTNode statement : block.statements) {
