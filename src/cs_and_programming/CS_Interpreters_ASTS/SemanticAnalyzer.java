@@ -23,6 +23,7 @@ public class SemanticAnalyzer {
                 //unless there is an error
 
             }else if (node instanceof Vardecl){
+                //Vardecl varDeclNode = (Var)
 
             }else if (node instanceof VariableNode){
                 String varName= ((Var)node).name;
@@ -31,7 +32,13 @@ public class SemanticAnalyzer {
 
                 }
 
-            }else if (node instanceof Assign){
+            }else if (node instanceof Assign assignNode){
+                String varName = assignNode.left.name;
+                if(!isvariableDefined(varName)){
+                    throw new ParserException("Unexpected identifier: " + varName);
+
+                }
+                visit(assignNode.right);
 
             }else if (node instanceof Block){
 
