@@ -65,8 +65,7 @@ public class Main {
         //for loop with 2 threads
         for(Iterator<IEmployee> it = employees.iterator(); it.hasNext();){
             IEmployee worker = it.next();//give the current element its pointing to
-            if (worker instanceof Employee){
-                Employee tmpWorker = (Employee) worker;
+            if (worker instanceof Employee tmpWorker){//pattern matching
                 if(removalNames.contains(tmpWorker.firstName)){
                     it.remove();
                 }
