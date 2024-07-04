@@ -34,16 +34,16 @@ public class Main {
             employees.add(employee);
         }
 
-        List<String> removalNames = new ArrayList<>();
-        removalNames.add("Fred");
+        List<String> undesirables = List.of("Wilma5","Barney4","Fred2");//to create a list
+        //undesirables.add("Fred");
 
-        removeUndesirablesed(employees, removalNames);
+        removeUndesirablesed(employees, undesirables);
 
         //enhanced for loop
         for (IEmployee worker : employees) {
             if (worker instanceof Employee) {
                 Employee tmpWorker = (Employee) worker;
-                if (removalNames.contains(((Employee) worker).firstName)) {
+                if (undesirables.contains(((Employee) worker).firstName)) {
                     employees.remove(worker);
                 }
             }
