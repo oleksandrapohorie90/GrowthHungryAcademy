@@ -42,6 +42,9 @@ public class Interpreter {
         } else if (node instanceof NumberNode numberNode) {
             return numberNode.value;
         } else if (node instanceof Vardecl varDecl) {
+            int rightExpressionResult = visit(varDecl.expr);
+            valueTable.put(varDecl.varNode.name, rightExpressionResult);
+            return rightExpressionResult;
 
         } else if (node instanceof Var var) {
             String varName = var.name;
