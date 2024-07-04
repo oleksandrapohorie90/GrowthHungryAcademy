@@ -19,8 +19,26 @@ public class Interpreter {
     //our program will return the execution of the last statement
     public int visit(ASTNode node) throws ParserException {
 
-        if (node instanceof BinaryOpNode) {
+        if (node instanceof BinaryOpNode binaryOpNode) {
+        int left = visit(binaryOpNode.left);
+        int right = visit(binaryOpNode.right);
 
+        //depending on the token type we will do an operation we need
+            switch (binaryOpNode.operationToken.type){
+                case MINUS -> {
+                    return left-right;
+                }
+                case PLUS ->{
+                    return left+right;
+                }
+                case DIVIDE ->{
+                    return left/right;
+                }
+                case MULTIPLY ->{
+                    return left*right;
+                }
+                default -> throw new ParserException("Unexpected token: " + binaryOpNode.operationToken);
+            }
         } else if (node instanceof NumberNode numberNode) {
             return numberNode.value;
         } else if (node instanceof Vardecl varDecl) {
