@@ -34,6 +34,13 @@ public class Main {
             employees.add(employee);
         }
 
+        IEmployee first = employees.get(0);
+        IEmployee second = employees.get(1);
+        IEmployee third = employees.get(2);
+
+        employees.remove(first);
+        employees.remove(1);
+
         List<String> undesirables = List.of("Wilma5","Barney4","Fred2");//to create a list
         //undesirables.add("Fred");
 
