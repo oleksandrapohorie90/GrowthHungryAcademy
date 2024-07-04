@@ -15,10 +15,23 @@ public class SemanticAnalyzer {
             //go thru each node
 
             if(node instanceof BinaryOpNode){
+                visit(((BinaryOpNode)node).left);
+                visit(((BinaryOpNode)node).right);
 
             }else if (node instanceof NumberNode){
+                //nothing, semantic analyzer doesn't return anything
+                //unless there is an error
+
+            }else if (node instanceof Vardecl){
 
             }else if (node instanceof VariableNode){
+                String varName= ((Var)node).name;
+                if(!isvariableDefined(varName)){
+                    throw new ParserException("Unexpected identifier: " + varName);
+
+                }
+
+            }else if (node instanceof Assign){
 
             }else if (node instanceof Block){
 
