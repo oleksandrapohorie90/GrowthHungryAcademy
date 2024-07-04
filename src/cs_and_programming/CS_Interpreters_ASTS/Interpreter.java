@@ -67,7 +67,6 @@ public class Interpreter {
             throw new ParserException("Unexpected AST Node: " + node.getClass().getCanonicalName());
         }
 
-        return 0;
     }
 
 }
