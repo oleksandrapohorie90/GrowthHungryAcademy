@@ -13,14 +13,22 @@ public class IfSortedArrayHowManyIntsNotInOrder {
         //iterate over the array again
         //else
         //stop the algorithm, array is sorted
-        //time complexity in worst case: O()
-        //Space complexity in worst case: O()
+        //time complexity in worst case: O(n^2)
+        //Space complexity in worst case: O() - in normal case you dont need to create a copy of sorted_copy array
+
 
         int n = heights.length;
         int[] sorted_copy = new int[n];
         for (int i = 0; i < n; i++) {
             sorted_copy[i] = heights[i];
         }
+
+        //worst case: a decreasing (nondecreasing) array
+        //example: [5,4,3,2,1]
+        //i=0 ->4 5 3 2 1
+        //i=1 ->4 3 5 2 1
+        //i=2 ->4 3 2 5 1
+        //i=3 ->4 3 2 1 5
         while (true) {
             boolean swapped = false;
             for (int i = 0; i < n - 1; i++) {
