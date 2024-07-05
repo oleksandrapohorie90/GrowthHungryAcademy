@@ -1,6 +1,6 @@
 package algos_and_ds.DS_BASIC_SORTING_ALGORITHMS;
 
-public class IfSortedArrayHowManyIntsNotInOrder {
+public class HeightChecker_BubbleSort {
 
     public int heightChecker(int[] heights) {
         //Bubble sort
