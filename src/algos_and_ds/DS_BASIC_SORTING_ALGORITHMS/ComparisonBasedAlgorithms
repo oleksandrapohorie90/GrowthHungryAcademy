@@ -8,5 +8,8 @@ and puts at the 2nd position, keep finding min elements and put in the position 
 7. selection
 8. intro
 
+Where are those tasks that Azret showed in the lecture ?
+
 (1)Count sort is not CBSA - comparison based sorting algorithm
-(2)Radix sort - if you have elements
+(2)Radix sort - if you have elements, lets take the lowest possible digit, sort this numbers based on the last digit
+also, respect the relative order:
