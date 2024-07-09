@@ -1,8 +1,8 @@
-package cs_and_programming.CS_Interpreters_ASTS;
+package cs_and_programming.CS_Interpreters_Semantic_Analysis;
 
 import cs_and_programming.CS_Interpreters_Parsers.*;
+import cs_and_programming.CS_Interpreters_Parsers.Var;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
@@ -34,7 +34,7 @@ public class SemanticAnalyzer {
             //put varName to current scope
             scopes.peek().add(varName);//take the latest element, declare var in scope
 
-        } else if (node instanceof Var) {
+        } else if (node instanceof cs_and_programming.CS_Interpreters_Parsers.Var) {
             String varName = ((Var) node).name;
             if (!isvariableDefined(varName)) {
                 throw new ParserException("Unexpected identifier: " + varName);

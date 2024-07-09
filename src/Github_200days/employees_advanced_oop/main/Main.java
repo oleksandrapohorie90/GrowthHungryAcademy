@@ -27,12 +27,15 @@ public class Main {
 // say more w/ less
         int totalSalaries = 0;
         IEmployee employee = null;
-        List<IEmployee> employees = new LinkedList<>();//linked list doesnt use arr internally
+        //List<IEmployee> employees = new LinkedList<>();//linked list doesnt use arr internally
+        List<IEmployee> employees = new ArrayList<>(List.of());//linked list doesnt use arr internally
 
         while (peopleMat.find()) {
             employee = Employee.createEmployee(peopleMat.group());
             employees.add(employee);
         }
+        IEmployee myEmp = employees.get(1);
+        System.out.println(employees.contains(myEmp));
 
         IEmployee first = employees.get(0);
         IEmployee second = employees.get(1);
@@ -41,8 +44,11 @@ public class Main {
         employees.remove(first);
         employees.remove(1);
 
+
         List<String> undesirables = List.of("Wilma5","Barney4","Fred2");//to create a list
         //undesirables.add("Fred");
+        List<String>newStrings = new ArrayList<>();
+        newStrings.addAll(undesirables);//add the whole collection
 
         removeUndesirablesed(employees, undesirables);
 
@@ -79,6 +85,7 @@ public class Main {
             }
         }
     }
+
 
 }
 
