@@ -2,16 +2,15 @@ package Github_200days.employees_advanced_oop.main;
 
 import java.text.NumberFormat;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 
 public class Main {
     public static void main(String[] args) {
         String peopleText = """
                 Flinstone, Fred, 1/1/1900, Programmer, {locpd=3000,yoe=14,iq=100}
+                Flinstone1, Fred, 1/1/1900, Programmer, {locpd=5000,yoe=14,iq=100}
+                Flinstone2, Fred, 1/1/1900, Programmer, {locpd=9000,yoe=14,iq=100}
                 Rubble, Barney, 2/2/1905, Manager, {orgSize=300,dr=10}
                 Flinstone, Wilma, 3/3/1910, Analyst,{projectCount=9}
                 Rubble, Betty, 4/4/1915, CEO,{avgStockPrice=300}
@@ -41,21 +40,33 @@ public class Main {
         System.out.println(employees.contains(employee1));
 
         System.out.println(myEmp.equals(employee1));
+        //indexOf, contains, containsAll, remove,
 
-        IEmployee first = employees.get(0);
-        IEmployee second = employees.get(1);
-        IEmployee third = employees.get(2);
+        //an anonymous class - Comparator
+        employees.sort(new Comparator<IEmployee>() {
+            @Override
+            public int compare(IEmployee o1, IEmployee o2) {
+                if(o1 instanceof Employee && o2 instanceof Employee) {
 
-        employees.remove(first);
-        employees.remove(1);
+                }
+                return 0;
+            }
+        });
 
-
-        List<String> undesirables = List.of("Wilma5","Barney4","Fred2");//to create a list
-        //undesirables.add("Fred");
-        List<String>newStrings = new ArrayList<>();
-        newStrings.addAll(undesirables);//add the whole collection
-
-        removeUndesirablesed(employees, undesirables);
+//        IEmployee first = employees.get(0);
+//        IEmployee second = employees.get(1);
+//        IEmployee third = employees.get(2);
+//
+//        employees.remove(first);
+//        employees.remove(1);
+//
+//
+//        List<String> undesirables = List.of("Wilma5","Barney4","Fred2");//to create a list
+//        //undesirables.add("Fred");
+//        List<String>newStrings = new ArrayList<>();
+//        newStrings.addAll(undesirables);//add the whole collection
+//
+//        removeUndesirablesed(employees, undesirables);
 
         //enhanced for loop
         for (IEmployee worker : employees) {
