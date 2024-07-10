@@ -47,7 +47,9 @@ public class Main {
             @Override
             public int compare(IEmployee o1, IEmployee o2) {
                 if(o1 instanceof Employee emp1 && o2 instanceof Employee emp2) {
-                    return emp1.lastName.compareTo(emp2.lastName);
+                    int lnameResult = emp1.lastName.compareTo(emp2.lastName);
+                    return lnameResult !=0 ? lnameResult : Integer.compare(emp1.getSalary(), emp2.getSalary());
+
 
                 }
                 return 0;
@@ -62,7 +64,7 @@ public class Main {
 //        employees.remove(1);
 //
 //
-//        List<String> undesirables = List.of("Wilma5","Barney4","Fred2");//to create a list
+        List<String> undesirables = List.of("Wilma5","Barney4","Fred2");//to create a list
 //        //undesirables.add("Fred");
 //        List<String>newStrings = new ArrayList<>();
 //        newStrings.addAll(undesirables);//add the whole collection
