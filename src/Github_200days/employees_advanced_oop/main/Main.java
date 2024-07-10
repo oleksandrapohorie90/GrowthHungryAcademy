@@ -42,7 +42,7 @@ public class Main {
         System.out.println(myEmp.equals(employee1));
         //indexOf, contains, containsAll, remove,
 
-        Collections.sort( employees, Comparator.naturalOrder());
+        //Collections.sort(employees, Comparator.naturalOrder());
 //            if (o1 instanceof Employee emp1 && o2 instanceof Employee emp2) {
 //                int lnameResult = emp1.lastName.compareTo(emp2.lastName);
 //                return lnameResult != 0 ? lnameResult : Integer.compare(emp1.getSalary(), emp2.getSalary());
