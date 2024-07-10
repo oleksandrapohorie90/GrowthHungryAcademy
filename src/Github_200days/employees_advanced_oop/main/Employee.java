@@ -59,12 +59,21 @@ public abstract class Employee implements IEmployee {
         return String.format("%s, %s, %s", lastName, firstName, moneyFormat.format(getSalary()), moneyFormat.format(getBonus()));
     }
 
-    private static final class DummyEmployee extends Employee implements IEmployee {
+    private static final class DummyEmployee extends Employee{
         @Override
         public int getSalary() {
             return 0;
         }
+
+        @Override
+        public int compare(IEmployee o1, IEmployee o2) {
+            return 0;
+        }
     }
 
-
+    @Override
+    public int compare(IEmployee o) {
+        Employee other = (Employee) o;
+        return this.lastName.compareTo(other.lastName);
+    }
 }

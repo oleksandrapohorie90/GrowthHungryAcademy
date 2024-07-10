@@ -5,5 +5,5 @@ import java.util.Comparator;
 public interface IEmployee extends Comparator<IEmployee> {
     int getSalary();
 
-    int compareTo(IEmployee o);
+    int compare(IEmployee o);
 }
