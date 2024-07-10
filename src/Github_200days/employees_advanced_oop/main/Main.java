@@ -42,20 +42,20 @@ public class Main {
         System.out.println(myEmp.equals(employee1));
         //indexOf, contains, containsAll, remove,
 
-        Collections.sort(employees, (o1, o2) -> {
-            if(o1 instanceof Employee emp1 && o2 instanceof Employee emp2) {
-                int lnameResult = emp1.lastName.compareTo(emp2.lastName);
-                return lnameResult !=0 ? lnameResult : Integer.compare(emp1.getSalary(), emp2.getSalary());
-
-
-            }
-            return 0;
-        });
+        Collections.sort( employees, Comparator.naturalOrder());
+//            if (o1 instanceof Employee emp1 && o2 instanceof Employee emp2) {
+//                int lnameResult = emp1.lastName.compareTo(emp2.lastName);
+//                return lnameResult != 0 ? lnameResult : Integer.compare(emp1.getSalary(), emp2.getSalary());
+//
+//
+//            }
+//            return 0;
+        //});
         //an anonymous class - Comparator, replaced by lambda
         employees.sort((o1, o2) -> {
-            if(o1 instanceof Employee emp1 && o2 instanceof Employee emp2) {
+            if (o1 instanceof Employee emp1 && o2 instanceof Employee emp2) {
                 int lnameResult = emp1.lastName.compareTo(emp2.lastName);
-                return lnameResult !=0 ? lnameResult : Integer.compare(emp1.getSalary(), emp2.getSalary());
+                return lnameResult != 0 ? lnameResult : Integer.compare(emp1.getSalary(), emp2.getSalary());
 
 
             }
@@ -70,7 +70,7 @@ public class Main {
 //        employees.remove(1);
 //
 //
-        List<String> undesirables = List.of("Wilma5","Barney4","Fred2");//to create a list
+        List<String> undesirables = List.of("Wilma5", "Barney4", "Fred2");//to create a list
         undesirables.sort(Comparator.naturalOrder());
         System.out.println(undesirables);
 //        //undesirables.add("Fred");
@@ -100,19 +100,19 @@ public class Main {
 //        System.out.println();
 //    }
 
-    private static void removeUndesirablesed(List<IEmployee> employees, List<String> removalNames) {
-        //if you need to remove items while you are iterating over them
-        //for loop with 2 threads
-        for(Iterator<IEmployee> it = employees.iterator(); it.hasNext();){
-            IEmployee worker = it.next();//give the current element its pointing to
-            if (worker instanceof Employee tmpWorker){//pattern matching
-                if(removalNames.contains(tmpWorker.firstName)){
-                    it.remove();
-                }
-            }
-        }
+//    private static void removeUndesirablesed(List<IEmployee> employees, List<String> removalNames) {
+//        //if you need to remove items while you are iterating over them
+//        //for loop with 2 threads
+//        for(Iterator<IEmployee> it = employees.iterator(); it.hasNext();){
+//            IEmployee worker = it.next();//give the current element its pointing to
+//            if (worker instanceof Employee tmpWorker){//pattern matching
+//                if(removalNames.contains(tmpWorker.firstName)){
+//                    it.remove();
+//                }
+//            }
+//        }
+   }
+
+
     }
-
-
-}
 

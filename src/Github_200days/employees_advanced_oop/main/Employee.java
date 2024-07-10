@@ -1,5 +1,4 @@
 package Github_200days.employees_advanced_oop.main;
-
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -42,10 +41,10 @@ public abstract class Employee implements IEmployee {
                 case "Manager" -> new Manager(employeeText);
                 case "Analyst" -> new Analyst(employeeText);
                 case "CEO" -> new CEO(employeeText);
-                default -> () -> 0;//method that takes no input and returns 0 or 1 output
+                default -> new DummyEmployee();//method that takes no input and returns 0 or 1 output
             };
         } else {
-            return () -> 0;
+            return new DummyEmployee();
         }
     }
 

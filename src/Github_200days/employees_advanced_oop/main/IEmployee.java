@@ -1,5 +1,9 @@
 package Github_200days.employees_advanced_oop.main;
 
-public interface IEmployee {
+import java.util.Comparator;
+
+public interface IEmployee extends Comparator<IEmployee> {
     int getSalary();
+
+    int compareTo(IEmployee o);
 }
