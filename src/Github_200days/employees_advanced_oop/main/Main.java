@@ -46,7 +46,8 @@ public class Main {
         employees.sort(new Comparator<IEmployee>() {
             @Override
             public int compare(IEmployee o1, IEmployee o2) {
-                if(o1 instanceof Employee && o2 instanceof Employee) {
+                if(o1 instanceof Employee emp1 && o2 instanceof Employee emp2) {
+                    return emp1.lastName.compareTo(emp2.lastName);
 
                 }
                 return 0;
