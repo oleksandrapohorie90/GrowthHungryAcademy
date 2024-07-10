@@ -42,18 +42,24 @@ public class Main {
         System.out.println(myEmp.equals(employee1));
         //indexOf, contains, containsAll, remove,
 
-        //an anonymous class - Comparator
-        employees.sort(new Comparator<IEmployee>() {
-            @Override
-            public int compare(IEmployee o1, IEmployee o2) {
-                if(o1 instanceof Employee emp1 && o2 instanceof Employee emp2) {
-                    int lnameResult = emp1.lastName.compareTo(emp2.lastName);
-                    return lnameResult !=0 ? lnameResult : Integer.compare(emp1.getSalary(), emp2.getSalary());
+        Collections.sort(employees, (o1, o2) -> {
+            if(o1 instanceof Employee emp1 && o2 instanceof Employee emp2) {
+                int lnameResult = emp1.lastName.compareTo(emp2.lastName);
+                return lnameResult !=0 ? lnameResult : Integer.compare(emp1.getSalary(), emp2.getSalary());
 
 
-                }
-                return 0;
             }
+            return 0;
+        });
+        //an anonymous class - Comparator, replaced by lambda
+        employees.sort((o1, o2) -> {
+            if(o1 instanceof Employee emp1 && o2 instanceof Employee emp2) {
+                int lnameResult = emp1.lastName.compareTo(emp2.lastName);
+                return lnameResult !=0 ? lnameResult : Integer.compare(emp1.getSalary(), emp2.getSalary());
+
+
+            }
+            return 0;
         });
 
 //        IEmployee first = employees.get(0);
@@ -65,6 +71,8 @@ public class Main {
 //
 //
         List<String> undesirables = List.of("Wilma5","Barney4","Fred2");//to create a list
+        undesirables.sort(Comparator.naturalOrder());
+        System.out.println(undesirables);
 //        //undesirables.add("Fred");
 //        List<String>newStrings = new ArrayList<>();
 //        newStrings.addAll(undesirables);//add the whole collection
@@ -72,25 +80,25 @@ public class Main {
 //        removeUndesirablesed(employees, undesirables);
 
         //enhanced for loop
-        for (IEmployee worker : employees) {
-            if (worker instanceof Employee) {
-                Employee tmpWorker = (Employee) worker;
-                if (undesirables.contains(((Employee) worker).firstName)) {
-                    employees.remove(worker);
-                }
-            }
-            System.out.println(worker.toString());
-            totalSalaries += worker.getSalary();
-        }
-
-
-        NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
-        System.out.printf("The total payout should be %s%n", currencyInstance.format(totalSalaries));
-
-        WeirdoNew larry = new WeirdoNew("David", "Larry", LocalDate.of(1995, 12, 30));
-        //cannot be changed so no need for setters
-        System.out.println();
-    }
+//        for (IEmployee worker : employees) {
+//            if (worker instanceof Employee) {
+//                Employee tmpWorker = (Employee) worker;
+//                if (undesirables.contains(((Employee) worker).firstName)) {
+//                    employees.remove(worker);
+//                }
+//            }
+//            System.out.println(worker.toString());
+//            totalSalaries += worker.getSalary();
+//        }
+//
+//
+//        NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
+//        System.out.printf("The total payout should be %s%n", currencyInstance.format(totalSalaries));
+//
+//        WeirdoNew larry = new WeirdoNew("David", "Larry", LocalDate.of(1995, 12, 30));
+//        //cannot be changed so no need for setters
+//        System.out.println();
+//    }
 
     private static void removeUndesirablesed(List<IEmployee> employees, List<String> removalNames) {
         //if you need to remove items while you are iterating over them
