@@ -28,7 +28,7 @@ public class Main {
         int totalSalaries = 0;
         IEmployee employee = null;
         //List<IEmployee> employees = new LinkedList<>();//linked list doesnt use arr internally
-        List<IEmployee> employees = new ArrayList<>(List.of());//linked list doesnt use arr internally
+        List<IEmployee> employees = new ArrayList<>(16);//linked list doesnt use arr internally
 
         while (peopleMat.find()) {
             employee = Employee.createEmployee(peopleMat.group());
@@ -36,6 +36,11 @@ public class Main {
         }
         IEmployee myEmp = employees.get(1);
         System.out.println(employees.contains(myEmp));
+
+        IEmployee employee1 = Employee.createEmployee("Flinstone5, Fred5, 1/1/1900, Programmer, {locpd=5,yoe=10,iq=100}");
+        System.out.println(employees.contains(employee1));
+
+        System.out.println(myEmp.equals(employee1));
 
         IEmployee first = employees.get(0);
         IEmployee second = employees.get(1);
