@@ -25,10 +25,10 @@ public class SingleNumber {
     public int singleNumber(int[] nums) {
         //each num appears twice except 1 number
         //4xor1xor2xor1xor2 = 4xor1xor1xor2xor2
-        int a = 0; //result var
+        int result = 0; //result var
         for (int i : nums) {
-            a ^= i; //xor all the numbers in the array
+            result ^= i; //xor all the numbers in the array
         }
-        return a;
+        return result;
     }
 }
