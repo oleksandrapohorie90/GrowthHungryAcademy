@@ -15,5 +15,11 @@ public class MoveZeroes {
             nums[j] = 0;//this sets the current position nums[j] to 0
             j++;
         }
+        /*
+        swap(nums,i,j)
+        t= nums[i]
+        nums[i] = nums[j]
+        nums[j] = t
+         */
     }
 }
