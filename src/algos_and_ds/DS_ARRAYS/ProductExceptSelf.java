@@ -21,7 +21,6 @@ public class ProductExceptSelf {
         nums[1..3] = [2,3,4]
         nums[0..3] = [1,2,3,4]
 
-
         int n = nums.length;
         int[] pref_mul = new int[n];
         int[] sufff_mul = new int[n];
@@ -40,5 +39,35 @@ public class ProductExceptSelf {
         indices  i=1..n-2, result[i] -? pref_mul[i-1] * suff_mul[i+1]
                                                0..i-1        i+1..n-1
          */
+        int n = nums.length;
+        int [] pref_mul = new int[n];
+        int [] suff_mul = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            pref_mul[i] =1;
+            suff_mul[i] = 1;
+        }
+
+        pref_mul[0] = nums[0];
+        for (int i = 1; i < n; i++) {
+            pref_mul[i] = pref_mul[i-1]*nums[i];
+        }
+
+        suff_mul[n-1] = nums[n-1];
+        for (int i = n-2; i >=0 ; i--) {
+            suff_mul[i] = nums[i] * suff_mul[i+1];
+        }
+
+        int[]result = new int[n];
+        result[0] = suff_mul[1];
+        result[n-1] = pref_mul[n-2];
+        for (int i = 1; i < n-1; i++) {
+            result[i] = pref_mul[i-1]*suff_mul[i+1];
+        }
+        return  result;
+
+
+
+
     }
 }
