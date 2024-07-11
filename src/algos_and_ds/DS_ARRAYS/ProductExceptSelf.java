@@ -43,13 +43,13 @@ public class ProductExceptSelf {
         int [] pref_mul = new int[n];
         int [] suff_mul = new int[n];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) { //O(n)
             pref_mul[i] =1;
             suff_mul[i] = 1;
         }
 
         pref_mul[0] = nums[0];
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i < n; i++) { //O(n)
             pref_mul[i] = pref_mul[i-1]*nums[i];
         }
 
@@ -58,15 +58,16 @@ public class ProductExceptSelf {
             suff_mul[i] = nums[i] * suff_mul[i+1];
         }
 
-        int[]result = new int[n];
+        int[]result = new int[n]; //O(n) space
         result[0] = suff_mul[1];
         result[n-1] = pref_mul[n-2];
-        for (int i = 1; i < n-1; i++) {
+        for (int i = 1; i < n-1; i++) { //O(n)
             result[i] = pref_mul[i-1]*suff_mul[i+1];
         }
         return  result;
 
-
+        //Time: O(n)
+        //Space: O(n)
 
 
     }
