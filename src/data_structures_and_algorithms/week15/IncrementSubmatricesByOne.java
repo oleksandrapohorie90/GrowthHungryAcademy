@@ -1,6 +1,6 @@
 package data_structures_and_algorithms.week15;
 
-public class RangeAddQueries {
+public class IncrementSubmatricesByOne {
 
     public int[][] rangeAddQueries(int n, int[][] queries) {
         //create a bigger array, so that I dont have to care about going out of bounds in any computations
@@ -31,7 +31,7 @@ public class RangeAddQueries {
         //[my array 'a' is (n+2)x(n+2), so I copy results to this array 'r'
         //that i will return
         int[][] r = new int[n][n];
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {//O(N^2)
             for (int j = 0; j < n; j++) {
                 r[i][j] = a[i + 1][j + 1];
             }

@@ -11,4 +11,9 @@ public class Analyst extends Employee{
     public int getSalary() {
         return 0;
     }
+
+    @Override
+    public int compare(IEmployee o1, IEmployee o2) {
+        return 0;
+    }
 }
