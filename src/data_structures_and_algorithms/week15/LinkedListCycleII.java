@@ -3,7 +3,7 @@ package data_structures_and_algorithms.week15;
 public class LinkedListCycleII {
 
     //Definition for singly-linked list.
-    static class ListNode {
+    class ListNode {
         int val;
         ListNode next;
 
