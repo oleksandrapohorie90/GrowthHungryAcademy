@@ -1,0 +1,20 @@
+<program> ::= <statement> | <program> <statement>
+
+<statement> ::= <assignment> ";" | <if-statement> | <print-statement> ";"
+
+<assignment> ::= <identifier> "=" <expression>
+
+<if-statement> ::= "if" "(" <expression> ")" "then" <block> ["else" <block>]
+
+<print-statement> ::= "print" <identifier>
+
+<block> ::= "{" <program> "}"
+
+<expression> ::= <term> | <expression> "+" <term> | <expression> ">" <term>
+
+<term> ::= <factor> | <term> "*" <factor> | <term> "/" <factor>
+
+<factor> ::= <number> | <identifier> | "(" <expression> ")"
+
+<identifier> ::= "x" | "y"  // Simplified for this example
+<number> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"

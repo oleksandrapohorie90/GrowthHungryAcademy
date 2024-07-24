@@ -1,0 +1,64 @@
+Syntax analysis: if we have an assignment we have right/left side, semicolon
+================
+we construct an AST during syntax analysis: to make sure it is processed by compiler to run the code
+x+1, but we never declared x, parser says ok but symantic analysis will warn we never defined x variable
+
+Interpreter
+Compiler
+
+CS_Interpreters_Lexer.Lexer issue: variable name cannot start w/ a digit    =>      int 123abc = 10;
+Parser issue: missing expression after assignment     =>      int x = ;
+Interpreter issue: division by zero                   =>      int y = 10/0;
+
+Tree graph where we have nodes
+All expressions go through lexers, parsers and then parser needs to verify
+==============================================================================
+expression is a term or term+ smth
+3     +   5 * (10 - 4)
+term      valid expression <= Rule 1 => but expression is left and right plus or minus, we have left and right thats it, so it is a term, we cannot say the whole thing left side minus smth
+|             |
+factor       term plus smth/minus smth
+|              |
+number       factor * term => Rule 2 => factor is 5(as to be a factor, we need to verify it), but factor is a num or expression in parenthesis, so its a number
+              |         |
+             number   term is a factor mult by smth by term or divided
+                        |
+                      factor => Rule 3
+                        |
+                      parenthesis expression => Rule 4 - can be a number or parenthesis expression "(" => 10 -4 has to be a valid expression
+                        |              |
+                      term    -     expression
+                       |                   |
+                      factor>>number=10   can be a term >> number = 4
+ => factor can be  number or parenthesis(we dont have any in the below example)
+
+<expression> ::= <term> | <term> "+" <expression> | <term> - <expression>
+<term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
+<factor> ::= <number> | "(" <expression> ")"
+=====================================================================
+for "3+5*(10-4)" CS_Interpreters_Lexer.Lexer produced this:
+Tokens:
+Token {type=NUMBER, value='3'}
+Token {type=PLUS, value='+'}
+Token {type=NUMBER, value='5'}
+Token {type=MULTIPLY, value='*'}
+Token {type=LPAREN, value='('}
+Token {type=NUMBER, value='10'}
+Token {type=MINUS, value='-'}
+Token {type=NUMBER, value='4'}
+Token {type=RPAREN, value=')'}
+
+BNF FOR ARITHMETIC EXPRESSIONS:
+<expression> ::= <term> | <term> "+" <expression> | <term> "-" <expression>
+<term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
+<factor> ::= <number> | "(" <expression> ")"
+
+simplify and say we want to support multiplication and division => 3 * 8 * 7 / 1 => term
+                                                                  everything is a term and term is a factor times or divide by term
+<expression> ::= <term>
+<term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
+<factor> ::= <number>
+
+=========================
+Parser that receives tokens
+Construction of the tree - everything is a node - node is a binary operation like * / OR just a number: 2 types
