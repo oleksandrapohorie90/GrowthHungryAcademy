@@ -17,4 +17,18 @@ public class RangeSumQueryWithSqrtDecomposition {
             block_sum[i / sqrt] += nums[i];
         }
     }
+
+    public int sumRange(int left, int right) {
+        int sum = 0;
+        for (int i = left; i <= right; i++) {
+            if (i % sqrt == 0 && i + sqrt - 1 <= right) {
+                sum += block_sum[i / sqrt];
+                i += sqrt;
+            } else {
+                sum += nums[i];
+                i++;
+            }
+        }
+        return sum;
+    }
 }
