@@ -3,8 +3,17 @@ package data_structures_and_algorithms.week15;
 import java.util.Arrays;
 
 public class SlidingWindowMax {
+
+    public static void main(String[] args) {
+        int[] nums = {5,6,7,8,91,2,3,4,5,4};
+        int k = 10;
+        //debugged
+        maxSlidingWindow(nums, k);
+
+    }
+
     //TODO: go over again line 25-51
-    public int[] maxSlidingWindow(int[] nums, int k) {
+    public static int[] maxSlidingWindow(int[] nums, int k) {
         // Build sqrt decomposition with operation "max" for nums.
         int n = nums.length;
         int sqrt = (int) Math.ceil(Math.sqrt(n));
