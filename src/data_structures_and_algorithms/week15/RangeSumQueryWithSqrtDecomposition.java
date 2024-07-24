@@ -18,6 +18,23 @@ public class RangeSumQueryWithSqrtDecomposition {
         }
     }
 
+    //T prefix sums: O(n)
+    //T sqrt decomposition: O(1)
+//    public void update(int index, int new_value) {
+//        //in case of prefix sums
+//        nums[index] = new_value;
+//        pref[0] = nums[0];
+//        for i = 1...n - 1
+//        pref[i] = pref[i - 1] + nums[i];
+//
+//        //in case of SQRT decomp - T: O(1)
+//        int old_value = nums[index];
+//        int block = index / sqrt;
+//        block_sum[block] -= old_value;
+//        block_sum[block] += new_value;
+//        nums[index] = new_value;
+//    }
+
     //T(prefix sums): O(1)
     //T(sqrt decomposition): O(sqrt(n))
     public int sumRange(int left, int right) {
