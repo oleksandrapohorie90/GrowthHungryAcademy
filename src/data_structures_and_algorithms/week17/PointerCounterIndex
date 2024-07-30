@@ -1,0 +1,5 @@
+index - is a way of accessing elements in container that supports indexes(array, ) in LinkedList access by index is not supported
+counter - int, array of int, counting sort(how many of each element you have) use it as a numerical value which indicates how many of certain thing you have
+pointer - in some languages, in many languages, in java a pointer is usually a reference to an object, for ex: I can have Obj A and then Obj B, if I set B = A - Im not copying obj a to obj b, but simply creating a reference, sometimes this reference we are calling a pointer
+
+    you can have pointer to pointers, but in java it doesnt support
