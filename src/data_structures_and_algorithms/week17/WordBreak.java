@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class WordBreak {
+    //Basic backtracking problem
     private int[] memo;
 
     public boolean wordBreak(String s, List<String> wordDict) {
