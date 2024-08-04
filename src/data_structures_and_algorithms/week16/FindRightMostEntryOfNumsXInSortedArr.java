@@ -1,4 +1,4 @@
-package data_structures_and_algorithms.week17;
+package data_structures_and_algorithms.week16;
 
 public class FindRightMostEntryOfNumsXInSortedArr {
     //lets find int x and return its leftmost index or return -1 if it is not present

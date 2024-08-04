@@ -1,4 +1,4 @@
-package data_structures_and_algorithms.week17;
+package data_structures_and_algorithms.week16;
 
 public class BinarySearch {
     public int binarySearch(int[] nums, int x) {
