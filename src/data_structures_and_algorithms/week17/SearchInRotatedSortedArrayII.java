@@ -18,8 +18,9 @@ public class SearchInRotatedSortedArrayII {
 
             if (nums[middle] > nums[right]) {
                 //middle is in the first increasing segment
-                if (target <= nums[right]) {
+                if (target < nums[right]) {
                     //target is in the 2nd increasing segment, so search in the right half
+                    right = middle + 1;
                 } else {
                     right = middle - 1;
                 }
