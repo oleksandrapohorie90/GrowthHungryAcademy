@@ -5,7 +5,28 @@ int left = 0;
 int right = n - 1;
 
 2.while loop and condition untill when binary search is executed, execute till search space is exhausted
-while(left<=right) -> there are nums btw left and right, till this interval contains 1 element - we keep searching
+while(left<=right) -> there are nums btw left and right, till this interval contains 1 element - we keep searching, when breaks it means binary search is concluded and we have an answer
+
+3. at each step of the binary search, we conclude the middle element in the remaining search space, everything has to do with the middle ELEMENT - based on it you search in left half search pace or right half
+
+THEN THERE ARE 3 MAIN CONDITIONS:
+4.
+(1)  IF above nums[middle] == X, then WE FOUND IT
+   if(nums[middle] == X){
+   return middle;
+   }
+(2)  IF above nums[middle] < X, then start search in the right part => [middle + 1; right] right=n-1 -> our x is bigger than middle
+   if ( nums[middle] < X){
+   left = middle + 1;
+   }
+(3)  IF X < nums[middle] above nums, then start search in the left part => [left; middle-1] left=0 -> our x is smaller than middle
+    else{
+    right = middle - 1;
+    }
+   }
+   return -1; -> in case we couldn't find it
+
+
 
 
 
