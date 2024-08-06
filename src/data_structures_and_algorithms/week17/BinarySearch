@@ -1,0 +1,11 @@
+-Binary searching the answer
+-Standard application:
+1. search space - for ex indexes of the array
+int left = 0;
+int right = n - 1;
+
+2.while loop and condition untill when binary search is executed, execute till search space is exhausted
+while(left<=right) -> there are nums btw left and right, till this interval contains 1 element - we keep searching
+
+
+
