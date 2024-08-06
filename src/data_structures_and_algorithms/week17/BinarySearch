@@ -1,5 +1,5 @@
 -Binary searching the answer
--Standard application:
+-Standard(TextBook) application:
 1. search space - for ex indexes of the array
 int left = 0;
 int right = n - 1;
@@ -15,7 +15,7 @@ THEN THERE ARE 3 MAIN CONDITIONS:
    if(nums[middle] == X){
    return middle;
    }
-(2)  IF above nums[middle] < X, then start search in the right part => [middle + 1; right] right=n-1 -> our x is bigger than middle
+(2)  IF above nums[middle] < X, then start search in the right part => [middle + 1; right] right=n-1(last index) -> our x is bigger than middle
    if ( nums[middle] < X){
    left = middle + 1;
    }
@@ -26,7 +26,7 @@ THEN THERE ARE 3 MAIN CONDITIONS:
    }
    return -1; -> in case we couldn't find it
 
-
+**NOTE: left = middle + 1;/right = middle - 1; -> this is pointing to the index of the number
 
 
 
