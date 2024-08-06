@@ -38,14 +38,32 @@ THEN THERE ARE 3 MAIN CONDITIONS:
 (2) else if nums[middle] == x{
 potential answer - need to save answer = middle, keep search in the left part [left; middle -1 ]
 answer=middle;
-right=middle-1;
+right=middle-1;      -> keep searching on the left
 
 (3) but if nums[middle<x], keep searching in the right part [middle+1; right]
 else{
 left = middle + 1;
   }
  }
- return answer;
+ return answer;         <- index 8 is the answer since it contains num 33 - the most left
+
+ => FIND the rightmost entry of number X in a sorted array of numbers
+ (1) separate answer variable is needed
+  IF(nums[middle] > x){
+  right = middle - 1
+   }
+
+ (2) else if nums[middle] == x{
+ potential answer - need to save answer = middle, keep search in the left part [left; middle -1 ]
+ answer=middle;
+ left=middle+1;   -> keep searching on the right
+
+ (3) but if nums[middle<x], keep searching in the right part [middle+1; right]
+ else{
+ left = middle + 1;
+   }
+  }
+  return answer;         <- index 9 is the answer since it contains num 33 - the most right
 
 
 
