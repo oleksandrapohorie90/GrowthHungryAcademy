@@ -65,6 +65,13 @@ left = middle + 1;
   }
   return answer;         <- index 9 is the answer since it contains num 33 - the most right
 
+Q:
+Can you please explain again the difference between Binary searching the answer and Standard(TextBook) application, can tasks be solved with either one approach? And can we go over Capacity To Ship Packages Within D Days, I didnt get it ??
+
+=> if goal find a particular number - binary search and no hard computations, special computations
+standard - simple checking mechanism,
+
+
 
 
 
