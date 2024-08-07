@@ -44,6 +44,7 @@ public class StringCompression {
             streakStart = streakEnd + 1;
 
         }
+
         return indexAnswer;
     }
 }
