@@ -6,7 +6,7 @@ public class StringCompression {
     //each char essentially is making a string of 1 or more chars
     //int streakStart=0 - points at the beginning at the next string
     //int indexAnswer=0 - points to where I will be writing my answer, this will be directly overwritting since we cant create a new array
-    //array is broken by parts - 'streaks'
+    //array is broken by parts - 'streaks' -> character and a number of how many that char appears in array
 
 
     public int compress(char[] chars) {
@@ -41,10 +41,12 @@ public class StringCompression {
                     indexAnswer++;
                 }
             }
-            streakStart = streakEnd + 1;
+            streakStart = streakEnd + 1; //?
 
         }
 
         return indexAnswer;
     }
+
+    //when you convert b12 - you have a count thats counting b's 12, how do you divide them in "1", "2"
 }
