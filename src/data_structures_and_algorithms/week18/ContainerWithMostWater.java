@@ -1,6 +1,7 @@
 package data_structures_and_algorithms.week18;
 
 public class ContainerWithMostWater {
+    //Time complexity: O(n) times
     //the idea or formula is
     //answer = max(answer, (j-i) * min(height[i], height[j])) = max(0,8 * 1) = 8
     //How to move pointers? if left pillar is the shortest among them, then we move to the next position(increment left pointer)
@@ -16,13 +17,13 @@ public class ContainerWithMostWater {
 
         int answer = 0;
 
-        while (i < j) {
+        while (i < j) {//while they are not pointing to the same pillar
             //we fixed pillars i and j - now, we want to know how much water
             //we can fill in btw them.
 
             //width between pillars i and j
             //lets call it "w" for "width"
-            int w = j - 1;
+            int w = j - 1; //-> so with of the space btw them, the length of the space btw them
 
             //This is, at most, how much water can be filled vertically
             //at any point between pillars i and j, so that it doesnt't
