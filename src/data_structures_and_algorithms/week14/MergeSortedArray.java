@@ -16,12 +16,18 @@ public class MergeSortedArray {
         int j = n - 1;
         int k = m + n - 1;
 
-        while (i >= 0) {
-            if (i >= 0 && nums1[i] > nums2[j]) {
-                nums1[k--] = nums1[i--];
-            } else {
-                nums1[k--] = nums2[j--];
+        while (i >= 0) {//when we are finished with 2nd array than we stop
+            if (i >= 0 && nums1[i] > nums2[j]) {//if num from 1st arr is bigger than num from 2nd arr
+                nums1[k] = nums1[i];//then at position k we write nums1 element
+                k--;
+                i--;
+            } else {//if they are equal or nums2 element is larger nums2 element
+                nums1[k] = nums2[j];
+                k--;
+                j--;
             }
+            //can also delete k from above and paste here k--;
+            //come up with a diff example on paper and come up with diff algorithm
         }
     }
 }
