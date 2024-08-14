@@ -1,15 +1,22 @@
 package data_structures_and_algorithms.week14;
 
 public class RangeSumQueryImmutable {
+    /**
+     * NOTE: need to revisit, not clear
+     */
+
     int[] prefix;
 
     //IDEA: prefix sums -> O(n)
-    //prefix is some number of 1st characters of th word
+    //prefix is some number of 1st characters of the word
+    //arr was 1-indexed, but nums is 0-indexed
     public RangeSumQueryImmutable(int[] nums) {
         int n = nums.length;
         //prefix array is 1-indexed because it greatly simplifies computations.
         //If prefix array would be 0-indexed, we'd have to always consider the case
         //when i=0 or left=0 separately, so that we dont go out-of-bounds
+
+        //prefix [0] = 0 bc its semantically equal to an empty prefix(which has zero sum)
         prefix[0] = 0;
         for (int i = 1; i <= n; i++) {
             //prefix[i] =
