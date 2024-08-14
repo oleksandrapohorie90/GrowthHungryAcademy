@@ -2,11 +2,11 @@ package data_structures_and_algorithms.week14;
 
 public class SortArrayByParityII {
     public int[] sortArrayByParityII(int[] A) {
-        int i = 0;
-        int j = 1;
+        int i = 0; //this iterator iterates only over even indeces
+        int j = 1; //this iterator iterates only over odd indeces
         int n = A.length;
 
-        while (i < n && j < n) {
+        while (i < n && j < n) {//here untill both i and j less then length of the array - A
             //find the next odd int at tan even position
             while (i < n && A[i] % 2 == 0) {
                 i += 2;
