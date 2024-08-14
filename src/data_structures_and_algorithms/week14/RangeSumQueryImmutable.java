@@ -15,6 +15,11 @@ public class RangeSumQueryImmutable {
         //prefix array is 1-indexed because it greatly simplifies computations.
         //If prefix array would be 0-indexed, we'd have to always consider the case
         //when i=0 or left=0 separately, so that we dont go out-of-bounds
+        prefix = new int[n + 1];
+        //       0 1 2 3 4 5
+        //nums= -2 0 3-5 2-1
+        //prefix=
+
 
         //prefix [0] = 0 bc its semantically equal to an empty prefix(which has zero sum)
         prefix[0] = 0;
