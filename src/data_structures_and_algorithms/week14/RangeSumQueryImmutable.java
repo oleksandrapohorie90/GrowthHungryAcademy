@@ -3,6 +3,8 @@ package data_structures_and_algorithms.week14;
 public class RangeSumQueryImmutable {
     int[] prefix;
 
+    //IDEA: prefix sums -> O(n)
+    //prefix is some number of 1st characters of th word
     public RangeSumQueryImmutable(int[] nums) {
         int n = nums.length;
         //prefix array is 1-indexed because it greatly simplifies computations.
