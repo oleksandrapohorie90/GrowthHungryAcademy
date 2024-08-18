@@ -33,7 +33,7 @@ public class PropositionalSatisfiability_Sudoku3 {
                         for (int j = 1; j <= 3; j++) {
                             //iterating over the current (3r +i, 3s +j) 3x 3 block
                             //if any of these values are true than number_n_is present is True
-                           //number_n_is_present |= p(3 * r + i, 3 * s + j, n);
+                            //number_n_is_present |= p(3 * r + i, 3 * s + j, n);
                         }
                     }
                     //then AND operation
@@ -42,7 +42,6 @@ public class PropositionalSatisfiability_Sudoku3 {
                 all_blocks_have_all_numbers &= current_block_has_all_numbers;
             }
         }
-
 
         return all_blocks_have_all_numbers;
     }
