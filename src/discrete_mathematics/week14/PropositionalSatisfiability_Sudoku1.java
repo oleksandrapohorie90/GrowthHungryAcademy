@@ -19,7 +19,7 @@ public class PropositionalSatisfiability_Sudoku1 {
                     //if column j in row i contains number n,
                     //then number_n_is_in_the_row will become 1 (true)
 
-                    number_n_is_in_the_row |= p(i, j, n); //then this will become true
+                    //number_n_is_in_the_row |= p(i, j, n); //then this will become true
                 }
                 //using AND operation
                 //if NOT number_n_is_in_the_row, then
