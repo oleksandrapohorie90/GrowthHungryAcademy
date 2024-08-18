@@ -22,7 +22,7 @@ public class PropositionalSatisfiability_Sudoku2 {
                     //if column i in row j contains number n,
                     //then number_n_is_in_the_column will become 1 (true)
 
-                    /number_n_is_in_the_column |= p(i, j, n); //one of the columns contains this number n
+                    //number_n_is_in_the_column |= p(i, j, n); //one of the columns contains this number n
                 }
                 //using AND operation
                 //if NOT number_n_is_in_the_row, then
