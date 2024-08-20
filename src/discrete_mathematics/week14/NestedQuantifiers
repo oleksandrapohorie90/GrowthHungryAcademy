@@ -1,5 +1,5 @@
 
-    boolean isPTrueForAllXAndY(){
+  (1)  boolean isPTrueForAllXAndY(){
         for(int x : domain_of_x){ -> iterate through values of x
             for(int y : domain_of_y){ -> loop through the values of y
                 if(P(x,y) == false){ -> if for some values of y P(x,y) is false
@@ -12,7 +12,7 @@
 
 
 
-    boolean isPTrueForAllXInAtLeastOneY(){
+   (2) boolean isPTrueForAllXInAtLeastOneY(){
         for(int x : domain_of_x){ -> iterate through values of x
             boolean true_y_found = false;
             for(int y : domain_of_y){ -> loop through the values of y
@@ -27,3 +27,5 @@
         }
         return true
     }
+
+
