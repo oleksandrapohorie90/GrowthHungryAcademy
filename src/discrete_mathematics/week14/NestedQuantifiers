@@ -1,8 +1,8 @@
 
     boolean isPTrueForAllXAndY(){
-        for(int x : domain_of_x){
-            for(int y : domain_of_y){
-                if(!P(x,y)){
+        for(int x : domain_of_x){ -> iterate through values of x
+            for(int y : domain_of_y){ -> loop through the values of y
+                if(P(x,y) == false){ -> if for some values of y P(x,y) is false
                 return false;
                 }
             }
