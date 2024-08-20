@@ -1,0 +1,12 @@
+
+    boolean isPTrueForAllXAndY(){
+        for(int x : domain_of_x){
+            for(int y : domain_of_y){
+                if(!P(x,y)){
+                return false;
+                }
+            }
+        }
+        return true
+    }
+
