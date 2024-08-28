@@ -1,5 +1,6 @@
 package data_structures_and_algorithms.week16;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,7 +9,7 @@ public class TwoSums {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 4, 6};
         int target = 4;
-        System.out.println(twoSum(nums, target));
+        System.out.println(Arrays.toString(twoSum(nums, target)));
     }
 
     public static int[] twoSum(int[] nums, int target) {
@@ -35,7 +36,7 @@ public class TwoSums {
             if (lastSeenSoFar.containsKey(b)) {
                 return new int[]{lastSeenSoFar.get(b), i};
             }
-            lastSeenSoFar.put(b, i);
+            lastSeenSoFar.put(a, i);
         }
         return new int[]{};
     }
