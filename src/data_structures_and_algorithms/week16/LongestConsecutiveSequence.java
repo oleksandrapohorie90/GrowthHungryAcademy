@@ -55,11 +55,14 @@ public class LongestConsecutiveSequence {
         // {100, 4, 200, 1, 3, 2}
         //if there is 99 then we know for sure no reason to check the interval from 100,and whenevr we find a beginning of an interval then we should understand how long is that interval, if in the Hashset there is no number 98 then we know for sure 99 is the beginning of the interval
         //ok, lets start walking from 99, doe it have next one yes = 100, does it have another next no, ok so interval is {99,100}
-        for (int n : set) {
+        //T: O(n)
+        //S: O(n)
+        for (int n : set) {//does this set contain number that is one less than this number 99
             if (!set.contains(n - 1)) {
                 int streak_start = n;
                 int streak_end = n;
 
+                //walk the streak to the last element
                 while (set.contains(streak_end + 1)) {
                     streak_end++;
                 }
