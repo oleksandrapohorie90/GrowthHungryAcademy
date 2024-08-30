@@ -87,5 +87,6 @@ public class SubArraySumEqualsK {
             //after we process the current prefix, we should add 1 to its seenCount.
             prefixSumSeenCount.put(currentPrefixSum, prefixSumSeenCount.getOrDefault(currentPrefixSum, 0) + 1);
         }
+        return answer;
     }
 }
