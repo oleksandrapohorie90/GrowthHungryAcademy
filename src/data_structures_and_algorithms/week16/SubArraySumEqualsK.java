@@ -81,8 +81,11 @@ public class SubArraySumEqualsK {
             //that number is equal to seenCount of(currentPrefixSum - k)
             //Why ? Look above in Azret explanation
 
-            answer += prefixSumSeenCount.getOrDefault(currentPrefixSum-k,0);
+            answer += prefixSumSeenCount.getOrDefault(currentPrefixSum - k, 0);
+            //getOrDefault() looks up the value for this key if not present then returns default value
 
+            //after we process the current prefix, we should add 1 to its seenCount.
+            prefixSumSeenCount.put(currentPrefixSum, prefixSumSeenCount.getOrDefault(currentPrefixSum, 0) + 1);
         }
     }
 }
