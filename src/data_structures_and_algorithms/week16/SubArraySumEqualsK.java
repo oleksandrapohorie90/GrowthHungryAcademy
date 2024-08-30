@@ -1,5 +1,8 @@
 package data_structures_and_algorithms.week16;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class SubArraySumEqualsK {
     // public int subarraySum(int[] nums, int k) {
     //        int currentPrefixSum = 0;
@@ -55,5 +58,31 @@ public class SubArraySumEqualsK {
     //        return answer;
     //    }
     //HashTable
-    public int subarraySum(int[] sums,)
+    //idea: prefix sums
+    public int subarraySum(int[] nums, int k) {
+        int currentPrefixSum = 0;
+        int answer = 0;
+
+        //key    value
+        //Map<prefixSum, seenCount>
+        //seenCount is how many times prefixSum has been seen previously
+        Map<Integer, Integer> prefixSumSeenCount = new HashMap<>();
+
+        //Empty prefix => prefixSum=0, seenCount = 1
+        prefixSumSeenCount.put(0, 1);
+
+        //lets iterate over array
+        for (int i = 0; i < nums.length; i++) {
+            //in the beginning its 0 and we keep adding next element
+            currentPrefixSum += nums[i];
+            //currentPrefixSum = sum(nums[0...i])
+
+            //lets add to the answer the count of subarrays that end at index i and have the sum of k
+            //that number is equal to seenCount of(currentPrefixSum - k)
+            //Why ? Look above in Azret explanation
+
+            answer += prefixSumSeenCount.getOrDefault(currentPrefixSum-k,0);
+
+        }
+    }
 }
