@@ -58,7 +58,7 @@ public class SubArraySumEqualsK {
     //        return answer;
     //    }
     //HashTable
-    //idea: prefix sums
+    //idea: PREFIX SUMS
     public int subarraySum(int[] nums, int k) {
         int currentPrefixSum = 0;
         int answer = 0;
