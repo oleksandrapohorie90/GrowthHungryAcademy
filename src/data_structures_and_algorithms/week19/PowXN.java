@@ -26,6 +26,5 @@ public class PowXN {
         //e.g. x^7 = (x^2)^3 * x = x^(2*3) *x = x^6 * x
         return (exponent % 2 == 0) ? myPow_(x * x, exponent / 2) :
                 myPow_(x * x, exponent / 2) * x;
-
     }
 }
