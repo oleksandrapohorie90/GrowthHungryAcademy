@@ -1,0 +1,65 @@
+cache.get("Nurbek")
+returns 29
+
+Cache cache = new Cache(10);
+cache.put("Nurbek", 29);
+
+int nurbekAge = cache.get("Nurbek");
+cache.remove("Nurbek");
+
+
+Cache cache = new Cache(10);
+cache.put("Nurbek",29);
+int nurbekAge = cache.get("Nurbek");
+
+cache.remove("Nurbek");
+
+FIFO
+3
+Nurbek Aleks tamara
+
+cache.put("Myke",18); -> Nurbek is deleted, Myke is added
+cache: [{"Aleks",20},{"Tamara",18},{"Myke",18}]
+
+Deque -> HashTable
+
+LRU
+3
+Nurbek Aleks Tamara
+
+1       0   3   - number of calls
+ int age=cache.get("Nurbek");
+
+
+
+ //FIFO
+ class Cache implements ICache{
+
+ private:
+    List<CacheItem> deck;
+    int capacity;
+
+ public
+ void put(string key, int value){
+ if(getSix=ze()>= getCapacity()){
+ //remove from the beginning
+ //put to the beginning the key-value
+ Cacheitem firstElemetnInDeck = deck[0];
+ dict.removeKey(firstElemetnInDeck.key);
+ deck[0] = new CacheItem(key,value);
+ }else{
+ deck.append(new CacheItem(key,value));
+ dict[key]=value;
+ }
+
+ }
+
+ int get(string key){
+if(containsKey(key)){
+return dict[key];
+}else{
+throw new NotFoundException(key +"is not in the cache")
+};
+
+
+}
