@@ -1,0 +1,29 @@
+Problems:
+
+1. https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
+
+2. https://leetcode.com/problems/move-zeroes/description/
+
+3. https://leetcode.com/problems/string-compression/description/
+
+4. https://leetcode.com/problems/container-with-most-water/description/
+
+Solutions:
+
+1. https://pastebin.com/j1EFv1U4
+
+2. https://pastebin.com/xmf0VuLH
+
+3. https://pastebin.com/uaeqmDQc
+
+4. https://pastebin.com/TjTVdU6E
+
+
+Recommended Two Pointers
+Problems:
+
+1. https://leetcode.com/problems/trapping-rain-water/
+
+Solutions:
+
+1. Prefix/Suffix Maxs: https://pastebin.com/Y2VMhZsr, Two Pointers: https://pastebin.com/gK1Yi3K1

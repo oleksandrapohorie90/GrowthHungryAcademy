@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_CS210.week14;
+package data_structures_and_algorithms_CS210.week14_RESET_week3_4;
 
 public class RotateArray {
     public void rotate(int[] nums, int k) {
