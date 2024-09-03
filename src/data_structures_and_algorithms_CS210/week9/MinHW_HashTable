@@ -1,0 +1,20 @@
+Some useful reading materials:
+- https://darrenyao.com/usacobook/cpp.pdf#page=18 (4.4 and 4.5)
+- https://usaco.guide/CPH.pdf#page=48 (4.2 and 4.3)
+- 11.2 and 11.4 in our text book (starting at pages 275 and 293, respectively)
+
+Problems:
+
+1. https://leetcode.com/problems/two-sum/
+
+2. https://leetcode.com/problems/subarray-sum-equals-k/
+
+3. https://leetcode.com/problems/group-anagrams/
+
+4. https://leetcode.com/problems/longest-consecutive-sequence/
+
+
+Recommended HW:
+1. https://leetcode.com/problems/lru-cache/
+
+2. Implement, on your own, a hash table for storing (int, int) pairs with chaining collision resolution and get an AC using it in the problem https://leetcode.com/problems/two-sum/
