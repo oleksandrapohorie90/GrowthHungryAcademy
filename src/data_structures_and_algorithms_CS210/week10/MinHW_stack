@@ -1,0 +1,41 @@
+(Recommended) Read pages 254-256 of our textbook (about stacks).
+
+(Totally optional) Feel free to watch some videos from this playlist:
+* https://www.youtube.com/playlist?list=PL_z_8CaSLPWdeOezg68SKkeLN4-T_jNHd
+
+
+Easy (simple applications):
+
+Bracket Sequence – https://leetcode.com/problems/valid-parentheses/description/
+
+Solution: https://leetcode.com/problems/valid-parentheses/solutions/3399077/easy-solutions-in-java-python-and-c-look-at-once-with-exaplanation/
+
+Reverse Polish Notation – https://leetcode.com/problems/evaluate-reverse-polish-notation/description/
+
+Solution: https://leetcode.com/problems/evaluate-reverse-polish-notation/solutions/47430/java-accepted-code-stack-implementation/
+
+Majority Element – https://leetcode.com/problems/majority-element/
+
+Solution: Translate to Java the code in https://leetcode.com/problems/majority-element/solutions/51819/c-5-lines-using-stack/
+
+
+
+Easy (with a twist):
+
+Min Stack – https://leetcode.com/problems/min-stack/description/ (remember that you can implement Max Stack if you can do Min Stack by simply changing min function to max function)
+
+Solution: https://leetcode.com/problems/min-stack/solutions/49010/clean-6ms-java-solution/
+
+
+Harder (with a twist):
+
+Largest Rectangle in Histogram – https://leetcode.com/problems/largest-rectangle-in-histogram/description/
+
+Solution: https://leetcode.com/problems/largest-rectangle-in-histogram/solutions/28902/5ms-o-n-java-solution-explained-beats-96/
+
+Solution from Azret: [TBA Link]
+
+
+
+
+

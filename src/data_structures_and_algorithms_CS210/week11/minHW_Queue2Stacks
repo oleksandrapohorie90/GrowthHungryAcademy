@@ -1,0 +1,24 @@
+Read pages 256-257 of our textbook and watch https://www.youtube.com/watch?v=IITnvmnfi_Y
+
+Easy:
+
+Number of Recent Calls: https://leetcode.com/problems/number-of-recent-calls/description/
+
+Design Circular Queue: https://leetcode.com/problems/design-circular-queue/description/
+
+Design Circular Deque: https://leetcode.com/problems/design-circular-deque/description/
+
+Design Front Middle Back Queue: https://leetcode.com/problems/design-front-middle-back-queue/description/
+
+
+Harder:
+
+Sliding Window Maximum – https://leetcode.com/problems/sliding-window-maximum/description/
+
+Solution (idea): Combine Two Max Stacks to implement a Max Queue (can return a maximum in the queue).
+
+Solution: https://pastebin.com/XwqzvY7T
+
+Shortest Subarray with Sum at Least K – https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/description/
+
+Solution: https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/solutions/143726/c-java-python-o-n-using-deque/
