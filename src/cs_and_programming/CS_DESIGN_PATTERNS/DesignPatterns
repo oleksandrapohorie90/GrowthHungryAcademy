@@ -1,14 +1,15 @@
 => Design patterns are typical solutions to common problems in software design. They define a common language that helps your team communicate more efficiently.
 
-1. Singleton pattern
+Creational design patterns:
+1. Singleton pattern - database connection
 class has only one instance and provides global access point to that instance
 
 2. Prototype pattern
 creates new objects by copying existing objects
 
-3. Builder pattern
+3. Builder pattern - we can always add some properties to the object
 separate construction of
 
-4. Factory pattern
+4. Factory pattern - create different implementations of one interface
 
 5. Abstract factory pattern
