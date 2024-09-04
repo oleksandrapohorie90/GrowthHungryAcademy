@@ -132,3 +132,8 @@ class Cache implements ICache{
         throw new NotFoundException(key + "is not in the cache");
     }
 }
+
+=======================
+Use at least 3 creational design patterns
+write readme file for reviewers
+
