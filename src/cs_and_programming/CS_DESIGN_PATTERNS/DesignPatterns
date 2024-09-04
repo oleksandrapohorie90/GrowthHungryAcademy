@@ -16,3 +16,119 @@ separate construction of
 
 
 1. create cache with creational design patterns
+    data storage mechanism that sr=tores frequently accessed data in a faster storage to improve performance. When a request is made the cache is checked first. If data is found its returned immediately. If not data is fetched from the underlying storage and stored in the cache for future use.
+
+Interface or class cache, it has 2 parameters: key a string and value is integer: check on the cache no database implementation
+1. cache is string
+2. cache value us integer
+3. implement functions of cache:
+    a.void put(string key, int value)
+    b.int get(string key)
+    c.void remove(string key)
+    optional:
+    void clear()
+    int size()
+    boolean containsKey(string key)
+
+4. if you want to use several caches(using factories), better to implement FIFO or LRU(least recently used) or LFU(least frequently used)
+10 is the amount of cases - size amount of cases added
+
+Cache cache new Cache(10);
+cache.put("Nurbek",29);
+int nurbekAge = cache.get("Nurbek");
+Pin message
+cache.remove("Nurbek");
+
+FIFO
+capacity 3
+Nurbek, Alex, Tamara
+cache.put("Myke",18) -> Nurbek is deleted, Myke is added
+cache:[{"Alex",20},{"Tamara",18},{"Myke",18}]
+stack wont allow you so deck data structure
+
+LFU
+3
+Nurbek Alex Tamara
+1       0       3 -number of calls
+int nurbekAge = cache.get("Nurbek");
+int tamaraAge1 = cache.get("Tamara");
+int tamaraAge2 = cache.get("Tamara");
+int tamaraAge3 = cache.get("Tamara");
+
+cache.put("Myke", 18); // remove Aleks, he is least freq used, Myke is added
+Nurbek Tamara Myke
+1       3       0 -number of calls
+
+
+LRU - sorts by time when we are using, nurbekAge is 1st one, Alex the 2nd one and Tamara is the 3rd one, nurbek was used more times
+Nurbek   Alex   Tamara
+1         2       3 -number of calls
+int nurbekAge1 = cache.get("Nurbek");
+int alexAge1 = cache.get("Alex");
+int tamaraAge1 = cache.get("Tamara");
+int tamaraAge2 = cache.get("Tamara");
+int tamaraAge3 = cache.get("Tamara");
+cache.put("Myke", 18); //remove Nurbek he is least recently used, Myke is added
+Alex    Tamara    Myke
+3           3       4
+
+Pseudocode
+==============================
+//FIFO
+class Cache implements ICache{
+    private:
+        List<CacheItem> deck;
+        int capacity;
+        Map<key,value> dict;
+    public:
+    void put(string key, int value){
+        if(getSize() >= getCapacity()){
+        //remove from the beginning
+        //put to the beginning the key-value
+        //do one operation
+        CacheItem firstElementInDeck = deck[0];
+        dict.removeKey(firstElementInDeck.key);
+        deck[0] = new CacheItem(key, value);
+    }else{
+        deck.append(new CacheItem(key, value));
+        dict[key] = value;
+        }
+
+    }
+
+    int get(string key){
+        if(containsKey(key)){
+            return dict[key]
+        }else{
+            throw new NotFoundException(key + "is not in the cache");
+        }
+    }
+}
+
+=============================
+can only use deck as array:
+
+class Cache implements ICache{
+    private:
+        List<CacheItem> deck;
+        int capacity;
+    public:
+
+    void put(string key, int value){
+        if(getSize() >= getCapacity()){
+        deck[0] = new CacheItem(key, value);
+    }else{
+        deck.append(new CacheItem(key, value));
+        }
+
+    }
+
+    int get(string key){ //you have to always iterate so will take more time, will be slower
+        for(int = 0; i < getSize(); i++){
+            if(deck[i].key == key){
+                return deck[i].value;
+            }
+        }
+        throw new NotFoundException(key + "is not in the cache");
+    }
+}
