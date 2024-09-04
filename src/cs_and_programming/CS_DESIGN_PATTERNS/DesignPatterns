@@ -13,3 +13,6 @@ separate construction of
 4. Factory pattern - create different implementations of one interface
 
 5. Abstract factory pattern
+
+
+1. create cache with creational design patterns
