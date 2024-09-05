@@ -19,5 +19,7 @@ public class Main {
         SingletonDesignPattern cache2 = SingletonDesignPattern.getInstance(200); // Returns the existing instance
         System.out.println(cache1 == cache2); // true - both references point to the same instance
 
+        FactoryDesignPattern cacheFactory = new LRUCacheFactory();
+        SingletonDesignPattern lruCache = cacheFactory.createCache(100);
     }
 }
