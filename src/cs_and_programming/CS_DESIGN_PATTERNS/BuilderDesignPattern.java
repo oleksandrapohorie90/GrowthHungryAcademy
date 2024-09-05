@@ -18,7 +18,7 @@ public class BuilderDesignPattern {
     }
 
     public SingletonDesignPattern build() {
-        SingletonDesignPattern cache = SingletonDesignPattern.getInstance(capacity);
+        SingletonDesignPattern cache = SingletonDesignPattern.getInstance(capacity, strategy);
         // we can also set the eviction strategy in the SingletonDesignPattern instance here if needed
         return cache;
     }
