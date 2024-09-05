@@ -23,7 +23,7 @@ public class BuilderDesignPattern {
         return cache;
     }
 
-    private enum EvictionStrategy {
+    public enum EvictionStrategy {
         LRU,   // Least Recently Used
         FIFO,  // First In First Out
         LFU    // Least Frequently Used

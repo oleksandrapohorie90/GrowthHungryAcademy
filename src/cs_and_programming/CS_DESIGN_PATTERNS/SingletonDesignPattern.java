@@ -12,16 +12,18 @@ public class SingletonDesignPattern {
     private final Map<String, Integer> cache;
     private final int capacity;
     private final LinkedList<String> keys;
+    private BuilderDesignPattern.EvictionStrategy strategy;
 
-    private SingletonDesignPattern(int capacity) {
+    private SingletonDesignPattern(int capacity, BuilderDesignPattern.EvictionStrategy strategy) {
         this.cache = new HashMap<>();
         this.capacity = capacity;
         this.keys = new LinkedList<>();
+        this.strategy = strategy;
     }
 
-    public static SingletonDesignPattern getInstance(int capacity) {
+    public static SingletonDesignPattern getInstance(int capacity, BuilderDesignPattern.EvictionStrategy strategy) {
         if (instance == null) {
-            instance = new SingletonDesignPattern(capacity);
+            instance = new SingletonDesignPattern(capacity, strategy);
         }
         return instance;
     }
