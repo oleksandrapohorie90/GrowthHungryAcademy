@@ -12,6 +12,9 @@ public class Main {
 
         System.out.println(cache.get("Olga"));
         cache.put("Elena",40); //removes Alex
-        System.out.println(cache.containsKey("Alex"));
+        System.out.println(cache.containsKey("Alex")); //false, since capacity was reached and Alex got removed
+
+        System.out.println(cache.size()); //always will be 5
+
     }
 }
