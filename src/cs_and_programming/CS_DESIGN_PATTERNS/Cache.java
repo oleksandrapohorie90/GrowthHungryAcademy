@@ -6,6 +6,7 @@ public class Cache {
     //we need a map to store cache key-value pairs
     private Map<String, Integer> cache;
     //we need a linked list to maintain order of insertion (for LRU or FIFO)
+    //the first item is the oldest and the last item is the most recent
     private LinkedList<String> keys;
     //we need cache size limit
     private int capacity;
@@ -24,9 +25,15 @@ public class Cache {
             cache.remove(leastUsed);
         }
         cache.put(key, value); //replace with a new key-value pair
-        keys.addLast(key); //Deque method to keep a track of insertion order
+        keys.addLast(key); //Deque method to keep a track of insertion order, adding to the end of the list, means the key was just used
     }
 
+    //create a method to retrieve the value for the given key
+    public int get(String key) throws Exception {
+        if (!cache.containsKey(key)) {
+            throw new Exception(key + "is not in the cache");
+        }
+    }
 
 }
 
