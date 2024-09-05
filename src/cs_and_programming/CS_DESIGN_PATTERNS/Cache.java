@@ -33,6 +33,26 @@ public class Cache {
         if (!cache.containsKey(key)) {
             throw new Exception(key + "is not in the cache");
         }
+        return cache.get(key);
+    }
+
+    //create a method to delete a key-value pair
+    public void remove(String key) {
+        if (cache.containsKey(key)) {
+            cache.remove(key);
+            keys.remove(key); //need to also remove from List insertion order tracking
+        }
+    }
+
+    //optional method to clear the cache
+    public void clear() {
+        cache.clear();
+        keys.clear();
+    }
+
+    //check the size of current cache
+    public int size() {
+        return cache.size();
     }
 
 }
