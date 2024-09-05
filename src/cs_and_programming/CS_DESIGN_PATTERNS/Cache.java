@@ -55,6 +55,11 @@ public class Cache {
         return cache.size();
     }
 
-}
+    //check if cache contains current key
+    public boolean containsKey(String key) {
+        return cache.containsKey(key);
+    }
 
 }
+
+
