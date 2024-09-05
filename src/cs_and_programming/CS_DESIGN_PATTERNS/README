@@ -1,0 +1,76 @@
+Overview
+This project implements a cache system using multiple software design patterns: Singleton, Factory, and Builder. The cache stores key-value pairs, where the key is a String and the value is an Integer. The cache supports different eviction strategies: Least Recently Used (LRU), First In First Out (FIFO), and Least Frequently Used (LFU). These strategies define how the cache manages the removal of items when the capacity is exceeded.
+
+Design Patterns Used
+1. Singleton Design Pattern
+The SingletonDesignPattern class ensures that only one instance of the cache is created and used throughout the application. This avoids conflicts when multiple caches could interfere with each other. It manages the cache operations, such as adding (put), retrieving (get), and removing (remove) items from the cache.
+
+2. Factory Design Pattern
+The FactoryDesignPattern interface and its concrete implementations (LRUCacheFactory, FIFOCacheFactory) allow the creation of cache instances with different eviction strategies (LRU, FIFO, LFU). This helps in decoupling the creation logic from the client code and allows the system to create caches with different behaviors.
+
+3. Builder Design Pattern
+The BuilderDesignPattern class allows for flexible construction of the cache. It provides options to set the cache's capacity and eviction strategy before building the cache instance. This is useful when you have multiple configuration options and want to create a cache in a clear and readable way.
+
+Features
+Eviction Strategies: The cache supports different eviction policies to handle overflow when the cache is full.
+LRU (Least Recently Used): Removes the least recently accessed item.
+FIFO (First In First Out): Removes the oldest item first.
+LFU (Least Frequently Used): Removes the least accessed item.
+Cache Operations:
+put(String key, int value): Adds a new key-value pair to the cache. If the cache is full, the item is removed based on the eviction strategy.
+get(String key): Retrieves the value associated with the given key. Throws an exception if the key does not exist.
+remove(String key): Removes the key-value pair from the cache.
+clear(): Clears the entire cache.
+containsKey(String key): Checks if a key is present in the cache.
+size(): Returns the current size of the cache.
+Classes Overview
+1. SingletonDesignPattern
+Purpose: Ensures that only one instance of the cache exists.
+Fields:
+cache: A Map<String, Integer> to store the key-value pairs.
+capacity: Defines the maximum size of the cache.
+keys: A LinkedList<String> to track the order of the keys for eviction.
+strategy: Defines the eviction strategy used for the cache (LRU, FIFO, or LFU).
+Methods:
+put(String key, int value): Adds a key-value pair to the cache.
+get(String key): Retrieves the value for a key.
+remove(String key): Removes a key-value pair.
+clear(): Clears the entire cache.
+containsKey(String key): Checks if a key exists in the cache.
+size(): Returns the size of the cache.
+2. FactoryDesignPattern
+Purpose: A factory interface to create different types of caches based on eviction strategies.
+Implementations:
+LRUCacheFactory: Creates a cache using the LRU eviction strategy.
+FIFOCacheFactory: Creates a cache using the FIFO eviction strategy.
+3. BuilderDesignPattern
+Purpose: Provides a flexible way to configure and create the cache.
+Fields:
+capacity: Defines the size of the cache.
+strategy: Defines the eviction strategy.
+Methods:
+setCapacity(int capacity): Sets the capacity of the cache.
+setEvictionStrategy(EvictionStrategy strategy): Sets the eviction strategy.
+build(): Creates the cache instance with the specified configuration.
+
+How to Use
+Create a Cache using Factory Pattern:
+FactoryDesignPattern lruFactory = new LRUCacheFactory();
+SingletonDesignPattern cache = lruFactory.createCache(5, BuilderDesignPattern.EvictionStrategy.LRU);
+
+Put and Get Values:
+cache.put("key1", 100);
+int value = cache.get("key1");
+
+Use the Builder Pattern to Configure Cache:
+BuilderDesignPattern builder = new BuilderDesignPattern()
+        .setCapacity(10)
+        .setEvictionStrategy(BuilderDesignPattern.EvictionStrategy.FIFO);
+SingletonDesignPattern cache = builder.build();
+
+Requirements
+Java 8+
+JUnit for testing purposes.
+Future Enhancements
+LFU Implementation: Implement least frequently used cache eviction logic.
+Expiration Policy: Add expiration time for cache items.
