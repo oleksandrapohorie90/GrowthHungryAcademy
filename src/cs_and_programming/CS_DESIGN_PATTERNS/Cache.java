@@ -3,6 +3,7 @@ package cs_and_programming.CS_DESIGN_PATTERNS;
 import java.util.*;
 
 public class Cache {
+
     //we need a map to store cache key-value pairs
     private Map<String, Integer> cache;
     //we need a linked list to maintain order of insertion (for LRU or FIFO)
@@ -21,7 +22,7 @@ public class Cache {
     public void put(String key, int value) {
         if (cache.size() >= capacity) {
             //we want to remove the least used item when cache capacity is full
-            String leastUsed = keys.removeFirst(); //Deque method, removes the 1st item
+            String leastUsed = keys.removeFirst(); //Deque method, returns and removes the 1st element from the List, since it is least used
             cache.remove(leastUsed);
         }
         cache.put(key, value); //replace with a new key-value pair
@@ -59,6 +60,8 @@ public class Cache {
     public boolean containsKey(String key) {
         return cache.containsKey(key);
     }
+
+
 
 }
 
