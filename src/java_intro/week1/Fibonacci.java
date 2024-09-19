@@ -21,10 +21,8 @@ public class Fibonacci {
     }
 
     public static void main(String[] args) {
-
-
         //find 100 fib
-        for (int i = 0; i <= 10; i++) {
+        for (int i = 0; i <= 100; i++) {
             long fib = fibonacci(i);
 
             System.out.println("Fib i = " + i + " = " + fib);
