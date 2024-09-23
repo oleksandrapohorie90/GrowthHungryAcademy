@@ -1,0 +1,28 @@
+1. global maximum - y value that this function achieves
+2. global min - the min point function achieves through out it
+
+3. local max - such points that you reach and functions starts to decrease
+4. local min - such points that you reach and functions starts to increase
+
+inflection points: at this point the curve cherve changes not a smile but a frawn
+
+discontinuity types: removable discontinuity, infinite discontinuity, jump discontinuity(piecewise function), oscillating discontinuity(y=sin1/x)
+
+intercepts coordinates:
+y=3x-1
+y=0 -> x intercept
+0=3x-1
+x=1/3
+
+x=0 -> y-intercept
+y=3*0-1
+y=-1
+
+
+Average rate of change - slope of a line of a linear function
+=============================================================
+if we are given 2 points and they are lying on the line
+slope(m) = rise/run = y/x = y2-y1/x2-x1=avg rate of change
+y=mx+b
+
+b=
