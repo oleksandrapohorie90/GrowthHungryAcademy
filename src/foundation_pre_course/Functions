@@ -1,0 +1,32 @@
+f(x) = 3x + 2
+x - input
+3x+2 - single output it produces
+if a function for single input produces 2 outputs-illegal, not function
+
+1. f(x) = x+2
+y = x+2
+x^2 + y^2 = 1
+y^2 = 1 - x^2
+y = +-sqrt1-x^2 => not a proper function bc why has 2 outputs
+
+relates to concept of inverse functions
+1. injective(one to one) - each output has at most 1 input or 0
+2. surjective(onto) - at least one input(more) for each output
+3. bijective(one to one and onto) - exactly one input for each output
+
+function:
+f(x) = y -> plug in input and it gives you the output
+
+inverse function(only bijective functions):
+f^-1(y) = x -> plug in output and it gives you the input
+
+Q: How to find an inverse of a function?
+f(x) = 3x + 2
+y = 3x + 2
+1. swap
+2. solve for y
+x = 3y + 2
+x-2 = 3y
+y = (x-2)/3 => the inverse of f(x) = 3x + 2 is f^-1(y) = (y-2)/3 why y ?
+
+
