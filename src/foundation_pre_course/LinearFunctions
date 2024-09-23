@@ -1,0 +1,38 @@
+Linear function:
+1 form
+y=mx+b
+2 form
+Ax + By = C(a and b are some constants)
+
+y = mx + b
+m = rise/run = (-4-6)/(5-(-1)) = -10/6 = -5/3 -> thats the m(slope)
+x2 = 5
+x1 = -1
+y2 = -4
+y1 = 6
+
+y2 = m * x2 + b
+-4 = -5/3 * 5 + b
+-4 + 25/3 = b
+b = 13/3
+
+y = -5/3 * x + 13/3 - express a line using two points
+______________________________________________________
+Now if I have a slope and a single point ?
+m = 7
+(x=-4, y=-11)
+y = 7x + b
+-11 = 7 * (-4) + b
+-11 = -28 + b
+b = 17 -> final equation of the line is y = 7x + 17
+------------------------------------------------------
+Now if we dont know y
+bring the 1st form into the 2nd, easy to find intersects
+-7x + y = 17
+A     B    C
+-7    1    17
+------------------------------------------------------
+Systems of linear equations:
+-12x + 8y = 4
+6x - 4y = -2
+Q: In how many places these 2 lines intersect ?
