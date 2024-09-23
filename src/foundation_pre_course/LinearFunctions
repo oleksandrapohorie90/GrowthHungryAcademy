@@ -42,4 +42,31 @@ Q: In how many places these 2 lines intersect ?
 -12x + 8y = 4
 +
 12x - 8y = -4
-0     0  =  0
+0     0  =  0 => always true, that means our lines intersect all the time at all points
+
+10x - 4y = 12
+10x + 6y = 2
+1. get rid of x's multiply 2nd equation by 1
+-10x - 6y = -2
+2. now add 2 equations
+10x - 4y = 12
++
+-10x - 6y = -2
+0    -10y = 10
+        y = -1
+3. now instead of y plug in -1
+10x - 4(-1) = 12
+10x = 8
+x = 4/5 -> so the point of intersection of above 2 lines is only 1 -> (0.8, -1) -> result of the 2nd system of linear equations
+
+
+2x - 7y = 14
+2x - 7y = 12
+1. subtract 2nd one from the 1st one
+2x - 7y = 14
+-
+2x - 7y = 12
+0    0  = 2  -> false all the time, so above 2 don't have any solutions, these are 2 parallel lines and they never intersect
+
+
+
