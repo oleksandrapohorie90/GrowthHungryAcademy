@@ -99,8 +99,23 @@ h(x)=f(x)+g(x) , domain can be different, property change
      f(x)-g(x)
      ....
 
+Composition functions:
+======================
+fog = f(g(x))
+(fog)(x) = ?
+1. g(x)=x^2-1
+f(x^2-1)=2*(x^2-1)+3
+fogx=2x^2+1
 
+Shifting functions:
+========================
+y=f(x) y=f(x-3) - by 3 points right horizontal shift
+y=f(x)+3 by 3 point upwards - vertical shift
 
+Event Odd Neither
+==========================
+1. f(x)=f(-x) even
+2. f(x)=x^3-x odd, inversely symmetrical
 
 
 
