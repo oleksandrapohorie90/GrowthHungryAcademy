@@ -1,0 +1,27 @@
+1. y = ax^2 + bx + c
+Ex: 2x^2 + 4x - 30 -> parabola: upward open-min value, downward open-max value - this point we call a vertex
+
+Vertex is set to be:
+x = -b/2a = -(4/(2*2)) = -1
+To find y coordinate - just evaluate 2x^2 + 4x - 30 for x = -1
+2*(-1)^2 + 4*(-1) - 30
+2 * 1      - 4    - 30 , => y = -32
+
+2. y = a*(x - p)*(x - q), => x & p are 2 points that are at the same distance from the Vertex, middle point btw p& q should be the Vertex
+y = 2(x-3)(x+5)
+p= +3
+q= -5
+the mid point btw them => (3+(-5))/2 = -1, so the middle point btw them is the Vertex x-coordinate
+its the same equation as 2x^2 + 4x - 30
+
+3. y = a * (x-h)^2 + k
+in this form the Vertex has coordinate 'h'
+Ex: 2*(x+1)^2 , -> no k its k=0, h=-1, its an equation quadratic function form, they are all equivalent
+
+Concave VS Convex functions
+-------------------------------------------
+
+
+
+
+
