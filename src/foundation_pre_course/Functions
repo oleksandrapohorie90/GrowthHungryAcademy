@@ -52,6 +52,42 @@ Interval notation
 (-infinity; 1] - ( not including
 
 
+Common Number Sets
+========================
+set is N - natural numbers
+Z is integers
+Z^0 is whole numbers
+
+1. Z^0 - whole numbers are all numbers from 0 to infinity
+2. Z - integers(-1,-34,-3) are all whole numbers that can be negative, positive or 0
+3. Q - rational numbers(0.5,1/4,1 5/8) are all p/q where p and q are both members of Z-integers, Q doesnt equal 0, bc cant divide by 0
+4. Irrational numbers - cannot describe by smth divided by smth: Pi, sqrt5, -sqrt7
+
+    set A U B = [1,2,3]
+    A=[1,2]
+    B=[2,3]
+
+    intersect of A and B = [2]
+
+    Set of all natural number except 5 -> S[xEN | x≠5
+    | -> such that
+    x doesn't= 5 -> condition
+    S=N \ [5]
+    \ -> except
+
+Domain Exercises:
+======================
+1. y=1/√19-x
+19-x >= 0
+x<=19
+19-x≠0
+x≠19
+
+
+
+
+
+
 
 
 
