@@ -81,7 +81,13 @@ Domain Exercises:
 19-x >= 0
 x<=19
 19-x≠0
-x≠19
+x≠19 , so -∞<x<19 then D= (-∞,19)
+
+2. piecewise function f(x)= [x/(x-3)(x+4)(x+10) x≠17
+                                    e           x=17
+domain -> x-3≠0
+          x+4≠0
+          x+10≠0 , then x ≠ 3,-4,-10
 
 
 
