@@ -20,7 +20,9 @@ Ex: 2*(x+1)^2 , -> no k its k=0, h=-1, its an equation quadratic function form, 
 
 Concave VS Convex functions
 -------------------------------------------
+Convex - functions if you take any 2 coordinates on the function and you draw a line btw them then no portion of the function is going to be above it
 
+Concave - the other way around, if I connect two point on the grapgh, the function btw two point will be above the line
 
 
 
