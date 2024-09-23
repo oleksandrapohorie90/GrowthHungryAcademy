@@ -29,4 +29,29 @@ x = 3y + 2
 x-2 = 3y
 y = (x-2)/3 => the inverse of f(x) = 3x + 2 is f^-1(y) = (y-2)/3 why y ?
 
+Piecewise functions
+=====================
+f(x) = x^2 if x<0
+       x   if x>=0
+
+Domain: set of all possible inputs
+f(x) = 1/x
+D = R(all possible nums, -1, fractional nums-Pi, except 0-cannot divide by 0)
+
+Range: set of all possible outputs
+f(x) = x^2
+xED
+D=R
+then range is R+ incl. 0 - all positive real numbers, bc x^2 >= 0
+so possible outputs any positive real numbers and 0
+
+
+Interval notation
+=======================
+[0;3] - [ including
+(-infinity; 1] - ( not including
+
+
+
+
 
