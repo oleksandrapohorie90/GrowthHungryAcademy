@@ -22,9 +22,32 @@
    yes
 
 6. f(x) = 2 + √x-4 ?
-   y = 2 + √x-4
-   (y-2)^2 = x-4
-   x = (y-2)^2+4
+   (1) replace f(x) w/ y = 2 + √x-4
+   (2) now solve for x
+   isolate the sqrt ter from both sides
+   (y-2)^2 = x-4 | ^2 both sides
+   (3) solve for x by adding 4 to both sides to isolate x
+   x = (y-2)^2+4 | + 4
+   (4) replace y w/ x to express the inverse function
    f^-1(x) = (x-2)^2+4
+   -------------------
+7. Domain: any real numbers ? HW solution is for positive
+   Range: its a parabola opening downward (-2x^2)
+   To find the range we need to find the Vertex(maximum point):
+   Vertex: f(x)=a(x-h)^2+k, where (h,k) is vertex
+           x = -b/2a = -4/2(-2)=1
+           a=-2, b=4
+   plug in x value: f(1) = -2(1)^2+4(1)-9=-2+4-9=-7
+   Vertex: (1,-7]
+
+8. f(x) =   x-4
+         ---------
+         x^2-2x-15 - cannot be zero
+(1) x^2-2x-15 = 0
+   (x-5)(x+3) = 0
+   x=5, x=-3 - the function is undefined since denominator=0 with them
+   Domain: all real numbers, except 5,-3
+   Interval notation: (-∞,-3)U(-3,5)U(5,∞)
+9.
 
 
