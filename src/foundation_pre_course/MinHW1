@@ -3,6 +3,8 @@ f: A -> B domain is A and possible set of outputs is B
 f: Z -> Z function accepts ints and produces ints
 f: N(one name) -> P(one phone number)
 
+for those who are interested in solving math problems via Katex in https://www.notion.so/
+codeforces
 1. It is not a function since its not bijective, 1-x doesn't refer to 1-y, since Lydia and Marty have 2 phone numbers
 
 2. y = x^2 + 1
@@ -115,8 +117,98 @@ h(x)=√x-1 +2
 
 18. reciprocal function f(x) = 1/x that shift functions graph one unit to the right and one unit up g(x) = (1/x-1) + 1
 
-19. the function is even f(s)=f(-s) s=-1 s=1
-    f(-1) = (-1)4 +3(-1)2 + 7 = 11
+19. even function if f(-x) = f(x) for all x
+    odd function if f(-x) = -f(x) for all x
+the function is odd f(s)=f(-s) s=-1 s=1
+   even ? -> f(-1) = (-x)3 + 2(-x) = -x3-2x -> doesn't return us to original function
+   odd ? -> -f(-x) = -(-x3-2x) = x3+2x, this is an odd function
+
+20. the function is even f(s)≠f(-s) s=-1 s=1
+        f(-1) = (-1)4 +3(-1)2 + 7 = 11
+21. point slope form of a linear equation:
+y - y1 = m(x-x1)
+point slope form of an equation of a line that passes through (5,1) & (8,7)
+(1) find slope m
+m=7-1 / 8-5 = 2
+(2) general point slope equation
+y-y2 = m(x-x2)
+y-7 = 2(x-8)
+y-7 = 2x-16
+y = 2x-16+7
+y=2x-9 - the slope intercept equation of the line is y = 2x-9
+
+22. m = 3/5>0 -> increasing function
+
+23. absolute maxima and minimum of f
+absolute maximum has 2 points at x=-2 and x=2
+absolut maximum has 1 point at y=16
+absolute minimum has 1 point at x=3
+absolute minimum has 1 point at y=-10
+
+24. x=1, local maximum is the y-coordinate at y=2 ??
+    x=-1, local minimum is the y-coordinate at y=-2
+    1. f(x) = 2x + 3
+    2. g(x)=1/2x-4
+    3. h(x)=-2x+2
+    4. j(x)=2x-6
+    1 and 4 are parallel
+    2 and 3 are perpendicular
+
+25. {2x+y = 7
+    {x-2y = 6
+    2x+y = 7
+    y = 7-2x
+
+    x-2(7-2x)=6
+    x-14+4x=6
+    5x=20
+    x=4
+
+    2(4)+y=7
+    8+y = 7
+    y=7-8
+    y=-1
+
+    (4,-1)
+
+    {2(4)+(-1) = 7 +
+    {4-2(-1) = 6 +
+
+26. {4x+2y=4
+    {6x-y=8
+
+    4x+2y=4
+    2y=4-4x |/2
+    y=2-2x
+
+    6x-(2-2x)=8
+    6x-2+2x=8
+    8x-2=8
+    8x=10
+    x=5/4
+
+    4(5/4)+2y=4
+    5+2y=4
+    2y=4-5
+    2y=-1
+    y=-1/2
+
+    (5/4,-1/2)
+
+    4(5/4)+2(-1/2)=4
+    5-1=4 +
+
+    6(5/4)-(-1/2)=8
+    7.5+0.5=8 +
+
+
+
+
+
+
+
+
+
 
 
 
