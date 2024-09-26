@@ -201,6 +201,29 @@ absolute minimum has 1 point at y=-10
     6(5/4)-(-1/2)=8
     7.5+0.5=8 +
 
+27. 1. general formula of quadratic function: f(x)=ax2 + bx + x, where a,b,c are real numbers and a≠0 ??
+    2. standard form of quadratic function: f(x)=a(x-h)2+k
+    3. The Vertex(h,k) is located at
+    h=-b/2a, k=f(h)=f(-b/2a)
+
+    h=-6/2(2)=3/2
+
+    k=f(h)=f(3/2)=2(3/2)2-6(3/2)+7=5/2
+    f(x)=ax2+bx+c
+    f(x)=2x2-6x+7
+
+    f(x)=2(x-3/2)2+5/2
+
+28. f(x)=-5x2 +9x -1
+    Domain: all R
+    U - max of the vertex
+    h= -b/2a
+    h=9/10
+    max value f(h) -> f(9/10)=5(9/10)2+9(9/10)-1 = 61/20
+    Range: (-∞,61/20)
+
+29.
+
 
 
 
