@@ -1,0 +1,20 @@
+Encapsulation - restricts access to object components and controls how they are accessed
+
+Abstraction - allows to define specific class should do without explaining, we define interface/class or methods, then the behavior is specified in the class its used, how it does the action it doesnt care
+
+Inheritance
+
+Polymorphism - allows objects to treat as parent classes, many forms, exhibiting behavior of parents
+
+Classes - blueprints/template for creating object
+Objects - instance of some class
+attributes-data
+methods-inside you can refer back to data
+
+Overloading - same method with different parameters
+
+Constructor - special method that gets called when object is created
+
+Car car1 = new Car();
+Car car1; //null pointer
+
