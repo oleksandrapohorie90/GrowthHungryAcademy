@@ -57,9 +57,10 @@ public class Student extends Person {
                 enrolledCourses[i] = null;
                 calculateTuition();
                 System.out.println("Student was removed from the course " + courseName);
+                return; // Exit the method once the course is found and removed
             }
-            System.out.println("Course " + courseName + " not found for this student.");
         }
+        System.out.println("Course " + courseName + " not found for this student.");
 
     }
 
