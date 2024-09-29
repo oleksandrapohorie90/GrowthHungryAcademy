@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CourseManager {
-    private List<Student> students;
+    private final List<Student> students;
 
     public CourseManager() {
         this.students = new ArrayList<>();
@@ -15,9 +15,13 @@ public class CourseManager {
     }
 
     public void displayAllStudents(){
+        System.out.println("There are "+students.size()+" students in total");
         for(Student student: students){
             student.displayDetails();
         }
     }
 
+    public void removeStudent(Student student){
+        students.remove(student);
+    }
 }

@@ -51,6 +51,18 @@ public class Student extends Person {
         System.out.println("Student was enrolled in the course " + courseName);
     }
 
+    public void dropCourse(String courseName) {
+        for (int i = 0; i < enrolledCourses.length; i++) {
+            if (courseName.equals(enrolledCourses[i])) {
+                enrolledCourses[i] = null;
+                calculateTuition();
+                System.out.println("Student was removed from the course " + courseName);
+            }
+            System.out.println("Course " + courseName + " not found for this student.");
+        }
+
+    }
+
     public void displayTuition() {
         System.out.println("Tuition: $" + getTuition());
     }
