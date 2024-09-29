@@ -35,9 +35,9 @@ public class Student extends Person {
     }
 
     public void enrollCourse(String[] enrolledCourses) {
-        this.enrolledCourses = enrolledCourses;
-        calculateTuition();
-        System.out.println("All enrolled courses for this student are: " + Arrays.toString(enrolledCourses));
+        for (String course : enrolledCourses) {
+            enrollCourse(course);
+        }
     }
 
     public void enrollCourse(String courseName) {
