@@ -9,7 +9,7 @@ public class Person {
         this.age = age;
     }
 
-    public void displayDetails(){
-        System.out.println("This is the student's name: "+name+"\nThis is the student's age: "+age);
+    public void displayDetails() {
+        System.out.println("This is the student's name: " + name + "\nThis is the student's age: " + age);
     }
 }
