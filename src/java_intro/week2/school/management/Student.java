@@ -2,6 +2,8 @@ package java_intro.week2.school.management;
 
 import java_intro.week2.school.Person;
 
+import java.util.Arrays;
+
 public class Student extends Person {
 
     private int studentID;
@@ -18,13 +20,14 @@ public class Student extends Person {
         return tuition;
     }
 
-    private void setTuition(double tuition) {
+    public void setTuition(double tuition) {
         this.tuition = tuition;
+        calculateTuition();
     }
 
     public void calculateTuition(){
         int numberOfCourses = 0;
-        for(String course: enrolledCourses){
+        for(String course: this.enrolledCourses){
             if(course!=null){
                 numberOfCourses++;
             }
@@ -35,6 +38,7 @@ public class Student extends Person {
     public void enrollCourse(String[] enrolledCourses) {
         this.enrolledCourses = enrolledCourses;
         calculateTuition();
+        System.out.println("All enrolled courses for this student are: "+ Arrays.toString(enrolledCourses));
     }
 
     public void enrollCourse(String courseName) {
@@ -45,6 +49,8 @@ public class Student extends Person {
             }
         }
         calculateTuition();
+        System.out.println("Student was enrolled in the course "+courseName);
     }
+
 
 }
