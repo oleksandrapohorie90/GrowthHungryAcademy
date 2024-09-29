@@ -55,4 +55,8 @@ public class Student extends Person {
         System.out.println("Tuition: $" + getTuition());
     }
 
+    public void displayEnrolledClasses() {
+        System.out.println("Student: " + name + " is enrolled in these courses: " + Arrays.toString(enrolledCourses));
+    }
+
 }

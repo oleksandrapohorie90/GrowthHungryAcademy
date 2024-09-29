@@ -17,6 +17,10 @@ public class Main {
         student1.displayDetails();
         student1.displayTuition();
 
+        student2.displayDetails();
+        student2.displayTuition();
+
+
     }
 
 
