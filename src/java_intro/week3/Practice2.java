@@ -1,6 +1,5 @@
 package java_intro.week3;
 
-import java.util.Deque;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -75,5 +74,28 @@ public class Practice2 {
                 System.out.println("Borrow requests for " + book + ": " + borrowRequests.get(book).size());
             }
         }
+    }
+    public static void main(String[] args) {
+        Practice2 library = new Practice2();
+
+        // Adding books to the library
+        library.addBook("Harry Potter", 2);
+        library.addBook("The Lord of the Rings", 1);
+        library.addBook("The Hobbit", 3);
+
+        // Borrowing books
+        library.borrowBook("Harry Potter");
+        library.borrowBook("The Hobbit");
+        library.borrowBook("Harry Potter");  // Already borrowed, request will be queued
+        library.displayLibraryStatus();
+
+        // Returning a book
+        library.returnBook("Harry Potter");
+
+        // Borrowing after return
+        library.borrowBook("Harry Potter");
+
+        // Display library status
+        library.displayLibraryStatus();
     }
 }
