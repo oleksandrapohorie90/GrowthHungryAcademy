@@ -5,10 +5,13 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
         // Creating different shapes
-        Shape circle = new Circle(5);
+        Circle circle = new Circle(5);
         Shape rectangle = new Rectangle(4, 5);
         Shape square = new Square(4);
+        //Shape s = new Shape("test"); -> cant be instantiated
+
         // Adding shapes to a list
         List<Shape> shapes = new ArrayList<>();
         shapes.add(circle);
