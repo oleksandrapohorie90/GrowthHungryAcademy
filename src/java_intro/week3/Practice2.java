@@ -23,6 +23,9 @@ public class Practice2 {
     //HashMap<String, Integer> borrowRequests = new HashMap<>();
     HashMap<String, Queue<String>> borrowRequests = new HashMap<>();
 
+    //to keep track of how many copies of each book have been borrowed
+    HashMap<String, Integer> borrowedBooks = new HashMap<>();
+
     //to add books to the inventory
     public void addBook(String book, int copies) {
         availability.put(book, availability.getOrDefault(book, 0) + copies);
@@ -33,6 +36,7 @@ public class Practice2 {
         //if book is available, then decrement availability map, if not then add a pending request
         if (availability.getOrDefault(book, 0) > 0) {
             availability.put(book, availability.get(book) - 1);
+            borrowedBooks.put(book, borrowedBooks.getOrDefault(book, 0) + 1);
         } else {
             if (!borrowRequests.containsKey(book)) {
                 borrowRequests.put(book, new LinkedList<>());
@@ -47,6 +51,29 @@ public class Practice2 {
             borrowRequests.get(book).remove();
         } else {
             availability.put(book, availability.get(book) + 1);
+            borrowedBooks.put(book, borrowedBooks.get(book) - 1);
+        }
+    }
+
+    //to display the current status of the library(inventory and borrowed books)
+    public void displayLibraryStatus() {
+        System.out.println("\nLibrary Inventory:");
+        for (String book : availability.keySet()) {
+            System.out.println(book + " - Copies Available: " + availability.get(book));
+        }
+
+        //keep track of borrowed books
+        System.out.println("\nBorrowed Books:");
+        for (String book : borrowedBooks.keySet()) {
+            System.out.println(book + ": " + borrowedBooks.get(book));
+
+        }
+
+        System.out.println("\nPending Borrow Requests:");
+        for (String book : borrowRequests.keySet()) {
+            if (!borrowRequests.get(book).isEmpty()) {
+                System.out.println("Borrow requests for " + book + ": " + borrowRequests.get(book).size());
+            }
         }
     }
 }
