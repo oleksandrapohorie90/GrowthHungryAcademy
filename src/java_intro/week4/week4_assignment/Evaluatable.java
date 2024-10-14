@@ -1,0 +1,5 @@
+package java_intro.week4.week4_assignment;
+
+public interface Evaluatable {
+    void gradeStudents();
+}
