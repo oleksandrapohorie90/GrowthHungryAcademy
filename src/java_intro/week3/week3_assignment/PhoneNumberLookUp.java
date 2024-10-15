@@ -4,18 +4,22 @@ import java.util.HashMap;
 
 public class PhoneNumberLookUp {
 
-    HashMap<String,String> phones = new HashMap<>();
+    HashMap<String, String> phones = new HashMap<>();
 
-    public String displayPhoneNumber(Contact contact){
-        for (String name : phones.keySet()){
-            if(phones.get(contact.name).equals(name)){
-                return phones.get(contact.name);
-            }
-        }
-        return "No Contact phone number was found";
+    //to not have an empty map
+    public void addContactToPhones(Contact contact) {
+        phones.put(contact.getName(), contact.getPhoneNumber());
     }
 
-    public void updatePhoneNumber(Contact contact, String updatedPhoneNumber){
-        phones.put(contact.name, updatedPhoneNumber);
+    public void displayPhoneNumber(String name) {
+        if (phones.containsKey(name)) {
+            System.out.println("Phone number for " + name + ": " + phones.get(name));
+        } else {
+            System.out.println("No Contact phone number was found");
+        }
+    }
+
+    public void updatePhoneNumber(Contact contact, String updatedPhoneNumber) {
+        phones.put(contact.getName(), updatedPhoneNumber);
     }
 }
