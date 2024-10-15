@@ -3,7 +3,7 @@ package java_intro.week3.week3_assignment;
 import java.util.ArrayList;
 
 public class ContactManagement {
-    ArrayList<Contact> contacts = new ArrayList<>();
+    public ArrayList<Contact> contacts = new ArrayList<>();
 
     public void addContact(Contact contact) {
         //check for duplicates based on name
