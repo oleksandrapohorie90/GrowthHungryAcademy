@@ -1,0 +1,10 @@
+5x - monomial
+3x^2 - monomial
+3x^2 - 5 - binomial
+x-1 - binomial
+(3x^2-5) + (x^5 + 3x^2) = 6x^5 + 6x^2 - 5
+n-th degree polinomial : anx^n + an-1x^n-1+...a1x^1 +a0x^0
+
+(3x^2-5) * (x^5 + 3x^2) = 3x^2 * 5x^5 +3x^2*6x^2 + 3x^2*(-5) +-5*x^5...
+
+
