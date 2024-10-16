@@ -70,7 +70,7 @@ shift sigma annotation
 n=1
 1-0.99 + 0.99^2 - 0.99^3 + 0.99^4
 
-Geometric series
+Geometric series topic
 a1=1 an=an-1 * 1/2
 
 an=a1 * r^n-1
@@ -92,3 +92,7 @@ EX: 1+2+4+8+16..+2^n-1
 a1=1
 r=2
 Sn= 1*(2^n-1) / 2-1 = 2^n - 1
+
+lim(limit)(a1(1-r^n / 1-r)) -> as n approaches infinity what is the value of whatever I write in the brackets
+n->∞
+= a1(1-0)  /  1-r = a1/1-r
