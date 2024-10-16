@@ -1,0 +1,10 @@
+2x^2 + 7x + 3
+2x   ->     3
+*           *
+x    ->     1
+
+(2x * 3) + (x * 1) = 6x + x = 7x ! matches
+now write cross thing
+(2x+1) * (x+3) -> this is how you factor this quadratic polynomial
+(2x)(x) + (2x)(3) + (1)(x) + (1)(3) = 2x^2 + 6x + x + 3 = 2x^2 + 7x +3 !
+
