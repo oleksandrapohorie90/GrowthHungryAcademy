@@ -87,3 +87,8 @@ ay=a1*r^y-1
 ay/ax = a1*r^y-1 / a1*r^x-1 = r^y-1-(x-1) = r^y-x = y-x √ r
 
 Formula of the 1st n term
+Sn = a1(r^n-1) / r-1
+EX: 1+2+4+8+16..+2^n-1
+a1=1
+r=2
+Sn= 1*(2^n-1) / 2-1 = 2^n - 1
