@@ -1,0 +1,43 @@
+Arithmetic sequence: a, a1 + d, a1 +2d, a1 +3d
+Arithmetic series: is when you want to compute the sum
+sigma(a sum) 99
+             ∑ 17k + 19 = (17*0+19)+(17*1+19)+(17*2+19)...+(17*99+19)
+             k=0
+so loop iterates from 0 to 99
+
+Sigma notation
+100
+∑ 17(k-1)+19 = (17*(1-1)+19)+(17*(2-1)+19)+(17*(3-1)+19)..+(17*(100-1)+19)
+k=1
+
+Sum notation
+    +7     +7
+-2006+(-1999)+(-1992)+...+1984 - arithmetic series, bc each term is diff from the prev by fixed number
+
+Recursive notation
+a1=9
+n>=2, an=an-1 +17
+a1=9
+a4 = ?, a4 = a3 + 17
+an = an-1 + 17
+a3 = a2 + 17
+
+a2 = a1(9)+17 = 26
+a3 = a2(26)+17 = 43
+a4 = a3(43)+17 = 60
+
+Closed formula for the nth term
+the one you can compute immediately
+a1  d(diff btw successive forms)
+an=a1+(n-1)d
+a1=9
+d=17
+a4=9+(4-1)*17 = 60 same as before
+
+MID formula
+ax ay  x<=y y-x+1 is ODD
+then you can compute the mid point
+(a2+a6)/2=a4
+a2=a1+1d  +  a6=a1+5d  = 2a1+6d/2  = a1+3d = a4
+
+
