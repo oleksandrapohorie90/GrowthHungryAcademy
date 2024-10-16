@@ -73,3 +73,17 @@ n=1
 Geometric series
 a1=1 an=an-1 * 1/2
 
+an=a1 * r^n-1
+an=a1*r^3
+a10 = a*r^9
+General formula: ax+y/2 = (ax+ay)/2
+Geometric mean:
+a4 = √a2   *  a6
+    a1*r^1   a1*r^5
+EX: What is r
+ax ay
+ax=a1*r^x-1
+ay=a1*r^y-1
+ay/ax = a1*r^y-1 / a1*r^x-1 = r^y-1-(x-1) = r^y-x = y-x √ r
+
+Formula of the 1st n term
