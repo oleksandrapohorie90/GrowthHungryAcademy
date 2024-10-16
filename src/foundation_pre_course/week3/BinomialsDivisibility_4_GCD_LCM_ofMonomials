@@ -1,0 +1,38 @@
+2x^2 + 6x = 2x(x+3) -> 2x and x+3 are factors of binomial 2x^2+6x, both of them divide it
+
+1. 24x^4 / 8x^3 = 3x
+2. 32x^3 / 4x^0 = 8/x^3 = 8x^-3 -> not a monomial/polinomial, cant have negative power, so the result is not a polinomial, not divisible
+3. 6x / 12x^2 = not divisible
+
+4. Which of these 5x, 3x^2y^5, 10x^4y^3 are the factors of 15x^2y^6 ?
+15x^2y^6 is divisible by 5x and 3x^2y^5, but not 10x^4y^3 bc of x^4, 4 exceeds 2
+
+5. What are the factors of x^2 + 5x + 4(quadratic polynomial)
+to factorize ->            x          4
+                          times     times
+                           x          1
+when multiply x * 4 and x * 1 and add them -> 4x + 1x = should give 5x, so this is the correct factorization
+then do cross multiplying -> (x+4) * (x+1) = x^2 + 5x + 4
+it has 2 factors: (x+4) and (x+1)
+
+GCD/LCM of monomials, how do you find a greatest common divisor of 2 monomials ?
+15x^2y^6    10x^4y^3
+1. lets break it down into factors/prime numbers(divisible by 1 or itself):
+
+15x^2y^6
+3*5 * x*x * y*y*y*y*y*y
+
+10x^4y^3
+2*5 * x*x*x*x * y*y*y
+
+2 and 3 are not going to contribute to GCD, we need 5 and x^2 is common divisor for both, also y^3 is common divisor for both
+GCD = 5x^2y^3
+
+LCM - least common multiple = 2 * 3 * 5 * (the most of occurrences of x and y) x^4 * y^6 = 30x^4y^6
+--------------------
+So in GCD you take the minimum of 2 powers
+In LCM you take the max of these 2 powers
+
+
+
+
