@@ -39,5 +39,21 @@ ax ay  x<=y y-x+1 is ODD
 then you can compute the mid point
 (a2+a6)/2=a4
 a2=a1+1d  +  a6=a1+5d  = 2a1+6d/2  = a1+3d = a4
+d=(ay-ax) / y-x
+
+sum of the n terms
+a1 + a2 ...+ an-1 + an
+Sn = (a1+an / 2) * n = a1 + (a1+(n-1)d) / 2 * n = 2a1 +(n-1)d/2  * n
+EX:
+1+2+3+...+n
+a1=1 d=1
+Sn = (1 + n)/2 * n = n(n+1)/2 --> Closed formula
+Sn 1+2+3+...+(n-1)+n
+                       +
+Sn n+(n-1n-2)... 2+ 1
+----------------------
+2Sn (n+1) +(n+1)+...(n+1)
+2Sn=n(n+1)
+Sn= n(n+1) / 2
 
 
