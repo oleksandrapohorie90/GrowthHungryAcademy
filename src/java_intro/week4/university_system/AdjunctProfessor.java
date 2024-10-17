@@ -1,8 +1,12 @@
 package java_intro.week4.university_system;
 
 public class AdjunctProfessor extends Professor{
-    public AdjunctProfessor(String name, double salary, String department) {
-        super(name, salary, department);
+
+    private int coursesTaught;
+
+    public AdjunctProfessor(String name, int coursesTaught, Department department) {
+        super(name, department);
+        this.coursesTaught = coursesTaught;
     }
 
     // ??
@@ -12,12 +16,22 @@ public class AdjunctProfessor extends Professor{
     }
 
     @Override
-    public void calculateSalary() {
-
+    public double calculateSalary() {
+    return coursesTaught * 1500;
     }
 
-    @Override
-    public void conductLecture() {
+    public class FullTimeProfessor extends Professor{
 
+        private double monthlySalary;
+
+        public FullTimeProfessor(String name, Department department, double monthlySalary) {
+            super(name, department);
+            this.monthlySalary = monthlySalary;
+        }
+
+        @Override
+        public double calculateSalary() {
+            return monthlySalary; //fixed monthly salary
+        }
     }
 }
