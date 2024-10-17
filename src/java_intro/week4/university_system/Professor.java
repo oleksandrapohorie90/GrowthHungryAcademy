@@ -11,9 +11,12 @@ abstract public class Professor implements Teach, Evaluatable {
         this.department = department;
     }
     public abstract double calculateSalary();
-    public void teachCourse() {
-        System.out.println("Professor " + name + " is teaching the course.");
+
+    @Override
+    public void conductLecture() {
+        System.out.println(name + " is conducting a lecture.");
     }
+
     public void gradeStudents() {
         System.out.println("Professor " + name + " is grading the students.");
     }
