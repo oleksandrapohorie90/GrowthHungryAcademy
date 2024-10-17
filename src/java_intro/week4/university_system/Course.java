@@ -1,38 +1,32 @@
 package java_intro.week4.university_system;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Course {
 
     private String courseName;
     private int creditHours;
     private int amountOfStudents;
 
-    public Course(String courseName, int creditHours, int amountOfStudents) {
+    private Map<Student,Integer> studentGrade;
+
+    public Course(String courseName, int creditHours) {
         this.courseName = courseName;
         this.creditHours = creditHours;
-        this.amountOfStudents = amountOfStudents;
+        this.studentGrade = new HashMap<>();
+    }
+
+    public void registerStudent(Student student) {
+        studentGrade.put(student, null); // No grade initially
+    }
+
+    public void assignGrade(Student student, int grade) {
+        studentGrade.put(student, grade);
     }
 
     public String getCourseName() {
         return courseName;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
-
-    public int getCreditHours() {
-        return creditHours;
-    }
-
-    public void setCreditHours(int creditHours) {
-        this.creditHours = creditHours;
-    }
-
-    public int getAmountOfStudents() {
-        return amountOfStudents;
-    }
-
-    public void setAmountOfStudents(int amountOfStudents) {
-        this.amountOfStudents = amountOfStudents;
-    }
 }
