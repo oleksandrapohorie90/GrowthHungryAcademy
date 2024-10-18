@@ -3,7 +3,7 @@ S = 5 + 9 + 13 ... 89
 1. each number increases by 4, so we have an arithmetic sequence
 2. form of arithmetic sequence:
 an = a1 + (n-1) * d
-an=nth term in the sequence
+an= is the last nth term in the sequence
 a1=5
 d=4
 an = 5 +(n-1) * 4 = 5 + 4n-4 = 4n + 1
@@ -69,5 +69,35 @@ an=994
 n= ((an-a1)/d) + 1 = ((994-105)/7 +1 = 128
 
 4. sum S=n/2(a1+an) = 128/2(105+994) = 64*1099=70,336
+                            n
+5)given arithmetic series S=∑(3k+2), find n such that S=2,650
+                           k=1
+1.3k+2 is the general term of the arithmetic sequence
+
+2.S=n/2(a1+an)
+
+3.to find the 1st term a1,sub k=1 to the gen term 3k+2
+where a1=3(1) + 2 = 5
+
+4.gen formula for any term in this sequence is 3k+2
+where an=3n+2
+5. sub into formula S=n/2(a1+an)
+S= n/2(5 + (3n+2)) = n/2(3n+7) = 2650 |*2
+                     n(3n+7) = 5300
+                     3n^2+7n = 5300
+                     3n^2+7n-5300 = 0
+6.solve quadratic equation using quadratic formula
+n = -b +-√b^2-4ac / 2a
+n = (-7 +-√7^2-4*3*(-5300)) / 2*3
+n = -7+252.28 / 6
+n = -7-252.28 / 6
+n=41
+S=n/2(a1+an) = 2793
+There is no int value of n such that S=2650
+
+6)
+
+
+
 
 
