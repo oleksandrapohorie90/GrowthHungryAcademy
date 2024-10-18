@@ -54,3 +54,20 @@ a25=12+(25-1)5=12+120 = 132
 
 d=5, a25=132
 
+4) find sum of all multiples of 7 btw 100 and 1,000
+1. 100/7 = 15
+   15 * 7 = 105
+2. largest multiple of 7 less than or equal to 1000
+   1000/7 = 142
+   142 * 7 = 994
+
+3. 105, 112, 119, 126,...994
+a1=105
+d=7
+an=994
+4. find the num of terms
+n= ((an-a1)/d) + 1 = ((994-105)/7 +1 = 128
+
+4. sum S=n/2(a1+an) = 128/2(105+994) = 64*1099=70,336
+
+
