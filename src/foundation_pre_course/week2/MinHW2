@@ -38,3 +38,19 @@ when k=15, k1=13
   13
   ∑(2k1+5)
   k=1
+
+3) Recursive notation
+a1=12 an=an-1+d. If a10=57 find value of d and find a25
+
+1.find d
+an=a1+(n-1)d
+a10=12+(10-1)d=12+9d=57 <--a10=57
+9d=57-12
+9d=45
+d=5
+
+2. find a25
+a25=12+(25-1)5=12+120 = 132
+
+d=5, a25=132
+
