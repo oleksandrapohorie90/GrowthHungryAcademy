@@ -1,0 +1,40 @@
+1) Express arithmetic series in sigma notation ?
+S = 5 + 9 + 13 ... 89
+1. each number increases by 4, so we have an arithmetic sequence
+2. form of arithmetic sequence:
+an = a1 + (n-1) * d
+an=nth term in the sequence
+a1=5
+d=4
+an = 5 +(n-1) * 4 = 5 + 4n-4 = 4n + 1
+
+3.to find n:
+89 = 4n + 1
+89-1=4n
+88=4n
+n=22 - there are 22 terms in the series
+
+4. write terms in sigma notation
+    22
+S = ∑(4n + 1) sum up 4n+1 for n starting from 1 to 22
+   n=1
+
+2)
+1. rewrite arithmetic series
+  15
+  ∑(2k+1) to start at k=1
+  k=3
+
+  k=3 k1=1 => k1=k-2
+  k=k1+2
+
+  Original expression: 2k+1
+  Now k=k1+2 => 2(k1+2)+1 =2k1 + 4 +1 = 2k1 + 5 <----
+2. adjust limits
+original summation ends at k=15
+substitute k1+2=15 => k1=13
+when k=15, k1=13
+
+  13
+  ∑(2k1+5)
+  k=1
