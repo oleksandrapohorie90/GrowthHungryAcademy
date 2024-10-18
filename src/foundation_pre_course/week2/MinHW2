@@ -86,7 +86,7 @@ S= n/2(5 + (3n+2)) = n/2(3n+7) = 2650 |*2
                      n(3n+7) = 5300
                      3n^2+7n = 5300
                      3n^2+7n-5300 = 0
-6.solve quadratic equation using quadratic formula
+6)solve quadratic equation using quadratic formula
 n = -b +-√b^2-4ac / 2a
 n = (-7 +-√7^2-4*3*(-5300)) / 2*3
 n = -7+252.28 / 6
@@ -95,7 +95,36 @@ n=41
 S=n/2(a1+an) = 2793
 There is no int value of n such that S=2650
 
-6)
+6)in arithmetic sequence the 5th term = 20 the 15th term=60, show 10th term = the arithmetic mean of the 5th and 15th term ?
+1. an=a1+(n-1)d
+   a10=a1+9d
+2. a5
+   an=a1+(n-1)d
+   20 =a1+(5-1)d = a1+4d
+   60 =a1+(15-1)d = a1+14d
+   sub
+   40=10d
+    d=4
+
+3. sub d
+20 =a1+(5-1)d = a1+4*4 = a1+16
+a1=20-16=4
+
+a10=a1+9d = 4 + 9 * 4 = 40
+
+4. compute the mean of a5 and a15 => 20+60/2 = 40
+a10=40 which is the arithmetic mean of a5 and a15
+
+7) a1=5
+   d=0.5
+   n=20
+   an=a1+(n-1)d
+   a20 = 5 +(20-1)*0.5 = 14.5 cm - hight of 20th step
+      S20 = n/2(a1+an)
+      S20 = 20/2(5+14.5) = 195 cm - total hight of the staircase
+
+
+
 
 
 
