@@ -39,7 +39,13 @@ U+V = 7i - j
 Dot/cross Product
 when you have 2 vectors you can take dot product
 ->  ->    ->      ->
-U * V = ||U|| * ||V|| * cos θ(angle btw 2 vectors is an angle θ) = I need to multiply their corresponding components -> (5*2)+(3*(-4)) = -2
+U * V = ||U|| * ||V|| * cos θ(angle btw 2 vectors is an angle θ) = I need to multiply their corresponding components -> (5*2)+(3*(-4)) = -2 <- the dot product is equal -2 for above particular products
 
+orthogonal(important geometric property) - right angle btw them, then the dot product is = 0
+n-dimensional vectors - 2D
+if the sin is equal to 0 btw below vectors, means they are pointing either in the same direction, or 180 degrees
+->  ->     ->      ->
+u         * v          = ||U|| * ||V|| * sin θ = x_1y_2 - x_2y_1
+(x_1*y_1) * (x_2*y_2)  =
 
 
