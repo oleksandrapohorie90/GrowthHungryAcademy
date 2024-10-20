@@ -1,0 +1,44 @@
+Matrices:
+3 X 3 matrix
+[ 1 2 3 ]
+  4 5 6
+  7 8 9
+
+           A
+       n columns
+m rows [        ]   m X n
+! to multiply these 2 matrices n columns should equal n rows !
+*          B
+       k columns
+n rows [        ]   n X k
+
+How to multiply 2 matrices:
+=
+           C
+       [  (i,j) ]   m X k
+C_i,j = ith row(in matrix A) * jth column(in matrix B) will be their dot product
+   3         2
+2[1 2 3]  3[1 2] =
+  4 5 6     3 4
+            5 6
+2 X 3     3 X 2  = 2 X 2 => [ 1*1 + 2*3 + 3*5 = 22 1*2 + 2*4 + 3*6 = 28
+r   c     r   c               4*1 + 5*3 + 6*5 = 49 4*2 + 5*4 + 6*6 = 64
+                 = [ 22 28 ]
+                     49 64
+TO exponentiate : matrix ^ 2
+keep multiplying by itself
+===================================
+Row Echelon form - when you have a matrix [ 1 a b c ] <- 3 X 4
+                                            0 1 d e
+                                            0 0 1 f   <- REF form
+                                            if you have 1's under the diagonal and under that diagonal you have 0's
+THEN => We can express sets of linear equations as matrices:
+
+
+
+Reduced and rref
+Inverse and rref
+
+
+
+
