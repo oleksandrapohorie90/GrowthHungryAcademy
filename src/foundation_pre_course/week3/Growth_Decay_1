@@ -1,0 +1,25 @@
+1. Compound interest
+2. Radioactive Decay problems
+
+$ - 1000
+compound interest - 6.5%
+years - 30
+
+f(t) =          1000         * (1 + 0.065)^t
+  num of years  stat amount         %
+f(30) = 1000 * (1 + 0.065) ^ 30 = $6,614.37 <- by the end of 30 years
+this is how you express compound interest as an exponential function
+
+10g of some radioactive material that has half life of 80 years, after how many years this 10g becomes less than 2 g
+half life - amount of time after which original material half's
+f(t) = 10 * 1/2(after every 80 years) ^t/80
+f(t_min) < 2g
+10 * (1/2)^t_min/80 < 2  | /10
+(1/2)^t/80 < 1/5
+log_1/2 (1/2)^t_min/80  log1_1/2 (1/5)    bc it is log of such a base btw                                      0<1<1, we should flip the sign
+t_min/80 > log_1/2 (1/5)  |*80
+t_min > 80 * log_1/2 (1/5)
+t_min > 185.754 <- when  185.755 years have passed the original 10g material will reduce to less than 2 g
+
+
+
