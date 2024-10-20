@@ -1,0 +1,24 @@
+log function - has a base always 'b' -
+
+log_b(x) = y - > base b
+b^y = x
+
+1) log_2^1=0
+   2^0 = 1
+
+2) log_2 2^8 = 8
+   2^8 =2^8
+
+3) log_3 27 = log_3 3^3 = 3
+4) log_a 1/a = -1
+   log_a a^-1
+
+5) log_a^k a = 1/k
+(a^k)^1/k = a
+a^k*1/k=a^1
+
+(a^x)^y = a^xy^
+
+6) log_a^k a^m = m/k -> (a^k)^m/k = a^k*m/k = a^m
+7)log_a a^m = m
+8) log_a (bc) = log_a b + log_a c <- the sum of the logarithms of 2 parts
