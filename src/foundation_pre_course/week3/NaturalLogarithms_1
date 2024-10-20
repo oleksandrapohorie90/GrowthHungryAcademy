@@ -1,0 +1,30 @@
+ln(x) - logarithm where the base is equal e, where e is ellers num = 2.71828 -> irrational number
+logarithms are only defined for positive rela numbers, not defined for 0 or negative numbers
+
+Exercises:
+==========================================
+log_4(-x) + log_4(6-x) = 2 -> solve for x ?
+1. we have a '+' so multiplication
+log_4(-x(6-x)) = 2
+      -x(6-x)  = 4^2 <-- this number should be equal to 4^2, bc base is 4
+      -x(6-x)  = 16
+      (-x)(6)+(-x)(-x) = 16
+      -6x + x^2 = 16 | -16
+      x^2 - 6x - 16 = 0
+      x          -8    x*-8
+      x           2    x*2
+                       -6x
+      (x+2)*(x-8) = 0
+Roots: x=-2  x=8 we will have 0
+log_4(-x) + log_4(6-x) = 2
+if we plug x=8 then log_4(-8) is not a solution since log cant be a negative num
+x=-2
+log_4(-(-2)) + log_4(6-(-2)) = 2
+log_2^2 (2^1) + log_2^2 (2^3) = 2
+    1/2       +     3/2       = 4/2 = 2 !!
+
+
+
+
+
+
