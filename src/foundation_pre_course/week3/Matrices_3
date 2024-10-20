@@ -1,4 +1,4 @@
-Matrices:
+Matrices, Inverse, Row operations :
 3 X 3 matrix
 [ 1 2 3 ]
   4 5 6
@@ -34,9 +34,10 @@ Row Echelon form - when you have a matrix [ 1 a b c ] <- 3 X 4
                                             if you have 1's under the diagonal and under that diagonal you have 0's
 THEN => We can express sets of linear equations as matrices:
 
+Reduced and rref - when you starts with A_n matrix and draw the line and write identity matrix on the right 1 in thE DIAGONAL and 0's under it, and bring A_n to Identity matrix and apply all of the operations, then you will achieve another matrix B_n <- the Invere matrix of A_n
+If you have A_n and B_n is the inverse matrix and you multiply them then you have I_n
+AA^-1 = I <-inverse
 
-
-Reduced and rref
 Inverse and rref
 
 
