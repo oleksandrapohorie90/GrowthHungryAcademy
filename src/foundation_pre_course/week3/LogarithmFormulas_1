@@ -41,4 +41,15 @@ log_a b^m = m*log_a b
 Exercises:
 log(x^2y) = log x^2 + log y = 2 log x * log y
 
-log
+1. log(√x * 3√y^2)
+   ------------ = log (√x * 3√y^2) - log (z^4) =
+       z^4
+                = log(√x) + log(3√y^2) - 4log z
+                = log x^1/2 + log y^2/3
+                = 1/2log x + 2/3log y - 4log z
+2. log x * √ √x / z = log x + log √√x / z =
+                    = log x + 1/2log(√x/z)
+                    = log x + 1/2(log √x - log z)
+                    = log x + 1/2(1/2log x - log z)
+                    = log x + 1/4log x - 1/2log z
+                    = 5/4 log x - 1/2 log z
