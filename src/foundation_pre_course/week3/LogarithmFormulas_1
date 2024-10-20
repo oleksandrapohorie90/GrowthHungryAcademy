@@ -22,3 +22,23 @@ a^k*1/k=a^1
 6) log_a^k a^m = m/k -> (a^k)^m/k = a^k*m/k = a^m
 7)log_a a^m = m
 8) log_a (bc) = log_a b + log_a c <- the sum of the logarithms of 2 parts
+9) log_2(32) = log_2(8*4) = log_2(8) + log_2(4)
+                                2^3        2^2
+         2^5     5  =             3          2
+
+10) log_a b/c = log_a b - log_a c
+    log_2 32/8 = log_2 32 - log_2 8
+    log_2 4=2  = 5 - 3 = 2
+          2^2
+11) log_a^k = b = 1/k * log_a b
+(a^k)^1/k*log_a b = a^k * 1/k = a^log_a b = b
+log_a b^m = m*log_a b
+
+12) log_a b = log_c b / log_c a <- log base substitution/swapping, PRACTICE MORE!!!
+13) log_a b = 1/log_b/a
+14) a^log_c b = b^log_c a
+
+Exercises:
+log(x^2y) = log x^2 + log y = 2 log x * log y
+
+log
