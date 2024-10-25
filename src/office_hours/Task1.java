@@ -6,9 +6,9 @@ public class Task1 {
         int n = nums.length;
         int[] res = new int[n];
 
-        for (int i = 0; i < n; i++) {
-            int product = 1;
-            for (int j = 0; j < n; j++) {
+        for (int i = 0; i < n; i++) { //O(n)
+            int product = 1;                   //=> O(n^2) the bigger n, the slower algorithm will run
+            for (int j = 0; j < n; j++) { //O(n)
                 if (i == j) continue;
                 product *= nums[j];
             }
