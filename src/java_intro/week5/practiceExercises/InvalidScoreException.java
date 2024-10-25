@@ -1,4 +1,4 @@
-package java_intro.week5;
+package java_intro.week5.practiceExercises;
 
 public class InvalidScoreException extends Exception{
     public InvalidScoreException(String message){

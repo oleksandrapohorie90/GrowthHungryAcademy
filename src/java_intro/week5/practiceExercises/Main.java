@@ -1,4 +1,4 @@
-package java_intro.week5;
+package java_intro.week5.practiceExercises;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Integer> scores = new ArrayList<>();
         BufferedReader br = null;
-        String filePath = "/Users/alexasky111/IdeaProjects/GrowthHungryAcademy/src/java_intro/week5/students.txt";
+        String filePath = "/Users/alexasky111/IdeaProjects/GrowthHungryAcademy/src/java_intro/week5/practiceExercises/students.txt";
         try {
             br = new BufferedReader(new FileReader(filePath));
             String line;
