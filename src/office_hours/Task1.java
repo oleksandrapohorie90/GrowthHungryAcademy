@@ -1,7 +1,7 @@
 package office_hours;
 
 public class Task1 {
-
+// [2,7,100] => [ 700, 200, 14 ]
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         int[] res = new int[n];
