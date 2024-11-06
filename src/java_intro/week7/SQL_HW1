@@ -1,0 +1,109 @@
+alexasky111@OleksanasLaptop sqlite-tools-osx-x64-3470000 % ./sqlite3 library.db        <<<<------Create a library
+SQLite version 3.47.0 2024-10-21 16:30:22
+Enter ".help" for usage hints.
+sqlite> CREATE TABLE Books (
+(x1...>   book_id INT PRIMARY KEY,
+(x1...>   title TEXT,
+(x1...>   author TEXT,
+(x1...>   genre TEXT,
+(x1...>   published_year INT,
+(x1...>   available BOOLEAN
+(x1...> );
+sqlite> .tables
+Books
+sqlite> CREATE TABLE Members (
+(x1...>     member_id INT PRIMARY KEY,
+(x1...>     first_name TEXT,
+(x1...>     last_name TEXT,
+(x1...>     membership_date DATE
+(x1...> );
+sqlite> CREATE TABLE Borrowings (
+(x1...>     borrowing_id INT PRIMARY KEY,
+(x1...>     book_id INT,
+(x1...>     member_id INT,
+(x1...>     borrowed_date DATE,
+(x1...>     return_date DATE,
+(x1...>     FOREIGN KEY (book_id) REFERENCES Books(book_id),
+(x1...>     FOREIGN KEY (member_id) REFERENCES Members(member_id)
+(x1...> );
+sqlite>
+sqlite> .tables
+Books       Borrowings  Members
+sqlite> INSERT INTO Books (book_id, title, author, genre, published_year, available)
+   ...> VALUES (1, 'To Kill a Mockingbird', 'Harper Lee', 'Fiction', 1960, 1);
+sqlite>
+sqlite> INSERT INTO Books (book_id, title, author, genre, published_year, available)
+   ...> VALUES (2, '1984', 'George Orwell', 'Dystopian', 1949, 1);
+sqlite>
+sqlite> INSERT INTO Books (book_id, title, author, genre, published_year, available)
+   ...> VALUES (3, 'The Great Gatsby', 'F. Scott Fitzgerald', 'Classic', 1925, 0);
+sqlite>
+sqlite> INSERT INTO Books (book_id, title, author, genre, published_year, available)
+   ...> VALUES (4, 'Pride and Prejudice', 'Jane Austen', 'Romance', 1813, 1);
+sqlite>
+sqlite> INSERT INTO Books (book_id, title, author, genre, published_year, available)
+   ...> VALUES (5, 'The Catcher in the Rye', 'J.D. Salinger', 'Literature', 1951, 0);
+sqlite> .schema Books
+CREATE TABLE Books (
+  book_id INT PRIMARY KEY,
+  title TEXT,
+  author TEXT,
+  genre TEXT,
+  published_year INT,
+  available BOOLEAN
+);
+sqlite> SELECT * FROM Books;
+1|To Kill a Mockingbird|Harper Lee|Fiction|1960|1
+2|1984|George Orwell|Dystopian|1949|1
+3|The Great Gatsby|F. Scott Fitzgerald|Classic|1925|0
+4|Pride and Prejudice|Jane Austen|Romance|1813|1
+5|The Catcher in the Rye|J.D. Salinger|Literature|1951|0
+sqlite> INSERT INTO Members (member_id, first_name, last_name, membership_date)
+   ...> VALUES (1, 'Oleh', 'Hochak', '2022-11-01');
+sqlite>
+sqlite> INSERT INTO Members (member_id, first_name, last_name, membership_date)
+   ...> VALUES (2, 'Natalia', 'Hochak', '2023-12-01');
+sqlite>
+sqlite> INSERT INTO Members (member_id, first_name, last_name, membership_date)
+   ...> VALUES (3, 'Vladimir', 'Hochak', '2024-01-01');
+sqlite> .schema Members
+CREATE TABLE Members (
+    member_id INT PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
+    membership_date DATE
+);
+sqlite> SELECT * FROM Members;
+1|Oleh|Hochak|2022-11-01
+2|Natalia|Hochak|2023-12-01
+3|Vladimir|Hochak|2024-01-01
+sqlite> INSERT INTO Borrowings (borrowing_id, book_id, member_id, borrowed_date, return_date)
+   ...> VALUES
+   ...>     (1, 1, 1, '2023-12-01', '2024-01-01'),
+   ...>     (2, 2, 2, '2023-12-05', '2024-01-10'),
+   ...>     (3, 3, 1, '2024-01-15', '2024-02-15'),
+   ...>     (4, 4, 3, '2024-02-01', NULL),  -- NULL indicates not yet returned
+   ...> 10')INSERT INTO Borrowings (borrowing_id, book_id, member_id, borrowed_date, return_date)
+   ...> VALUES
+   ...>     (1, 1, 1, '2023-12-01', '2024-01-01'),
+   ...>     (2, 2, 2, '2023-12-05', '2024-01-10'),
+   ...>     (3, 3, 1, '2024-01-15', '2024-02-15'),
+   ...>     (4, 4, 3, '2024-02-01', NULL),
+   ...>     (5, 5, 2, '2024-01-25', '2024-02-10');
+Parse error: near "INSERT": syntax error
+  returned     (5, 5, 2, '2024-01-25', '2024-02-10')INSERT INTO Borrowings (borr
+                                      error here ---^
+sqlite> INSERT INTO Borrowings (borrowing_id, book_id, member_id, borrowed_date, return_date)
+   ...> VALUES
+   ...>     (1, 1, 1, '2023-12-01', '2024-01-01'),
+   ...>     (2, 2, 2, '2023-12-05', '2024-01-10'),
+   ...>     (3, 3, 1, '2024-01-15', '2024-02-15'),
+   ...>     (4, 4, 3, '2024-02-01', NULL),
+   ...>     (5, 5, 2, '2024-01-25', '2024-02-10');
+sqlite> SELECT * FROM Borrowings;
+1|1|1|2023-12-01|2024-01-01
+2|2|2|2023-12-05|2024-01-10
+3|3|1|2024-01-15|2024-02-15
+4|4|3|2024-02-01|
+5|5|2|2024-01-25|2024-02-10
+sqlite>
