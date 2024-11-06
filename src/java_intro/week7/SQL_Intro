@@ -1,0 +1,114 @@
+Part 2: SQL 101
+=================================
+Scenario: Company Database for Employee and Department Management
+In this exercise, you’ll create tables for a company database to store information about
+employees, departments, and projects. You'll then practise basic SQL operations, including
+creating tables, inserting data, and writing queries.
+-- Create the database
+-- Create Departments table
+CREATE TABLE Departments (
+department_id INT PRIMARY KEY,
+department_name VARCHAR(50) NOT NULL,
+location VARCHAR(50)
+);
+-- Create Employees table
+CREATE TABLE Employees (
+employee_id INT PRIMARY KEY,
+first_name VARCHAR(50) NOT NULL,
+last_name VARCHAR(50) NOT NULL,
+email VARCHAR(100),
+salary DECIMAL(10, 2),
+department_id INT,
+FOREIGN KEY (department_id) REFERENCES Departments(department_id)
+);
+-- Create Projects table
+CREATE TABLE Projects (
+project_id INT PRIMARY KEY,
+project_name VARCHAR(50) NOT NULL,
+budget DECIMAL(15, 2),
+department_id INT,
+FOREIGN KEY (department_id) REFERENCES Departments(department_id)
+);
+-- Create EmployeeProjects (many-to-many relationship)
+CREATE TABLE EmployeeProjects (
+employee_id INT,
+project_id INT,
+PRIMARY KEY (employee_id, project_id),
+FOREIGN KEY (employee_id) REFERENCES Employees(employee_id),
+FOREIGN KEY (project_id) REFERENCES Projects(project_id)
+);
+-- Insert data into Departments
+INSERT INTO Departments (department_id, department_name, location)
+VALUES (1, 'Engineering', 'Building A'),
+(2, 'Human Resources', 'Building B'),
+(3, 'Marketing', 'Building C');
+-- Insert data into Employees
+INSERT INTO Employees (employee_id, first_name, last_name, email, salary,
+department_id)
+VALUES (101, 'Alice', 'Smith', 'alice@company.com', 80000, 1),
+(102, 'Bob', 'Brown', 'bob@company.com', 55000, 2),
+(103, 'Carol', 'Johnson', 'carol@company.com', 70000, 3),
+(104, 'David', 'Lee', 'david@company.com', 75000, 1);
+-- Insert data into Projects
+INSERT INTO Projects (project_id, project_name, budget, department_id)
+VALUES (201, 'Project Alpha', 1000000, 1),
+(202, 'Project Beta', 500000, 2),
+(203, 'Project Gamma', 300000, 3);
+-- Insert data into EmployeeProjects (assigning employees to projects)
+INSERT INTO EmployeeProjects (employee_id, project_id)
+VALUES (101, 201),
+(104, 201),
+(102, 202),
+(103, 203);
+Step 3: Sample Queries for Practice
+These queries cover basic SQL operations, joins, filtering, and aggregations.
+1. Retrieve All Employees
+sql
+Copy code
+SELECT * FROM Employees;
+2. Find Employees in the Engineering Department
+sql
+Copy code
+SELECT first_name, last_name
+FROM Employees
+WHERE department_id = 1;
+3. List Employees and Their Departments (Using INNER JOIN)
+sql
+Copy code
+SELECT e.first_name, e.last_name, d.department_name
+FROM Employees e
+INNER JOIN Departments d ON e.department_id = d.department_id;
+4. Find Projects with Budgets Over $500,000
+sql
+Copy code
+SELECT project_name, budget
+FROM Projects
+WHERE budget > 500000;
+5. Count the Number of Employees in Each Department
+sql
+Copy code
+SELECT d.department_name, COUNT(e.employee_id) AS employee_count
+FROM Departments d
+LEFT JOIN Employees e ON d.department_id = e.department_id
+GROUP BY d.department_name;
+6. List All Employees and the Projects They’re Assigned To
+sql
+Copy code
+SELECT e.first_name, e.last_name, p.project_name
+FROM Employees e
+JOIN EmployeeProjects ep ON e.employee_id = ep.employee_id
+JOIN Projects p ON ep.project_id = p.project_id;
+7. Calculate Total Budget per Department (Using Aggregation)
+sql
+Copy code
+SELECT d.department_name, SUM(p.budget) AS total_budget
+FROM Departments d
+JOIN Projects p ON d.department_id = p.department_id
+GROUP BY d.department_name;
+8. Retrieve Employees with No Project Assigned
+sql
+Copy code
+SELECT first_name, last_name
+FROM Employees e
+LEFT JOIN EmployeeProjects ep ON e.employee_id = ep.employee_id
+WHERE ep.project_id IS NULL;
