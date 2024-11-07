@@ -1,0 +1,38 @@
+Part 2: Build and Query a Library Database
+Objective: Create a library management database in SQLite. Practice using SQL
+commands to create tables, insert data, and write queries.
+Step 1: Setup
+1. Download and install SQLite if you haven't already.
+2. Open your SQLite environment and create a new database called library.db.
+Step 2: Create Tables
+1. Books: Create a table to store information about books.
+○ Columns: book_id (INTEGER, Primary Key), title (TEXT), author
+(TEXT), genre (TEXT), published_year (INTEGER), available
+(BOOLEAN).
+2. Members: Create a table to store information about library members.
+○ Columns: member_id (INTEGER, Primary Key), first_name (TEXT),
+last_name (TEXT), membership_date (DATE).
+3. Borrowings: Create a table to record which books are borrowed by members.
+○ Columns: borrowing_id (INTEGER, Primary Key), book_id (INTEGER,
+Foreign Key referencing Books), member_id (INTEGER, Foreign Key
+referencing Members), borrowed_date (DATE), return_date (DATE).
+Step 3: Insert Seed Data
+Insert sample data for testing and queries.
+1. Books: Add at least 5 different books with varying genres and authors.
+2. Members: Add at least 3 library members.
+3. Borrowings: Add records showing which members have borrowed which books,
+along with the borrowing and return dates.
+Step 4: Practice Queries
+Write SQL queries to answer the following questions:
+1. All Books: List all books in the library.
+2. Available Books: Retrieve only the books that are currently available.
+3. Members who Borrowed Books: Show each member’s name and the titles of
+books they have borrowed.
+4. Books by Genre: List all books grouped by genre.
+5. Count of Borrowed Books: Find out how many books each member has borrowed.
+6. Overdue Books: List all books that have been borrowed for more than 30 days.
+7. Most Recent Borrowing: Retrieve the most recent borrowing record.
+Step 5: Advanced Queries (Bonus)
+1. Popular Books: Find the book that has been borrowed the most times.
+2. Average Borrowing Duration: Calculate the average number of days a book is
+borrowed before being returned.
