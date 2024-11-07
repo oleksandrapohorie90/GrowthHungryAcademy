@@ -157,3 +157,19 @@ sqlite> SELECT * FROM Borrowings
 4|4|3|2024-02-01|
 sqlite>
 sqlite>
+
+1. Popular Books: Find the book that has been borrowed the most times.
+2. Average Borrowing Duration: Calculate the average number of days a book is
+borrowed before being returned.
+
+SELECT b.title, COUNT(br.book_id) AS borrow_count
+FROM Books b
+JOIN Borrowings br ON b.book_id = br.book_id
+GROUP BY b.book_id
+ORDER BY borrow_count DESC
+LIMIT 1;
+
+SELECT AVG(JULIANDAY(return_date) - JULIANDAY(borrowed_date)) AS avg_borrowing_duration
+FROM Borrowings
+WHERE return_date IS NOT NULL;
+
