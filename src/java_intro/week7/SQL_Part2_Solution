@@ -1,4 +1,4 @@
-alexasky111@OleksanasLaptop sqlite-tools-osx-x64-3470000 % ./sqlite3 library.db        <<<<------Create a library
+alexasky111@OleksanasLaptop sqlite-tools-osx-x64-3470000 % ./sqlite3 library.db
 SQLite version 3.47.0 2024-10-21 16:30:22
 Enter ".help" for usage hints.
 sqlite> CREATE TABLE Books (
@@ -106,4 +106,54 @@ sqlite> SELECT * FROM Borrowings;
 3|3|1|2024-01-15|2024-02-15
 4|4|3|2024-02-01|
 5|5|2|2024-01-25|2024-02-10
+sqlite> SELECT * FROM Books;
+1|To Kill a Mockingbird|Harper Lee|Fiction|1960|1
+2|1984|George Orwell|Dystopian|1949|1
+3|The Great Gatsby|F. Scott Fitzgerald|Classic|1925|0
+4|Pride and Prejudice|Jane Austen|Romance|1813|1
+5|The Catcher in the Rye|J.D. Salinger|Literature|1951|0
+sqlite> SELECT * FROM Books
+   ...> WHERE available = 1;
+1|To Kill a Mockingbird|Harper Lee|Fiction|1960|1
+2|1984|George Orwell|Dystopian|1949|1
+4|Pride and Prejudice|Jane Austen|Romance|1813|1
+sqlite> SELECT Members.first_name, Members.last_name, Books.title
+   ...> FROM Members
+   ...> JOIN Borrowings ON Members.member_id = Borrowings.member_id
+   ...> JOIN Books ON Borrowings.book_id = Books.book_id;
+Oleh|Hochak|To Kill a Mockingbird
+Natalia|Hochak|1984
+Oleh|Hochak|The Great Gatsby
+Vladimir|Hochak|Pride and Prejudice
+Natalia|Hochak|The Catcher in the Rye
+sqlite> SELECT genre, COUNT(*) AS total_books
+   ...> FROM Books
+   ...> GROUP BY genre;
+Classic|1
+Dystopian|1
+Fiction|1
+Literature|1
+Romance|1
+sqlite>
+sqlite> SELECT Members.first_name, Members.last_name, COUNT(Borrowings.book_id) AS borrowed_count
+   ...> FROM Members
+   ...> LEFT JOIN Borrowings ON Members.member_id = Borrowings.member_id
+   ...> GROUP BY Members.member_id;
+Oleh|Hochak|2
+Natalia|Hochak|2
+Vladimir|Hochak|1
+sqlite>
+sqlite> SELECT Books.title, Borrowings.borrowed_date, Borrowings.return_date
+   ...> FROM Borrowings
+   ...> JOIN Books ON Borrowings.book_id = Books.book_id
+   ...> WHERE julianday(Borrowings.return_date) - julianday(Borrowings.borrowed_date) > 30;
+To Kill a Mockingbird|2023-12-01|2024-01-01
+1984|2023-12-05|2024-01-10
+The Great Gatsby|2024-01-15|2024-02-15
+sqlite>
+sqlite> SELECT * FROM Borrowings
+   ...> ORDER BY borrowed_date DESC
+   ...> LIMIT 1;
+4|4|3|2024-02-01|
+sqlite>
 sqlite>
