@@ -1,10 +1,15 @@
 package java_intro.week7;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class StudentManager {
     private String filePath;
+
+    public StudentManager(String filePath) {
+        this.filePath = filePath;
+    }
 
     private void saveStudentsToFile(List<Student> students) throws IOException {
         /**
@@ -18,6 +23,12 @@ public class StudentManager {
                 writer.newLine();
             }
         }
+    }
+
+    public void addStudent(Student student) throws IOException {
+        List<Student> students = loadStudentsFromFile();
+        students.add(student);
+        saveStudentsToFile(students);
     }
 
     private List<Student> loadStudentsFromFile() throws IOException {
