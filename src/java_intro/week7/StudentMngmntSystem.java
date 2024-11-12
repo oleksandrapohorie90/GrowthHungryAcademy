@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class StudentMngmntSystem {
     public static void main(String[] args) {
-        String filePath = "java_intro/week7/AllStudents.txt";
+        String filePath = "/Users/alexasky111/IdeaProjects/GrowthHungryAcademy/src/java_intro/week7/AllStudents.txt";
         StudentManager manager = new StudentManager(filePath);
         Scanner scanner = new Scanner(System.in);
         while (true) {

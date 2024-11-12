@@ -52,10 +52,11 @@ public class StudentManager {
     public void displayStudents() throws IOException {
         List<Student> students = loadStudentsFromFile();
         if (students.isEmpty()) {
-            System.out.println("No students found");
+            System.out.println("No students found.");
         } else {
             for (Student student : students) {
-                System.out.println("Student's name " + student.getName() + "\nStudent's grade " + student.getGrade() + "\nStudent's ID " + student.getId());
+                System.out.println("ID: " + student.getId() + ", Name: " + student.getName() +
+                        ", Age: " + student.getAge() + ", Grade: " + student.getGrade());
             }
         }
     }
