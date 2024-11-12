@@ -1,7 +1,7 @@
 package data_structures_and_algorithms_CS210.week18;
 
 public class StringCompression {
-    //Main goal to analyze the array and find chars and put 1st = that char, 2nd = the number of how many times that char appears in the array
+    //StudentManager goal to analyze the array and find chars and put 1st = that char, 2nd = the number of how many times that char appears in the array
 
     //each char essentially is making a string of 1 or more chars
     //int streakStart=0 - points at the beginning at the next string
