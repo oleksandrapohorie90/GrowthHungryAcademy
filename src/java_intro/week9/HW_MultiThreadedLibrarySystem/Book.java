@@ -1,4 +1,4 @@
-package java_intro.week9;
+package java_intro.week9.HW_MultiThreadedLibrarySystem;
 
 public class Book {
     private int id;

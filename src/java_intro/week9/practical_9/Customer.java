@@ -1,8 +1,8 @@
-package java_intro.week9;
+package java_intro.week9.practical_9;
 
 import java.util.Random;
 
-class Customer implements Runnable {
+public class Customer implements Runnable {
     private BankAccount account;
     private Random random = new Random();
     // Constructor

@@ -1,4 +1,4 @@
-package java_intro.week9;
+package java_intro.week9.practical_9;
 
 public class BankSimulation {
     public static void main(String[] args) {

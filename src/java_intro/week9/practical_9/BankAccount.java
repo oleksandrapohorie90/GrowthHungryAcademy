@@ -1,4 +1,4 @@
-package java_intro.week9;
+package java_intro.week9.practical_9;
 
 public class BankAccount{
     private int balance = 1000; // Starting balance
