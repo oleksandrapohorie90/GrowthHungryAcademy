@@ -1,0 +1,19 @@
+process-independent execution until with separate memoty space
+thread-lightweight, shares memory within the same process. allows resource sharing but requires synchronization
+
+each process has multiple threads
+each thread has a single process, threads share the same memory
+
+threads +:
+enhance performance
+allow parallel tasks
+responsive UI
+
+Java abstracts thread management with classes/libraries that makes multithreading easier
+
+Concurrency model - shared memory model where threads can access shared data and objects
+
+Garbage collection - releasing memory that is no longer used
+Deamon threads - if no longer used threads, program terminates
+Runnable or Thread class can be extended and override run() method
+
