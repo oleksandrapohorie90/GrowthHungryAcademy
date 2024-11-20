@@ -17,3 +17,11 @@ Garbage collection - releasing memory that is no longer used
 Deamon threads - if no longer used threads, program terminates
 Runnable or Thread class can be extended and override run() method
 
+ 1. once thread 1 is paused, 2nd thread is idle and blocked waiting for thread 1 to complete if a synchronized word added to the method signiture
+ 2. synchronized -> executed at most 1 thread at the time
+
+ Thread Pool
+ =============
+ when task is finished a thread returns to thread pool
+ and waits for another task, mostly for performance
+ newCachedThreadPool()
