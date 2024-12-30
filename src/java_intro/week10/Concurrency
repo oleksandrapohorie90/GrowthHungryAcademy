@@ -1,7 +1,7 @@
-ability of a program to execute multiple tasks simultaniously
+ability of a program to execute multiple tasks simultaneously
 -minim CPU usage
 -faster task completion
-dont control execution order, you dont know what order of threads execution
+don't control execution order, you don't know what order of threads execution
 Challenges of Threading
 =======================
 Data race is a type of race condition that occurs when 2 or more threads access a shared var concurrently, and at least 1 of the accesses is a write operation. This leads to data corruption.
@@ -32,5 +32,8 @@ CopyOnWriteArrayList
 BlockingQueue
 they are not free, performance overhead, computation, its not optimal, but if performance is not a restriction we can use them
 ==================================================================
-
+java-multithreading course
+Semaphore - managing, limiting number of concurrent customers
+Blocking Queue - for placing, processing orders
+ReentrantLock - protecting an int variable
 
