@@ -1,5 +1,4 @@
 package java_intro.week9.practical_9;
-
 import java.util.Random;
 
 public class Customer implements Runnable {

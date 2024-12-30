@@ -1,9 +1,25 @@
 package java_intro.week9.practical_9;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BankSimulation {
     public static void main(String[] args) {
 // Create shared bank account
         BankAccount account = new BankAccount();
+        List<Thread> customers = new ArrayList<>();
+
+        for (int i = 0; i < 100; i++) {
+            customers.get(i).start();
+            customers.add(new Thread(new Customer(account), "Customer" + i));
+        }
+        try {
+            for (int i = 0; i < 100; i++) {
+                customers.get(i).join();
+            }
+        } catch (InterruptedException e) {
+            System.out.println("Main thread interrupted");
+        }
 // Create multiple customer threads
         Thread customer1 = new Thread(new Customer(account), "Customer1");
         Thread customer2 = new Thread(new Customer(account), "Customer2");
