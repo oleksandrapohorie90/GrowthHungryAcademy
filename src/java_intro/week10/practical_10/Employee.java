@@ -1,6 +1,6 @@
 package java_intro.week10.practical_10;
 
-class Employee {
+public class Employee {
     private int id;
     private String name;
     private double salary;
