@@ -19,5 +19,10 @@ Locks: provide THREAD synchronisation by controlling access to critical sections
     b.ReadWriteLock:separates read and write access for better performance
 **increment operations can be protected by the lock
 **useful for section of code to execute 1 at a time and not multiple in the same time
+===========================
 
+Semaphores: limit the number of threads accessing a resource simultaneously**
+-limiting concurrent access to shared resources(DB connections)
+-thread signaling and coordination
+-create a semaphore and set the limit of concurrent connections in teh same time
 
