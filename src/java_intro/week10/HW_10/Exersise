@@ -1,0 +1,8 @@
+Simulate a parking lot with a fixed number of parking spots (e.g., 5).
+Use a Semaphore to control access to the parking spots.
+Create multiple threads representing cars:
+A car thread waits for an available spot, parks for a random amount of time, and then leaves.
+Print messages indicating when a car parks and leaves.
+Requirements:
+Use Semaphore.acquire() and Semaphore.release() appropriately.
+Simulate at least 10 cars attempting to park.
