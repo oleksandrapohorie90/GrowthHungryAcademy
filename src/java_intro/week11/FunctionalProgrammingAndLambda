@@ -63,3 +63,13 @@ Comparator Example
 List<String> names = Arrays.asList("Zoe","Alice", "John");
 names.sort((a,b) -> a.compareTo(b));
 
+Supplier Example
+=======================
+Supplier<Double> randomSupplier = Math::random;
+System.out.println(randomSupplier.get);
+
+
+Lambdas w/ Threads
+===================
+new Thread(() -> System.out.println("Hello from Thread")).start();
+
