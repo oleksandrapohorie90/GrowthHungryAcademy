@@ -46,5 +46,20 @@ List<Integer> evenNumbers = numbers.stream()
                           .filter(isEven)
                           .collect(Collectors.toList());
 
+Consumer Example
+====================
+Consumer<String> logger = System.out::println;
+list.forEach(logger);
 
+
+Function Example
+=====================
+Function<String,Integer> lengthFunction = String::length;
+List<Integer> lengths = words.stream().map(lengthFunction).collect(Collectors.toList());
+
+
+Comparator Example
+======================
+List<String> names = Arrays.asList("Zoe","Alice", "John");
+names.sort((a,b) -> a.compareTo(b));
 
