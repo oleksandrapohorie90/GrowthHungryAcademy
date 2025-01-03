@@ -40,4 +40,11 @@ numbers.forEach(n -> System.out.println(n));
 
 Predicate Example
 ===================
+Predicate<Integer> isEven = n -> n%2 == 0;
+
+List<Integer> evenNumbers = numbers.stream()
+                          .filter(isEven)
+                          .collect(Collectors.toList());
+
+
 
