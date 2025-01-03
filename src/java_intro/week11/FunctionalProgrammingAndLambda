@@ -73,3 +73,12 @@ Lambdas w/ Threads
 ===================
 new Thread(() -> System.out.println("Hello from Thread")).start();
 
+
+Real world example
+=======================
+Scenario: Filter, transform and print a list of employees on salary.
+employees.stream()
+         .filter(e->e.getSalary()>50000)
+         .map(Employee::getName)
+         .forEach(System.out.println);
+
