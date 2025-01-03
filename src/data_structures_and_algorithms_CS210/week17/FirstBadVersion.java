@@ -7,7 +7,7 @@ public class FirstBadVersion extends VersionControl {
         return false;
     }
 
-    //VersionControl is another class that has isBadVersion API defined
+    //VersionControl is another class that has isBadVersion FunctionalProgrammingAndLambda defined
     public int firstBadVersion(int n) {
         int left = 1;
         int right = n;
