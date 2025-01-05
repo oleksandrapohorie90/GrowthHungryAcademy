@@ -1,6 +1,7 @@
 package java_intro.week11.HW_11;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,17 +22,21 @@ public class FunctionalBookstore {
         //1.Filter Books: Return a list of books with a rating of 4.0 or higher.
         System.out.println("All books with rating 4.5 or higher: ");
         List<Book> higherRatedBooks =
-        books.stream()
-                .filter(book->book.getRating() >= 4.5)
-                .toList();
+                books.stream()
+                        .filter(book -> book.getRating() >= 4.5)
+                        .toList();
         higherRatedBooks.forEach(System.out::println);
         //2. Find Expensive Books: Find the top 3 most expensive books.
-
-
-
-
-
-
+        System.out.println("Top 3 the most expensive books: ");
+        List<Book> mostExpensiveBooks = books.stream()
+                .sorted(Comparator.comparingDouble(Book::getPrice).reversed()).limit(3)
+                .toList();
+        mostExpensiveBooks.forEach(System.out::println);
+        //3. Transform Titles: Convert all book titles to uppercase and return them as a list.
+        System.out.println("All book titles are in UpperCase: ");
+        List<String> transformToUpperCase = books.stream()
+                .map(book -> book.getTitle().toUpperCase()).toList();
+        transformToUpperCase.forEach(System.out::println);
 
 
     }
