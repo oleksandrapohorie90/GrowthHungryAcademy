@@ -14,7 +14,43 @@ import java.util.Map;
 import java.util.logging.Handler;
 
 public class HttpRequestHandler {
-
+/*
+Practical Exercise 2: HTTP Request Handler
+Develop a Java program that demonstrates the use of HTTP classes by creating an HTTP
+Request Handler. This program will simulate a basic HTTP server capable of responding to
+GET requests.
+Instructions:
+1. Setup:
+○ Create a server application using Java's HttpServer class from the
+com.sun.net.httpserver package.
+○ Configure it to listen on a specific port (e.g., 8000).
+2. Functionality:
+○ Handle basic HTTP GET requests by returning appropriate responses.
+○ Implement the following endpoints:
+■ /: Respond with a welcome message (e.g., "Welcome to the HTTP
+Request Handler!").
+■ /time: Respond with the current server time in a readable format.
+■ /echo?message=your_message: Echo back the provided message
+as part of the response.
+3. Enhancements:
+○ Log incoming requests with details like the request method, URI, and
+timestamp.
+○ Return an appropriate error message for unsupported request types (e.g.,
+POST).
+Guidelines:
+● Use HttpServer and HttpHandler classes for managing HTTP requests.
+● Implement a custom HttpHandler for each endpoint.
+● Ensure proper resource management and exception handling.
+Example Output:
+1. Server log:
+○ "Request received: GET /time at 2024-12-15 10:00:00"
+○ "Request received: GET /echo?message=Hello"
+2. Client responses:
+○ GET /: "Welcome to the HTTP Request Handler!"
+○ GET /time: "Current server time: 2024-12-15 10:00:00"
+○ GET /echo?message=Hello: "Echo: Hello"
+This exercise practices the use of HTTP classes in Java and basic HTTP protocol handling
+ */
     public static void main(String[] args) throws IOException {
         int port = 8000;
         HttpServer server = HttpServer.create(new

@@ -8,6 +8,33 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TimeServer {
+    /*
+    Instructions:
+1. Setup:
+○ Create a server program that listens on a specified port (e.g., 12345).
+○ Create a client program that connects to the server.
+2. Functionality:
+○ Server:
+■ On receiving a request, send the current server time to the client.
+○ Client:
+■ Connect to the server and display the received time.
+3. Enhancements:
+○ Format the time in a readable format (e.g., "2024-12-15 10:00:00").
+○ Allow multiple clients to connect simultaneously using multithreading.
+Guidelines:
+● Use ServerSocket and Socket classes for networking.
+● Handle exceptions gracefully to avoid crashes.
+● Use proper closing of sockets and streams to prevent resource leaks.
+Example Output:
+1. Server output:
+○ "Client connected: 127.0.0.1"
+○ "Sent time: 2024-12-15 10:00:00"
+2. Client output:
+○ "Connected to server"
+○ "Server time: 2024-12-15 10:00:00"
+This exercise practices key concepts of network programming in Java while avoiding
+complex file handling or chat-based applications
+     */
     private static final int PORT = 12345;
 
     public static void main(String[] args) {
