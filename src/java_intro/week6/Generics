@@ -1,0 +1,106 @@
+Generics
+Definition: Generics enable types (classes and interfaces) to be parameters when
+defining classes, interfaces, and methods.
+Purpose: They allow for code reusability, type safety, and consistency.
+Example: Without Generics vs With Generics in Java collections (e.g., ArrayList
+without specifying type and ArrayList with <String>).
+Benefits of Using Generics
+Type Safety: Prevents ClassCastException by catching incompatible types at
+compile-time.
+Code Reusability: Write generic methods or classes that work with any type of
+data.
+Cleaner Code: Avoids type casting, making the code easier to read and maintain.
+Generics syntax
+class Box<T> {
+private T item;
+public void setItem(T item) { this.item = item; }
+public T getItem() { return item; }
+}
+The <T> denotes a generic type, which can be replaced with any object type (e.g.,
+String, Integer).
+Common use cases of Generics
+Collections: ArrayList<T>, HashMap<K, V>, and other collection types use
+generics to enforce type safety.
+Utility Methods: Libraries like java.util.Collections use generics extensively for
+reusable code.
+Custom Generic Classes: You can define your own generic classes and
+methods for flexible software design.
+Generic classes
+A generic class defines one or more type parameters (e.g., Box<T>).
+Allows class members to use the generic type parameter:
+Box<Integer> integerBox = new Box<>();
+Type Inference: The diamond operator <> infers the type.
+Generic methods
+public <T> void printArray(T[] array) {
+for (T element : array) {
+System.out.println(element);
+}
+}
+The method is called with any type (e.g., printArray(new Integer[]{1, 2, 3})).
+Generic Interfaces
+interface Comparable<T> {
+int compareTo(T o);
+}
+Generic constructors
+public class Box<T> {
+private T item;
+public <U> Box(U u) {
+System.out.println(u.getClass().getName())
+}}
+
+Type bounds
+You can restrict the types that can be used with generics by using bounds.
+Upper Bound:
+class Box<T extends Number> {
+private T item;
+}
+Example: Box<Integer> and Box<Double> are allowed, but Box<String> is not.
+Multiple type bounds
+class Box<T extends Number & Comparable<T>> {
+private T item;
+}
+Wildcards in generics
+Definition: A wildcard (?) represents an unknown type in generics.
+Types of Wildcards:
+Unbounded Wildcard: <?> (accepts any type)
+Upper Bounded Wildcard: <? extends T> (restricts to subclasses of T)
+Lower Bounded Wildcard: <? super T> (restricts to superclasses of T)
+Unbounded Wildcards
+Purpose: To work with any type without specifying a bound.
+public void printList(List<?> list) {
+for (Object obj : list) {
+System.out.println(obj);
+}
+}
+Upper bounded wildcards
+Definition: Restricts the wildcard type to be a subclass of a specific class.
+public void printNumbers(List<? extends Number> list) {
+for (Number n : list) {
+System.out.println(n);
+}
+}
+Lower bounded wildcards
+Definition: Allows the wildcard to be a superclass of a specific class.
+public void addNumber(List<? super Integer> list) {
+list.add(10);
+}
+Wildcards vs type parameters
+If you want to enforce some relationship on the different types of method
+arguments, you can't do that with wildcards, you have to use type parameters.
+public static <T extends Number> void copy(List<T> dest, List<T> src)
+Wildcards vs type parameters
+● If you have only one parameterized type argument, you can use a wildcard,
+although type parameter will also work.
+● Type parameters support multiple bounds, wildcards don't.
+● Wildcards support both upper and lower bounds, type parameters only
+support upper bounds.
+Type erasure in generics
+Definition: Java generics are implemented using type erasure. This means that
+generic types are replaced with Object (or bounds) at runtime, ensuring backward
+compatibility with non-generic code.
+Implication: No runtime type information for generics.
+References
+● https://www.baeldung.com/java-generics
+● https://www.youtube.com/watch?v=K1iu1kXkVoA
+● https://stackoverflow.com/questions/18176594/when-to-use-generic-methods-
+and-when-to-use-wild-card
