@@ -1,0 +1,163 @@
+File
+=========
+Creating new file
+File myObj = new File("filename.txt");
+if (myObj.createNewFile()) {
+System.out.println("File created: " + myObj.getName());
+} else {
+System.out.println("File already exists.");
+}
+
+Reading from a file
+File myObj = new File("filename.txt");
+Scanner myReader = new Scanner(myObj);
+while (myReader.hasNextLine()) {
+String data = myReader.nextLine();
+System.out.println(data);
+}
+myReader.close();
+
+Deleting a file
+File myObj = new File("filename.txt");
+if (myObj.delete()) {
+System.out.println("Deleted the file: " + myObj.getName());
+} else {
+System.out.println("Failed to delete the file.");
+}
+
+File Reader/Writer
+In Java, FileReader and FileWriter are classes that handle reading and writing text
+files at the character level. They belong to the java.io package and are ideal for
+handling text data (like .txt files), especially when working with character encoding.
+Here’s a closer look at each:
+
+File Reader/Writer
+try (FileReader reader = new FileReader("example.txt")) {
+int character;
+while ((character = reader.read()) != -1) {
+System.out.print((char) character);
+}
+} catch (IOException e) {
+e.printStackTrace();
+}
+
+File Reader/Writer
+try (FileWriter writer = new FileWriter("output.txt")) {
+writer.write("Hello, World!");
+} catch (IOException e) {
+e.printStackTrace();
+}
+Buffered Reader/Writer
+Wrappers around FileWriter and FileReader (or other character streams) that add
+buffering capabilities. They gather data into a buffer and write or read it in larger
+chunks. This minimizes disk I/O operations, as accessing a file directly on disk is
+relatively slow. With buffering, fewer disk accesses are needed, making these
+operations much faster.
+BufferedReader provides the readLine() method, which allows you to read an
+entire line of text at once, making it easier to process text files line by line.
+BufferedWriter offers newLine() to insert line separators, making code more
+readable and managing line breaks platform-independently.
+
+Buffered Reader/Writer
+try (
+BufferedReader reader = new BufferedReader(new FileReader(inputFilePath));
+BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath))
+) {
+String line;
+while ((line = reader.readLine()) != null) {
+writer.write(line);
+writer.newLine(); // Adds a new line in the output file
+}
+System.out.println("File copied successfully.");
+} catch (IOException e) { ..
+
+
+sql 101
+============
+Definition: SQL (Structured Query Language) is a standard programming
+language used to manage and manipulate relational databases.
+Purpose: Primarily used to retrieve, update, insert, and delete data from
+databases.
+
+SQL Databases and Why They Matter
+Relational Databases: Store data in structured tables that relate to each other.
+Examples of SQL Databases: MySQL, PostgreSQL, SQL Server, and SQLite.
+Importance: Efficiently stores, manages, and retrieves large amounts of data in
+applications.
+
+Basic SQL syntax
+SQL Statements: Consist of clauses like SELECT, FROM, WHERE, etc.
+Case Sensitivity: SQL is generally case-insensitive, but standard practice is to
+write SQL keywords in uppercase.
+SELECT * FROM customers;
+
+Creating a table
+CREATE TABLE table_name (
+column1 datatype,
+column2 datatype,
+...
+);
+
+Inserting data into a table
+INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);
+INSERT INTO customers (id, name, email)
+VALUES (1, 'John Doe', 'john@example.com');
+
+
+Reading data with SELECT
+SELECT column1, column2 FROM table_name WHERE condition;
+Filtering data with WHERE
+SELECT name FROM customers WHERE id = 1;
+Updating data in a table
+UPDATE table_name SET column1 = value1 WHERE condition;
+UPDATE customers SET email = 'new_email@example.com' WHERE id = 1
+==============
+Deleting data from a table
+DELETE FROM table_name WHERE condition;
+DELETE FROM customers WHERE id = 1;
+Note: Be cautious when using DELETE without a WHERE clause, as it removes
+all records in the table.
+SQL Joins intro
+Purpose: Joins combine records from multiple tables based on related columns.
+Types of Joins: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN.
+SQL INNER JOIN
+Definition: Returns records with matching values in both tables.
+SELECT columns FROM table1
+INNER JOIN table2 ON table1.common_column = table2.common_column;
+SQL LEFT JOIN
+Definition: Returns all records from the left table and matched records from the
+right table; unmatched records in the right table return as NULL.
+SELECT columns FROM table1
+LEFT JOIN table2 ON table1.common_column = table2.common_column;
+SQL RIGHT JOIN
+Definition: Returns all records from the right table and matched records from the
+left; unmatched records in the left table return as NULL.
+SELECT columns FROM table1
+RIGHT JOIN table2 ON table1.common_column = table2.common_column;
+SQL FULL JOIN
+Definition: Combines results of both LEFT and RIGHT joins, returning all
+matched and unmatched records from both tables.
+SELECT columns FROM table1
+FULL JOIN table2 ON table1.common_column = table2.common_column;
+SQL GROUP BY
+The GROUP BY clause in SQL is used to arrange identical data into groups.
+Commonly used with aggregate functions (COUNT, SUM, AVG, MAX, MIN) to perform
+calculations on grouped data.
+SELECT column1, aggregate_function(column2)
+FROM table_name
+GROUP BY column1;
+SQL GROUP BY
+SELECT category, COUNT(product_id) AS total_products
+FROM products
+GROUP BY category;
+Explanation: Counts the number of products in each category.
+SQL GROUP BY
+SELECT region, department, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY region, department;
+Explanation: Finds average salary grouped by both region and department.
+References
+● https://docs.oracle.com/javase/tutorial/essential/io/file.html
+● https://docs.oracle.com/javase/8/docs/api/?java/io/File.html
+● https://www.sqlite.org/download.html
