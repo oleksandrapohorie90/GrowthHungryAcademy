@@ -1,0 +1,89 @@
+Exceptions
+● Understanding Exceptions
+● Types of exceptions (checked, unchecked)
+● Try-Catch Blocks
+● Handling multiple exceptions
+● Finally and Throw
+● Using finally block
+What are Exceptions?
+An exception is an event that disrupts the normal flow of a program's execution.
+In Java, exceptions are objects that represent these runtime issues.
+Exception Handling: A mechanism to handle runtime errors, ensuring normal
+program flow.
+Exception Hierarchy
+Throwable is the root class for all exceptions.
+Subclasses:
+Error: Represents serious problems that applications shouldn't catch.
+Exception: Represents recoverable conditions that a program might want to catch.
+Common Exceptions
+ArithmeticException: E.g., dividing by zero.
+NullPointerException: Accessing an object that is null.
+ArrayIndexOutOfBoundsException: Accessing an invalid index in an array.
+Types of Exceptions
+Checked Exceptions: Checked at compile-time (e.g., IOException,
+SQLException).
+Unchecked Exceptions: Checked at runtime (e.g., NullPointerException,
+ArrayIndexOutOfBoundsException).
+Checked Exceptions
+Must be handled using try-catch or declared using throws.
+Examples: FileNotFoundException, IOException.
+Unchecked Exceptions
+Subclass of RuntimeException.
+Can be avoided with better coding practices
+Error Class
+Errors represent issues beyond application control (e.g., hardware failure, JVM issues).
+Examples:
+OutOfMemoryError
+StackOverflowError
+These should generally not be handled in the program.
+Handling Exceptions
+try {
+// Code that might throw an exception
+} catch (ExceptionType e) {
+// Handling code
+}
+Multiple Catch Blocks
+try {
+// Risky code
+} catch (NullPointerException e) {
+// Handle NullPointerException
+} catch (IOException e) {
+// Handle IOException
+}
+Finally Block
+try {
+// Code
+} catch (Exception e) {
+// Handle exception
+} finally {
+// Cleanup code
+}
+Throwing Exceptions
+throw new ExceptionType("Error message");
+Throws keyword
+Used in method signatures to declare exceptions that the method might throw.
+public void method() throws IOException, SQLException {
+// Method code
+}
+Custom Exceptions
+Custom exceptions are user-defined exceptions created by extending the
+Exception class or RuntimeException
+class CustomException extends Exception {
+public CustomException(String message) {
+super(message);
+}
+Exception Propagation
+Unhandled exceptions propagate up the call stack.
+A method can handle an exception or pass it up to its caller using throws.
+Best Practices for Exception Handling
+● Catch Specific Exceptions
+● Use Checked Exceptions Judiciously
+● Avoid Empty catch Blocks:
+● Provide Clear Error Messages
+● Use Custom Exceptions
+● Avoid Throwing Exceptions Unnecessarily
+● Log Exceptions
+● Test Exception Handling
+References
+● https://www.geeksforgeeks.org/exceptions-in-java/
+● https://stackify.com/best-practices-exceptions-java/
