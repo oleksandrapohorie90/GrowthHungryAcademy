@@ -1,0 +1,111 @@
+Functional programming
+● Definition: Programming paradigm where functions are first-class citizens.
+● Key Concepts: Immutability, statelessness, and higher-order functions.
+● Benefits: Concise code, easier parallelism, fewer side effects.
+Functional programming in Java
+● Introduced in Java 8 to handle modern programming challenges.
+● Supports declarative coding styles.
+● Simplifies operations on collections and parallel computing.
+Immutability
+● Definition: Data objects cannot be modified after creation.
+● Benefits:
+○ Prevents unintended side effects.
+○ Easier to debug and test.
+○ Improves thread safety in concurrent applications.
+List<Integer> numbers = List.of(1, 2, 3); // Immutable List
+// Attempt to modify: UnsupportedOperationException
+Statelessness
+● Definition: Functions rely only on their inputs and produce the same output for the
+same input (no external state dependency).
+● Benefits:
+○ Predictable and consistent behavior.
+○ Easier to parallelize.
+Function<Integer, Integer> square = x -> x * x;
+System.out.println(square.apply(4)); // Always 16
+Higher order functions
+● Definition: Functions that accept other functions as parameters or return them.
+● Benefits:
+○ Enables declarative programming.
+○ Encourages reuse and modular design.
+List<String> names = List.of("Alice", "Bob", "Charlie");
+names.stream()
+.filter(name -> name.startsWith("A"))
+.forEach(System.out::println);
+
+Functional interface
+● Definition: Interfaces with a single abstract method.
+● Examples: Runnable, Callable, Comparator, and Function.
+● Annotated with @FunctionalInterface.
+Common functional interfaces
+Predicate<T> Test a condition test(T t) Filters a collection.
+Consumer<T> Consume an input accept(T t) Logging or printing.
+Function<T,R> Transform input to output apply(T t) Mapping data.
+Supplier<T> Provide an output without input get() Generate random
+values.
+Lambda expressions
+● Definition: Anonymous function to simplify code.
+(parameters) -> expression
+(parameters) -> { statements; }
+Benefits of Lambda Expressions
+Conciseness: Replaces boilerplate code.
+Readability: Expressive and easy-to-understand.
+Compatibility: Works seamlessly with streams and collections.
+
+Lambda syntax examples
+x -> x * x;
+(a, b) -> a + b;
+(x, y) -> {
+int sum = x + y;
+return sum;
+};
+Functional Programming with Streams API
+● Stream Operations:
+○ Intermediate: map, filter, sorted.
+○ Terminal: collect, forEach, reduce.
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+names.stream()
+.filter(name -> name.startsWith("A"))
+.forEach(System.out::println);
+forEach and lambda
+List<Integer> numbers = List.of(1, 2, 3);
+numbers.forEach(n -> System.out.println(n));
+Method references
+● A shorthand for lambdas invoking existing methods.
+○ Static methods: Class::methodName.
+○ Instance methods: instance::methodName.
+● Example:
+○ names.forEach(System.out::println);
+Predicate example
+● Predicate<Integer> isEven = n -> n % 2 == 0;
+List<Integer> evenNumbers = numbers.stream()
+.filter(isEven)
+.collect(Collectors.toList());
+
+================
+Function example
+Function<String, Integer> lengthFunction = String::length;
+List<Integer> lengths = words.stream() .map(lengthFunction)
+.collect(Collectors.toList());
+Comparator example
+List<String> names = Arrays.asList("Zoe", "Alice", "John");
+names.sort((a, b) -> a.compareTo(b));
+Supplier example
+Supplier<Double> randomSupplier = Math::random;
+System.out.println(randomSupplier.get);
+Using lambdas with Threads
+Simplify thread creation
+new Thread(() -> System.out.println("Hello from thread!")).start();
+Real-world example
+Scenario: Filter, transform, and print a list of employees based on salary.
+employees.stream()
+.filter(e -> e.getSalary() > 50000)
+.map(Employee::getName)
+.forEach(System.out::println);
+Common pitfalls
+● Overusing Lambdas: Avoid complex logic in lambdas.
+● Readability: Maintain clarity in nested streams.
+● Debugging: Ensure error handling within streams.
+References
+● https://www.geeksforgeeks.org/functional-programming-in-java-with-examples
+● https://www.udemy.com/course/java8_lambdasandstreams
+
