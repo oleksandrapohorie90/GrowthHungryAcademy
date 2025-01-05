@@ -1,0 +1,68 @@
+
+HashMap
+Based on a hash table.
+Average Time Complexity: O(1) for put, get, and remove operations.
+Worst Case: O(n) if many collisions occur, but this is rare with a good hash function.
+Use Case: When you need a high-performance map without any ordering requirements.
+TreeMap
+Based on a Red-Black tree (a type of self-balancing binary search tree).
+Ordering: Sorted order of the keys (natural ordering or via a provided Comparator).
+Time Complexity: O(log n) for put, get, and remove operations.
+Use Case: When you need a map that maintains its keys in a sorted order.
+TreeMap<String, Integer> treeMap = new TreeMap<>();
+treeMap.put("Apple", 1);
+treeMap.put("Banana", 2);
+LinkedHashMap
+Combines a hash table with a doubly-linked list.
+Ordering: Maintains insertion order (the order in which keys were added) or access order
+(order based on access).
+Time Complexity: Similar to HashMap with O(1) for put, get, and remove operations.
+Slightly Slower than HashMap due to the overhead of maintaining the linked list.
+Use Case: When you need a map that maintains the order of elements, such as caches
+where access order is important.
+HashSet
+Implements the Set interface.
+Unique elements only (no duplicates allowed).
+Fast operations for add, remove, contains due to hashing.
+HashSet<String> set = new HashSet<>();
+set.add("A");
+set.add("B");
+HashMap vs HashSet
+HashMap: Stores key-value pairs.
+HashSet: Stores unique elements (only values, no keys).
+Both use hashing, making lookups fast, but for different purposes.
+Practical Use Cases for Collections/Maps
+ArrayList: Ideal for storing ordered collections with fast access.
+LinkedList: Ideal for queue implementations or frequent modifications.
+HashMap: Suitable for cache, lookups, and dictionaries.
+Practice exercise 1
+Create a program that stores student names (as keys) and their grades (as values) using a
+HashMap. The program should:
+Add students and their grades to the HashMap.
+Display all students and their grades.
+Search for a specific student and display their grade.
+Remove a student from the HashMap.
+Check if a particular student exists in the map.
+Practice exercise 2
+Create a simple Java program that simulates a Library Management System. This program
+will allow you to:
+Store a list of books (using an ArrayList).
+Manage a list of borrowed books (using a HashSet, since borrowed books should be
+unique).
+Track book borrow requests in the order they are received (using a Deque).
+Keep track of how many copies of each book are available in the library (using a HashMap).
+Practice exercise 2
+Given an array of integers nums and an integer target, return indices of the two numbers
+such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the
+same element twice.
+You can return the answer in any order.
+class Solution {
+public int[] twoSum(int[] nums, int target) {
+}
+}
+References
+● https://www.geeksforgeeks.org/java-collection-tutorial/
+● https://www.tutorialspoint.com/java/java_collections.htm
+● https://www.masaischool.com/blog/understanding-hashmap-data-structure-
+with-examples/
