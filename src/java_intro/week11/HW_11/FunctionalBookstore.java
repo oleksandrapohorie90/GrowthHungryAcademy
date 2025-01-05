@@ -37,7 +37,14 @@ public class FunctionalBookstore {
         List<String> transformToUpperCase = books.stream()
                 .map(book -> book.getTitle().toUpperCase()).toList();
         transformToUpperCase.forEach(System.out::println);
-
+        //4. Sort by Rating and Price: Sort books first by rating (descending) and then by price (ascending).
+        //Ascending - Items are arranged from smallest to largest or from the earliest to the latest.
+        //Descending - Items are arranged from largest to smallest or from the latest to the earliest.
+        System.out.println("All book titles are in Descending Rating and Ascending Price: ");
+        List<Book> sortByRatingAndPrice = books.stream()
+                .sorted(Comparator.comparingDouble(Book::getRating).reversed().thenComparingDouble(Book::getPrice))
+                .toList();
+        sortByRatingAndPrice.forEach(System.out::println);
 
     }
 }
