@@ -1,0 +1,99 @@
+Advanced Object-Oriented Programming Concepts
+● Inheritance
+● Method Overriding
+● Polymorphism
+● Abstract Classes
+● Interfaces
+Inheritance
+Enables a class to inherit properties and behavior from another class.
+Promote code reuse, logical hierarchy, and extendability in object-oriented design.
+Inheritance
+Superclass: The parent class from which properties and methods are inherited.
+Subclass: The child class that inherits from the superclass.
+class Animal { } // Superclass
+class Dog extends Animal { } // Subclass
+Polymorphism
+Polymorphism allows one interface to be used for multiple types of objects.
+● Compile-time (Static polymorphism) via method overloading.
+● Runtime (Dynamic polymorphism) via method overriding.
+Polymorphism
+● Code Reusability: Multiple forms of a method or class can coexist.
+● Maintainability: Easier to add new types without altering existing code.
+● Extensibility: Enhances flexibility by allowing a generalized interface
+Method overriding
+When a subclass provides a specific implementation of a method already defined
+in its superclass.
+Rules:
+● Method signature must be identical.
+● Access level should not be more restrictive.
+● Demonstrates runtime polymorphism.
+Method overriding
+class Animal {
+void sound() {
+System.out.println("Animal makes sound");
+} }
+class Dog extends Animal {
+@Override
+void sound() {
+System.out.println("Dog barks");
+} }
+`super` keyword
+class Animal {
+String type = "Animal";
+}
+class Dog extends Animal {
+void printType() {
+System.out.println(super.type); // Calls parent variable
+}
+Abstract Classes
+Definition: A class that cannot be instantiated but can be subclassed.
+Purpose: Used when certain methods should have implementations, but others
+must be implemented by subclasses.
+Abstract Classes
+abstract class Animal {
+abstract void sound(); // Abstract method
+}
+class Dog extends Animal {
+void sound() { System.out.println("Barks"); }
+}
+Interfaces
+A completely abstract class (all methods are abstract by default).
+interface Animal {
+void sound(); // Abstract method
+}
+class Dog implements Animal {
+public void sound() { System.out.println("Barks"); }
+}
+Abstract Classes vs Interfaces
+Abstract Classes: Can have both abstract and concrete methods, supports
+constructors, and instance variables.
+Interfaces: Purely abstract, does not allow constructors, variables must be final.
+Abstract Classes vs Interfaces
+Abstract classes
+● When there is shared code
+across classes (use abstract
+classes).
+● When you need to provide a
+base implementation that can
+be reused by subclasses.
+Interfaces
+● When you need to define a
+contract for multiple unrelated
+classes.
+● When multiple inheritance is
+required (only one class can be
+extended, but multiple interfaces
+can be implemented).
+Abstract Class and Interface Together
+interface Vehicle {
+void start();
+}
+abstract class Car implements Vehicle {
+void fuel() { System.out.println("Refueling..."); }
+}
+class Tesla extends Car {
+public void start() { System.out.println("Tesla starts..."); }
+}
+References
+● https://www.udemy.com/course/java-the-complete-java-developer-course/
+● https://www.codecademy.com/learn/learn-java
