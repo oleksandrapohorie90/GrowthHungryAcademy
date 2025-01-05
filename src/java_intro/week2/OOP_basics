@@ -1,0 +1,63 @@
+
+Encapsulation Principle
+Access modifiers are essential for encapsulation, as they help restrict direct access to class
+variables and ensure that they can only be modified through controlled methods (like getters
+and setters).
+Access modifiers
+public: Accessible from anywhere.
+private: Accessible only within the class.
+protected: Accessible within the same package or subclasses.
+default (package-private): Accessible within the same package.
+Public Access Modifier
+The public keyword allows a class, method, or variable to be accessed from anywhere.
+Accessible from any class (same or different packages).
+Use case: When a method or class should be available for use in any other part of the
+program.
+Public Access Modifier
+The public keyword allows a class, method, or variable to be accessed from anywhere.
+Accessible from any class (same or different packages).
+Use case: When a method or class should be available for use in any other part of the
+program.
+Private Access Modifier
+public class Car {
+public String model;
+public void drive() {
+System.out.println("Driving...");
+}
+}
+Private Access Modifier
+public class BankAccount {
+private double balance;
+public void deposit(double amount) {
+balance += amount;
+}
+}
+Protected Access Modifier
+The protected keyword allows a class member to be accessed in the same package or
+subclasses (even if they are in different packages).
+Accessible within the same package or through inheritance in subclasses.
+Use case: When a class wants to allow access to certain members only to subclasses or
+classes in the same package.
+Protected Access Modifier
+public class Animal {
+protected String species;
+}
+class Dog extends Animal {
+public void printSpecies() {
+System.out.println(species); // Accessible due to inheritance
+}
+}
+Default (Package-Private) Access Modifier
+If no access modifier is specified, the member has package-private (default) access. This
+means it is only accessible within the same package.
+class Employee {
+String name; // Default access
+void printName() {
+System.out.println(name);
+}
+}
+References
+● https://www.w3schools.com/java/java_oop.asp (Java OOP - Java Packages
+API)
+● Intro to Object Oriented Programming - Crash Course
+● Object-oriented Programming in 7 minutes | Mosh
