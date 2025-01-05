@@ -1,0 +1,196 @@
+Concurrency recap
+● Concurrency: The ability of a program to execute multiple tasks
+simultaneously.
+● Commonly used for:
+○ Maximizing CPU usage.
+○ Faster task completion.
+○ Scalability in multi-user applications.
+Threading challenges
+● Non-deterministic execution.
+● Thread interference.
+● Resource contention.
+● Difficult to debug and test.
+Race conditions
+Situation where the outcome of a program depends on the timing of events that are not strictly controlled. Example data races.
+Thread t1 = new Thread(() -> {
+// Do something
+});
+Thread t2 = new Thread(() -> {
+// Do something else
+});
+t1.start();
+t2.start();
+Data race
+A data race is a type of race condition that occurs when two or more threads
+access a shared variable concurrently, and at least one of the accesses is a write
+operation. This can lead to unpredictable behavior and data corruption.
+
+Data race
+public static int sharedVariable = 0;
+public static void main(String[] args) {
+Thread t1 = new Thread(() -> {
+sharedVariable++;
+});
+Thread t2 = new Thread(() -> {
+sharedVariable++;
+});
+t1.start();
+t2.start();
+t1.join();
+t2.join();
+// Might not be 2
+System.out.println(sharedVariable);
+Deadlocks
+class DeadlockDemo {
+private final Object lock1 = new Object();
+private final Object lock2 = new Object();
+public void method1() {
+synchronized (lock1) {
+synchronized (lock2) {
+System.out.println("Method1 executed.");
+}
+}
+}
+public void method2() {
+synchronized (lock2) {
+synchronized (lock1) {
+System.out.println("Method2 executed.");
+}
+}
+}
+Deadlock prevention
+● Use consistent lock ordering.
+● Avoid nested locks where possible.
+● Use tryLock to prevent indefinite blocking
+
+Concurrency utilities in Java
+● Tools and mechanisms provided by Java to manage multi-threaded
+programming.
+● Address challenges like race conditions, thread safety, and synchronization.
+Locks
+● Provide thread synchronization by controlling access to critical sections.
+● Types:
+○ ReentrantLock: Allows the same thread to acquire the lock multiple times.
+○ ReadWriteLock: Separates read and write access for better performance.
+ReentrantLock
+private int count = 0;
+private final ReentrantLock lock = new ReentrantLock();
+public void increment() {
+lock.lock();
+try {
+count++;
+} finally { lock.unlock(); }
+}
+public int getCount() { return count; }
+public static void main(String[] args) {
+Counter counter = new Counter();
+Runnable task = counter::increment;
+Thread t1 = new Thread(task);
+Thread t2 = new Thread(task);
+t1.start();
+t2.start();
+}
+}
+ReadWriteLock
+class DataStore {
+private int data;
+private final ReadWriteLock lock = new ReentrantReadWriteLock();
+public void write(int value) {
+lock.writeLock().lock();
+try {
+data = value;
+System.out.println("Written: " + value);
+} finally { lock.writeLock().unlock(); }
+}
+public int read() {
+lock.readLock().lock();
+try {
+System.out.println("Read: " + data);
+return data;
+} finally {
+lock.readLock().unlock();
+}
+}
+}
+Semaphores
+Limit the number of threads accessing a resource simultaneously.
+● Limiting concurrent access to shared resources (e.g., database connections).
+● Thread signaling and coordination.
+
+
+Semaphore
+private final Semaphore semaphore;
+public Resource(int permits) { this.semaphore = new
+Semaphore(permits); }
+public void accessResource(String name) {
+try {
+semaphore.acquire();
+System.out.println(name + " accessed the resource.");
+Thread.sleep(1000);
+} catch (InterruptedException e) {
+Thread.currentThread().interrupt();
+} finally { semaphore.release();
+System.out.println(name + " released the resource."); }
+public class SemaphoreExample {
+public static void main(String[] args) {
+Resource resource = new Resource(2);
+for (int i = 1; i <= 5; i++) {
+String name = "Thread-" + i;
+new Thread(() -> resource.accessResource(name)).start();
+}
+}
+}
+
+
+Concurrent Collections
+ConcurrentHashMap
+public static void main(String[] args) {
+ConcurrentHashMap<String, Integer> map = new ConcurrentHashMap<>();
+map.put("Key1", 1);
+Thread t1 = new Thread(() -> map.put("Key2", 2));
+Thread t2 = new Thread(() -> map.put("Key3", 3));
+t1.start();
+t2.start();
+System.out.println(map);
+}
+CopyOnWriteArrayList
+public static void main(String[] args) {
+CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();
+list.add("Item1");
+Thread t1 = new Thread(() -> list.add("Item2"));
+Thread t2 = new Thread(() -> list.add("Item3"));
+t1.start();
+t2.start();
+list.forEach(System.out::println);
+}
+BlockingQueue
+● Thread-safe queue for producer-consumer problems.
+● Blocks threads when full (producer) or empty (consumer).
+BlockingQueue
+BlockingQueue<String> queue = new ArrayBlockingQueue<>(5);
+Thread producer = new Thread(() -> {
+try {
+queue.put("Item");
+System.out.println("Produced an item.");
+} catch (InterruptedException e) {
+Thread.currentThread().interrupt();
+}
+});
+Thread consumer = new Thread(() -> {
+try {
+String item = queue.take();
+System.out.println("Consumed: " + item);
+} catch (InterruptedException e) {
+Thread.currentThread().interrupt();
+}
+});
+producer.start();
+consumer.start();
+
+Advantages of Concurrent Collections
+Reduced complexity in managing thread safety.
+● Optimized for high performance and scalability.
+● Avoids common synchronization pitfalls.
+References
+● https://www.udemy.com/course/java-multithreading-the-complete-course
+
