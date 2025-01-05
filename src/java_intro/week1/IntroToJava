@@ -1,0 +1,80 @@
+Key Milestones
+● 1991: The project begins under the name "Oak," inspired by an oak tree outside Gosling's office.
+● 1995: The language is renamed "Java" and officially released. It quickly gains popularity due to its promise
+of "Write Once, Run Anywhere" (WORA).
+● Late 1990s: Java becomes a dominant force in enterprise applications and web development with the
+introduction of servlets and JavaServer Pages (JSP).
+● Early 2000s: Java expands into mobile development with the release of J2ME (Java 2 Micro Edition).
+● 2004: Sun releases Java 5, introducing significant language enhancements like generics and autoboxing.
+● 2009: Oracle acquires Sun Microsystems, becoming the steward of Java.
+● 2011: Java 7 is released, focusing on performance improvements and language refinements.
+● 2014: Java 8 marks a major milestone with the introduction of lambda expressions and functional
+programming features.
+● Ongoing: Java continues to evolve with new versions, addressing modern development challenges and
+incorporating emerging technologies.
+Key Characteristics
+Java is a high-level, class-based, object-oriented programming language that's designed to be platform-independent. This
+means you can write code once and run it on different operating systems (Write Once, Run Anywhere or WORA).
+● Object-Oriented: Java is built around the concept of objects, which encapsulate data and behavior.
+● Platform Independence: Java code compiles into bytecode, which can run on any system with a Java Virtual
+Machine (JVM).
+● Robust: Java incorporates strong type checking, exception handling, and garbage collection to enhance reliability.
+● Secure: Designed with security in mind, Java provides features like bytecode verification and access control.
+● High Performance: While not as fast as languages like C++, Java offers good performance through just-in-time
+compilation.
+● Multi-threaded: Java supports concurrent programming, allowing multiple threads to execute independently.
+Download Intellij Community
+https://www.jetbrains.com/idea/download
+Make sure to click ‘other versions’
+JVM (Java Virtual Machine)
+The heart of Java execution: It's an abstract machine that provides a runtime
+environment for Java applications.
+Platform independence: It translates Java bytecode (compiled Java code) into
+machine-specific code, allowing "Write Once, Run Anywhere" (WORA).
+Memory management: Handles memory allocation and garbage collection.
+Security: Provides security features like bytecode verification and class loading
+restrictions.
+JVM - key functions
+The JVM is essentially an abstract computer that provides a runtime environment for executing Java bytecode. It
+acts as a bridge between the compiled Java code and the underlying hardware and operating system.
+Key Functions of the JVM:
+● Platform Independence: The JVM translates Java bytecode into machine code at runtime, enabling Java
+applications to run on different operating systems without recompilation.
+● Memory Management: The JVM automatically handles memory allocation and garbage collection, freeing
+developers from manual memory management concerns.
+● Security: Implements security features like bytecode verification, class loading restrictions, and access control to
+protect against malicious code.
+● Runtime Environment: Provides the necessary libraries and APIs for Java applications to function.
+● Thread Management: Supports multithreading, allowing concurrent execution of multiple tasks within a Java
+application.
+JVM - how it works
+1. Compilation: Java source code is compiled into bytecode by the Java compiler (javac).
+2. Loading: The JVM loads the bytecode into memory.
+3. Verification: The bytecode is verified to ensure it adheres to Java language specifications and security
+requirements.
+4. Execution: The JVM interprets the bytecode or compiles it into native machine code using a Just-In-Time
+(JIT) compiler for performance optimization.
+5. Garbage Collection: The JVM automatically reclaims memory occupied by objects that are no longer in
+use.
+JVM - summary
+The JVM is a fundamental component of the Java ecosystem, providing a crucial layer of
+abstraction between Java code and the underlying hardware. Its role in enabling platform
+independence, memory management, and security has made Java a popular and reliable choice
+for developers
+JRE (Java Runtime Environment)
+Runtime environment: Includes the JVM, core Java libraries, and other
+components necessary to run Java applications.
+No development tools: Doesn't contain tools for compiling Java code.
+Essential for running Java applications: Required on any machine where you want
+to execute Java programs.
+JDK - JAVA development toolkit
+Development toolkit: Contains the JRE, plus tools for developing Java
+applications.
+Includes compiler, debugger, and other tools: Provides a complete environment for
+Java development.
+Required for creating Java applications: Essential for programmers.
+JVM, JRE vs JDK
+JVM is the underlying engine that executes Java code.
+JRE is the environment to run Java applications, including the JVM and core
+libraries.
+JDK is a superset of JRE, adding tools for developing Java applications.
