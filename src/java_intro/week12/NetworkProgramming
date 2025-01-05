@@ -8,3 +8,53 @@ classes: Socket, ServerSocket, URL, HttpURLConnection
 
 2. UDP - doesn't guarantee deliver order, doesnt require connection, video gaming, streaming, real time connections
 unreliable connections
+
+
+Java and Networking
+● Java provides robust APIs for network programming.
+● Built on top of the TCP/IP model.
+● Main classes: Socket, ServerSocket, URL, HttpURLConnection.
+Socket programming
+● Client-side: Communicates with a server.
+● Server-side: Accepts connections from clients.
+● Key classes: Socket and ServerSocket.
+Socket programming
+● Server starts and listens for connections.
+● Client connects to the server.
+● Data is exchanged between client and server using input/output streams.
+Client Socket
+Socket socket = new Socket("hostname", port);
+OutputStream os = socket.getOutputStream();
+InputStream is = socket.getInputStream();
+Server Socket
+ServerSocket serverSocket = new ServerSocket(port);
+Socket clientSocket = serverSocket.accept();
+OutputStream os = clientSocket.getOutputStream();
+InputStream is = clientSocket.getInputStream();
+UDP Programming
+● DatagramSocket: For sending/receiving packets.
+● DatagramPacket: Represents a packet of data.
+DatagramSocket socket = new DatagramSocket();
+byte[] data = "Hello".getBytes();
+InetAddress address = InetAddress.getByName("localhost");
+DatagramPacket packet = new DatagramPacket(data, data.length, address, port);
+socket.send(packet);
+HTTP recap
+● HTTP (Hypertext Transfer Protocol) is the foundation of data communication
+on the World Wide Web. It's a client-server protocol that defines how
+messages are formatted and transmitted.
+● Built on TCP: HTTP relies on TCP to establish reliable connections.
+● TCP is the underlying transport layer that ensures reliable data delivery.
+● HTTP is the application layer protocol that defines how data is formatted and
+exchanged over the TCP connection.
+HTTP and Java
+URL url = new URL("http://example.com");
+HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+InputStream is = connection.getInputStream();
+Sending HTTP GET request
+URL url = new URL("http://example.com");
+HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+connection.setRequestMethod("GET");
+InputStream is = connection.getInputStream();
+References
+● https://www.udemy.com/course/network-programming-java-mastering-java-networking/
