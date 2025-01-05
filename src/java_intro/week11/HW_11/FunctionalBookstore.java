@@ -47,8 +47,8 @@ public class FunctionalBookstore {
         sortByRatingAndPrice.forEach(System.out::println);
         //5. Average Price by Author: Calculate the average price of books for each author.
         System.out.println("========Average Price by Author=============");
-        Map<String, Double> avPricePerAuthor = books.stream().collect(Collectors.groupingBy(Book::getAuthor,Collectors.averagingDouble(Book::getPrice)));
-        avPricePerAuthor.forEach((author,avPrice)-> System.out.println(author +": "+ avPrice));
+        Map<String, Double> avPricePerAuthor = books.stream().collect(Collectors.groupingBy(Book::getAuthor, Collectors.averagingDouble(Book::getPrice)));
+        avPricePerAuthor.forEach((author, avPrice) -> System.out.println(author + ": " + avPrice));
         //6*. Books by Price Range: Group books into three price ranges: <20, 20-50, >50.
         System.out.println("========Grouped Books into 3 price ranges=============");
         Map<String, List<Book>> groupedBooksByPrice = books.stream().collect(Collectors.groupingBy(book -> {
@@ -60,5 +60,28 @@ public class FunctionalBookstore {
             System.out.println(range + ":");
             bookList.forEach(System.out::println);
         });
+        /*
+         * Extra Challenges (Optional)
+         * 1. Find the book with the longest title.
+         * 2. Count how many books each author has written.
+         * 3. Check if all books in the list have a rating greater than 3.0.
+         */
+        //1.
+        System.out.println("========Book with the longest Title=============");
+        books.stream()
+                .max(Comparator.comparingInt(book -> book.getTitle().length())).ifPresent(book -> System.out.println("Longest Title: " + book));
+        //2.
+        System.out.println("========Books count by each author=============");
+        Map<String, Long> booksByAuthor = books.stream()
+                .collect(Collectors.groupingBy(Book::getAuthor, Collectors.counting()));
+        booksByAuthor.forEach((author, count) -> {
+            System.out.println(author + " has written " + count + " book(s).");
+        });
+        //3.
+        System.out.println("=======All books have rating greater than 3.0=========");
+        boolean allBooksGreaterThen3Rating =
+                books.stream()
+                        .allMatch(book -> book.getRating() > 3.0);
+        System.out.println("All books have a rating greater than 3.0: " + allBooksGreaterThen3Rating);
     }
 }
