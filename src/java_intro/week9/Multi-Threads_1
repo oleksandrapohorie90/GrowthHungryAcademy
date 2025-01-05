@@ -1,0 +1,115 @@
+Threads vs Processes
+What is a thread
+● Definition: A thread is the smallest unit of processing. Each Java application
+has at least one thread (main thread).
+● Purpose: Enables multitasking within a single application, allowing
+concurrent execution.
+Why threads?
+● Advantages: Enhances application performance, allows parallel task
+execution, responsive UI, and better resource utilization.
+● Applications: Games, web servers, applications with background
+processing.
+Java thread model
+● Java Approach: Java abstracts thread management with classes and
+libraries, making multithreading easier.
+● Concurrency Model: Shared memory model, where threads can access
+shared data and objects.
+Types of Threads in Java
+● User Threads: Active threads that keep running unless the program is
+stopped.
+● Daemon Threads: Support threads (e.g., garbage collector) that do not
+prevent the program from terminating.
+Creating Threads
+● Two ways to create threads
+○ by extending the Thread class
+○ implementing the Runnable interface
+
+Method 1: extending the Thread Class
+Steps: Extend Thread, override run() method, create an instance, and call start().
+class MyThread extends Thread {
+public void run() {
+System.out.println("Thread is running");
+}
+}
+Method 2: Implementing Runnable interface
+Steps: Implement Runnable, define run(), create Thread with Runnable, call start().
+class MyRunnable implements Runnable {
+public void run() {
+System.out.println("Runnable thread is running");
+}
+}
+Starting threads
+● Thread.start(): initiates a new thread and starts its execution. The JVM
+schedules the new thread for execution. Invokes the run() method: It implicitly
+calls the run() method of the thread object.
+● start() vs. run(): start() initiates a new thread, run() only executes in the
+current thread.
+● Best Practice: Always use start() to initiate thread execution.
+Managing threads
+sleep(ms) Pauses the thread for the specified time in milliseconds. Allows other threads to
+execute. Throws InterruptedException if interrupted during sleep.
+yield() Suggests to the thread scheduler that the current thread is willing to give up its CPU
+time for other threads. No guarantee of yielding, and it's OS-dependent.
+join() Causes the current thread to wait until the specified thread has finished its execution.
+Useful for synchronizing threads.
+interrupt()Signals the thread to stop its execution, often used to end a sleep or wait state. Throws
+InterruptedException if the thread is sleeping, waiting, or blocked.
+setPriority() Sets the priority of a thread (1 to 10). Higher priority threads may be given
+preference in scheduling. Default priority is 5 (normal)
+
+Thread Priority
+● Priority Levels: Range from MIN_PRIORITY (1) to MAX_PRIORITY (10).
+● Usage: Set priority using setPriority(), which hints to the JVM which threads
+are more important.
+Thread Lifecycle Stages
+● New: Created but not yet started.
+● Runnable: Ready to run, waiting for CPU.
+● Blocked: Waiting for a resource.
+● Waiting: Temporarily inactive.
+● Timed Waiting: Waiting with a timeout.
+● Terminated: Completed execution.
+Transitioning Between States
+● New to Runnable: Call start().
+● Runnable to Blocked: Waiting for I/O or resource.
+● Runnable to Waiting: Using wait() or join().
+● Terminated: Automatically after run() completes.
+Basic synchronization
+● Problem: Threads accessing shared resources can cause data
+inconsistency.
+● Solution: Synchronize code using synchronized keyword to prevent
+concurrent access.
+public synchronized void synchronizedMethod() {
+// code to be synchronized
+}
+
+Thread Pools
+Instead of creating new threads for each task, a thread pool maintains a fixed
+number of threads. When a task arrives, it's assigned to an available thread. Once
+a thread finishes its task, it returns to the pool and waits for the next task.
+Benefits of Thread Pools
+● Resource Efficiency: Reduces the overhead of creating and destroying
+threads.
+● Controlled Concurrency: Limits the number of concurrent threads,
+preventing resource exhaustion.
+● Improved Performance: Can improve performance by reusing threads and
+reducing context switching.
+How Thread Pools work
+● Task Submission: A task (a Runnable or Callable object) is submitted to the
+thread pool.
+● Thread Assignment: The task is assigned to an available thread from the
+pool.
+● Task Execution: The thread executes the task.
+● Thread Return: Once the task is completed, the thread returns to the pool
+and becomes available for another task.
+Thread Pools example
+ExecutorService executor = Executors.newFixedThreadPool(5);
+for (int i = 0; i < 10; i++) {
+executor.submit(new Runnable() {
+@Override
+public void run() {
+System.out.println("Task
+" + Thread.currentThread().getName());
+}
+});
+References
+● https://www.geeksforgeeks.org/java-multithreading-tutorial/
