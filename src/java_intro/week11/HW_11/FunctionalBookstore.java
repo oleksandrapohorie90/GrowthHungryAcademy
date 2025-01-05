@@ -1,6 +1,5 @@
 package java_intro.week11.HW_11;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -50,5 +49,16 @@ public class FunctionalBookstore {
         System.out.println("========Average Price by Author=============");
         Map<String, Double> avPricePerAuthor = books.stream().collect(Collectors.groupingBy(Book::getAuthor,Collectors.averagingDouble(Book::getPrice)));
         avPricePerAuthor.forEach((author,avPrice)-> System.out.println(author +": "+ avPrice));
+        //6*. Books by Price Range: Group books into three price ranges: <20, 20-50, >50.
+        System.out.println("========Grouped Books into 3 price ranges=============");
+        Map<String, List<Book>> groupedBooksByPrice = books.stream().collect(Collectors.groupingBy(book -> {
+            if (book.getPrice() < 20) return "<$20";
+            else if (book.getPrice() <= 50) return "$20 - $50";
+            else return ">50";
+        }));
+        groupedBooksByPrice.forEach((range, bookList) -> {
+            System.out.println(range + ":");
+            bookList.forEach(System.out::println);
+        });
     }
 }
