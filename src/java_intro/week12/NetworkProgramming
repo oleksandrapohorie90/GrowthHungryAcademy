@@ -1,0 +1,10 @@
+=> communication btw applications running on different devices over a network
+=> TCP/IP - suite of protocols that governs communication over the internet. Its like a set of rules that computers follow to send and receive data
+usually when you write program underneath it relies on communication of some server it relies on
+
+1. TCP(transmission control protocol) - delivers data accurately and in order, you establish connection before data transfer
+reliable connections, connection oriented, order preserved, used in most cases
+classes: Socket, ServerSocket, URL, HttpURLConnection
+
+2. UDP - doesn't guarantee deliver order, doesnt require connection, video gaming, streaming, real time connections
+unreliable connections
