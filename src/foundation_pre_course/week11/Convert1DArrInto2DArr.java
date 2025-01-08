@@ -1,4 +1,4 @@
-package foundation_pre_course.week11_java;
+package foundation_pre_course.week11;
 
 public class Convert1DArrInto2DArr {
     public int[][] construct2DArray(int[] original, int m, int n) {
