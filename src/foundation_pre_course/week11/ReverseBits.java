@@ -2,7 +2,7 @@ package foundation_pre_course.week11;
 
 public class ReverseBits {
     //session 1
-    //boolean logic lecture
+    //boolean logic lecture, left shift, right shift, operations
     //bitmask
 
     /**
