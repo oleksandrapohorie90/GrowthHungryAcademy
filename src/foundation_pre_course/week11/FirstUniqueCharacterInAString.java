@@ -20,6 +20,7 @@ LEFTMOST IN THE STRING AND APPEARS ONLY ONCE
         String s = "leetcode";
         System.out.println(firstUniqChar(s));
     }
+
     public static int firstUniqChar(String s) {
         //find the frequencies of numbers 1st
         //A fixed-size array freq of length 26 is created to store the frequencies of each letter in the alphabet.
@@ -59,6 +60,20 @@ LEFTMOST IN THE STRING AND APPEARS ONLY ONCE
             }
         }
         return -1;
+    }
+
+    public static int firstUniqChar1(String s) {
+        int bestIndex = 1000000000;
+        for (char c = 'a'; c <= 'z'; c++) {
+            //below functions return -1 if char doesn't appear in the string
+            int first = s.indexOf(c);
+            int last = s.lastIndexOf(c);
+            if (first != -1 && first == last) {
+                bestIndex = Math.min(bestIndex, first);
+            }
+        }
+        if (bestIndex == 1000000000) bestIndex = -1;
+        return bestIndex;
     }
 
 }
