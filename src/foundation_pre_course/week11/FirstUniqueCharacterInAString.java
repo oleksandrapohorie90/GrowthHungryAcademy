@@ -16,17 +16,42 @@ The character 'l' at index 0 is the first character that does not occur at any o
 LEFTMOST IN THE STRING AND APPEARS ONLY ONCE
      */
     //WAY FROM JAVA SESSION 1 FOR COUNT/FIND THE FREQUENCIES
-    public int firstUniqChar(String s) {
-
-        //find the frequencies 1st
+    public static void main(String[] args) {
+        String s = "leetcode";
+        System.out.println(firstUniqChar(s));
+    }
+    public static int firstUniqChar(String s) {
+        //find the frequencies of numbers 1st
+        //A fixed-size array freq of length 26 is created to store the frequencies of each letter in the alphabet.
+        //Each index in the array corresponds to a letter: 0 → 'a', 1 → 'b', ..., 25 → 'z'.
+        //Initially, all values in freq are 0.
         int[] freq = new int[26];
 
         //count the frequencies
+        //The loop iterates over each character c in the string s.
+        //c - 'a' computes the index for the character. For example:
+        //'a' - 'a' → 0
+        //'b' - 'a' → 1
+        //'z' - 'a' → 25
+        //The frequency of the character c is incremented in the freq array.
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             freq[c - 'a']++;
+            //freq[4] = 2  // 'e' appears twice
+            //freq[11] = 1 // 'l' appears once: l is 101 and a is 97
+            //freq[19] = 1 // 't' appears once
+            //freq[2] = 1  // 'c' appears once
+            //freq[3] = 1  // 'd' appears once
+            //All other entries in freq remain 0.
         }
 
+        //The loop iterates over each character c in the string s again.
+        //For each character, it checks if the frequency freq[c - 'a'] is 1.
+        //If it finds a character with frequency 1, it returns the current index i.
+        //Key Debugging Observations:
+        //
+        //For "leetcode", the iterations proceed as follows:
+        //i = 0, c = 'l': freq[11] = 1 → Returns 0.
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (freq[c - 'a'] == 1) {

@@ -23,7 +23,7 @@ public class ValidAnagram {
     }
 
     /**
- create a freq array w/ 26 indexes and iterate over str1, take each char and sub 'q' from it, we have 26 letters in english alphabet
+ create a freq array w/ 26 indexes and iterate over str1, take each char and sub 'a' from it, we have 26 letters in english alphabet
      if you take 'a' - 'a'(sub ascii codes here = 97-97) => 0
      'b' - 'a' => 1 (98-97)
      ...just count how many letters you have, freq will count how many letters you have freq0 = how many 1's I have, freq1 how many b's etc
