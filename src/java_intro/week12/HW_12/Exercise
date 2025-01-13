@@ -1,0 +1,30 @@
+Create a simple, multi-threaded online chat application using Java. This project will integrate
+concepts of concurrency, SQL for data persistence, and networking for communication.
+
+Key Features:
+1. Multi-threading:
+○ Use threads to handle multiple client connections simultaneously.
+○ Implement a thread pool for efficient resource management.
+
+2. Networking:
+○ Use TCP sockets for client-server communication.
+○ Implement protocols for message exchange (e.g., JSON).
+
+3. SQL Database:
+○ Store user data, chat history, and other relevant information in a SQL
+database (e.g., MySQL, PostgreSQL).
+○ Use JDBC (Java Database Connectivity) to interact with the database.
+
+Breakdown of Tasks:
+Part 1 - Persistence
+Manage user data and chat history in MySQL database.
+
+Part 2 - Server-side
+1. Create a server socket to listen for incoming connections.
+2. Handle client connections using threads.
+3. Implement message broadcasting and private messaging.
+
+Part 3 - Client-side
+4. Establish a connection to the server.
+5. Allow users to send and receive messages.
+6. Handle user input and display messages.
