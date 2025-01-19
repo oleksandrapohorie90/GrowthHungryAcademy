@@ -33,14 +33,19 @@ Each string does not contain leading zeros except for the zero itself.
         while (carry > 0 || i >= 0 || j >= 0) {
             int sum = carry;
             if (i >= 0) {
+                //converts the character to its integer value (0 or 1).
                 sum += a.charAt(i) - '0';
+                //is decremented to move to the next bit to the left.
                 i--;
             }
             if (j >= 0) {
                 sum += b.charAt(j) - '0';
                 j--;
             }
+            //Determines the new carry. In binary addition, a sum of 2 or 3 means there's a carry of 1.
             carry = sum / 2;
+
+            //Appends the current bit to the StringBuilder. sum % 2 gives the remainder when sum is divided by 2, effectively providing the current bit (0 or 1).
             sb.append(sum % 2);
         }
         return sb.reverse().toString();
