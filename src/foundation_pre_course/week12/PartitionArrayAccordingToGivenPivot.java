@@ -27,6 +27,50 @@ The relative ordering of the elements less than and greater than pivot is also m
 
         System.out.println(Arrays.toString(pivotArray(arr, pivot)));
     }
+
+    public int[] pivotArray2(int[] nums, int pivot) {
+        int n = nums.length;
+
+        int[] result = new int[n];
+        int insertPosition = 0;
+
+        // The idea is that after partitioning,
+        // the array will be split into three blocks:
+        // [(numbers < pivot), (numbers == pivot), (numbers > pivot)].
+
+        // Firstly, put all (numbers < pivot)
+        // at the beginning of the result array.
+        // Count the # of (numbers == pivot) in the process.
+        int pivotFreq = 0;
+        for (int num : nums) {
+            if (num < pivot) {
+                result[insertPosition] = num;
+                insertPosition++;
+            } else if (num == pivot) {
+                pivotFreq++;
+            }
+        }
+
+        // After all (numbers < pivot), we shall
+        // insert all pivots [now that we know the
+        // # of (numbers == pivot), it is easy to do].
+        while (pivotFreq > 0) {
+            result[insertPosition] = pivot;
+            insertPosition++;
+            pivotFreq--;
+        }
+
+        // After that, insert the rest, i.e. all (numbers > pivot).
+        for (int num : nums) {
+            if (num > pivot) {
+                result[insertPosition] = num;
+                insertPosition++;
+            }
+        }
+
+        return result;
+    }
+
     public static int[] pivotArray(int[] nums, int pivot) {
         int insert_position = 0;
         int pivotFrequency = 0;

@@ -16,6 +16,28 @@ Input: strs = ["dog","racecar","car"]
 Output: ""
 Explanation: There is no common prefix among the input strings.
      */
+    public String longestCommonPrefix2(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+        // Initialize 'prefix' with the longest possible prefix.
+        // 'prefix' cannot be longer than any of the strings, so
+        // simply initialize it with strs[0].
+        String prefix = strs[0];
+
+        // Iterate over all strings.
+        for (int i = 1; i < strs.length; i++) {
+            // Until 'prefix' is not a prefix of the current string,
+            // reduce 'prefix' by one character and try to match again.
+            while (strs[i].indexOf(prefix) != 0) {
+                // Removing the last character from 'prefix'.
+                prefix = prefix.substring(0, prefix.length() - 1);
+            }
+        }
+        // Return found 'prefix' as it is a prefix of all strings in the list.
+        return prefix;
+    }
+
     public static void main(String[] args) {
         String[] strings = {"flower", "flow", "flight"};
         System.out.println(longestCommonPrefix(strings));
@@ -65,5 +87,5 @@ Explanation: There is no common prefix among the input strings.
          * Return "fl" as the longest common prefix.
          */
     }
-
 }
+
