@@ -43,7 +43,6 @@ public class RotateArray {
 
 
     public static void reverse(int[] nums, int start, int end) {
-
         //why start<end and not start<=end
         while (start < end) {
             int temp = nums[start];
