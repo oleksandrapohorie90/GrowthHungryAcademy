@@ -28,8 +28,6 @@ public class RotateArray {
         int n = nums.length;
         k %= n; //length=7, 3*2=6, 7-6=1 remainder
         System.out.println("Initial array is " + Arrays.toString(nums));
-
-
         //rotate the whole arr first
         reverse(nums, 0, nums.length - 1);
         System.out.println("Rotated whole array: "+ Arrays.toString(nums));
