@@ -22,6 +22,7 @@ public class SortColors {
     public static void main(String[] args) {
         int[] nums = {2, 0, 2, 1, 1, 0};
         sortColors(nums);
+        sortColors2(nums);
     }
 
     public static void sortColors(int[] nums) {
@@ -29,25 +30,44 @@ public class SortColors {
         int sorted_insertion = 0;
 
         for (int i = 0; i < nums.length; i++) {
-            if(nums[i]<1){
-                swap(nums,i,sorted_insertion);
+            if (nums[i] < 1) {
+                swap(nums, i, sorted_insertion);
                 sorted_insertion++;
             }
         }
         for (int j = sorted_insertion; j < nums.length; j++) {
-            if(nums[j]==1){
-                swap(nums,j,sorted_insertion);
+            if (nums[j] == 1) {
+                swap(nums, j, sorted_insertion);
                 sorted_insertion++;
             }
         }
         System.out.println("Input arr after sort: " + Arrays.toString(nums));
     }
 
-    public static void swap(int [] nums, int i, int j){
+    public static void swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
 
+    }
+
+    public static void sortColors2(int[] nums) {
+        int zero_insertPos = 0;
+        int two_insertPosition = nums.length - 1;
+        int i = 0;
+        while (i <= two_insertPosition) {
+            if(nums[i]==0){
+                swap(nums,i,zero_insertPos);
+                zero_insertPos++;
+                i++;
+            }else if(nums[i]==1){
+                i++;
+            }else{
+                swap(nums,i,two_insertPosition);
+                two_insertPosition--;
+            }
+        }
+        System.out.println("Input arr after sort: " + Arrays.toString(nums));
     }
 
 }
