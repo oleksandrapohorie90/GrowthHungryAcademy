@@ -26,10 +26,13 @@ public class LinkedListCycle_II {
             slow = slow.next;
             fast = fast.next.next;
             if (slow == fast) {
+                // They met at the meeting point.
+                // Note that we don't know any of a, b, x, y, and L.
                 break;
             }
         }
         if (fast == null || fast.next == null) {
+            // There was no cycle in the linked list.
             return null;
         }
         slow = head;
