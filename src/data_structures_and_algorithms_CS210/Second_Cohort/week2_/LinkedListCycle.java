@@ -51,6 +51,6 @@ public class LinkedListCycle {
         // fast pointer reached null or fast.next is null, which means end of the
         // linked list. So, there is no cycle in the linked list – return false.
         return false;
-
     }
+
 }
