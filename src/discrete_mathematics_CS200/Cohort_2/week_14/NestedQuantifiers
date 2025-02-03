@@ -1,0 +1,35 @@
+
+  (1)  boolean isPTrueForAllXAndY(){
+        for(int x : domain_of_x){ -> iterate through values of x
+            for(int y : domain_of_y){ -> loop through the values of y
+                if(P(x,y) == false){ -> if for some values of y P(x,y) is false
+                return false;
+                }
+            }
+        }
+        return true
+    }
+
+   (2) boolean isPTrueForAllXInAtLeastOneY(){
+        for(int x : domain_of_x){ -> iterate through values of x
+            boolean true_y_found = false;
+            for(int y : domain_of_y){ -> loop through the values of y
+                if(P(x,y)){
+                true_y_found = true;
+                break;
+                }
+            }
+            if(!true_y_found){
+            return false;
+            }
+        }
+        return true
+    }
+
+    (3) All + All => you can swap the order
+    Exists + Exists => you can swap the order
+
+    All+ Exists or Exists + All => you cannot swap the order
+
+
+
