@@ -14,7 +14,14 @@ public class Top_K_FrequentElements_RevisitComparator {
      * Input: nums = [1], k = 1
      * Output: [1]
      */
-    public class Pair<K, V> {
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 1, 2, 2, 3};
+        int k = 2;
+
+        System.out.println(Arrays.toString(topKFrequent(nums, k)));
+    }
+
+    public static class Pair<K, V> {
         private final K key;
         private final V value;
 
@@ -32,7 +39,7 @@ public class Top_K_FrequentElements_RevisitComparator {
         }
     }
 
-    public int[] topKFrequent(int[] nums, int k) {
+    public static int[] topKFrequent(int[] nums, int k) {
         //is there a way to avoid creating a list of pairs, where did it come from ? <---Priority Queue
         //also can you do without Comparator ?
 
