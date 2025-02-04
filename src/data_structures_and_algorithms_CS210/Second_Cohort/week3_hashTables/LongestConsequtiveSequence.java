@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_CS210.Second_Cohort.week3_hashMap;
+package data_structures_and_algorithms_CS210.Second_Cohort.week3_hashTables;
 
 import java.util.HashSet;
 import java.util.Set;
