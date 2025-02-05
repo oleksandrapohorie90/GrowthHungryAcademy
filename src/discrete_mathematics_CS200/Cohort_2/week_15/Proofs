@@ -1,4 +1,5 @@
-1. Trivial
-2. Vacuous
-3. Direct
-4. Contraposition (indirect proof) - assume not q and prove not p
+1. Trivial - if we know q is true then p->q is true
+2. Vacuous - if we know p is false then p->q is true
+3. Direct - assume p is true and use rules of inference, axioms, logical equivalences to show q is true
+4. Contraposition (indirect proof) - assume not q and prove not p is true
+prove n is odd -> assume n is even
