@@ -1,5 +1,16 @@
 1. Trivial - if we know q is true then p->q is true
+if it is raining then 1=1
+
 2. Vacuous - if we know p is false then p->q is true
+if i am both rich and poor, then 2+2=5
+
 3. Direct - assume p is true and use rules of inference, axioms, logical equivalences to show q is true
+
 4. Contraposition (indirect proof) - assume not q and prove not p is true
 prove n is odd -> assume n is even
+rational
+even
+
+if not q -> not p =>> p->q
+
+5. Contradiction
