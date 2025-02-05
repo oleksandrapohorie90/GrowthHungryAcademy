@@ -13,4 +13,9 @@ even
 
 if not q -> not p =>> p->q
 
-5. Contradiction
+5. Contradiction p->q =>> not p OR q
+assume p AND not q is true and derive a contradiction(prove its not possible)
+
+assume not q is true and you arrive to q so its a conradiction
+
+EX. prove there is no largest prime number =>> assume there is a largest prime number
