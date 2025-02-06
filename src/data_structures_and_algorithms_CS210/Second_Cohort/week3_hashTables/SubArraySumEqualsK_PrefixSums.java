@@ -30,7 +30,7 @@ public class SubArraySumEqualsK_PrefixSums {
         // seenCount is how many times prefixSum has been seen previously.
         Map<Integer, Integer> prefixSumSeenCount = new HashMap<>();
 
-        // Empty prefix => (prefixSum = 0, seenCount = 1)
+        // Empty prefix => (prefixSum = 0, seenCount = 1) ->>>> we normally do indexation from 1 in prefix sums assuming there is an empty prefix, prefix 0
         prefixSumSeenCount.put(0, 1);
 
         // T: O(n)
