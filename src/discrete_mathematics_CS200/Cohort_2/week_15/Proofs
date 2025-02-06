@@ -22,3 +22,16 @@ EX. prove there is no largest prime number =>> assume there is a largest prime n
 
 Ex. prove sqrt of 2 is irrational by contradiction
 assume sqrt of 2 is rational
+===========================
+existence proofs:
+1. constructive proof
+-find an explicit value of c such that P(c) is true
+-then ExP(x) is true by existential generalization (EG)
+2. nonconstructive
+-assume no c exists such that P(c) is true and derive a contradiction
+============================
+uniqueness proofs
+
+Proof strategies for proving p->q or not q -> not p:
+1. forward: start w/ p and prove q
+2. or backward reasoning: when trying to prove q find a statement p such that we can prove p->q
