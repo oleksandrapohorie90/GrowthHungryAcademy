@@ -6,6 +6,7 @@ import java.util.Map;
 
 public class TwoSums {
     //Is it better on the interview to solve it with HashMap or with Arrays ?
+    //Is there a reason incrementing is going ++i ?
     /**
      * Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
      * <p>
