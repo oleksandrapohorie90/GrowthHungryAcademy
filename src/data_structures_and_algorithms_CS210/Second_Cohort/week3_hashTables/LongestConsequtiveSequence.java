@@ -5,6 +5,8 @@ import java.util.Set;
 
 public class LongestConsequtiveSequence {
     //You must write an algorithm that runs in O(n) time. WHAT is the 1st thing we should think of when we see this requirement ?
+    //Why cant we just write  longest_streak = Math.max(longest_streak, streak_end);  ,    instead of longest_streak = Math.max(longest_streak, streak_end - streak_start + 1); ?
+
     /**
      * Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
      * <p>
@@ -26,8 +28,9 @@ public class LongestConsequtiveSequence {
     }
 
     public static int longestConsecutive(int[] nums) {
+        //we need to know all the consecutive combinations and their length
 
-        //lets create a set to avoid duplicates and make sure all the look up of elements ara fast
+        //lets create a has set to avoid duplicates, so each number will be stored only once and make sure all the look up of elements are fast
         Set<Integer> set = new HashSet<>();
         for (int n : nums) {
             set.add(n);
@@ -42,7 +45,7 @@ public class LongestConsequtiveSequence {
         //assign a longest consecutive
         int longest_streak = 0;
         for (int n : nums) {
-            //we need to make sure that the num is truly a start of the longest consecutive
+            //we need to make sure that the num is truly a start of the longest consecutive, otherwise there is no reason to explore the interval starting from this point if there is another number num - 1 that is consecutive
             // if (n is the beginning of a streak)
             // Lookup works in O(1).
             if (!set.contains(n - 1)) {
