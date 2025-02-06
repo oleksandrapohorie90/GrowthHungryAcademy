@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class LongestConsequtiveSequence {
+    //You must write an algorithm that runs in O(n) time. WHAT is the 1st thing we should think of when we see this requirement ?
     /**
      * Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
      * <p>
