@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SubArraySumEqualsK_PrefixSums {
-    /**
+    /** SIMMILAR TO TWO SUMS TASK
      * Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
      * <p>
      * A subarray is a contiguous non-empty sequence of elements within an array.
@@ -20,6 +20,7 @@ public class SubArraySumEqualsK_PrefixSums {
      * Output: 2
      */
 //What is the list of most important algorithms to remember or know so that there is a high chance you will resolve a task if they come up ? I struggle with prefix sums :(
+    //Which lectures to rewatch ?? Boolean logic, master theorem and java ?
     public int subarraySum(int[] nums, int k) {
         int currentPrefixSum = 0;
         int answer = 0;
