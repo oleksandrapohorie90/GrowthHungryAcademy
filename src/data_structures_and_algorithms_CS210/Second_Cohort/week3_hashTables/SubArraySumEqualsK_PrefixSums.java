@@ -3,6 +3,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SubArraySumEqualsK_PrefixSums {
+    //counting sort, radix sort, bucket sort
+    //when you sort numbers by digits - radix sort, by last digit by nums of 1s tens, thousands
+
+    //10*n
     /** SIMMILAR TO TWO SUMS TASK
      * Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
      * <p>

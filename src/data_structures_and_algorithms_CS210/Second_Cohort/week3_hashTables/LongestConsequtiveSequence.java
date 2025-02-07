@@ -26,6 +26,7 @@ public class LongestConsequtiveSequence {
         int[] nums = {100, 4, 200, 1, 3, 2};
         System.out.println(longestConsecutive(nums));
     }
+    //NO NESTED LOOPS NO SORTING, MOST EFFICIENT DS HASHSET HASHMAP, I CAN ITERATE OVER THE ARRAY FASTER IN O(N)
 
     public static int longestConsecutive(int[] nums) {
         //we need to know all the consecutive combinations and their length

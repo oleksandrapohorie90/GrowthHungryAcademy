@@ -1,0 +1,48 @@
+types of hash tables:
+used for hashing: a key value pair, you hash the key and then you need to insert it in the hash table
+you hash table is of certain size, you have 100 % slots
+you take the key of the key value pair, you hash it and you take modulo 100
+the key value pairs are name(str) value(date of birth)
+
+the idea is the name is Alexandra(take a hash of Alexandra) and some big number and take its remainder of dividing by 100
+
+at index 40 - you should insert this pair
+what happens if I take another key value pair
+key is sofia, what if sofia has the same modulo 100 being 40
+
+1. we have a collision - they both hash to 40 in hash tables
+2 methods exist
+chaining() - each slot is a linked list, i will insert alexandra and her dob and next element will be sofia and her dob
+
+What is the date of birth of Sofia? but slot 40 is a linked list, if sofia is not there no answer=null, if hse is there i will return her dob
+retrieval of hashmap is O(1) => the worst time complexity is linear time
+then they will have worst case O(n) complexity
+
+======================================
+it is spread as much as possible and probability of them to smash is
+
+2. open addressing
+the idea is alexandra is hashed to slot 40 - I store in this slot Alexandra and her dob
+
+sofia is stored in the same slot 40, but I go to next slot and I see it is empty, then I will store sofia at 41, I compute hash of sofia its 40, i will keep looking until I hit an empty slot, till I get sofia, if I get her I return her value
+
+======================================
+bloom filters - you have k hash functions, each of them is very different from each other, produce diff results,
+
+Whats hashing functions do you know ? - they produce very random results
+
+you have 3 hashing functions, lets create an array[256] slots
+3 hash functions : at this indexes we will make the value equal to 1
+at this index we put 1, at this position put 2,
+is sofia in this bloom filter or not? K.hash functions
+probabilistic data structure
+if an answer from bloom filter - no
+it happened that 3
+when we say a yes-probable yes
+when we say a no - its a definite no
+is there an element or no ?
+
+recently big bloom filter, good hash functions
+bigger array,
+
+
