@@ -14,6 +14,7 @@ public class Top_K_FrequentElements_RevisitComparator {
      * Input: nums = [1], k = 1
      * Output: [1]
      */
+    //THE PROBLEM IS SUPER STRAIGHTFORWARD - ITS NOTT
     public static void main(String[] args) {
         int[] nums = {1, 1, 1, 2, 2, 3};
         int k = 2;
