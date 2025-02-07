@@ -1,5 +1,4 @@
 package data_structures_and_algorithms_CS210.Second_Cohort.week3_hashTables;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,7 +19,7 @@ public class SubArraySumEqualsK_PrefixSums {
      * Input: nums = [1,2,3], k = 3
      * Output: 2
      */
-
+//What is the list of most important algorithms to remember or know so that there is a high chance you will resolve a task if they come up ? I struggle with prefix sums :(
     public int subarraySum(int[] nums, int k) {
         int currentPrefixSum = 0;
         int answer = 0;
