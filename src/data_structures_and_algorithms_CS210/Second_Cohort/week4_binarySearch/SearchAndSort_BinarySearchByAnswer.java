@@ -6,13 +6,23 @@ import java.util.StringTokenizer;
 public class SearchAndSort_BinarySearchByAnswer {
 
     /**
-     * Сегодня утром жюри решило добавить в вариант олимпиады еще одну, Очень Легкую Задачу. Ответственный секретарь Оргкомитета напечатал ее условие в одном экземпляре, и теперь ему нужно до начала олимпиады успеть сделать еще N копий. В его распоряжении имеются два ксерокса, один из которых копирует лист за х секунд, а другой – за y. (Разрешается использовать как один ксерокс, так и оба одновременно. Можно копировать не только с оригинала, но и с копии.) Помогите ему выяснить, какое минимальное время для этого потребуется.
-     * <p>
-     * Входные данные
-     * На вход программы поступают три натуральных числа N, x и y, разделенные пробелом (1 ≤ N ≤ 2∙108, 1 ≤ x, y ≤ 10).
-     * <p>
-     * Выходные данные
-     * Выведите одно число – минимальное время в секундах, необходимое для получения N копий.
+     This morning the jury decided to add another Very Easy Problem to the Olympiad version. The responsible secretary of the Organizing Committee printed its conditions in one copy, and now he needs to make N more copies before the Olympiad starts. He has two photocopiers at his disposal, one of which copies a sheet in x seconds, and the other in y . (It is allowed to use either one photocopier or both at the same time. You can copy not only from the original, but also from the copy.) Help him figure out what minimum time is required for this.
+
+     Input data
+     The program input contains three natural numbers N , x and y , separated by a space (1 ≤ N ≤ 2∙10 8 , 1 ≤ x , y ≤ 10).
+
+     Output data
+     Output a single number - the minimum time in seconds required to obtain N copies.
+
+     Examples
+     Input data
+     4 1 1
+     Output data
+     3
+     Input data
+     5 1 2
+     Output data
+     4
      */
     // TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
