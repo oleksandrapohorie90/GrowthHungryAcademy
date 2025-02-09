@@ -1,0 +1,33 @@
+for binary search you need to define the search space:
+indeces of the array
+min possible index = 0
+max possible index = n-1
+===========================> BOUNDARIES
+next while loop
+======================> until when your binary search executes, until we exhaust search space, tehre are numbs btw left and right, until this interval contains at least 1 element we keep search, after condition breaks we exit the loop, then binary search is concluded and we stop
+
+at each step of binary search-you compute middle element in your remaining search space and everything has to do with this middle element
+based on this middle element - you either continue searching in left half search space or continue searching in right half
+
+int left=0;
+int right = n-1;
+
+while(left<=right){
+int middle = (left+right)/2;
+    if(nums[middle] == x){
+    return middle; //we found it
+    }
+
+    if(nums[middle]<x){
+    //search in the right part [middle+1; right]
+    left=middle+1;
+    }
+
+    else{
+    //x<nums[middle]
+    //search in the left [left; middle-1]
+    right = middle -1;
+    }
+}
+couldn't find it
+return -1;
