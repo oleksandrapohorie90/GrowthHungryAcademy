@@ -43,5 +43,24 @@ public class FirstBadVersion extends VersionControl {
         }
         return answer;
     }
+    /*
+    public class Solution extends VersionControl {
+    public int firstBadVersion(int n) {
+        int left = 1, right = n;
+
+        while (left < right) { // No need for `<=` because left will converge
+            int middle = left + (right - left) / 2; // Prevent integer overflow
+
+            if (isBadVersion(middle)) {
+                right = middle; // Keep searching on the left
+            } else {
+                left = middle + 1; // Move right if current is not bad
+            }
+        }
+
+        return left; // Left now points to the first bad version
+    }
+}
+     */
 
 }
