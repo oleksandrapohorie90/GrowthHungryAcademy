@@ -47,5 +47,6 @@ public class TwoSum_ll_InputArrayIsSorted {
         }
         //return indexes that should be returned 1 indexed, bc the arr is 0 indexed
         return new int[]{left + 1, right + 1};
+        //maybe i sort arr, maybe put 2 pointers
     }
 }
