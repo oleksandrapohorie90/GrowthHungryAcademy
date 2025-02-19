@@ -29,17 +29,18 @@ public class MoveZeroes {
         int insertPosition = 0;
         for (int x : nums) {
             if (x != 0) {
-                nums[insertPosition++] = x;
+                nums[insertPosition] = x;
+                insertPosition++;
             }
         }
-        while (insertPosition < nums.length) {
-            nums[insertPosition++] = 0;
+        for (; insertPosition < nums.length; insertPosition++) {
+            nums[insertPosition] = 0;
         }
     }
 
-    public static void swap(int i, int j) {
-        int a = i;
-        int b = j;
-
-    }
+//    public static void swap(int i, int j) {
+//        int a = i;
+//        i = j;
+//        j = a;
+//    }
 }
