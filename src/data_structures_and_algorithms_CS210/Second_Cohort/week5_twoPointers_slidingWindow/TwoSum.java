@@ -24,9 +24,7 @@ public class TwoSum {
             int b = nums[i];
             int a = target - b;
             if (map.containsKey(a)) {
-                return new[]{
-                    map.get(a), i
-                } ;
+                return new int []{map.get(a), i} ;
             }
             //save that num b (nums[i]) last seen at index i
             map.put(b, i);
