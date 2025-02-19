@@ -29,7 +29,7 @@ public class TwoSum_ll_InputArrayIsSorted {
     //if you want to increase the sum you should move the left pointer +1 further(so not 2 but 7), if you want to decrease the sum you should move the right pointer to the left -1(so not 15 but 11)
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
-        int target = 6;
+        int target = 9;
 
         System.out.println(Arrays.toString(twoSum(nums, target)));
     }
@@ -45,6 +45,7 @@ public class TwoSum_ll_InputArrayIsSorted {
                 right--;
             }
         }
+        //return indexes that should be returned 1 indexed, bc the arr is 0 indexed
         return new int[]{left + 1, right + 1};
     }
 }
