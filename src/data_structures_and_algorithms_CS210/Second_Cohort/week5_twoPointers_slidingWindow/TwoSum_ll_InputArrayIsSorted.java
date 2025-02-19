@@ -1,5 +1,7 @@
 package data_structures_and_algorithms_CS210.Second_Cohort.week5_twoPointers_slidingWindow;
 
+import java.util.Arrays;
+
 public class TwoSum_ll_InputArrayIsSorted {
     /**
      * The idea is to maintain 2 pointers!
@@ -29,6 +31,7 @@ public class TwoSum_ll_InputArrayIsSorted {
         int[] nums = {2, 7, 11, 15};
         int target = 6;
 
+        System.out.println(Arrays.toString(twoSum(nums, target)));
     }
 
     public static int[] twoSum(int[] numbers, int target) {
