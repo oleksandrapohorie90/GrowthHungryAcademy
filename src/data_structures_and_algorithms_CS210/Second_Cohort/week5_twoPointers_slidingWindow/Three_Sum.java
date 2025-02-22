@@ -37,7 +37,15 @@ public class Three_Sum {
          * 3. fix the element 'i', but with additional logic to skip the duplicates for the 1st number, for example if i=-5 and incremented to index 1 and the value is -5 then it will skip it since it already saw -5 in the index 0
          * 4. then it does 2 sum idea with sorted array on the rest of the array
          * 5. then it does smth smart to skip the duplicates for 2nd and 3rd number as well with while loops
+         * time complexity: n^2 - each num btw left and right will be visited only once
+         *space complexity: O(n) because of the sorting
+         * which sorting algo does array.sort use ->
+         * Arrays.sort(n) -> log n time complexity
+         *
+         *
          */
+
+
     }
 
 
