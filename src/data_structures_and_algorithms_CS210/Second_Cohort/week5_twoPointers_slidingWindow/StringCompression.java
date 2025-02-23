@@ -54,50 +54,69 @@ public class StringCompression {
             int strealEnd = streakStart;
             //i have 1 char only at position streakStart
             int count = 1;
+
+            //i want to increase my streak by 1 if its the same as streakChar
             while (strealEnd + 1 < n && chars[strealEnd + 1] == streakChar) {
                 strealEnd++;
-                count++;
+                count++; //I want to count how many (same)chars there in this streak
             }
-        }
 
+            chars[indexAnswer] = streakChar;
+            indexAnswer++; //increment so I can start writing the count, or if count ==1 then i just skip below part and indexAnswer just points where the next char should be
+
+            if (count > 1) {
+                //then i Convert my count into a String and then into a char arr
+                char[] countAsChars = Integer.toString(count).toCharArray();
+                //iterate over this digits
+                //I write into index answer and increment
+                for (char digit : countAsChars) {
+                    chars[indexAnswer] = digit;
+                    indexAnswer++;
+                }
+                //at the end streakStart assign to streakEnd+1
+            }
+            streakStart = strealEnd + 1;
+        }
+        return indexAnswer;
 
     }
-
-
-    /**
-     *  int n = chars.length;
-     *
-     *         int streakStart = 0;
-     *         int indexAnswer = 0;
-     *         while (streakStart < n) {
-     *             // Current streak starts with chars[streakStart]
-     *             char streakChar = chars[streakStart];
-     *
-     *             // Count how many consecutive streakChar-s there are in this streak.
-     *             // streakStart and streakEnd are the two pointers. This is a common technique.
-     *             int streakEnd = streakStart;
-     *             int count = 1;
-     *             while (streakEnd + 1 < n && chars[streakEnd + 1] == streakChar) {
-     *                 streakEnd++;
-     *                 count++;
-     *             }
-     *
-     *             // if count == 1 ~> then we should write in `chars` just the `streakChar`
-     *             // else ~> then we should write in `chars` the `streakChar` followed by the integer `count` as characters
-     *             chars[indexAnswer] = streakChar;
-     *             indexAnswer++;
-     *
-     *             if (count > 1) {
-     *                 char[] countAsChars = Integer.toString(count).toCharArray();
-     *                 for (char digit : countAsChars) {
-     *                     chars[indexAnswer] = digit;
-     *                     indexAnswer++;
-     *                 }
-     *             }
-     *
-     *             streakStart = streakEnd + 1;
-     *         }
-     *         System.out.println(indexAnswer);
-     *         return indexAnswer;
-     */
 }
+
+
+/**
+ * int n = chars.length;
+ * <p>
+ * int streakStart = 0;
+ * int indexAnswer = 0;
+ * while (streakStart < n) {
+ * // Current streak starts with chars[streakStart]
+ * char streakChar = chars[streakStart];
+ * <p>
+ * // Count how many consecutive streakChar-s there are in this streak.
+ * // streakStart and streakEnd are the two pointers. This is a common technique.
+ * int streakEnd = streakStart;
+ * int count = 1;
+ * while (streakEnd + 1 < n && chars[streakEnd + 1] == streakChar) {
+ * streakEnd++;
+ * count++;
+ * }
+ * <p>
+ * // if count == 1 ~> then we should write in `chars` just the `streakChar`
+ * // else ~> then we should write in `chars` the `streakChar` followed by the integer `count` as characters
+ * chars[indexAnswer] = streakChar;
+ * indexAnswer++;
+ * <p>
+ * if (count > 1) {
+ * char[] countAsChars = Integer.toString(count).toCharArray();
+ * for (char digit : countAsChars) {
+ * chars[indexAnswer] = digit;
+ * indexAnswer++;
+ * }
+ * }
+ * <p>
+ * streakStart = streakEnd + 1;
+ * }
+ * System.out.println(indexAnswer);
+ * return indexAnswer;
+ */
+
