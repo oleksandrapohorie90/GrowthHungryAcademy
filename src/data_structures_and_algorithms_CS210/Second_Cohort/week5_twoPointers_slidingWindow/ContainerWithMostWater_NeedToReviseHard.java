@@ -1,7 +1,9 @@
 package data_structures_and_algorithms_CS210.Second_Cohort.week5_twoPointers_slidingWindow;
 
-public class ContainerWithMostWater {
+public class ContainerWithMostWater_NeedToReviseHard {
     public int maxArea(int[] height) {
+
+        //Formula: answer = max(answer, (j-i) * min(height[i], height[j])) = max(0,8*1)=8
         int i = 0;
         int j = height.length - 1;
 
