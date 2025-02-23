@@ -19,15 +19,17 @@ public class TwoSum {
      */
     public int[] twoSum(int[] nums, int target) {
 
-        Map<Integer, Integer> map = new HashMap<>();
+        //we need to find the sum of two numbers
+        //we will have a map that will be empty and if we have the number that sum(target) - num 1 = num 2, then we want to return both numbers indexes
+        Map<Integer, Integer> seen = new HashMap<>();
+
         for (int i = 0; i < nums.length; i++) {
             int b = nums[i];
             int a = target - b;
-            if (map.containsKey(a)) {
-                return new int []{map.get(a), i} ;
+            if (seen.containsKey(a)) {
+                return new int[]{seen.get(a), i};
             }
-            //save that num b (nums[i]) last seen at index i
-            map.put(b, i);
+            seen.put(b, i);
         }
         return new int[]{};
     }
