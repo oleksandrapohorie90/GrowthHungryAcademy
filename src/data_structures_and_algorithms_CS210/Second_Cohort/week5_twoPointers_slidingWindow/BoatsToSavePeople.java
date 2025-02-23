@@ -38,7 +38,14 @@ public class BoatsToSavePeople {
         // if its bigger than the limit, then we add the boat
         // if equal to limit then we put 1 pointer and 2nd pointer to the boat and we move first to the right and last to the left
         //if they exceed the limit then the last one goes in the boat and then we move right to the left and dont touch the left one and still increase the boat
-        //Arrays.sort(people); <---- too slow
+
+        //Arrays.sort(people); <---- nlogn time complexity
+        //Instead use Bucket Sort or Counting sort
+        //30000 + 50000 + 30000 + 50000 = 160,000
+        //MAX = 30000
+        //O(N + MAX) -> Linear
+        // N ~ 50000
+        //N log N -> 50000 *17 ~ 850,000 -> Linearithmic time
 
         //sort
         int[] count = new int[30001]; //0..30000
