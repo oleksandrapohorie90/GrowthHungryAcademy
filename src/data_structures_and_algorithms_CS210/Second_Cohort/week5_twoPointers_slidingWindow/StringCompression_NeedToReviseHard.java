@@ -1,6 +1,6 @@
 package data_structures_and_algorithms_CS210.Second_Cohort.week5_twoPointers_slidingWindow;
 
-public class StringCompression {
+public class StringCompression_NeedToReviseHard {
     /**
      * Given an array of characters chars, compress it using the following algorithm:
      * <p>
