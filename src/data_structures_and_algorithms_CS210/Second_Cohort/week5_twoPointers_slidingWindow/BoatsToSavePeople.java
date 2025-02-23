@@ -38,7 +38,21 @@ public class BoatsToSavePeople {
         // if its bigger than the limit, then we add the boat
         // if equal to limit then we put 1 pointer and 2nd pointer to the boat and we move first to the right and last to the left
         //if they exceed the limit then the last one goes in the boat and then we move right to the left and dont touch the left one and still increase the boat
-        Arrays.sort(people);
+        //Arrays.sort(people); <---- too slow
+
+        //sort
+        int[] count = new int[30001]; //0..30000
+        for (int x : people) {
+            count[x]++;
+        }
+        for (int x = 0, i = 0; x <= 30000; x++) {
+            while (count[x] > 0) {
+                people[i] = x;
+                count[x]--;
+                i++;
+            }
+        }
+
         int left = 0;
         int right = people.length - 1;
         int boats = 0;
