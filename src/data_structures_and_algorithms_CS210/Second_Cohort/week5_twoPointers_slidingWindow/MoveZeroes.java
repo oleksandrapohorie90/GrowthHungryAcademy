@@ -1,5 +1,7 @@
 package data_structures_and_algorithms_CS210.Second_Cohort.week5_twoPointers_slidingWindow;
 
+import java.util.Arrays;
+
 public class MoveZeroes {
     /**
      * Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
@@ -22,21 +24,25 @@ public class MoveZeroes {
 
     public static void moveZeroes(int[] nums) {
         //you will have 2 pointers, 1 is at the beginning and up, 2nd is pointing at the position where next non zero element should land, so I see a 0-skip, then I see non zero - insert in nums[0] position and increment, so just overwrite
-
         if (nums == null || nums.length == 0) {
             return;
         }
-        //it is where my next non-zero element should be
+
         int insertPosition = 0;
+        //fill out all the non zeroes elements in the beginning
         for (int x : nums) {
             if (x != 0) {
                 nums[insertPosition] = x;
                 insertPosition++;
             }
         }
-        for (; insertPosition < nums.length; insertPosition++) {
+        //take care of 0's and put them at the end
+        while (insertPosition < nums.length) {
             nums[insertPosition] = 0;
+            insertPosition++;
         }
+
+        System.out.println(Arrays.toString(nums));
     }
 
 //    public static void swap(int i, int j) {
