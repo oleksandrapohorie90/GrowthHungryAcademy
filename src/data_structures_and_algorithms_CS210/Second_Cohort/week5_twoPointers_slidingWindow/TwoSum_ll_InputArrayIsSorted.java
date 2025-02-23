@@ -28,6 +28,7 @@ public class TwoSum_ll_InputArrayIsSorted {
     // numbers = [2, 7, 11, 15] , target = 9
     //if you want to increase the sum you should move the left pointer +1 further(so not 2 but 7), if you want to decrease the sum you should move the right pointer to the left -1(so not 15 but 11)
     public static void main(String[] args) {
+        //maintain 2 pointers and apply its relatively cheap, greedy algorithms are pretty hard to figure out greedy condition
         int[] nums = {2, 7, 11, 15};
         int target = 9;
 
