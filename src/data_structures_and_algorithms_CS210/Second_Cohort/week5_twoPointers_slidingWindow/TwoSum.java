@@ -1,5 +1,6 @@
 package data_structures_and_algorithms_CS210.Second_Cohort.week5_twoPointers_slidingWindow;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +18,14 @@ public class TwoSum {
      * Output: [0,1]
      * Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
      */
-    public int[] twoSum(int[] nums, int target) {
+
+    public static void main(String[] args) {
+        int[] nums = {2, 7, 11, 15};
+        int target = 18;
+        System.out.println(Arrays.toString(twoSum(nums, target)));
+    }
+
+    public static int[] twoSum(int[] nums, int target) {
 
         //we need to find the sum of two numbers
         //we will have a map that will be empty and if we have the number that sum(target) - num 1 = num 2, then we want to return both numbers indexes
@@ -29,6 +37,7 @@ public class TwoSum {
             if (seen.containsKey(a)) {
                 return new int[]{seen.get(a), i};
             }
+            //save that number b (nums[i]) last seen at index i
             seen.put(b, i);
         }
         return new int[]{};
