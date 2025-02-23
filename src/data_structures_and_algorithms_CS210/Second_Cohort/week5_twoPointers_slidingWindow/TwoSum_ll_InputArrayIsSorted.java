@@ -35,9 +35,14 @@ public class TwoSum_ll_InputArrayIsSorted {
     }
 
     public static int[] twoSum(int[] numbers, int target) {
+        //the arr is sorted
+        //we guaranteed to have exactly 1 solution
+        //we may not use the same element twice
+        //left pointer pointing at the 1st element in the array and the right pointer pointing at the last element in the array
+        //if sum of 2 elements is less then target, we will increment the left pointer, if sum of 2 element is more then target, we will decrement the right pointer
+
         int left = 0;
         int right = numbers.length - 1;
-
         while (numbers[left] + numbers[right] != target) {
             if (numbers[left] + numbers[right] < target) {
                 left++;
@@ -45,8 +50,7 @@ public class TwoSum_ll_InputArrayIsSorted {
                 right--;
             }
         }
-        //return indexes that should be returned 1 indexed, bc the arr is 0 indexed
+        //in the requirements of the task
         return new int[]{left + 1, right + 1};
-        //maybe i sort arr, maybe put 2 pointers
     }
 }
