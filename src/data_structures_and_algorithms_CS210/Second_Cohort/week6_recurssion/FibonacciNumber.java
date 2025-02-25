@@ -29,8 +29,12 @@ public class FibonacciNumber {
 
     }
 
-    public static int fib(int n) {
-        if (n <= 1) return n;
+    //brute-force recursion - SLOW
+    public int fib(int n) {
+        // https://visualgo.net/en/recursion
+        if (n <= 1) {
+            return n;
+        }
         //you need to compute again fib function but for smaller parameters
         return fib(n - 1) + fib(n - 2);
     }
@@ -57,9 +61,9 @@ public class FibonacciNumber {
     // G(n) = 2^n
     */
 
-    // T: O(n)
-    // S: O(n)
-
+    // T: O(n) <- very fast
+    // S: O(n) <- very fast
+    //How long does it take to compute 1 value of a function and multiply it by the nums of values you have to compute. Ex: if you  have to compute f(n), then you need to compute everything from f(1) to f(n), which is n values of this function and each value is going to compute it in O(1)-> sum of 2 prev fibonaccies; Computing a SUM is O(1), any f, you multiply by the numbers of values you have to compute n*1 -> O(n)
     private int fib_(int n) {
         if (n <= 1) return n;
         if (f[n] == 0) { // each val f[n] will be computed only once
