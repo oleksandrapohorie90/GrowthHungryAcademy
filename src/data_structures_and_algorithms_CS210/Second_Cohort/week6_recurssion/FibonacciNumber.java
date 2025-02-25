@@ -35,4 +35,42 @@ public class FibonacciNumber {
         return fib(n - 1) + fib(n - 2);
     }
 
+    //to speed up we can use common process - the MEMOIZATION(when you store the results that you already computed and reuse them when you try to compute the same value again. So instead of computing the same value again, you just reuse what you have already saved and compute it
+    private int[] f;
+
+    /*
+    // T(0) = O(1)
+    // T(1) = O(1)
+    // T(n) = T(n - 1) + T(n - 2)
+    // T(n) = O(F(n)) = O(2^n)
+    // F(n) = F(n - 1) + F(n - 2)
+           <= F(n - 1) + F(n - 1)
+           <= G(n - 1) + G(n - 1)
+           <= G(n)
+           <= 2^n
+
+    // T
+
+    // G(n) = G(n - 1) + G(n - 1)
+            = 2 * G(n - 1)
+    // G(0) = 1
+    // G(n) = 2^n
+    */
+
+    // T: O(n)
+    // S: O(n)
+
+    private int fib_(int n) {
+        if (n <= 1) return n;
+        if (f[n] == 0) { // each val f[n] will be computed only once
+            f[n] = fib_(n - 1) + fib_(n - 2);
+        }
+        return f[n];
+    }
+
+    public int fib1(int n) {
+        f = new int[n + 1]; // 0..n
+        return fib_(n);
+    }
+
 }
