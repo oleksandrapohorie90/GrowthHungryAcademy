@@ -30,7 +30,7 @@ public class FibonacciNumber {
     }
 
     //brute-force recursion - SLOW
-    public int fib(int n) {
+    public static int fib(int n) {
         // https://visualgo.net/en/recursion
         if (n <= 1) {
             return n;
