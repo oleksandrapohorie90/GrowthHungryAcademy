@@ -3,7 +3,7 @@ package data_structures_and_algorithms_CS210.Second_Cohort.week6_recurssion;
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class TowersOfHanoi {
+public class TowersOfHanoi_Hardd {
     //classic recursion problem
     //https://informatics.msk.ru/mod/statements/view.php?id=2550#1
     //1st-starting rode
