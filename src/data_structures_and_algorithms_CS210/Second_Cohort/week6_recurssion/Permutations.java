@@ -4,14 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Permutations {
+    public static void main(String[] args) {
+        int [] arr = {1,2,3};
+        System.out.println(permute(arr));
+    }
 
-    public List<List<Integer>> permute(int[] nums) {
+    public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();
         backtrack(list, new ArrayList<>(), nums);
         return list;
     }
 
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums) {
+    private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums) {
         if (tempList.size() == nums.length) {
             list.add(new ArrayList<>(tempList));
             return;
