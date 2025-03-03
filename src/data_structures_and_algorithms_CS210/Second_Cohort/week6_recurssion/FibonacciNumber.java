@@ -1,19 +1,9 @@
 package data_structures_and_algorithms_CS210.Second_Cohort.week6_recurssion;
 
-import static java_intro.week1.Fibonacci.fibonacci;
-
 public class FibonacciNumber {
 
     public static void main(String[] args) {
         //Recursion is a property of a function when computing it, relies on computing itself
-        /**
-         * fib sequence is a seq of nums that starts with 0 and 1 and each number after that is a sum of previous 2 numbers
-         * 0  1  1  2  3  5  8  13  21 34 ...
-         *  +  +  +  +  +  +  +  +  +  +
-         */
-        int n2 = 6; //<= 8, the 6th fib number is the 5th fib number + 4th fib number
-        //f(n) = f(n-1) + f(n-2)
-        fibonacci(n2);
 
         /** Next fib num is the sum of previous 2 nums
          * The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
