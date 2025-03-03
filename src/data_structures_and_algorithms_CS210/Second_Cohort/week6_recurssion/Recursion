@@ -12,7 +12,8 @@ void fun(int n)
 Recursion with loop -  only will have ascending phase
 Recursion without - will have both
 
-Leaving main function, if you count activation records, how many records - only for that function 4, so size of Stack=4
+Leaving main function, if you count activation records, how many records - only for that function 4, so size of Stack=4, how much MEMORY its consuming, each activation call has 1 var created - Call n+1, total memory consumed O(n) not n+1, bc we write degree and highest term
+
 void fun(int n){
 if(n>0)}
 print("n")
@@ -40,3 +41,9 @@ Stack
 x=3
 
 Code
+
+===================================================
+Time Complexity
+In Recursion Tree Total time - 3 units of time if n=3
+So, the time depends on the value Im passing - O(n)
+
