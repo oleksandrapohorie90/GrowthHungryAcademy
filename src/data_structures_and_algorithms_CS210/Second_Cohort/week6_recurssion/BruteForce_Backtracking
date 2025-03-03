@@ -1,0 +1,21 @@
+Backtracking - one of the problem solving strategies;
+using this approach we can use Brute Force approach - for any given problem you should try out all possible solutions and pick up desired solutions
+we will do it in Dynamic programing - when solving optimal solutions
+
+Backtracking - when we have multiple solutions and we want all those solutions
+EX: 3 students
+B1 B2 B3 in how many ways can we arrange 3 students n=3 => in 3! ways
+How to find all possible arrangements ?
+State Space Tree
+Bounding Function - when restriction is introduced
+
+N-queens problem, coloring problem
+
+Branch and Bound
+
+Backtracking follows DFS
+
+Branch and Bound follows DFS
+
+
+
