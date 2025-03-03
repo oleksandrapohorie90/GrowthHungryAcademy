@@ -12,7 +12,7 @@ void fun(int n)
 Recursion with loop -  only will have ascending phase
 Recursion without - will have both
 
-
+Leaving main function, if you count activation records, how many records - only for that function 4, so size of Stack=4
 void fun(int n){
 if(n>0)}
 print("n")
@@ -23,15 +23,20 @@ void main{
 int x=3;
 fun(x);
 }
-
+How Stack is created and utilized in Recursion ?
+==============================================
 Heap
 
 Stack
-5. fun executed now n=0, no print, bc n=0 <-activation call deleted
-4. fun executed now n=1 print, bc n>0
-3. fun executed now n=2 print, bc n>0
-2. fun executed now n=3 print, bc n>0
-1. main function
+5. fun executed now n=0, no print, bc n=0 <-activation call deleted and control goes back to previous call, but there is nothing after line 19 so nothing happens-nothing to DO
+
+4. fun executed now n=1 print, bc n>0  <-activation call deleted and control goes back to previous call, but there is nothing after line 19 so nothing happens-nothing to DO
+
+3. fun executed now n=2 print, bc n>0  <-activation call deleted and control goes back to previous call, but there is nothing after line 19 so nothing happens-nothing to DO
+
+2. fun executed now n=3 print, bc n>0  <-activation call deleted and control goes back to previous call, but there is nothing after line 19 so nothing happens-nothing to DO
+
+1. main function - finally goes back to main, but there is nothing after line 24 so also activation call deleted
 x=3
 
 Code
