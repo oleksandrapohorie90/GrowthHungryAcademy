@@ -1,6 +1,8 @@
 package data_structures_and_algorithms_CS210.Second_Cohort.week6_recurssion;
 
 public class FibonacciNumber_Memoization {
+    //memoization - when we save the result of calculating a certain fib number, so then later on when we need to calculate that exact same fib number again we can just look up that value that we already calculated instead of redoing all those calculations all over again
+
     public static void main(String[] args) {
         /**
          * fib sequence is a seq of nums that starts with 0 and 1 and each number after that is a sum of previous 2 numbers
