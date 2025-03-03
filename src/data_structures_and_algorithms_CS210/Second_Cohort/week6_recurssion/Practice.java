@@ -10,7 +10,7 @@ public class Practice {
         //base case - condition inside the method where it can return without making another recursive call
         //you need a base case otherwise the recursion will stock overflow
         if(count<=1) {
-            return; //exits run of the method
+            return; //exits run of the method without calling recursion
         }
         sayHi(count - 1);
     }
