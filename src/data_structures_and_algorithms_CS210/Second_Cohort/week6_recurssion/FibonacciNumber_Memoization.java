@@ -10,7 +10,7 @@ public class FibonacciNumber_Memoization {
          * 0  1  1  2  3  5  8  13  21 34 ...
          *  +  +  +  +  +  +  +  +  +  +
          */
-        int n2 = 6; //<= 8, the 6th fib number is the 5th fib number + 4th fib number
+        int n2 = 92; //<= 8, the 6th fib number is the 5th fib number + 4th fib number
 
         fibonacciCache = new long[n2 + 1]; //because 1st fib num in the sequence is 0 => 0 1 1 2
 
