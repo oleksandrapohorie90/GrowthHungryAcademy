@@ -12,3 +12,26 @@ void fun(int n)
 Recursion with loop -  only will have ascending phase
 Recursion without - will have both
 
+
+void fun(int n){
+if(n>0)}
+print("n")
+fun(n-1)
+}
+}
+void main{
+int x=3;
+fun(x);
+}
+
+Heap
+
+Stack
+5. fun executed now n=0, no print, bc n=0 <-activation call deleted
+4. fun executed now n=1 print, bc n>0
+3. fun executed now n=2 print, bc n>0
+2. fun executed now n=3 print, bc n>0
+1. main function
+x=3
+
+Code
