@@ -28,3 +28,8 @@ X ≡ a1(mod m1)
 X ≡ a2(mod m2)
 ...
 X ≡ an(mod mn)
+
+EX 1: X ≡ 2 (mod 3)
+      X ≡ 3 (mod 5)
+      X ≡ 2 (mod 7)
+X = (a1M1M1^-1 + a2M2M2^-1 + a3M3M3^-1) mod M
