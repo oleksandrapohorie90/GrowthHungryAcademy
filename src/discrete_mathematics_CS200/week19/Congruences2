@@ -23,6 +23,7 @@ EX 3: n | (a-b)
 
 ========================================
 Chinese Remainder Theorem - CRT
+help solving diff congruences questions and 1 variable, but with a condition that mod should be relatively prime
 used to solve a set of diff congruent equations, w/ 1 var but different moduli which are relatively prime as shown below:
 X ≡ a1(mod m1)
 X ≡ a2(mod m2)
@@ -57,5 +58,10 @@ M3^-3 = 15 * M^3-3 = 1 mod 7, also 1, 15*1=15 then 15/7=2 and remainder 1
 ==============================
 X = (a1M1M1^-1 + a2M2M2^-1 + a3M3M3^-1) mod M
 ==============================
+X = (2*35*2 + 3*21*1 + 2*15*1) mod 105 = 233 mod 105
+X = 23 as a remainder
 
+23 ≡ 2(mod 3) 23/3 is remainder 2?
+23 ≡ 3(mod 5) 23/5 is remainder 3?
+23 ≡ 2(mod 7) 23/7 is remainder 2?
 
