@@ -33,3 +33,19 @@ EX 1: X ≡ 2 (mod 3)
       X ≡ 3 (mod 5)
       X ≡ 2 (mod 7)
 X = (a1M1M1^-1 + a2M2M2^-1 + a3M3M3^-1) mod M
+compare 1 and 2
+a1=2, m1=3, to find M1, to find M1^-1
+a2=3, m2=5, to find M2, to find M2^-2
+a3=2, m3=7, to find M3, to find M3^-3
+
+There exists a solution when small m1,m2,m3 are relatively prime OR GCD of m1,m2,m3 is 1
+
+to find M => m1 * m2 * m3
+        M = 105
+
+to find M1..3 = M/m1..3
+M1=105/3 = 35
+M2=105/5 = 21
+M3=105/7 = 15
+
+
