@@ -21,6 +21,18 @@ EX 2:  a = k * n + b (-n) => a=10, b=14, k=?, n=4 <= all INT's
 EX 3: n | (a-b)
       4 | (10-14) = 4/-4 = -4*(-1)
 
+========================================
+Chinese Remainder Theorem - CRT
+used to solve a set of diff congruent equations, w/ 1 var but different moduli which are relatively prime as shown below:
+X ≡ a1(mod m1)
+X ≡ a2(mod m2)
+...
+X ≡ an(mod mn)
+
+
+
+
+
 
 
 
