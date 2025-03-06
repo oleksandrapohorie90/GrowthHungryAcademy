@@ -1,0 +1,121 @@
+4.4 section Min HW
+====================
+Exercise 3: By inspection (as discussed prior to Example 1), find an inverse of
+4 modulo 9.
+
+We need to find a number x such that 4x = 1 (mod 9)
+Try numbers:
+4 * 1 = 4 mod 4 (mod 9)
+4 * 2 = 8 mod 8 (mod 9)
+4 * 3 = 12 mod 3 (mod 9)
+4 * 4 = 16 mod 7 (mod 9)
+4 * 5 = 20 mod 2 (mod 9)
+4 * 6 = 24 = mod 6 (mod 9)
+4 * 7 = 28 = mod 1 (mod 9)
+So, the inverse of 4 modulo 9 is 7
+
+Exercise 5a: Find an inverse of a modulo m for a = 4, m = 9 using the method
+followed in Example 2 (Extended Euclidean Algorithm).
+We want to solve 4s + 9t = gcd(4, 9) = 1
+Euclidean Algorithm:
+    9=2*4+1
+Reverse steps:
+    1=9-2*4=>1=(-2)*4+(1)*9
+
+s = -2and t = 1. The inverse is s=-2. Since we want a positive inverse modulo 9, -2 mod 7 (mod 9) => Inverse is 7, same as before
+
+Exercise 9: Solve the congruence 4x = 5 (mod 9) using the inverse of 4
+modulo 9 found in part (a) of Exercise 5.
+
+We found the inverse of 4 mod 9 is 7.
+Multiply both sides of 4x = 5 (mod 9) by 7
+
+    7 * (4x) = 7* 5 (mod 9)
+
+    (7* 4) * x = 35 (mod 9)
+
+    1 * x = 35 (mod 9) (Since 7*4 = 1 (mod 9))
+
+    x = 35 (mod 9)
+
+    x = 8 (mod 9) (Since 35 = 3*9 + 8)
+Solution is x = 8 (mod 9)
+
+Exercise 20: Use the construction in the proof of the Chinese remainder
+theorem to find all solutions to the system of congruences x = 2 (mod 3), x
+1 (mod 4), and 3 (mod 5).
+
+2; m= 4,
+
+Ms = M/s om
+Inverses:
+
+2 (mod 3). Inv y
+4). Inverse of 3 mod 4 is 9 = 1 (mod 4). y
+
+(mod 5). Inverse of 2 mod 5 is 3 (since 2*3 = 6 = 1 (mod 5)).
+
+2 + as * My * ys (mod 60) x +1* 15° 3+ ©
+
+S + 108 (mod 60) x = 233 (m 53 (mod 60) (Since
+
+_ 185% 4° 3 80 + 45
+
+
+
+185%
+
+GrowthHungry,
+
++
+
+x
+
+® Arrays copyOf
+
+x
+
+app.excalidraw.com/I/5w2Np4L3q5h/9QXxPT7mCOU
+
+© (3) Recursio x [4 Google Calend: x  & GH Academy|
+
+* Solution: x = 53 (mod 60)
+
+x
+
+(M Week #4: Dom
+
+Exercise 23: Solve the system of congruences in Exercise 20 using the method
+
+of back substitution.
+mod 3) (1)
+1 (mod 4)
+From (1), x = Substitute in (2
+= 1 (mod 4)
+1 (mod 4)
+= 1 (mod 4) (Divide by 3, or notice k=1 works)
+4j + 1. Substitute back into x
+
+3(4j + 12j+3+2
+
+* Now, x = 12) + 5. Substitute in (3):
+
+2 mod 5) (Since 12 = 2 (mod 5))
+Multiply by inverse of 2 mod 5 (which is 3):
+
+3 * 3 (mod 5)
+4 (mod 5
+
+* So, j = 51 + 4, Substitute back into x =
++5 = 601+5
+
+* Solution: x = 53 (mod 60). Again, same answer!
+
+ercise 33: Use Fermat's little theorem to find 7~121 mod 13.
+
+* 13 is prime, 7 is 0,7 M12 = 1 (mod 13)
+
+© Divide 121 by 12: 121 = 10 *
+© 79121 = 7A(10*12 + 1) = (7912)A10 *
+
+(7912)910 * 791 = (1)910 * 7-1 * 7 = 7 (mod 1
