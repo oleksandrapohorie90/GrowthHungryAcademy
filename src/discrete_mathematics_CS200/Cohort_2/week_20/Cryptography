@@ -25,3 +25,32 @@ For 'F' (p=22): f^-1(22) = (22-3) mod 26 = 19 mod 26 = 19(2='T') => CAT
 Affine Cipher Example
 Encryption funtcion: f(p) = (7p+3) mod 26 Here a=7,b=3
 Plaintext letter 'K'
+1. convert letter to num: K -> 10
+2. Apply encryption function:
+f(10) = (7 * 10 + 3) mod 26 = (70 + 3) mod 26 = 73 mod 26
+   73 = 2*26 +21, so 73 mod 26 = 21
+3. convert num back to letter
+21 -> V
+4. Ciphertext "V" Letter 'K' is encrypted as 'V'
+
+
+To decrypt V back to K => p = a(c-b) mod 26, we need to find the inverse of a=7 mod 26, using extended euclidean algo or by trial and error
+7*15=105=4*26+1 congruence sign 1 (mod 26)
+==============================
+
+1. Convert ciphertext letter to number
+V -> 21
+2. apply decryption function
+f^-1(21) = 15 * (21-3) mod 26 = 15 * (18) mod 26 = 270 mod 26
+270 = 10 * 26 +10, so 270 mod 26 = 10
+3. convert num back to letter
+10 -> K
+plaintext: "K"
+==============================
+RSA crypto system: the public key revolution - SECURE bc of the difficulty of factoring large numbers
+Ciphertext C = M^e mod n
+use efficient modular exponentiation like exponentiation by squaring Algorithms sec 4.2
+To decrypt M=C^d mod n
+use efficient modular exponentiation
+
+
