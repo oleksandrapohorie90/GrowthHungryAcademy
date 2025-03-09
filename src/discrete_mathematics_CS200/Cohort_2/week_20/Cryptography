@@ -6,11 +6,13 @@ key(shift value): k=3 (Caeser cipher)
 C -> 2
 A -> 0
 T -> 19
+Convert to SECRET
 Apply encryption function f(p) = (p+k) mod 26 to each letter
 C -> 2: f(2) = (2+3) mod 26 = 5 mod 26 = 5(5 corresponds to F)
 A -> 0: f(0) = (0+3) mod 26 = 3 mod 26 = 3 (3 corresponds to D)
 T -> 19: f(19) = (19+3) mod 26 = 22 mod 26 = 22 (22 corresponds to 'W')
 
+Convert back to PLAIN TEXT
 Convert numbers back to letters
 5 -> F
 3 -> D
