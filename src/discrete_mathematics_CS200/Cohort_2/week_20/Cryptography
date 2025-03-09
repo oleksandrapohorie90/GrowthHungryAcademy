@@ -61,8 +61,13 @@ Instant Messaging Apps(whats up) - use Diffie Hellman
 
 
 Classical Ciphers - illustrative foundations, educational tools
-RSA - public key encryption and digital signatures - the workhorse for secure identity and confidentiality on the internet
-Diffie-Hellman: secure key agreement - the magic that allows secure communication to begin in the first place
+Shift and Affine ciphers - understanding basic encryption, decryption and thei weakness(frequency analysis)
+
+RSA - public key cryptography - key generation, encryption, decryption, security based on factoring
+public key encryption and digital signatures - the workhorse for secure identity and confidentiality on the internet
+
+Diffie-Hellman: key exchange - secure key agreement, security based on discrete logarithms
+secure key agreement - the magic that allows secure communication to begin in the first place
 
 
 
