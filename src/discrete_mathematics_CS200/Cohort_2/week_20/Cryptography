@@ -52,5 +52,19 @@ Ciphertext C = M^e mod n
 use efficient modular exponentiation like exponentiation by squaring Algorithms sec 4.2
 To decrypt M=C^d mod n
 use efficient modular exponentiation
+===============================
+Real world uses for establishing secure channels:
+SSH(Secure shell) - Diffie Hellman
+TS/HTTPS(Secure web browsing)
+VPN's(Virtual private networks)
+Instant Messaging Apps(whats up) - use Diffie Hellman
+
+
+Classical Ciphers - illustrative foundations, educational tools
+RSA - public key encryption and digital signatures - the workhorse for secure identity and confidentiality on the internet
+Diffie-Hellman: secure key agreement - the magic that allows secure communication to begin in the first place
+
+
+
 
 
