@@ -1,4 +1,7 @@
+4.4
 a ≡ b (mod n)
+
+
 
 1. a and b have the same remainder when they are divided by 'n'(positive whole num greater than 1)
 2. a = k * n + b -> working with equation instead of congruence
