@@ -46,4 +46,9 @@ Code
 Time Complexity
 In Recursion Tree Total time - 3 units of time if n=3
 So, the time depends on the value Im passing - O(n)
-
+=================================================
+1.Tail recursion - no operations to be done while returning time
+loop is more efficient then tail recursion
+2.Head Recursion - all of operations are done at the time of returning
+3. Linear recursion - when recursion is called itself 1 time
+4. tree recursion - when a reursion is calling itself more than 1 time
