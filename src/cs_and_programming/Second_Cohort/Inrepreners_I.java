@@ -2,6 +2,8 @@ package cs_and_programming.Second_Cohort;
 
 import java.util.Scanner;
 
+import static java.lang.Integer.valueOf;
+
 public class Inrepreners_I {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -47,6 +49,7 @@ public class Inrepreners_I {
                 throw new UnsupportedOperationException("Operation is not supported");
         }
 
-        return operator;
+        //return Integer.parseInt(operator);
+
     }
 }
