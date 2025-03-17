@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import static java.lang.Integer.valueOf;
 
-public class Inrepreners_I {
+public class Interpreters_I {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String line;
