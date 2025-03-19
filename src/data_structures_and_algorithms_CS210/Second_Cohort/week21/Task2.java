@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class Task2 {
 //build each str and each combination one by one
+    //pure brute force recursion
 
     private static final Map<Character, String> phoneMap = new HashMap<>();
 
