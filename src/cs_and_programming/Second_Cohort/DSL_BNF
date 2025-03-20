@@ -16,7 +16,7 @@ BNF form for above simple language
 <operator> ::= "ADD" | "SUB" | "MUL" | "DIV"
 3.lets define what is operand - basically is just an integer
 <operand> ::= <integer>
-4. define what is integer, optionally misnus in front [], either nothing or minus
+4. define what is integer, optionally minus in front [], either nothing or minus
 <integer> ::= ["-"]<one_to_nine> {digit} **NOTE dont cover 0, triple thing
 <digit> ::= "0" | <one_to_nine>
 <one_to_nine> ::= "1" | "2" |"3" |"4" |"5" |"6" |"7" |"8" |"9"
@@ -24,8 +24,13 @@ BNF form for above simple language
 =====================
 Number: [sign] digits [fractional part] -2,3,3.3,-45.56,5.0, -0.5
 
-<number> ::= <integer>[<fractional>]
+<number> ::= <integer>[<fractional>] => 3.55
 <fractional> ::= "."<digit>+
 <integer> ::= ["."](<one_to_nine>{digit}|"0")
 <digit>   ::= "0" | <one_to_nine>
 <one_to_nine> ::= "1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"
+
+=========================
+[] - optional
+digit+ -> + one or many, at least 1, anything from 0 to nine, 3.3, 0,5,7
+digit* -> 0 1 or any number starting from 0
