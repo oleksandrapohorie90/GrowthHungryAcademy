@@ -22,9 +22,11 @@ Part 1
 6. define nums and include 0 handling
 <digit> ::= "0" | <one_to_nine>
 
-7.
+7. all the nums
 <one_to_nine> ::= "1" | "2" |"3" |"4" |"5" |"6" |"7" |"8" |"9"
+
 => 1
+5 + 6 * 3 - 4 / 2
 <expression> ::= <term> (("ADD" | "SUB") <term>)*
 <term> ::= <factor> (("MUL" | "DIV") <factor>)*
 <factor> ::= <integer>
@@ -32,6 +34,56 @@ Part 1
 <integer> ::= ["-"]<one_to_nine> {<digit>}
 <digit> ::= "0" | <one_to_nine>
 <one_to_nine> ::= "1" | "2" |"3" |"4" |"5" |"6" |"7" |"8" |"9"
+
+=> 2
+5 + 6 * (45-3) - 4 / 2
+<expression> ::= <term> (("ADD" | "SUB") <term>)*
+modified <term> to allow parenthesis
+<term> ::= <factor> (("MUL" | "DIV") <factor>)*
+modified <factor> to allow parenthesis with expression inside
+<factor> ::= <integer> | "(" <expression> ")"
+<operator> ::= "ADD" | "SUB" | "MUL" | "DIV"
+<integer> ::= ["-"]<one_to_nine> {<digit>}
+<digit> ::= "0" | <one_to_nine>
+<one_to_nine> ::= "1" | "2" |"3" |"4" |"5" |"6" |"7" |"8" |"9"
+
+=> 3
+5 ^ 3 + 6 * (45 - 3 ^ 2) - 4 / 2
+^ has a higher precedence than multiplication, division, addition, and subtraction
+<expression> ::= <term> (("ADD" | "SUB") <term>)*
+//modified term to handle pow ^ as well
+<term> ::= <power> (("MUL" | "DIV") <power>)*
+<power> ::= <factor> ("POW" <factor>)*
+<factor> ::= <integer> | "(" <expression> ")"
+<operator> ::= "ADD" | "SUB" | "MUL" | "DIV" | "POW"
+<integer> ::= ["-"]<one_to_nine> {<digit>}
+<digit> ::= "0" | <one_to_nine>
+<one_to_nine> ::= "1" | "2" |"3" |"4" |"5" |"6" |"7" |"8" |"9"
+
+=> 4
+add exponents
+Each scientific number follows this pattern:
+<number> ::= <base> "e" <exponent>
+where:
+
+<base> is a decimal or an integer.
+<exponent> is a signed integer.
+Since scientific notation modifies how numbers work, we need to update our <factor> rule
+
+<expression> ::= <term> (("ADD" | "SUB") <term>)*
+<term> ::= <power> (("MUL" | "DIV") <power>)*
+<power> ::= <factor> ("POW" <factor>)*
+//Since scientific notation modifies how numbers work, we need to update our <factor> rule
+<factor> ::= <number> | "(" <expression> ")"
+<number> ::= <integer> | <decimal> | <scientific>
+<decimal> ::= ["-"] <digit>+ "." <digit>+
+<scientific> ::= ( <integer> | <decimal> ) "e" ["-"] <digit>+
+<operator> ::= "ADD" | "SUB" | "MUL" | "DIV" | "POW"
+<integer> ::= ["-"]<one_to_nine> {<digit>}
+<digit> ::= "0" | <one_to_nine>
+<one_to_nine> ::= "1" | "2" |"3" |"4" |"5" |"6" |"7" |"8" |"9"
+
+
 
 Part 2
 interpret, execute each line
