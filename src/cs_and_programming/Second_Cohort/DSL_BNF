@@ -34,3 +34,35 @@ Number: [sign] digits [fractional part] -2,3,3.3,-45.56,5.0, -0.5
 [] - optional
 digit+ -> + one or many, at least 1, anything from 0 to nine, 3.3, 0,5,7
 digit* -> 0 1 or any number starting from 0
+(* means zero or more) + or - followed by another term.
+=========================
+
+In BNF (Backus-Naur Form), we use different non-terminals (<expression>, <term>, <factor>, etc.) to structure our grammar.
+
+A term (<term>) is a part of an expression that consists of multiplication and division operations.
+In mathematical precedence, multiplication and division are evaluated before addition and subtraction.
+That's why we separate them in a special rule.
+Think of <term> like this:
+
+A basic arithmetic expression consists of terms separated by + or -.
+Each term consists of factors that are multiplied or divided
+5 + 6 * 3 - 4 / 2
+6 * 3 is a term.
+4 / 2 is a term.
+5 + (6 * 3) - (4 / 2) is the overall expression.
+===========================
+<expression> ::= <term> (("ADD" | "SUB") <term>)*
+Every expression must start with a <term>.
+After the first term, we can optionally have zero or more (* means zero or more) + or - followed by another term.
+============================
+
+How This Works for 5 + 6 * 3 - 4 / 2
+Expanding it based on our BNF:
+
+Start with a <term> (first number 5).
+See a + → Expect another <term> (6 * 3 is a term).
+See a - → Expect another <term> (4 / 2 is a term).
+(expression)
+  ├── (term) → 5
+  ├── ADD (term) → (6 * 3)
+  ├── SUB (term) → (4 / 2)
