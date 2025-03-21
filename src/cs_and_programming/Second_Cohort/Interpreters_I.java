@@ -17,24 +17,22 @@ public class Interpreters_I {
             }
             try {
                 String operator = expr[0];
-                int operand1 = Integer.parseInt(expr[1]);
-                int operand2 = Integer.parseInt(expr[2]);
+                double operand1 = Double.parseDouble(expr[1]);
+                double operand2 = Double.parseDouble(expr[2]);
 
-                int result = evaluate(operator, operand1, operand2);
-                System.out.println("Result: " + result);
+                double result = evaluate(operator, operand1, operand2);
+                System.out.printf("Result: %.2f%n", result);
+
 
             } catch (NumberFormatException e) {
                 System.out.println("Invalid number received: " + line);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-
         }
-
-
     }
 
-    private static int evaluate(String operator, int operand1, int operand2) {
+    private static double evaluate(String operator, double operand1, double operand2) {
 
         switch (operator) {
             case "ADD":
@@ -48,8 +46,12 @@ public class Interpreters_I {
                     throw new IllegalArgumentException("Cannot divide by zero");
                 }
                 return operand1 / operand2;
+            case "POW":
+                return (int) Math.pow(operand1, operand2);
+            case "MOD":
+                return operand1 % operand2;
             default:
-                throw new UnsupportedOperationException("Operation is not supported");
+                throw new UnsupportedOperationException("Operation is not supported" + operator);
         }
 
         //return Integer.parseInt(operator);
