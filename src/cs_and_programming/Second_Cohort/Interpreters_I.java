@@ -21,13 +21,16 @@ public class Interpreters_I {
                 int operand2 = Integer.parseInt(expr[2]);
 
                 int result = evaluate(operator, operand1, operand2);
+                System.out.println("Result: " + result);
 
             } catch (NumberFormatException e) {
                 System.out.println("Invalid number received: " + line);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
+
         }
+
 
     }
 
