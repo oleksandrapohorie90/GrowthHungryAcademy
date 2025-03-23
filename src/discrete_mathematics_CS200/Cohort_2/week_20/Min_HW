@@ -15,7 +15,7 @@ Step 3: Convert Back to Letters
 Ciphertext: "GRQRW SD VVR JR"
 
 26 is a part of the cipher’s definition and protects the logic for other cases
-
+===============================================================================
 4a: Decrypt the message "EOXH MHDQV" using Caesar cipher (k = 3)
 Step 1: Convert to Numbers
 E=4, O=14, X=23, H=7, M=12, H=7, D=3, Q=16, V=21
@@ -29,7 +29,7 @@ Step 3: Convert Back to Letters
 → B L U E J E A N S
 
 Plaintext: "BLUE JEANS"
-
+===============================================================================
 7: Cryptanalyze the cipher "DY CVOOZ ZOBMRKXMO DY NBOKW"
 Step 1: Frequency Analysis
 Most frequent = O (3 times), assume it maps to 'E' (most frequent English letter) A=0, B=1, C=2, D=3, E=4
@@ -52,7 +52,7 @@ O = 14 → (14 - 10) % 26 = 4 → E
 
 O = 14 → 4 → E
 
-Z = 25 → (25 - 10) = 15 → P → CVOOZ → SLEEP (but typo appears in example as SLEPER)
+Z = 25 → (25 - 10) = 15 → P → CVOOZ → SLEEP
 
 Word: ZOBMRKXMO
 Decrypting each:
@@ -91,4 +91,22 @@ W = 22 → 12 → M
 
 Plaintext:
 “TO SLEEP PERCHANCE TO DREAM”
-(Though SLEEP is slightly misspelled as “SLEPER”)
+===============================================================================
+11: What is the decryption function of the Affine Cipher if the Encryption Function
+is: c = (ap + b) mod 26, where a = 15, b = 13
+To decrypt, find modular inverse of a = 15 mod 26
+
+Step 1: Find a⁻¹ mod 26 15 × 7 ≡ 1 mod 26 -> ≡ is congruent to or has the same remainder as, 15 * 7 ≡ 1 mod 26, 15 times 7 leaves a remainder of 1 when divided by 26
+What number can I multiply a by so that the result is 1 mod m? 15⁻¹ mod 26, find x such that 15 * x ≡ 1 mod 26 => its 7 is called the modular inverse of 15 mod 26
+  15 × 7 = 105 ≡ 1 mod 26
+  → a⁻¹ = 7
+
+Step 2: Construct Decryption Function
+  p = a⁻¹(c - b) mod 26
+  → p = 7(c - 13) mod 26
+  Can also be written as:
+  → p = (7c + 13) mod 26
+
+Decryption Function:
+p = 7(c - 13) mod 26
+p = (7c + 13) mod 26
