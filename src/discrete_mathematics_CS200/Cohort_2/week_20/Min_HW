@@ -111,3 +111,38 @@ Decryption Function:
 p = 7(c - 13) mod 26
 p = (7c + 13) mod 26
 ===============================================================================
+Exercise 24: Encrypt “ATTACK” using RSA (n = 2537, e = 13)
+Step 1: Translate to Numbers (2-digit blocks)
+A=00, T=19, C=02, K=10
+Blocks = "AT", "TA", "CK" → 0019, 1900, 0210
+→ M₁ = 19, M₂ = 1900, M₃ = 210
+
+Step 2: Encrypt each block using c = Mᵉ mod n
+
+M₁ = 19 → C₁ = 19¹³ mod 2537 = 1819
+
+M₂ = 1900 → C₂ = 1900¹³ mod 2537 = 1415
+
+M₃ = 210 → C₃ = 210¹³ mod 2537 = 0981
+
+Ciphertext blocks:
+→ 1819 1415 0981
+
+===============================================================================
+Exercise 29: Diffie-Hellman Key Exchange (p = 23, a = 5)
+Alice: k₁ = 8
+Bob: k₂ = 5
+
+Step 1: Alice computes public value
+A = 5⁸ mod 23 = 390625 mod 23 = 16
+
+Step 2: Bob computes public value
+B = 5⁵ mod 23 = 3125 mod 23 = 20
+
+Step 3: Shared Key Computation
+
+Alice computes: s = 20⁸ mod 23 = 18
+
+Bob computes: s = 16⁵ mod 23 = 18
+
+Shared Key: 18
