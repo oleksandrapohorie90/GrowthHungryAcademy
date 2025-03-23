@@ -30,4 +30,65 @@ Step 3: Convert Back to Letters
 
 Plaintext: "BLUE JEANS"
 
+7: Cryptanalyze the cipher "DY CVOOZ ZOBMRKXMO DY NBOKW"
+Step 1: Frequency Analysis
+Most frequent = O (3 times), assume it maps to 'E' (most frequent English letter) A=0, B=1, C=2, D=3, E=4
+O = 14, E = 4 → shift k = 14 - 4 = 10
 
+Step 2: Decrypt with k = 10
+Use f⁻¹(c) = (c - 10) mod 26
+Decrypted ciphertext becomes:
+Word: DY
+D = 3 → (3 - 10) % 26 = -7 → 19 → T
+
+Y = 24 → (24 - 10) % 26 = 14 → O → DY → TO
+
+Word: CVOOZ
+C = 2 → (2 - 10) % 26 = -8 → 18 → S
+
+V = 21 → (21 - 10) % 26 = 11 → L
+
+O = 14 → (14 - 10) % 26 = 4 → E
+
+O = 14 → 4 → E
+
+Z = 25 → (25 - 10) = 15 → P → CVOOZ → SLEEP (but typo appears in example as SLEPER)
+
+Word: ZOBMRKXMO
+Decrypting each:
+
+Z = 25 → 15 → P
+
+O = 14 → 4 → E
+
+B = 1 → -9 → 17 → R
+
+M = 12 → 2 → C
+
+R = 17 → 7 → H
+
+K = 10 → 0 → A
+
+X = 23 → 13 → N
+
+M = 12 → 2 → C
+
+O = 14 → 4 → E
+→ ZOBMRKXMO → PERCHANCE
+
+Word: DY again → already did → TO
+Word: NBOKW
+N = 13 → 3 → D
+
+B = 1 → -9 → 17 → R
+
+O = 14 → 4 → E
+
+K = 10 → 0 → A
+
+W = 22 → 12 → M
+→ NBOKW → DREAM
+
+Plaintext:
+“TO SLEEP PERCHANCE TO DREAM”
+(Though SLEEP is slightly misspelled as “SLEPER”)
