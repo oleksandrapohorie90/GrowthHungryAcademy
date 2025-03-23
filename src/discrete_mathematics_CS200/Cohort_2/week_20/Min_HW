@@ -111,11 +111,24 @@ Decryption Function:
 p = 7(c - 13) mod 26
 p = (7c + 13) mod 26
 ===============================================================================
-Exercise 24: Encrypt “ATTACK” using RSA (n = 2537, e = 13)
+Exercise 24: Encrypt “ATTACK” using RSA (n = 2537, e = 13): c=M^e mod n
+M = message block (number form)
+
+e = public exponent
+
+n = modulus
+
+c = encrypted block (ciphertext)
+
 Step 1: Translate to Numbers (2-digit blocks)
-A=00, T=19, C=02, K=10
+A = 00
+T = 19
+C = 02
+K = 10
+
 Blocks = "AT", "TA", "CK" → 0019, 1900, 0210
 → M₁ = 19, M₂ = 1900, M₃ = 210
+c=M^e mod n ⇒ c = M^13 mod 2537
 
 Step 2: Encrypt each block using c = Mᵉ mod n
 
