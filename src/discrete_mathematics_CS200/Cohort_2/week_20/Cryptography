@@ -1,5 +1,38 @@
 4.6
 ==========
+🔒 Encryption
+→ Hides the original message.
+→ You take plaintext (the original readable message) and scramble it into ciphertext (nonsense-looking code) using a key or formula.
+
+🔤 Example:
+
+Plaintext: HELLO
+
+After Caesar cipher with shift +3: KHOOR
+
+🧠 Think of it like locking a message.
+
+🔓 Decryption
+→ Reveals the original message.
+→ You take ciphertext and unscramble it back into plaintext using the same key (or related key).
+
+🔤 Example:
+
+Ciphertext: KHOOR
+
+After Caesar cipher with shift -3: HELLO
+
+🧠 Think of it like unlocking a message.
+==========================================
+Action	Input	Output	Purpose
+Encryption	Plaintext	Ciphertext	To hide or protect a message
+Decryption	Ciphertext	Plaintext	To read the original message
+🔐 Real-Life Analogy:
+Encryption = Locking a box with a key 🔑
+
+Decryption = Unlocking the box with the same key 🗝️
+==========================================
+
 alphabet A=0, B=1,...Z=25
 key(shift value): k=3 (Caeser cipher)
 "CAT"

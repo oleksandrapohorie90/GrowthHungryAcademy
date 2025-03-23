@@ -1,0 +1,33 @@
+1a: Encrypt the message "DO NOT PASS GO" using Caesar cipher (k = 3)
+Step 1: Convert to Numbers
+Plaintext = DO NOT PASS GO
+→ D=3, O=14, N=13, O=14, T=19, P=15, A=0, S=18, S=18, G=6, O=14
+Spaces are ignored.
+So, numeric = [3, 14, 13, 14, 19, 15, 0, 18, 18, 6, 14]
+
+Step 2: Apply Encryption Function
+f(p) = (p + 3) mod 26
+→ [6, 17, 16, 17, 22, 18, 3, 21, 21, 9, 17]
+
+Step 3: Convert Back to Letters
+→ G R Q R W S D V V J R
+
+Ciphertext: "GRQRW SD VVR JR"
+
+26 is a part of the cipher’s definition and protects the logic for other cases
+
+4a: Decrypt the message "EOXH MHDQV" using Caesar cipher (k = 3)
+Step 1: Convert to Numbers
+E=4, O=14, X=23, H=7, M=12, H=7, D=3, Q=16, V=21
+→ [4, 14, 23, 7, 12, 7, 3, 16, 21]
+
+Step 2: Apply Decryption Function
+f⁻¹(c) = (c - 3) mod 26
+→ [1, 11, 20, 4, 9, 4, 0, 13, 18]
+
+Step 3: Convert Back to Letters
+→ B L U E J E A N S
+
+Plaintext: "BLUE JEANS"
+
+
