@@ -1,4 +1,4 @@
-package cs_and_programming.Second_Cohort;
+package cs_and_programming.Second_Cohort.BNF;
 
 import java.util.Scanner;
 

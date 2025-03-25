@@ -1,0 +1,2 @@
+Lexer - a word scanner for DSL
+A lexer (also called a tokenizer) reads your code and breaks it into small parts called tokens. Think of tokens like labels for words in a sentence

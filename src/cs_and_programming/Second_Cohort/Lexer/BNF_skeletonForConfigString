@@ -1,0 +1,22 @@
+Define BNF skeleton
+<program> ::= <statement_list>
+<statement_list> ::= <statement> | <statement> <statement_list>
+
+<statement> ::= <config_statement>
+              | <update_statement>
+              | <compute_statement>
+              | <show_statement>
+
+Define each statement
+<config_statement> ::= "config" <string> "=" <value>
+<update_statement> ::= "update" <string> "=" <value>
+<compute_statement> ::= "compute" <string> "=" <expression>
+<show_statement> ::= "show configs"
+
+Define value and expression rules
+<value> ::= <number>
+<number> ::= [0-9]+ ("." [0-9]+)?
+<string> ::= "\"" [a-zA-Z_][a-zA-Z0-9_]* "\""
+
+<expression> ::= <variable> "*" <variable>
+<variable> ::= "%" [a-zA-Z_][a-zA-Z0-9_]*
