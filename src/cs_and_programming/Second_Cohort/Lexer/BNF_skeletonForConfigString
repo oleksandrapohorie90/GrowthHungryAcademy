@@ -6,6 +6,8 @@ Define BNF skeleton
               | <update_statement>
               | <compute_statement>
               | <show_statement>
+              | <loop_statement>
+              | <if_statement>
 
 Define each statement
 <config_statement> ::= "config" <string> "=" <value>

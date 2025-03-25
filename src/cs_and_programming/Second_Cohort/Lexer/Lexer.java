@@ -27,7 +27,16 @@ public class Lexer {
         tokenPatterns.add(new TokenPattern("STRING", "\"[a-zA-Z_][a-zA-Z0-9_]*\""));
         tokenPatterns.add(new TokenPattern("VARIABLE", "%[a-zA-Z_][a-zA-Z0-9_]*"));
         tokenPatterns.add(new TokenPattern("NUMBER", "\\d+(\\.\\d+)?"));
-        tokenPatterns.add(new TokenPattern("WHITESPACE", "[ \t\n\r]+")); // Skip later
+        tokenPatterns.add(new TokenPattern("IDENTIFIER", "[a-zA-Z_][a-zA-Z0-9_]*"));
+        tokenPatterns.add(new TokenPattern("WHITESPACE", "[ \t\n\r]+"));
+        tokenPatterns.add(new TokenPattern("LOOP", "loop"));
+        tokenPatterns.add(new TokenPattern("FROM", "from"));
+        tokenPatterns.add(new TokenPattern("TO", "to"));
+        tokenPatterns.add(new TokenPattern("IF", "if"));
+        tokenPatterns.add(new TokenPattern("ELSE", "else"));
+        tokenPatterns.add(new TokenPattern("END", "end"));
+        tokenPatterns.add(new TokenPattern("GREATER_THAN", ">"));
+
     }
 
     public List<Token> tokenize(String input) {
