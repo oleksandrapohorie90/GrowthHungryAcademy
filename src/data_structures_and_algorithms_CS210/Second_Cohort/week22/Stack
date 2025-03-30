@@ -1,0 +1,92 @@
+Stack can be defined as a container in which insertion and deletion can be done from the one end known as the top of the stack.
+https://www.tpointtech.com/data-structure-stack
+Stack works on the LIFO pattern. As we can observe in the below figure there are five memory blocks in the stack; therefore, the size of the stack is 5.
+
+Suppose we want to store the elements in a stack and let's assume that stack is empty. We have taken the stack of size 5 as shown below in which we are pushing the elements one by one until the stack becomes full.
+
+DS Stack Introduction
+Since our stack is full as the size of the stack is 5. In the above cases, we can observe that it goes from the top to the bottom when we were entering the new element in the stack. The stack gets filled up from the bottom to the top.
+
+When we perform the delete operation on the stack, there is only one way for entry and exit as the other end is closed. It follows the LIFO pattern, which means that the value entered first will be removed last. In the above case, the value 5 is entered first, so it will be removed only after the deletion of all the other elements.
+
+Stacks adhere strictly to the Last-In-First-Out (LIFO) principle for insertion and deletion of elements.
+Envision a vertical stack with the top portion being the active end for additions and removals.
+Initially, when a stack is created, it is marked as empty with the top pointer set to a sentinel value like -1
+During insertion (push operation), the element is placed at the current top position after incrementing the top pointer.
+This push process continues until the stack's predetermined capacity is reached, after which insertions aren't possible.
+For removal (pop operation), the element at the current top is retrieved and returned.
+Simultaneously, the top pointer is decremented, removing that topmost element from the stack.
+A pop attempt on an empty stack triggers an underflow condition, indicating an erroneous operation.
+The stack grows upwards during pushes and shrinks downwards during pops, maintaining the LIFO order.
+This disciplined addition and removal from a single end is a fundamental stack property across its operations.
+
+The following are some common operations implemented on the stack:
+===================================================================
+Push (item): Inserts a new element 'item' onto the top of the stack. However, attempting a push will result in an overflow error condition if the stack is already at its maximum capacity.
+pop(): Removes and returns the topmost element from the stack. But if the stack is empty, attempting a pop will trigger an underflow error, as there are no elements to remove.
+peek(): Retrieves the value of the topmost element without removing it from the stack. If the stack is empty, it indicates an error state.
+isEmpty(): Checks if the stack is empty by verifying if the top pointer points to a sentinel value (e.g., -1). Returns true if the stack is empty; otherwise, it is false.
+isFull(): Determines if the stack has reached its maximum capacity by checking if the top pointer is at the last valid index. Returns true if full, false if not.
+size(): Returns the number of elements currently present in the stack.
+top(): Accesses and returns the value of the topmost element without removing it, similar to peek(). An alias for peek().
+display(): Outputs all elements in the stack, typically by traversing from top to bottom.
+Additionally, some advanced operations include:
+
+clear(): Removes all elements from the stack, resetting it to an empty state.
+reverse(): Reverses the order of elements in the stack.
+contains(item): Checks if the given 'item' exists in the stack, returning true or false.
+
+Algorithm of Stack
+A stack can be implemented using an array or a linked list data structure
+For an array implementation, we need to define a fixed size for the stack initially
+We maintain a 'top' variable that keeps track of the index of the topmost element in the stack
+Initially, 'top' is set to -1, indicating an empty stack
+The following operations can be performed on a stack:
+Push Operation:
+Check if the stack is full (top == size - 1)
+If full, return an error (stack overflow)
+If not full, increment 'top' and insert the new element at the new 'top' index
+Pop Operation:
+Check if the stack is empty (top == -1)
+If empty, return an error (stack underflow)
+If not empty, retrieve the element at the 'top' index
+Decrement 'top' to remove the topmost element
+Peek Operation:
+Check if the stack is empty (top == -1)
+If empty, return an error
+If not empty, return the element at the 'top' index (without removing it)
+isEmpty Operation:
+Check if 'top' is equal to -1
+If yes, return true (stack is empty)
+If no, return false (stack is not empty)
+isFull Operation:
+Check if 'top' is equal to size - 1
+If yes, return true (stack is full)
+If no, return false (stack is not full)
+
+function push(item):
+    if top == n - 1:
+        print("Stack Overflow")
+    else:
+        top = top + 1
+        stack[top] = item
+
+function pop():
+    if top == -1:
+        print("Stack Underflow")
+    else:
+        item = stack[top]
+        top = top - 1
+        return item
+
+function peek():
+    if top == -1:
+        print("Stack is empty")
+    else:
+        return stack[top]
+
+function isEmpty():
+    return top == -1
+
+function isFull():
+    return top == n - 1
