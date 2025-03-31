@@ -1,0 +1,81 @@
+7.
+We can form the following amounts of money as indicated:
+2 = 2,
+4 = 2 + 2,
+5 = 5,
+6 = 2 + 2 + 2.
+By having considered all the combinations, we know that the gaps in this list ($1 and $3) cannot be filled. We claim that we can form all amounts of money greater than or equal to $5.
+
+Let P(n) be the statement that we can form n dollars using just 2-dollar and 5-dollar bills.
+We want to prove that P(n) is true for all n ≥ 5.
+
+We already observed that the basis step is true for n = 5 and 6.
+Assume the inductive hypothesis, that P(j) is true for all j with 5 ≤ j ≤ k, where k is a fixed integer greater than or equal to 6.
+
+We want to show that P(k + 1) is true.
+Because k – 1 ≥ 5, we know that P(k – 1) is true, that is, that we can form k – 1 dollars.
+Add another 2-dollar bill, and we have formed k + 1 dollars, as desired.
+
+9.
+Let P(n) be the statement that there is no positive integer b such that √2 = n / b.
+
+Basis step: P(1) is true because √2 > 1 ≥ 1/b for all positive integers b.
+
+Inductive step: Assume that P(j) is true for all j ≤ k, where k is an arbitrary positive integer; we must prove that P(k + 1) is true.
+
+Assume the contrary:
+√2 = (k + 1)/b for some positive integer b.
+Squaring both sides and clearing fractions:
+→ 2b² = (k + 1)²
+→ (k + 1)² is even → k + 1 is even → k is odd.
+
+So we write k + 1 = 2t → 2b² = 4t² → b² = 2t² → b = 2s.
+Then √2 = (k + 1)/b = (2t)/(2s) = t/s → contradicts inductive hypothesis.
+Therefore, P(k + 1) is also true, and the proof is complete.
+
+11.
+Base cases:
+If n = 1 = 4·0 + 1, first player loses.
+If n = 2, 3, 4, first player can win by removing matches.
+
+Assume strong inductive hypothesis:
+With k or fewer matches:
+
+First player wins if k ≡ 0, 2, or 3 (mod 4)
+
+Second player wins if k ≡ 1 (mod 4)
+
+Let the game have k + 1 matches:
+
+If k + 1 ≡ 0 (mod 4) → remove 3 matches → opponent has k – 2 ≡ 1 (mod 4) → second player wins.
+
+If k + 1 ≡ 2 (mod 4) → remove 1 match → opponent has k ≡ 1 (mod 4) → second player wins.
+
+If k + 1 ≡ 3 (mod 4) → remove 2 matches → opponent has k – 1 ≡ 1 (mod 4) → second player wins.
+
+If k + 1 ≡ 1 (mod 4) → cannot force opponent into losing position → first player loses.
+
+Thus, the proof is complete.
+
+25. Multiple Choice
+a) The inductive step lets us conclude P(3), P(5), ... but nothing about P(2), P(4).
+b) Correct: We can conclude P(n) is true for all positive integers n, using strong induction.
+c) Inductive step gives P(2), P(4), P(8), ..., but nothing about non-powers of 2.
+d) Mathematical induction: we can conclude P(n) is true for all positive integers n.
+
+35.
+To calculate product a₁a₂...aₙ via parentheses:
+
+n – 1 multiplications are needed no matter how parentheses are placed.
+
+Proof by strong induction:
+
+Basis: n = 1 → 0 multiplications.
+
+Inductive hypothesis: for all k < n, k – 1 multiplications required.
+
+Divide: (a₁a₂...aᵣ) · (aᵣ₊₁...aₙ)
+
+First group needs r – 1 multiplications, second n – r – 1, one final multiplication for the product → total:
+(r – 1) + (n – r – 1) + 1 = n – 1, as required.
+
