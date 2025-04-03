@@ -11,14 +11,14 @@ public class Lexer {
 
         //define token patterns in order
         String[] tokenPatterns = {
-                "\\bif\\b",           // if
-                "\\belse\\b",         // else
-                "\\bprint\\b",        // print
-                "[a-zA-Z_][a-zA-Z0-9_]*", // identifiers (x, y, variable names)
-                "\\d+",               // numbers
-                "==|>=|<=|!=|>|<",    // comparison operators
-                "[+\\-*/=]",          // math and assignment
-                "[(){};]"             // punctuation
+                "\\bif\\b",           //if
+                "\\belse\\b",         //else
+                "\\bprint\\b",        //print
+                "[a-zA-Z_][a-zA-Z0-9_]*",// identifiers (x, y, variable names)
+                "\\d+",               //numbers
+                "==|>=|<=|!=|>|<",    //comparison operators
+                "[+\\-*/=]",          //math and assignment
+                "[(){};]"             //punctuation
         };
 
         //combine them into one big regex

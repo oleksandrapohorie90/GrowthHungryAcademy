@@ -8,6 +8,10 @@ It turns it into basic building blocks (tokens)
 
 Later, those blocks get processed by a parser or interpreter
 
+https://www.w3schools.com/java/java_regex.asp
+
+regex101.com
+
 Regex	Meaning	Example Matches
 .	any character	a, b, 1, etc.
 \d	digit (0–9)	0, 1, 2
