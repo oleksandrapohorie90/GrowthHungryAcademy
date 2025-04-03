@@ -1,0 +1,21 @@
+The goal of a lexer is to break the code into individual words and symbols (called tokens or lexemes) so that the parser can understand it later
+
+Think of it like Google Translate:
+
+It takes in a sentence (your code)
+
+It turns it into basic building blocks (tokens)
+
+Later, those blocks get processed by a parser or interpreter
+
+Regex	Meaning	Example Matches
+.	any character	a, b, 1, etc.
+\d	digit (0–9)	0, 1, 2
+\w	word character (letter/number/_)	a, b, 3, _
++	one or more	\d+ → 1, 23, 456
+*	zero or more	a* → "", a, aa
+[]	match any one character in brackets	[abc] → a, b, or c
+^ / $	start / end of line	^x → starts with x
+( )	grouping	(ab)+ → abab
+`	`	OR
+\b	word boundary	\bif\b → only "if"

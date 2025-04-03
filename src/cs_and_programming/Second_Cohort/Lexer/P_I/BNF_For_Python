@@ -1,0 +1,90 @@
+BNF (Backus–Naur Form) is a way to describe the syntax (structure) of a programming language or data.
+
+Writing grammar rules — but for code instead of English
+<statement> ::= <if-statement> | <assignment>
+This means a <statement> can be either an <if-statement> or an <assignment>
+A condition is made of an expression compared to another expression using operators like >, <, ==, !=
+==========================================================
+
+<program> ::= {<statement>}
+=> A program is made up of zero or more statements. Whole file or block of code — it’s just a series of individual commands
+
+<statement> ::= <assignment>
+              | <if-statement>
+              | <print-statement>
+=>A statement can be:
+A variable assignment like x = 5;
+An if-else structure
+A print command
+
+<assignment> ::= <identifier> "=" <expression> ";"
+=> This defines how a variable is assigned a value. The variable (<identifier>) is set equal to some <expression>, and it ends with a semicolon
+
+<print-statement> ::= "print" <identifier> ";"
+=> This is the only function call allowed for now — it just prints a variable to the output
+
+<if-statement> ::= "if" <condition> "then" <statement> "else" <statement> "end" ";"
+=>This is a full if-else block:
+Starts with if and a <condition>
+Has one statement after then and one after else
+Ends with end;
+
+<condition> ::= <expression> <comparison-operator> <expression>
+=> Conditions check whether one expression is greater than, less than, equal to, etc., another expression
+
+<comparison-operator> ::= ">" | "<" | "==" | "!="
+=> These are the comparison operators allowed
+
+Expressions (Arithmetic with Precedence)
+<expression> ::= <term> (("+" | "-") <term>)*
+=> Handles addition and subtraction. An expression is made of one or more <term>s connected with + or -
+<expression> handles addition and subtraction
+<term> handles multiplication and division
+<factor> handles:
+a number (5, 42)
+a variable (x, y)
+a full parenthesized expression like (2 + 3)
+
+<term> ::= <factor> (("*" | "/") <factor>)*
+=> Handles multiplication and division. A term is made of one or more <factor>s connected with * or /
+
+<factor> ::= <number> | <identifier> | "(" <expression> ")"
+=> A factor can be:
+   A number (like 5, 3.14)
+   A variable (x, y)
+   A parenthesized expression, which overrides precedence
+
+<identifier> ::= "x" | "y" | "z"
+=> only three valid variable names for now
+
+<number> ::= <digit>+ | <digit>+ "." <digit>+
+=> A number is either:
+   A whole number like 42
+   Or a decimal like 3.14
+
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+=> This just defines what a single digit is
+
+
+
+====================================================
+<program> ::= {<statement>}
+
+<statement> ::= <assignment>
+              | <if-statement>
+              | <print-statement>
+
+<assignment> ::= <identifier> "=" <expression> ";"
+<print-statement> ::= "print" <identifier> ";"
+
+<if-statement> ::= "if" <condition> "then" <statement> "else" <statement> "end" ";"
+<condition> ::= <expression> <comparison-operator> <expression>
+<comparison-operator> ::= ">" | "<" | "==" | "!="
+
+<expression> ::= <term> (("+" | "-") <term>)*
+<term> ::= <factor> (("*" | "/") <factor>)*
+<factor> ::= <number> | <identifier> | "(" <expression> ")"
+
+<identifier> ::= "x" | "y" | "z"
+<number> ::= <digit>+ | <digit>+ "." <digit>+
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
