@@ -1,0 +1,11 @@
+Problem 25
+a) Since we can generate all even integers by starting with 0 and repeatedly adding or subtracting 2, a simple recursive way to define this set is:
+0 ∈ 𝑆
+If 𝑥∈𝑆 then x+2 ∈ 𝑆 and 𝑥−2 ∈ 𝑆
+
+b) The smallest positive integer congruent to 2 modulo 3 is 2, so declare 2∈S. All the others can be obtained by adding multiples of 3. So the inductive step is:
+If x∈S, then x+3∈S
+
+c) The positive integers not divisible by 5 are those congruent to 1, 2, 3, or 4 modulo 5. Therefore we define:
+1,2,3,4∈S
+If x∈S, then x+5∈S
