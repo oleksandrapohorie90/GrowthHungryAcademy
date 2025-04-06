@@ -22,3 +22,38 @@ If x∈S, then x+3∈S
 c) The positive integers not divisible by 5 are those congruent to 1, 2, 3, or 4 modulo 5. Therefore we define:
 1,2,3,4∈S
 If x∈S, then x+5∈S
+
+Problem 33
+Let D={0,1,2,3,4,5,6,7,8,9} be the set of decimal digits.
+
+We define a function m that finds the smallest digit in a string.
+
+a) Base case: For a string of length 1, i.e.,
+x∈D, then m(x)=x
+Recursive case: Let the string be
+s=tx, where t∈D* and x∈D. Then: m(s)=min(m(s'),x), where s' is the prefix of s and x is the new digit appended
+
+b) Let s=wx, where w∈D* and x∈D. If w=λ (empty string), then:
+m(s)=m(x)=x
+Otherwise, let s=tx (t is a string, x a digit). Then: m(s)=min(m(t),x)
+Suppose, s=uv, then using structural induction: m(st)=min(min(m(s),m(t)),x)=min(m(s),min(m(t),x))=min(m(s),m(t))
+This shows that the minimum digit of the full string equals the minimum digit of its parts.
+
+Problem 39
+Define the set A={0^n1^n ∣ n≥0}
+The recursive part: To go from string s∈A, add a 0 to the front and a 1 to the end. Start with empty string λ
+Generate: λ,01,0011,000111, ...
+
+Problem 43
+Prove: For full binary trees 𝑇, the number of nodes
+n(T)≥2h(T)+1
+Base case: A tree with a single root. Then n(T)=1, h(T)=0, and 1≥2 * 0+1
+Inductive hypothesis: Assume for trees 𝑇1 and T2
+n(T1) >= 2h(T1)+1 and n(T2)>=2h(T2)+1
+Recursive case:
+n(T) = 1 +n(T1)+n(T2)
+h(T) = 1+max(h(T1),h(T2))
+
+Sub and simplify: n(T)≥1+(2h(T1)+1)+(2h(T2)+1) = 2h(T1)+2h(T2)+3
+Since, h(T) = 1+max(h(T1),h(T2)), this inequality proves n(T)>=2h(T)+1
+
