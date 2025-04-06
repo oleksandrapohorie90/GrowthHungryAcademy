@@ -1,4 +1,4 @@
-package discrete_mathematics_CS200.Cohort_2.week_14;
+package discrete_mathematics_CS200.Cohort_2.week_14_propositional_logic;
 
 public class PropositionalSatisfiability_Sudoku1 {
     //propositional equivalences - Ch. 1.3

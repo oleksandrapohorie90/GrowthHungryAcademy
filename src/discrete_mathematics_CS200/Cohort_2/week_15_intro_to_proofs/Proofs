@@ -1,3 +1,5 @@
+1.7 - 1.8
+
 1. Trivial - if we know q is true then p->q is true
 if it is raining then 1=1
 
