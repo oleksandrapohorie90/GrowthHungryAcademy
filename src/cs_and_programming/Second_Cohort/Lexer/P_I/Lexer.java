@@ -2,10 +2,6 @@ package cs_and_programming.Second_Cohort.Lexer.P_I;
 
 import cs_and_programming.Lexerexception;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
 //raw input -> broken down into list of tokens
 //we want to support basic operations x= 3 + 5 *6;
 //we want to support some if (x < 0)
@@ -39,7 +35,7 @@ public class Lexer {
 //        return tokens;
 //    }
     private static final char EOF_CHAR = '\0';
-    private static final Set<String> KEYWORDS = new HashSet<>(Arrays.asList("if"));
+    //private static final Set<String> KEYWORDS = new HashSet<>(Arrays.asList("if"));
     private final String input;
     private int position;
     private char currentChar;
@@ -78,10 +74,26 @@ public class Lexer {
                 case ';':
                     advance();
                     return new Token(TokenType.SEPARATOR, ";");
-                //same thing for minus, delete, multiply, brackets, (,{,[
+                case '(':
+                    advance();
+                    return new Token(TokenType.OPEN_BRACKET, "(");
+                case ')':
+                    advance();
+                    return new Token(TokenType.CLOSE_BRACKET, ")");
+                case '{':
+                    advance();
+                    return new Token(TokenType.OPEN_CURLY_BRACKET, "{");
+                case '}':
+                    advance();
+                    return new Token(TokenType.CLOSED_CURLY_BRACKET, "}");
+                case '>':
+                    advance();
+                    return new Token(TokenType.GREATER_THAN, ">");
+                case '<':
+                    advance();
+                    return new Token(TokenType.SMALLER_THAN, "<");
                 default:
                     throw new Lexerexception("Unsupported character: " + currentChar);
-
             }
         }
         return new Token(TokenType.EOF, "");
@@ -91,12 +103,20 @@ public class Lexer {
         StringBuilder builder = new StringBuilder();
         while (Character.isLetterOrDigit(currentChar)) {
             builder.append(currentChar);
-            advance();//to be able to move to another character
+            advance();
         }
+
         String value = builder.toString();
-        return KEYWORDS.contains(value) ?
-                new Token(TokenType.IF, value) :
-                new Token(TokenType.IDENTIFIER, value);
+
+        if ("if".equals(value)) {
+            return new Token(TokenType.IF, value);
+        } else if ("else".equals(value)) {
+            return new Token(TokenType.ELSE, value);
+        } else if ("print".equals(value)) {
+            return new Token(TokenType.PRINT, value);
+        } else {
+            return new Token(TokenType.IDENTIFIER, value);
+        }
     }
 
     private Token readNumber() {
@@ -138,9 +158,8 @@ public class Lexer {
         }
     }
 
-
     public enum TokenType {
-        NUMBER, IDENTIFIER, PLUS, EOF, ASSIGNMENT, SEPARATOR, MINUS, IF, MULTIPLY
+        NUMBER, IDENTIFIER, PLUS, EOF, ASSIGNMENT, SEPARATOR, MINUS, IF, MULTIPLY, OPEN_BRACKET, CLOSE_BRACKET, OPEN_CURLY_BRACKET, CLOSED_CURLY_BRACKET, GREATER_THAN, SMALLER_THAN, ELSE, PRINT
     }
 
 }

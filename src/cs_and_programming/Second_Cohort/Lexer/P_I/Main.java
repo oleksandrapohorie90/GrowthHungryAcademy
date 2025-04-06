@@ -5,7 +5,15 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        String rawInput = "xyz = 5465 +6 \n m = 5 * 7";
+        String rawInput = """
+                x = 5;
+                if (x > 3) {
+                y = x + 2;
+                } else {
+                y = x * (2 + 3);
+                }
+                print y;
+                """;
         Lexer lexer = new Lexer(rawInput);
 
         Lexer.Token token;
