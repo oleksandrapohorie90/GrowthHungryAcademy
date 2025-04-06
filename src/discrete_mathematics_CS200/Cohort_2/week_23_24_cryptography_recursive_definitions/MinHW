@@ -57,3 +57,15 @@ h(T) = 1+max(h(T1),h(T2))
 Sub and simplify: n(T)≥1+(2h(T1)+1)+(2h(T2)+1) = 2h(T1)+2h(T2)+3
 Since, h(T) = 1+max(h(T1),h(T2)), this inequality proves n(T)>=2h(T)+1
 
+Problem 61 — Log* Function
+log(0)n=n
+log^(k+1)n = log(log^k * n)
+log*n = number of times you can apply log until result ≤ 1.
+
+a)log*2=1
+b)log*4=2
+b)log*8=3
+b)log*16=3
+b)log*256=4
+b)log*65536=4
+b)log*2048=5
