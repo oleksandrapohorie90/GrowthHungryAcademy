@@ -1,3 +1,16 @@
+Problem 13 — Fibonacci Induction Proof
+We prove this using the principle of mathematical induction. The base case is
+n=1, and in that case, the statement to be proved is just:
+𝑓1=𝑓2
+This is true since both values are 1.
+
+Inductive Step: Assume the inductive hypothesis:
+𝑓1+𝑓3+ ... +𝑓2n-1 = 𝑓2𝑛
+Try to prove the corresponding statement for 𝑛+1 namely:
+𝑓1+𝑓3+ ... +𝑓2n-1 +𝑓2n+1 = +𝑓2n+2 - by inductive hypothesis
+We have:
+𝑓1+𝑓3+ ... +𝑓2𝑛−1+𝑓2𝑛+1=𝑓2𝑛+𝑓2𝑛+1 = 𝑓2𝑛+2 - by definition of Fib numbers
+
 Problem 25
 a) Since we can generate all even integers by starting with 0 and repeatedly adding or subtracting 2, a simple recursive way to define this set is:
 0 ∈ 𝑆
