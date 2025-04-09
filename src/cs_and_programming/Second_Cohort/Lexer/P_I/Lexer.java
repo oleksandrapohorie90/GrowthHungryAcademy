@@ -92,6 +92,9 @@ public class Lexer {
                 case '<':
                     advance();
                     return new Token(TokenType.SMALLER_THAN, "<");
+                case '%':
+                    advance();
+                    return new Token(TokenType.PERCENTAGE, "%");
                 default:
                     throw new Lexerexception("Unsupported character: " + currentChar);
             }
@@ -151,7 +154,7 @@ public class Lexer {
 
         @Override
         public String toString() {
-            return "Token{" +
+            return "Token {" +
                     "tokenType=" + tokenType +
                     ", value='" + value + '\'' +
                     '}';
@@ -159,7 +162,7 @@ public class Lexer {
     }
 
     public enum TokenType {
-        NUMBER, IDENTIFIER, PLUS, EOF, ASSIGNMENT, SEPARATOR, MINUS, IF, MULTIPLY, OPEN_BRACKET, CLOSE_BRACKET, OPEN_CURLY_BRACKET, CLOSED_CURLY_BRACKET, GREATER_THAN, SMALLER_THAN, ELSE, PRINT
+        NUMBER, IDENTIFIER, PLUS, EOF, ASSIGNMENT, SEPARATOR, MINUS, IF, MULTIPLY, OPEN_BRACKET, CLOSE_BRACKET, OPEN_CURLY_BRACKET, CLOSED_CURLY_BRACKET, GREATER_THAN, SMALLER_THAN, ELSE, PRINT,PERCENTAGE
     }
 
 }
