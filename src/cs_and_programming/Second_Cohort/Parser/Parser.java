@@ -25,7 +25,25 @@ public class Parser {
     }
 
     public ASTNode parse() {
-        return parseFactor();
+        //return parseFactor();
+        //return parseTerm();
+        return parseExpression();
+    }
+
+    private ASTNode parseExpression() {
+
+        ASTNode leftTerm = parseTerm();
+
+        if (currentToken.tokenType == Lexer.TokenType.PLUS || currentToken.tokenType == Lexer.TokenType.MINUS) {
+            //if we have '+' and '-' we need to consume and proceed to the next token
+            Lexer.TokenType operation = currentToken.tokenType;
+            consume(currentToken.tokenType);
+
+            //rightTerm is parseExpression()
+            return new BinaryNode(operation, leftTerm, parseExpression());
+        }
+
+        return leftTerm;
     }
 
     public ASTNode parseTerm() {
@@ -35,9 +53,6 @@ public class Parser {
         //this is our left
         ASTNode leftNode = parseFactor();
 
-        if (currentToken.tokenType == Lexer.TokenType.EOF) {
-            return leftNode;
-        }
         if (currentToken.tokenType == Lexer.TokenType.MULTIPLY || currentToken.tokenType == Lexer.TokenType.DIVIDE) {
             //if we have '*' and '/' we need to consume and proceed to the next token
             Lexer.TokenType operation = currentToken.tokenType;
@@ -47,7 +62,7 @@ public class Parser {
             return new BinaryNode(operation, leftNode, rightNode);
 
         }
-        throw new IllegalArgumentException("Unexpected token type received: " + currentToken.tokenType.name());
+        return leftNode;
     }
 
     public ASTNode parseFactor() {
