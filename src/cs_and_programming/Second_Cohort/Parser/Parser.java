@@ -1,5 +1,6 @@
 package cs_and_programming.Second_Cohort.Parser;
 
+import cs_and_programming.CS_Interpreters_Parsers.ParserException;
 import cs_and_programming.Second_Cohort.Lexer.P_I.Lexer;
 
 public class Parser {
@@ -24,16 +25,47 @@ public class Parser {
     }
 
     public ASTNode parse() {
+        return parseFactor();
+    }
+
+    public ASTNode parseTerm() {
+
+        //<term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
+
+        //this is our left
+        ASTNode node = parseFactor();
+
+        if (currentToken.tokenType == Lexer.TokenType.EOF) {
+            return node;
+        }
+        if (currentToken.tokenType == Lexer.TokenType.MULTIPLY || currentToken.tokenType == Lexer.TokenType.DIVIDE) {
+
+        }
+        throw new IllegalArgumentException("Unexpected token type received: " + currentToken.tokenType.name());
+    }
+
+    public ASTNode parseFactor() {
 
         //go to lexer and parse everything you see
         //we can only receive a factor -> identifier or number
         if (currentToken.tokenType == Lexer.TokenType.NUMBER) {
+            consume(Lexer.TokenType.NUMBER);
             return new NumberNode(currentToken.value);
         }
         if (currentToken.tokenType == Lexer.TokenType.IDENTIFIER) {
+            consume(Lexer.TokenType.NUMBER);
             return new IdentifierNode(currentToken.value);
         }
-        return null;
+        throw new IllegalArgumentException("Unexpected token type received: " + currentToken.tokenType.name());
+    }
+
+    private void consume(Lexer.TokenType tokenType) {
+        //if the type of current token is the type we need and move to the next token
+        if (currentToken.tokenType == tokenType) {
+            currentToken = lexer.nextToken();
+        } else {
+            throw new ParserException("Unexpected token: " + currentToken.tokenType.name());
+        }
     }
 
     //we need a node, class ASTNODE
