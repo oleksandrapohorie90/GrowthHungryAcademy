@@ -3,6 +3,17 @@ package cs_and_programming.Second_Cohort.Parser;
 import cs_and_programming.Second_Cohort.Lexer.P_I.Lexer;
 
 public class Parser {
+    /*
+    <program> ::= <statement> | <program> <separator> <statement>
+    <statement> ::= <expression>
+    <separator> ::= ";"
+
+    <expression> ::= <term> | <term> "+" <expression> | <term> "-" <expression>
+    <term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
+    <factor> ::= <number> | <identifier>
+
+    ignore this | "(" <expression> ")"
+     */
     private final Lexer lexer;
     private Lexer.Token currentToken;
 
@@ -10,9 +21,14 @@ public class Parser {
         this.lexer = lexer;
     }
 
+    public ASTNode parse() {
+        //go to lexer and parse everything you see
+
+    }
+
     //we need a node, class ASTNODE
     static class ASTNode {
-
+        //all leafs will be identifier or number, leaf of the tree doesnt have children
     }
 
     static class BinaryNode extends ASTNode {
