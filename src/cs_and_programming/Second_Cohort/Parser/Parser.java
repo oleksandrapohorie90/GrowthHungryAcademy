@@ -33,10 +33,10 @@ public class Parser {
         //<term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
 
         //this is our left
-        ASTNode node = parseFactor();
+        ASTNode leftNode = parseFactor();
 
         if (currentToken.tokenType == Lexer.TokenType.EOF) {
-            return node;
+            return leftNode;
         }
         if (currentToken.tokenType == Lexer.TokenType.MULTIPLY || currentToken.tokenType == Lexer.TokenType.DIVIDE) {
             //if we have '*' and '/' we need to consume and proceed to the next token
@@ -44,7 +44,7 @@ public class Parser {
             consume(currentToken.tokenType);
 
             ASTNode rightNode = parseTerm();
-            return new BinaryNode(operation, node, rightNode);
+            return new BinaryNode(operation, leftNode, rightNode);
 
         }
         throw new IllegalArgumentException("Unexpected token type received: " + currentToken.tokenType.name());
@@ -80,12 +80,18 @@ public class Parser {
     }
 
     static class BinaryNode extends ASTNode {
-        final String value;
+        final Lexer.TokenType operation;
         final ASTNode left;
         final ASTNode right;
 
-        public BinaryNode(String value, ASTNode left, ASTNode right) {
-            this.value = value;
+        public BinaryNode(Lexer.TokenType operation, ASTNode left, ASTNode right) {
+            //has operation, left nd right
+            /*
+            *
+           / \
+          x   y
+             */
+            this.operation = operation;
             this.left = left;
             this.right = right;
         }
