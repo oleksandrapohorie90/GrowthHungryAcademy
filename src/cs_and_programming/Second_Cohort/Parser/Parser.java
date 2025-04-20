@@ -39,6 +39,12 @@ public class Parser {
             return node;
         }
         if (currentToken.tokenType == Lexer.TokenType.MULTIPLY || currentToken.tokenType == Lexer.TokenType.DIVIDE) {
+            //if we have '*' and '/' we need to consume and proceed to the next token
+            Lexer.TokenType operation = currentToken.tokenType;
+            consume(currentToken.tokenType);
+
+            ASTNode rightNode = parseTerm();
+            return new BinaryNode(operation, node, rightNode);
 
         }
         throw new IllegalArgumentException("Unexpected token type received: " + currentToken.tokenType.name());
