@@ -19,11 +19,21 @@ public class Parser {
 
     public Parser(Lexer lexer) {
         this.lexer = lexer;
+        //assign the current token number or identifier
+        this.currentToken = lexer.nextToken();
     }
 
     public ASTNode parse() {
-        //go to lexer and parse everything you see
 
+        //go to lexer and parse everything you see
+        //we can only receive a factor -> identifier or number
+        if (currentToken.tokenType == Lexer.TokenType.NUMBER) {
+            return new NumberNode(currentToken.value);
+        }
+        if (currentToken.tokenType == Lexer.TokenType.IDENTIFIER) {
+            return new IdentifierNode(currentToken.value);
+        }
+        return null;
     }
 
     //we need a node, class ASTNODE
