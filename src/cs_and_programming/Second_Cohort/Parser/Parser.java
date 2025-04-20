@@ -16,14 +16,31 @@ public class Parser {
     }
 
     static class BinaryNode extends ASTNode {
+        final String value;
+        final ASTNode left;
+        final ASTNode right;
 
+        public BinaryNode(String value, ASTNode left, ASTNode right) {
+            this.value = value;
+            this.left = left;
+            this.right = right;
+        }
     }
 
     static class IdentifierNode extends ASTNode {
+        //everything in the node is immutable
+        final String value;
 
+        public IdentifierNode(String value) {
+            this.value = value;
+        }
     }
 
     static class NumberNode extends ASTNode {
+        final String value;
 
+        public NumberNode(String value) {
+            this.value = value;
+        }
     }
 }
