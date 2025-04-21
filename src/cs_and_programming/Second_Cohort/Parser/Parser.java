@@ -114,6 +114,24 @@ public class Parser {
         }
     }
 
+    public void print(ASTNode node, int indent) {
+        System.out.println("method is called ");
+        String indentStr = "  ".repeat(indent);
+
+        if (node instanceof Parser.NumberNode) {
+            System.out.println(indentStr + "Number: " + ((Parser.NumberNode) node).value);
+        } else if (node instanceof Parser.IdentifierNode) {
+            System.out.println(indentStr + "Identifier: " + ((Parser.IdentifierNode) node).value);
+        } else if (node instanceof Parser.BinaryNode) {
+            Parser.BinaryNode bin = (Parser.BinaryNode) node;
+            System.out.println(indentStr + "BinaryOp: " + bin.operation);
+            print(bin.left, indent + 1);
+            print(bin.right, indent + 1);
+        } else {
+            System.out.println(indentStr + "Unknown node");
+        }
+    }
+
     //we need a node, class ASTNODE
     static class ASTNode {
         //all leafs will be identifier or number, leaf of the tree doesnt have children
