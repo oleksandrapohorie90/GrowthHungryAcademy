@@ -13,6 +13,9 @@ public class Parser {
     <term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
     <factor> ::= <number> | <identifier>
 
+    <statement> ::= <assignment> | <expression>
+    <assignment> ::= <identifier> "=" <expression>
+
     ignore this | "(" <expression> ")"
      */
     private final Lexer lexer;
@@ -27,6 +30,26 @@ public class Parser {
     public ASTNode parse() {
         //return parseFactor();
         //return parseTerm();
+        //return parseExpression();
+        return parseStatement();
+    }
+
+    private ASTNode parseStatement() {
+        //look ahead for assignment pattern: IDENTIFIER '=' ...
+        if (currentToken.tokenType == Lexer.TokenType.IDENTIFIER) {
+            String identifier = currentToken.value;
+            consume(Lexer.TokenType.IDENTIFIER);
+            if (currentToken.tokenType == Lexer.TokenType.EQUALS) {
+                consume(Lexer.TokenType.EQUALS);
+                ASTNode expr = parseExpression();
+                return new AssignmentNode(identifier, expr);
+            } else {
+                //not an assignment; rewind identifier as part of expression
+                throw new ParserException("Expected '=' after identifier for assignment.");
+            }
+        }
+
+        //fallback to just parsing as expression
         return parseExpression();
     }
 
@@ -70,12 +93,14 @@ public class Parser {
         //go to lexer and parse everything you see
         //we can only receive a factor -> identifier or number
         if (currentToken.tokenType == Lexer.TokenType.NUMBER) {
+            String value = currentToken.value;
             consume(Lexer.TokenType.NUMBER);
-            return new NumberNode(currentToken.value);
+            return new NumberNode(value);
         }
         if (currentToken.tokenType == Lexer.TokenType.IDENTIFIER) {
-            consume(Lexer.TokenType.NUMBER);
-            return new IdentifierNode(currentToken.value);
+            String value = currentToken.value;
+            consume(Lexer.TokenType.IDENTIFIER);
+            return new IdentifierNode(value);
         }
         throw new IllegalArgumentException("Unexpected token type received: " + currentToken.tokenType.name());
     }
@@ -92,6 +117,16 @@ public class Parser {
     //we need a node, class ASTNODE
     static class ASTNode {
         //all leafs will be identifier or number, leaf of the tree doesnt have children
+    }
+
+    static class AssignmentNode extends ASTNode {
+        final String identifier;
+        final ASTNode expression;
+
+        public AssignmentNode(String identifier, ASTNode expression) {
+            this.identifier = identifier;
+            this.expression = expression;
+        }
     }
 
     static class BinaryNode extends ASTNode {
