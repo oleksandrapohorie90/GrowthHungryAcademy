@@ -36,6 +36,11 @@ public class Parser {
 
     private ASTNode parseStatement() {
         //look ahead for assignment pattern: IDENTIFIER '=' ...
+
+
+        // <statement> ::= <assignment> | <expression>
+        //    <assignment> ::= <identifier> "=" <expression>
+
         if (currentToken.tokenType == Lexer.TokenType.IDENTIFIER) {
             String identifier = currentToken.value;
             consume(Lexer.TokenType.IDENTIFIER);
@@ -44,8 +49,7 @@ public class Parser {
                 ASTNode expr = parseExpression();
                 return new AssignmentNode(identifier, expr);
             } else {
-                //not an assignment; rewind identifier as part of expression
-                throw new ParserException("Expected '=' after identifier for assignment.");
+
             }
         }
 
@@ -115,9 +119,9 @@ public class Parser {
     }
 
     public void print(ASTNode node, int indent) {
-        System.out.println("method is called ");
+        //System.out.println("method is called ");
         String indentStr = "  ".repeat(indent);
-
+        //depth of search
         if (node instanceof Parser.NumberNode) {
             System.out.println(indentStr + "Number: " + ((Parser.NumberNode) node).value);
         } else if (node instanceof Parser.IdentifierNode) {
