@@ -33,6 +33,15 @@ public class HIndex {
 
         // Otherwise, h-index is 0.
 
+        //Ex: citations = [4, 4, 4, 2, 1]
+        //why not 4 ? - Because at i = 4:
+        //
+        //We only have 3 papers with 4 or more citations.
+        //
+        //But H=4 needs 4 papers, not 3.
+        //
+        //So H=4 is too big → not valid.
+
         int n = citations.length;
         int[] buckets = new int[n + 1];
         for (int c : citations) {
