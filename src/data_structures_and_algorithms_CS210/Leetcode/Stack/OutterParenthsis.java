@@ -7,6 +7,13 @@ public class OutterParenthsis {
         StringBuilder result = new StringBuilder();
         Stack<Character> stack = new Stack<>();
 
+        /*
+        (()(()) )
+
+        stack
+
+        sb ()(())
+         */
         for (char c : s.toCharArray()) {
             if (c == '(') {
                 if (!stack.isEmpty()) {
