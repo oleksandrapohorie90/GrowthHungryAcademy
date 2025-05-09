@@ -10,7 +10,7 @@ public class Parser {
     <separator> ::= ";"
 
     <expression> ::= <term> | <term> "+" <expression> | <term> "-" <expression>
-    <term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term>
+    <term> ::= <factor> | <factor> "*" <term> | <factor> "/" <term> => 15 || 5*3 || 5+3
     <factor> ::= <number> | <identifier>
 
     <statement> ::= <assignment> | <expression>
@@ -20,6 +20,11 @@ public class Parser {
      */
     private final Lexer lexer;
     private Lexer.Token currentToken;
+    public AssignmentNode assignmentNode;
+    public BinaryNode binaryNode;
+    public NumberNode numberNode;
+    public IdentifierNode identifierNode;
+
 
     public Parser(Lexer lexer) {
         this.lexer = lexer;
@@ -36,22 +41,22 @@ public class Parser {
 
     private ASTNode parseStatement() {
         //look ahead for assignment pattern: IDENTIFIER '=' ...
-
-
         // <statement> ::= <assignment> | <expression>
-        //    <assignment> ::= <identifier> "=" <expression>
+        // <assignment> ::= <identifier> "=" <expression>
 
-        if (currentToken.tokenType == Lexer.TokenType.IDENTIFIER) {
+        if (currentToken.tokenType == Lexer.TokenType.IDENTIFIER) { //x + 5
             String identifier = currentToken.value;
-            consume(Lexer.TokenType.IDENTIFIER);
-            if (currentToken.tokenType == Lexer.TokenType.EQUALS) {
-                consume(Lexer.TokenType.EQUALS);
+            consume(Lexer.TokenType.IDENTIFIER); //advance, move forward
+            if (currentToken.tokenType == Lexer.TokenType.ASSIGNMENT) {
+                consume(Lexer.TokenType.ASSIGNMENT);
                 ASTNode expr = parseExpression();
                 return new AssignmentNode(identifier, expr);
-            } else {
-
             }
         }
+        //expression: 5 + 3 || 5 - 3
+        //factor: is a number of identifier
+        //term: 5 * 3 || 5 / 3
+        //operator: +, -, *, /
 
         //fallback to just parsing as expression
         return parseExpression();
@@ -118,26 +123,26 @@ public class Parser {
         }
     }
 
-    public void print(ASTNode node, int indent) {
-        //System.out.println("method is called ");
-        String indentStr = "  ".repeat(indent);
-        //depth of search
-        if (node instanceof Parser.NumberNode) {
-            System.out.println(indentStr + "Number: " + ((Parser.NumberNode) node).value);
-        } else if (node instanceof Parser.IdentifierNode) {
-            System.out.println(indentStr + "Identifier: " + ((Parser.IdentifierNode) node).value);
-        } else if (node instanceof Parser.BinaryNode) {
-            Parser.BinaryNode bin = (Parser.BinaryNode) node;
-            System.out.println(indentStr + "BinaryOp: " + bin.operation);
-            print(bin.left, indent + 1);
-            print(bin.right, indent + 1);
-        } else {
-            System.out.println(indentStr + "Unknown node");
-        }
-    }
+//    public void print(ASTNode node, int indent) {
+//        //System.out.println("method is called ");
+//        String indentStr = "  ".repeat(indent);
+//        //depth of search
+//        if (node instanceof Parser.NumberNode) {
+//            System.out.println(indentStr + "Number: " + ((Parser.NumberNode) node).value);
+//        } else if (node instanceof Parser.IdentifierNode) {
+//            System.out.println(indentStr + "Identifier: " + ((Parser.IdentifierNode) node).value);
+//        } else if (node instanceof Parser.BinaryNode) {
+//            Parser.BinaryNode bin = (Parser.BinaryNode) node;
+//            System.out.println(indentStr + "BinaryOp: " + bin.operation);
+//            print(bin.left, indent + 1);
+//            print(bin.right, indent + 1);
+//        } else {
+//            System.out.println(indentStr + "Unknown node");
+//        }
+//    }
 
     //we need a node, class ASTNODE
-    static class ASTNode {
+    public static class ASTNode {
         //all leafs will be identifier or number, leaf of the tree doesnt have children
     }
 
@@ -149,6 +154,12 @@ public class Parser {
             this.identifier = identifier;
             this.expression = expression;
         }
+
+        @Override
+        public String toString() {
+            return "Assignment: = ";
+        }
+
     }
 
     static class BinaryNode extends ASTNode {
@@ -157,7 +168,7 @@ public class Parser {
         final ASTNode right;
 
         public BinaryNode(Lexer.TokenType operation, ASTNode left, ASTNode right) {
-            //has operation, left nd right
+            //has operation, left and right
             /*
             *
            / \
@@ -167,6 +178,18 @@ public class Parser {
             this.left = left;
             this.right = right;
         }
+
+        @Override
+        public String toString() {
+            return "BinaryOperation: " + operation.toString()
+                    + "\n\t" + left.toString() +
+                    "\n\t" + right.toString();
+        }
+
+    }
+
+    public void print(ASTNode node) {
+        System.out.println(node.toString());
     }
 
     static class IdentifierNode extends ASTNode {
@@ -176,6 +199,11 @@ public class Parser {
         public IdentifierNode(String value) {
             this.value = value;
         }
+
+        @Override
+        public String toString() {
+            return "IdentifierNode: "+value;
+        }
     }
 
     static class NumberNode extends ASTNode {
@@ -183,6 +211,11 @@ public class Parser {
 
         public NumberNode(String value) {
             this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "NumberNode: " + value;
         }
     }
 }
