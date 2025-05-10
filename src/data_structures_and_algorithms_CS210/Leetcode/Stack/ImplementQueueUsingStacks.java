@@ -27,7 +27,7 @@ public class ImplementQueueUsingStacks {
             while (!stack1.isEmpty())
                 stack2.push(stack1.pop());
         }
-        return stack2.pop();
+        return stack2.pop();//at this step it will pop -> 1 bc now 1 is the last in first out, since we reversed
     }
 
     public int peek() {
