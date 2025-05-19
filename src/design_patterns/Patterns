@@ -9,5 +9,7 @@ Factory Pattern - create objects in super class but subclasses alter type of obj
 
 Abstract factory pattern - provides interface for creating families of related or dependant objects without specifying concrete classes
 
+Advantages: they decouple objects creation from usage, encapsulate complexity, promote code reuse, optimize object creation(only 1 instance) and share with other places, builder an elegant creation of 1 , allow for easy system extension
+
 
 
