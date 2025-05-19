@@ -1,0 +1,13 @@
+Singleton Pattern - have 1 object and can provide access globally
+
+Prototype Pattern - helps to create new objects by copying existing once, you can create another instance of object and modify if needed
+Shape:clone, draw method,
+
+Builder Pattern - allows the same construction process to create different representations house -> house with swimming pool or garden or fancy statues
+
+Factory Pattern - create objects in super class but subclasses alter type of objects
+
+Abstract factory pattern - provides interface for creating families of related or dependant objects without specifying concrete classes
+
+
+
