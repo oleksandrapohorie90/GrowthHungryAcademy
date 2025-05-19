@@ -1,0 +1,14 @@
+Requirements:
+1. Cache key is string
+2. Cache value is integer
+3. Implement functions of cache
+a. void put(string key, int value)
+b. int get(string key)
+c. void remove(string key)
+d. optional:
+i. void clear()
+ii. int size()
+iii. boolean containsKey(string key)
+4. If you want to use several caches(using factories), better to
+implement FIFO(first-in first-out) or LRU(least recently used) or
+LFU(least frequently used)
