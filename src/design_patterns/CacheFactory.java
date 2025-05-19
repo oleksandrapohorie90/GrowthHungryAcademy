@@ -6,7 +6,7 @@ import design_patterns.CacheImplementtions.LRUCache;
 import design_patterns.Interfaces.ICache;
 
 public class CacheFactory {
-    public ICache createCacheInstance(CacheType type) throws Exception {
+    public static ICache createCacheInstance(CacheType type) throws Exception {
         //will be singleton at first
         //should provide diff caches by some type
         //give the type and it will create some implementation, thats why we have switch
