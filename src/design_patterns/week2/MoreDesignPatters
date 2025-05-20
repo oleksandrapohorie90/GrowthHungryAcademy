@@ -1,0 +1,8 @@
+Adapter(Wrapper) - allows the interface of an existing class to be used as another interface
+
+Bridge - decouple abstraction from its implementation so that the two can vary independently
+interface car and a lot of implementations of interface car
+
+Composite
+
+Decorator - allows some behavior to be added to some object dynamically without impacting other instances of the class
