@@ -1,9 +1,8 @@
 package design_patterns;
 
 import design_patterns.CacheImplementtions.CacheType;
-import design_patterns.CacheImplementtions.FIFOCache;
 import design_patterns.CacheImplementtions.FIFOCacheBuilder;
-import design_patterns.CacheImplementtions.LRUCache;
+import design_patterns.CacheImplementtions.LFUCache;
 import design_patterns.Interfaces.ICache;
 
 public class CacheFactory {
@@ -23,7 +22,7 @@ public class CacheFactory {
                 amazonCacheBuilder = amazonCacheBuilder.setServerName("Amazon WS");
                 return amazonCacheBuilder.build();
             case CacheType.LRU:
-                return new LRUCache();
+                return new LFUCache();
             default:
                 throw new Exception("Type is not implemented");
         }
