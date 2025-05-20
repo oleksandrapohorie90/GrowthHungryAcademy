@@ -5,8 +5,11 @@ import design_patterns.Interfaces.ICache;
 public class FIFOCache implements ICache {
 
     int capacity;
-    public FIFOCache(int capacity){
+    String server;
+
+    public FIFOCache(int capacity) {
         this.capacity = capacity;
+        this.server = "Global IT Cloud";
     }
 
     @Override
@@ -28,7 +31,12 @@ public class FIFOCache implements ICache {
     public void put() {
 
     }
-    public void setCapacity(int capacity){
+
+    public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+
+    public void setServer(String server) {
+        this.server = server;
     }
 }

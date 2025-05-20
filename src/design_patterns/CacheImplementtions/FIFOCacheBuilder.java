@@ -5,7 +5,7 @@ public class FIFOCacheBuilder {
 
     //builder design patter
     public FIFOCacheBuilder() {
-        fifoCache = new FIFOCache();
+        fifoCache = new FIFOCache(3);
     }
 
     public FIFOCacheBuilder setCapacity(int capacity) {
@@ -13,5 +13,12 @@ public class FIFOCacheBuilder {
         return this;
     }
 
-    public
+    public FIFOCacheBuilder setServerName(String server) {
+        fifoCache.setServer(server);
+        return this;
+    }
+
+    public FIFOCache build() {
+        return fifoCache;
+    }
 }
