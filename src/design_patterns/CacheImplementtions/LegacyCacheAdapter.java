@@ -13,6 +13,7 @@ public class LegacyCacheAdapter implements ICache {
 
     @Override
     public void put(String key, int value) {
+        System.out.println("Put an element to legacy cache");
         if (legacyCache.getSize() >= capacity) {
             System.out.println("Cache is full");
             return;
