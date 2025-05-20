@@ -3,6 +3,11 @@ Adapter(Wrapper) - allows the interface of an existing class to be used as anoth
 Bridge - decouple abstraction from its implementation so that the two can vary independently
 interface car and a lot of implementations of interface car
 
-Composite
+Composite -
 
 Decorator - allows some behavior to be added to some object dynamically without impacting other instances of the class
+
+Facade - creates a simplified interface to the underlying cache components, serves as a front facing interface
+
+Proxy - can handle cache retrieve and storage invoking the underlying cache object only when necessary
+
