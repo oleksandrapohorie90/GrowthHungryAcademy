@@ -1,1 +1,49 @@
 4.6, 5.3
+Solutions:
+1. Solution 5.3.1.a:
+• Given f(0) = 1 and f(n + 1) = f(n) + 2.
+• f(1) = f(0) + 2 = 1 + 2 = 3.
+• f(2) = f(1) + 2 = 3 + 2 = 5.
+• f(3) = f(2) + 2 = 5 + 2 = 7.
+• f(4) = f(3) + 2 = 7 + 2 = 9. (This defines the sequence of odd positive integers).
+2. Solution 5.3.7.a:
+• We want to define an = 6n for n = 1, 2, 3, ... recursively.
+• Basis Step: a1 = 6.
+• Recursive Step: We need to relate an+1 to an. an+1 = 6(n + 1) = 6n + 6 = an + 6.
+• So, the recursive definition is: a1 = 6 and an+1 = an + 6 for n ≥ 1.
+3. Solution 5.3.9:
+• F (n) = 1 + 2 + ⋯ + n.
+• Basis Step: F (1) = 1. (Sum of the first 1 positive integer). Note: The definition needs to handle
+n = 0 or start from n = 1. If we define for non-negative n, F (0) = 0. Let’s assume n is a positive
+integer as stated.
+• Recursive Step: F (n + 1) = 1 + 2 + ⋯ + n + (n + 1) = (1 + 2 + ⋯ + n) + (n + 1) = F (n) + (n + 1).
+• So, the recursive definition is: F (1) = 1 and F (n + 1) = F (n) + n + 1 for n ≥ 1.
+4. Solution 5.3.23:
+• Let S be the set of positive integers that are multiples of 5.
+• Basis Step: 5 ∈ S.
+• Recursive Step: If x ∈ S, then x + 5 ∈ S.
+• (Alternative Recursive Step: If x ∈ S and y ∈ S, then x + y ∈ S. This also works but the first one
+is simpler and sufficient).
+5. Solution 5.3.34.a:
+• The reversal of a string w = w1w2 ... wn is w
+
+R = wn ... w2w1
+For w = 0101, the reversal w
+R is 1010.
+
+6. Solution 5.3.12: (Using ∑n
+
+i=1 fi = fn+2 − 1)
+
+• We use mathematical induction on n. Let P (n) be the statement f1 + f2 + ⋯ + fn = fn+2 − 1.
+• Basis Step (n = 1): P (1) states f1 = f1+2 − 1 = f3 − 1. Since f1 = 1 and f3 = f2 + f1 = 1 + 1 = 2,
+we have 1 = 2 − 1, which is true. P (1) holds.
+• Inductive Step: Assume P (k) is true for some positive integer k ≥ 1. That is, f1 + f2 + ⋯ + fk =
+fk+2 − 1.
+• We want to show P (k + 1) is true, i.e., f1 + f2 + ⋯ + fk + fk+1 = f(k+1)+2 − 1 = fk+3 − 1.
+• Start with the left side of P (k + 1): (f1 + f2 + ⋯ + fk) + fk+1
+• Using the inductive hypothesis P (k): = (fk+2 − 1) + fk+1
+• Rearrange terms: = (fk+2 + fk+1) − 1
+• By the recursive definition of Fibonacci numbers, fk+2 + fk+1 = fk+3. = fk+3 − 1
+• This is the right side of P (k + 1). Thus, P (k + 1) is true.
+• By the principle of mathematical induction, the statement holds for all positive integers n.
