@@ -52,3 +52,14 @@ if (min==node){
 break;
 swap(min.val, nod.val);
 node=min;
+==============================
+How do we insert numbers in the Heap ?
+1index
+       [1] has children 2 index and 2index+1
+       /     \
+   2index     3index
+     [2]       [3]
+4index 5index
+     / \       /
+   [4] [5]     2.5
+
