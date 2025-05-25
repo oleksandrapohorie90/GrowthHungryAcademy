@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_CS210.Leetcode.PriorityQueue;
+package data_structures_and_algorithms_CS210.Leetcode.Heap_PriorityQueue;
 
 import java.util.ArrayList;
 import java.util.Collections;
