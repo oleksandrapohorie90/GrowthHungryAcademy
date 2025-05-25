@@ -65,3 +65,4 @@ How do we insert/push numbers in the Heap ?
 =============================
 How to get rid of smallest val ?
 swap top element of the heap w/ very last val, so index 1 with the last index [3], then you call min_heapify and start pushing the 3 and push it down
+*When removing you exchange the last and top element and call heapify on the top element
