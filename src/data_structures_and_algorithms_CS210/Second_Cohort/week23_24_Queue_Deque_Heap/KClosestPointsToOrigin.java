@@ -6,7 +6,8 @@ public class KClosestPointsToOrigin {
     public int[][] kCloset(int[][] points, int k) {
         //dist[i] = points[i][0]^2 + point[i][1]^2
         //int[] -> [dist[i], i]
-        //1. compute the distance 2. create max heap 3. go through points one by one and we put inside the pairs distance and the index of this point
+        //1. compute the distance 2. create max heap 3. go through points one by one and we put inside the pairs distance and the index of this point,distance to the origin from this point and its index , we put them in max_heap
+        //when size heap becomes of k+1 we remove the k+furthest point and keep k+closest point at anytime, in the end simply copy them to the answer and return them
         int n = points.length;
         int[] dist = new int[n];
         for (int i = 0; i < n; i++) {
