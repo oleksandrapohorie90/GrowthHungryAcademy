@@ -1,0 +1,65 @@
+=> Heap DS is a Binary tree, often times in programming languages is called Priority Queue,Binary tree.
+
+*Follows main rule - min heap-node, an element should be less than its children, if max then the opposite
+min element is on top of binary tree: smaller than children
+max element is on top of binary tree: bigger than children
+
+*How Heap is built, main operation is .heapify()
+if there is arr of values
+arr = [a1 a2 a3 ... an]
+for i=n/2 .. 1
+call min_heapify(arr, i) > arr at index i
+heapify() does at single node, takes a node and push it down as much as it can, takes current val and val of children, finds out who is the smallest, then it swaps if children are bigger than parent
+then it goes to lower and again compares and continues going all the way down to the leaf so we cant move it down bc it doesnt have any children
+
+if min heap - we want to know which of them is the smaller one and we exchange the current val with the smaller one
+if max heap - we do the same if max found we stop pushing down
+
+random array, how to build a heap w/ heapify from array
+ 1 2 3 4 5
+[2 5 3 4 1]
+i want it to become the heap
+in the heap the top element is the first
+not a correct min heap yet!
+        1index
+       [2] has children 2 index and 2index+1
+       / \
+   2index 3index
+     [5] [3]
+4index 5index
+     / \
+   [4] [3] > leaf nodes, no point to call heapify bc no children
+
+* call min heapify on [5] and [2]
+
+        1index
+       [1] has children 2 index and 2index+1
+       / \
+   2index 3index
+     [2] [3]
+4index 5index
+     / \
+   [4] [5] > leaf nodes, no point to call heapify bc no children
+
+min var is set to current node, if there is a left child, then we compare its val with current min if less - we swap, if there is a right child we compare with min val and if right child less we swap again, at the end we have a var called min and it points to min node, we take original node is it equal to minimum ? if min poiner is pointing to current node, means we should teminate min_heapify, bc min of 3 is current node. Othewise we swap btw node.val and min.val node = min and we continue the algotithm untill node has no children
+* while(!node.left || !node.right)
+min = node;
+if (node.left && node.left.val < min.val){
+min = node.left};
+if (node.right && node.right.val < min.val){
+min = node.right};
+if (min==node){
+break;
+swap(min.val, nod.val);
+node=min;
+==============================
+How do we insert numbers in the Heap ?
+1index
+       [1] has children 2 index and 2index+1
+       /     \
+   2index     3index
+     [2]       [3]
+4index 5index
+     / \       /
+   [4] [5]     2.5
+
