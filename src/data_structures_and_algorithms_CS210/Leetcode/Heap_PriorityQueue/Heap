@@ -53,7 +53,7 @@ break;
 swap(min.val, nod.val);
 node=min;
 ==============================
-How do we insert numbers in the Heap ?
+How do we insert/push numbers in the Heap ?
 1index
        [1] has children 2 index and 2index+1
        /       \
@@ -62,4 +62,6 @@ How do we insert numbers in the Heap ?
 4index 5index
      / \       /
    [4] [5]     3 (insert a val 2.5 and push it up, is this val smaller than the parent, if it is then yu should swap, so 3 will exchange with 2.5, then compare with 1 and no exchange then thats it)
-
+=============================
+How to get rid of smallest val ?
+swap top element of the heap w/ very last val, so index 1 with the last index [3], then you call min_heapify and start pushing the 3 and push it down
