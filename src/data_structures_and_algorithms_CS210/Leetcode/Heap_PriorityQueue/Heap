@@ -56,10 +56,10 @@ node=min;
 How do we insert numbers in the Heap ?
 1index
        [1] has children 2 index and 2index+1
-       /     \
+       /       \
    2index     3index
-     [2]       [3]
+     [2]       [2.5]
 4index 5index
      / \       /
-   [4] [5]     2.5
+   [4] [5]     3 (insert a val 2.5 and push it up, is this val smaller than the parent, if it is then yu should swap, so 3 will exchange with 2.5, then compare with 1 and no exchange then thats it)
 
