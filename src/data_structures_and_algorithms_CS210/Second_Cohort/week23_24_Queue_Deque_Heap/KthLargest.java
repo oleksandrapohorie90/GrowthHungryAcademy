@@ -53,7 +53,7 @@ public class KthLargest {
     }
 
     public int add(int val) {
-        if(topK.isEmpty()){
+        if (topK.isEmpty()) {
             topK.offer(val);
         } else if (val >= topK.peek()) {
             topK.poll();
