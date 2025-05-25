@@ -21,8 +21,34 @@ random array, how to build a heap w/ heapify from array
 i want it to become the heap
 in the heap the top element is the first
 not a correct min heap yet!
+        1index
        [2] has children 2 index and 2index+1
        / \
+   2index 3index
      [5] [3]
+4index 5index
      / \
-   [4] [3]
+   [4] [3] > leaf nodes, no point to call heapify bc no children
+
+* call min heapify on [5] and [2]
+
+        1index
+       [1] has children 2 index and 2index+1
+       / \
+   2index 3index
+     [2] [3]
+4index 5index
+     / \
+   [4] [5] > leaf nodes, no point to call heapify bc no children
+
+min var is set to current node, if there is a left child, then we compare its val with current min if less - we swap, if there is a right child we compare with min val and if right child less we swap again, at the end we have a var called min and it points to min node, we take original node is it equal to minimum ? if min poiner is pointing to current node, means we should teminate min_heapify, bc min of 3 is current node. Othewise we swap btw node.val and min.val node = min and we continue the algotithm untill node has no children
+* while(!node.left || !node.right)
+min = node;
+if (node.left && node.left.val < min.val){
+min = node.left};
+if (node.right && node.right.val < min.val){
+min = node.right};
+if (min==node){
+break;
+swap(min.val, nod.val);
+node=min;
