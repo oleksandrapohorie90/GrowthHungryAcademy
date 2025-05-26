@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_CS210.Leetcode.Queue;
+package data_structures_and_algorithms_CS210.Leetcode.Queue_Deque;
 
 public class DesignCircularDeque {
     int[] array;
