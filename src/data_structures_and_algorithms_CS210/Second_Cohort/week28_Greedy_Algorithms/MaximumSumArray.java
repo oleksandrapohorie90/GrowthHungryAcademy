@@ -46,7 +46,6 @@ public class MaximumSumArray {
             min_prefix_sum_so_far = Math.min(min_prefix_sum_so_far, prefix_sums[i]);
         }
         */
-
         int best_sum = Integer.MIN_VALUE;
         int current_sum = 0;
         for (int num : nums) {
