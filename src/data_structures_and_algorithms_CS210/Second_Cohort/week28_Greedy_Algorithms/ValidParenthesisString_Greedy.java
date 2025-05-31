@@ -2,7 +2,7 @@ package data_structures_and_algorithms_CS210.Second_Cohort.week28_Greedy_Algorit
 
 public class ValidParenthesisString_Greedy {
     public boolean checkValidString(String s) {
-
+//O(1) space
         int low = 0; //lowest num of floating balloons possible so far
         int high = 0; //highest number of balloons possible so far
         for (char c : s.toCharArray()) {
