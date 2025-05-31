@@ -34,5 +34,6 @@ public class ValidParenthesisString {
                 return false;
             }
         }
+        return true;
     }
 }
