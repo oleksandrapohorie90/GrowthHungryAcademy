@@ -20,13 +20,19 @@ public class ValidParenthesisString {
                     left_indices.pop(); //means there is smth we can match it with
                 } else if (!asterisk_indices.isEmpty()) {
                     asterisk_indices.pop();
-                }else{
+                } else {
                     return false; //this closing bracket cant be matched
                 }
             }
         }
-        while (!left_indices.isEmpty()){
+        while (!left_indices.isEmpty()) {
             //can we match the left indices ?
+            if (!asterisk_indices.isEmpty() && left_indices.peek() < asterisk_indices.peek()) {
+                left_indices.pop();
+                asterisk_indices.pop();
+            } else {
+                return false;
+            }
         }
     }
 }
