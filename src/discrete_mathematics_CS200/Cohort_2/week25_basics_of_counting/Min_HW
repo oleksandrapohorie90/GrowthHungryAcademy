@@ -1,0 +1,31 @@
+1. Exercise 6.1 #2Problem: An office building contains 27 floors and has 37 offices on each floor.Solution:By the Product Rule:27 floors × 37 offices = 999 offices
+
+2. Exercise 6.1 #4Problem: A shirt comes in 12 colors, 2 versions (male/female), and 3 sizes per version.Solution:12 colors × 2 versions × 3 sizes = 72 shirt types
+
+3. Exercise 6.1 #7Problem: How many three-letter initials are possible (using 26 uppercase letters)?Solution:26 choices × 26 × 26 = 17,576 initials
+
+4. Exercise 6.1 #10Problem: How many bit strings of length 8?Solution:2 choices per bit × 8 bits = 2^8 = 256 bit strings
+
+5. Exercise 6.1 #12Problem: How many bit strings of length 6 or less (excluding the empty string)?Solution:2^1 + 2^2 + 2^3 + 2^4 + 2^5 + 2^6 = 2 + 4 + 8 + 16 + 32 + 64 = 126 bit strings
+
+6. Exercise 6.1 #18aProblem: How many 5-element DNA sequences end with A? (Bases: A, T, C, G)Solution:4 choices for each of the first 4 positions, 1 fixed last (A):4^4 × 1 = 256 sequences
+
+7. Exercise 6.1 #21a, b, cProblem: Find how many integers between 50 and 100 are divisible by:
+
+a) 7:
+Range: 56 to 98 (7×8 to 7×14) → Values: 56, 63, 70, 77, 84, 91, 98Answer: 7 numbers
+
+b) 11:
+Range: 55 to 99 (11×5 to 11×9) → Values: 55, 66, 77, 88, 99Answer: 5 numbers
+
+c) Both 7 and 11 (LCM = 77):Only number between 50 and 100 is 77Answer: 1 number
+
+8. Exercise 6.1 #28Problem: How many license plates with either 3 digits + 3 letters or 3 letters + 3 digits?
+
+Solution:
+Case 1: DDDLLL = 10^3 × 26^3 = 1,000 × 17,576 = 17,576,000Case 2: LLLDDD = 26^3 × 10^3 = 17,576 × 1,000 = 17,576,000Total = 17,576,000 + 17,576,000 = 35,152,000 plates
+
+9. Exercise 6.2 #1Problem: Show that in a set of 6 classes meeting on weekdays, at least 2 meet the same day.Solution:Pigeonhole Principle: 6 classes (pigeons), 5 weekdays (holes)Since 6 > 5, at least one day must have 2 or more classes
+
+10. Exercise 6.2 #3aProblem: A drawer has 12 brown and 12 black socks. How many to take to ensure a matching pair?Solution:Worst case: 1 brown, 1 black = no match.Next sock must match one color → need to pick 3 socks
+
