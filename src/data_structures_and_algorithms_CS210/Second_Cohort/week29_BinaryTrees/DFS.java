@@ -50,4 +50,6 @@ public class DFS {
         System.out.println(root.val);
         postorder(root.left);
     }
+
+    //all above are DFS - depth first search, going as far deep as we can first in the left subtree before we can go to the right subtree
 }
