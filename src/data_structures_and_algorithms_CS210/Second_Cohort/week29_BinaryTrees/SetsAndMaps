@@ -13,3 +13,6 @@ we sort by the key > logn time
 
 
 Stack - interface, underneath implemented with dynamic array
+For BST's Sets and Maps are called : ordered Set/Map or TreeSet and TreeMap
+
+TreeMap - java has a built in TreeMap, nt in js or python

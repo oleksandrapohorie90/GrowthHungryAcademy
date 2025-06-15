@@ -1,0 +1,18 @@
+apply backtracking to a binary tree -
+if a path exists from the root to the leaf node, as long as entire path doesnt contain any zeroes
+
+     4
+    / \
+   0    1
+  / \  / \
+    7  2  0
+
+1. start at root node, make sure not zero
+2. check the left side of a tree, its a ZERO > go back up >
+the IDEA is like going in the MAZE - when a dead end you turn around
+and backtrack to reach the end, we recursively try every single path
+you go through every single possibility, if a regular tree and not BST,
+you have no idea which path can lead to the end
+3. go to right sub tree > has children then continue > go to left child
+doesnt have children so we found the answer there is a path, no NEED to look
+in the right subtree, we have a path return TRUE
