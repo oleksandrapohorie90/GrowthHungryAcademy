@@ -53,11 +53,25 @@ public class CanReachTheLeaf_IsAPath {
         return false;
     }
 
-//2nd option - more complicated
+    /**
+     * <p>
+     *   4
+     *  / \
+     * 0    1
+     / \   / \
+     * 7  3   2
+     *     \
+     *      0
+     * <p>
+     */
+
+//2nd option - more complicated, what values of that path will look like
+    //O(n) will run through all possible options - thru size of the tree
     public boolean leafPath(TreeNode root, ArrayList<Integer> path) {
         if (root == null || root.val == 0) {
             return false;
         }
+
         path.add(root.val);
 
         if (root.left == null && root.right == null) {
