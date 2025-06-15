@@ -1,0 +1,15 @@
+Set - implemented by HashSet, used like an array, used for Binary Search Trees
+advantage: we can search for vals, insert and remove in log(n) time
+
+Map - implemented by HashMap, phone book sorted in a-z, have a bunch of names:
+key    value
+------------
+Alice > 123
+Brad > 456
+Collin > 789
+for every name is mapped to smth else
+we want to store all the info, but we want to sort by the name > key value
+we sort by the key > logn time
+
+
+Stack - interface, underneath implemented with dynamic array
