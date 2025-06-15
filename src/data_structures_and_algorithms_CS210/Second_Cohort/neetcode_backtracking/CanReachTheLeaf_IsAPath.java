@@ -53,6 +53,7 @@ public class CanReachTheLeaf_IsAPath {
         return false;
     }
 
+//2nd option - more complicated
     public boolean leafPath(TreeNode root, ArrayList<Integer> path) {
         if (root == null || root.val == 0) {
             return false;
