@@ -12,6 +12,17 @@ public class MaxDepth {
         }
     }
 
+    public int maxDepth2(TreeNode root) {
+
+        if (root == null)
+            return 0;
+
+        int countNodesRight = maxDepth(root.right);
+        int countNodesLeft = maxDepth(root.left);
+
+        return 1 + Math.max(countNodesLeft, countNodesRight);
+    }
+
     public int maxDepth(TreeNode v) {
         if (v == null) {
             return 0;
