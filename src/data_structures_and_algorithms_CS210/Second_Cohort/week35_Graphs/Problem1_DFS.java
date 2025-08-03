@@ -2,11 +2,12 @@ package data_structures_and_algorithms_CS210.Second_Cohort.week35_Graphs;
 
 import java.util.Scanner;
 
+//compile in ideone.com
 public class Problem1_DFS {
     static void dfs(int v, boolean[] visited, int[][] graph) {
         visited[v] = true;
-        for (int i = 0; i < graph.length; i++) {
-            if (!visited[i]) {
+        for (int i = 1; i <= graph.length; i++) {
+            if (!visited[i] && graph[v][i] == 1) {
                 dfs(i, visited, graph);
             }
         }
@@ -29,9 +30,9 @@ public class Problem1_DFS {
         int startVertex = scanner.nextInt();
 
         //read all the graph
-        int[][] graph = new int[n][n];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        int[][] graph = new int[n + 1][n + 1];
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
                 graph[i][j] = scanner.nextInt();
             }
         }
@@ -40,13 +41,13 @@ public class Problem1_DFS {
         //n == graph.length
         //Adjency matrix is ready
 
-        //step 2
-        boolean[] visited = new boolean[n];
+        //step 2, when doing 1 indexed graph remember that indeces start from 0 so you need +1
+        boolean[] visited = new boolean[n + 1];
         dfs(startVertex, visited, graph);
 
         //step 3
         int answer = 0;
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i < n; i++) {
             if (visited[i]) {
                 answer += 1;
             }
