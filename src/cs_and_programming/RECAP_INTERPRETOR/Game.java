@@ -13,6 +13,9 @@ public class Game {
         //java read file line by line - stackOverflow
         //Scanner is better and simpler, in java we understand reading from disk is done through Buffer, and it reads by chunks
         File file = new File(playerProperties);
-        Scanner sc = new Scanner(file);
+        Scanner input = new Scanner(file);
+        while (input.hasNext()) {
+            String line = input.nextLine();
+        }
     }
 }
