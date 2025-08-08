@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class ReverseDirectedGraph {
     //usually we use adjacency list since we deal with large graph, not small so no adjacency matrix used too often
+    //hashcodes are the same for undirected graphs and different for directed 31 * u + v
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
