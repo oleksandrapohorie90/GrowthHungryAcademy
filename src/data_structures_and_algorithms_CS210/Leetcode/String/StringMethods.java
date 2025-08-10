@@ -1,5 +1,8 @@
 package data_structures_and_algorithms_CS210.Leetcode.String;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class StringMethods {
 //
 //    Write a method to reverse a string.**
@@ -88,4 +91,43 @@ public class StringMethods {
         }
         return sb.toString().trim();//need a trim since the last word will have a space too
     }
+
+    //write a method to find the first non-repeated character - "aabccddj" -> b
+    //If c is in the map → get its count and add 1.
+    //If c is not in the map → start from 0 and add 1.
+    public static char returnFirstNonRepeated(String str) {
+//        Keys → characters in the string
+//
+//        Values → how many times each character appears
+        Map<Character, Integer> countChar = new HashMap<>();
+
+        for (char ch : str.toCharArray()) {
+            //charCount.getOrDefault(c, 0) → if c exists in the map, get its count; if not, treat its count as 0.
+            //
+            //Add 1 to that count.
+            //
+            //Store the result back into the map.
+            countChar.put(ch, countChar.getOrDefault(ch, 0) + 1);
+        }
+//the first non-repeated character.
+// Loop again in original order (important for finding the first one).
+//
+//Check if the stored count for each char is exactly 1.
+//
+//As soon as you find it → return it.
+//
+//In "swiss", counts are {s=3, w=1, i=1}
+//
+//Check s → count 3 → skip
+//
+//Check w → count 1 → return 'w'
+        for (char ch : str.toCharArray()) {
+            if (countChar.get(ch) == 1) {
+                return ch;
+            }
+        }
+
+        return '\0'; //is the null character in Java — a common placeholder to mean “no char found.”
+    }
+
 }
