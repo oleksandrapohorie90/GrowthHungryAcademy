@@ -86,4 +86,25 @@ public class ArrayMethods {
         }
         return secondLargest;
     }
+
+    //write a method to implement bubble sort
+//    We compare two adjacent elements at a time (arr[j] and arr[j+1]).
+//
+//    If the left one is bigger, we swap them.
+//
+//    After the first pass, the largest element will be at the end.
+//
+//    We repeat for the remaining part of the array, but each time we need one less comparison because the end portion is already sorted.
+    public static void bubbleSort(int[] array) {
+
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {//That’s why each pass needs fewer comparisons — because the largest elements are already at the right end.
+                if (array[j] > array[j + 1]) {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+    }
 }
