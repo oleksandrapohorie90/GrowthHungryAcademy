@@ -69,4 +69,21 @@ public class ArrayMethods {
     }
 
     //write a method to find the second largest number in an array.
+    public static int find2ndMaxNumInArray(int[] array) {
+
+        if (array.length < 2) return -1;
+
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+        for (int num : array) {
+            if (num > largest) {
+                secondLargest = largest;
+                largest = num;
+            } else if (num > secondLargest && num < largest) { //or !=
+                secondLargest = num;
+            }
+        }
+        return secondLargest;
+    }
 }
