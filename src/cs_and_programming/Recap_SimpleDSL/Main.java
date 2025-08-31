@@ -3,14 +3,13 @@ package cs_and_programming.Recap_SimpleDSL;
 import java.util.List;
 
 public class Main {
-
     /*
     PROGRAM   := STATEMENT+
     STATEMENT := ASSIGNMENT | EXPRESSION
     ASSIGNMENT:= "LET" IDENTIFIER
     ARGUMENT  := NUMBER | IDENTIFIER
     EXPRESSION:= OPERATION ARGUMENT ARGUMENT
-    OPERATION := "ADD" | "SUB" | "DIV" | "MUL"
+    OPERATION := "ADD" | "SUB" | "MUL" | "DIV"
     NUMBER    := [0-9]+
     IDENTIFIER:= [A-ZA-Z_][A-ZA-Z0-9_]*
      */
