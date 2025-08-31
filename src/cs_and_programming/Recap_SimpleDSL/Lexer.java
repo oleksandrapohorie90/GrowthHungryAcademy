@@ -35,7 +35,6 @@ public class Lexer {
                     } catch (NumberFormatException e) {
                         System.out.println("Invalid token");
                     }
-
             }
         }
         tokens.add(new Token(TokenType.EOF, "EOF"));
