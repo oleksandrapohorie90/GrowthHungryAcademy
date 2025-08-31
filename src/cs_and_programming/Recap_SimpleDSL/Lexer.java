@@ -27,9 +27,9 @@ public class Lexer {
                     sb.append(input.charAt(position++));
                 }
                 tokens.add(new Token(TokenType.NUM, sb.toString()));
-            } else if (Character.isLetter(c)) {
+            } else if (Character.isLetter(c) || c == '_') {
                 StringBuilder sb = new StringBuilder();
-                while (position < input.length() && Character.isLetter(input.charAt(position))) {
+                while (position < input.length() && (Character.isLetterOrDigit(input.charAt(position))) || input.charAt(position) == '_') {
                     sb.append(input.charAt(position++));
                 }
                 switch (sb.toString()) {
@@ -49,17 +49,11 @@ public class Lexer {
                         tokens.add(new Token(TokenType.LET, sb.toString()));
                         break;
                     default:
-                        try {
-                            Integer i = Integer.parseInt(sb.toString());
-                            tokens.add(new Token(TokenType.NUM, sb.toString()));
-                        } catch (NumberFormatException e) {
-                            System.out.println("Invalid token");
-                        }
+                        tokens.add(new Token(TokenType.IDENTIFIER, sb.toString()));
                 }
             }
-            tokens.add(new
-
-                    Token(TokenType.EOF, "EOF"));
-            return tokens;
         }
+        tokens.add(new Token(TokenType.EOF, "EOF"));
+        return tokens;
     }
+}

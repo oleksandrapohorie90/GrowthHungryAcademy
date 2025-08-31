@@ -14,7 +14,7 @@ public class Main {
     IDENTIFIER:= [A-ZA-Z_][A-ZA-Z0-9_]*
      */
     public static void main(String[] args) {
-        Lexer lexer = new Lexer("ADD 5 3 SUB 7 6  DIV 10 0");
+        Lexer lexer = new Lexer("LET _x 5 ADD 2_x");
         List<Token> tokens = lexer.tokenize();
         tokens.forEach(t -> System.out.println(t));
         Parser parser = new Parser(tokens);
