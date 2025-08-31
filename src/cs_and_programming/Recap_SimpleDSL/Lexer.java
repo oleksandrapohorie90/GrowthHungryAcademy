@@ -6,6 +6,7 @@ import java.util.List;
 public class Lexer {
     //will have one method tokenize and constructor
     private String input;
+    private int position;
 
     public Lexer(String rawInput) {
         input = rawInput;
@@ -13,6 +14,11 @@ public class Lexer {
 
     public List<Token> tokenize() {
         List<Token> tokens = new ArrayList<>();
+        while (position < input.length()) {
+
+        }
+
+
         String[] temp = input.split(" ");
         for (String t : temp) {
             switch (t) {
