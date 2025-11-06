@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_CS210.Leetcode.SDET;
+package data_structures_and_algorithms_CS210.Leetcode.SDET_Critical;
 
 public class SecondHighestNumberInArray {
     public static void main(String[] args) {
