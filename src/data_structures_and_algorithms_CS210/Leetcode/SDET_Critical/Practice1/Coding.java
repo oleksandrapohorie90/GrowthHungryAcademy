@@ -5,7 +5,7 @@ public class Coding {
         int[] arr = {1, 2, 7, 5, 6};
         int number = 121;
         System.out.println("Second highest number is: " + secondHighest(arr));
-        System.out.println("Is number a palindrome: "+ isPalindrome(number));
+        System.out.println("Is number a palindrome: " + isPalindrome(number));
     }
 
     //2nd highest number in array
@@ -37,5 +37,24 @@ public class Coding {
         return original == reversed;
     }
 
-    //av of 3 nums
+    //av of 3 numbers
+    public static double findAverageOfThree(int a, int b, int c) {
+        return (a + b + c) / 3.0;
+    }
+
+    //is even or odd
+    public static boolean isEvenOrOdd(int num) {
+        return num % 2 == 0;
+    }
+
+    public static boolean isPrime(int num) {
+        if (num <= 1) return false;
+
+        for (int i = 2; i < num; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
