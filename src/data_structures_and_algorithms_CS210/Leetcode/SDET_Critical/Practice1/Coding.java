@@ -6,8 +6,9 @@ public class Coding {
     public static void main(String[] args) {
         int[] arr = {1, 2, 7, 5, 6};
         int number = 121;
-        System.out.println("Second highest number is: " + secondHighest(arr));
-        System.out.println("Is number a palindrome: " + isPalindrome(number));
+//        System.out.println("Second highest number is: " + secondHighest(arr));
+//        System.out.println("Is number a palindrome: " + isPalindrome(number));
+        System.out.println(reverseString1("AlexaSky"));
     }
 
     //2nd highest number in array
@@ -69,4 +70,24 @@ public class Coding {
     public static int generateRandom(int num) {
         return new Random().nextInt(1, 100);
     }
+
+    //reverse string
+    public static String reverseString(String str) {
+        String reversed = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed += str.charAt(i);
+        }
+
+        return reversed;
+    }
+    public static String reverseString1(String str) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = str.length() - 1; i >= 0; i--) {
+            sb.append(str.charAt(i));
+        }
+
+        return sb.toString();
+    }
+
+    //count num of words in a given string
 }
