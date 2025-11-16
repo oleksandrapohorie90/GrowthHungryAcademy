@@ -1,5 +1,7 @@
 package data_structures_and_algorithms_CS210.Leetcode.SDET_Critical.Practice1;
 
+import java.util.Random;
+
 public class Coding {
     public static void main(String[] args) {
         int[] arr = {1, 2, 7, 5, 6};
@@ -56,5 +58,15 @@ public class Coding {
             }
         }
         return true;
+    }
+
+    //convertFtoC
+    public static int FahrenheitToCelsius(int num) {
+        return (num - 32) * 5 / 9;
+    }
+
+    //generate random num
+    public static int generateRandom(int num) {
+        return new Random().nextInt(1, 100);
     }
 }
