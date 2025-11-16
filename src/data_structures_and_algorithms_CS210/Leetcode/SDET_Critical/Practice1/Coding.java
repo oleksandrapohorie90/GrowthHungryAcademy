@@ -8,7 +8,8 @@ public class Coding {
         int number = 121;
 //        System.out.println("Second highest number is: " + secondHighest(arr));
 //        System.out.println("Is number a palindrome: " + isPalindrome(number));
-        System.out.println(reverseString1("AlexaSky"));
+        // System.out.println(reverseString1("AlexaSky"));
+        System.out.println("The number of words are: " + countNumberOfWords("I will find a job of my dream this year."));
     }
 
     //2nd highest number in array
@@ -80,6 +81,7 @@ public class Coding {
 
         return reversed;
     }
+
     public static String reverseString1(String str) {
         StringBuilder sb = new StringBuilder();
         for (int i = str.length() - 1; i >= 0; i--) {
@@ -90,4 +92,9 @@ public class Coding {
     }
 
     //count num of words in a given string
+    public static int countNumberOfWords(String str) {
+        String[] strArr = str.split(" ");
+
+        return strArr.length;
+    }
 }
