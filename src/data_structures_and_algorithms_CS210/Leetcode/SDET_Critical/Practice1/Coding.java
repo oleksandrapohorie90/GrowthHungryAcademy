@@ -93,8 +93,8 @@ public class Coding {
 
     //count num of words in a given string
     public static int countNumberOfWords(String str) {
-        String[] strArr = str.split(" ");
-
-        return strArr.length;
+        //String[] strArr = str.split(" ");
+        //return str.trim().isEmpty() ? 0 : str.trim().split("\\s").length;
+        return str.split(" ").length;
     }
 }
