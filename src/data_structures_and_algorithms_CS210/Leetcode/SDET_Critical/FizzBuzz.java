@@ -34,4 +34,7 @@ public class FizzBuzz {
         }
         return result;
     }
+
+    //replace a&b without
+
 }
